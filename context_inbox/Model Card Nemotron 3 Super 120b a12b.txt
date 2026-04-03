@@ -1,0 +1,509 @@
+nemotron-3-super-120b-a12b Model by NVIDIA | NVIDIA NIM
+https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b/modelcard
+
+nemotron-3-super-120b-a12b
+
+ModelCard++
+NVIDIA-Nemotron-3-Super-120B-A12B
+Model Summary
+
+Total Parameters 120B (12B active)
+Architecture LatentMoE - Mamba-2 + MoE + Attention hybrid with Multi-Token Prediction (MTP)
+Context Length Up to 1M tokens
+Minimum GPU Requirement 8× H100-80GB
+Supported Languages English, French, German, Italian, Japanese, Spanish, Chinese
+Best For Agentic workflows, long-context reasoning, high-volume workloads (e.g. IT ticket automation), tool use, RAG
+Reasoning Mode Configurable on/off via chat template (enable_thinking=True/False)
+License NVIDIA Nemotron Open Model License
+Release Date March 11, 2026
+Quick Start
+
+Use temperature=1.0 and top_p=0.95 across all tasks and serving backends — reasoning, tool calling, and general chat alike.
+
+For more details on how to deploy and use the model - see the Quick Start Guide below!
+
+Model Overview
+
+Model Developer: NVIDIA Corporation
+
+Model Dates: December 2025 - March 2026
+
+Data Freshness:
+
+The post-training data has a cutoff date of February 2026.
+The pre-training data has a cutoff date of June 2025.
+What is Nemotron?
+
+NVIDIA Nemotron™ is a family of open models with open weights, training data, and recipes, delivering leading efficiency and accuracy for building specialized AI agents.
+
+Description
+
+Nemotron-3-Super-120B-A12B-BF16 is a large language model (LLM) trained by NVIDIA, designed to deliver strong agentic, reasoning, and conversational capabilities. It is optimized for collaborative agents and high-volume workloads such as IT ticket automation. Like other models in the family, it responds to user queries and tasks by first generating a reasoning trace and then concluding with a final response. The model's reasoning capabilities can be configured through a flag in the chat template.
+
+The model employs a hybrid Latent Mixture-of-Experts (LatentMoE) architecture, utilizing interleaved Mamba-2 and MoE layers, along with select Attention layers. Distinct from the Nano model, the Super model incorporates Multi-Token Prediction (MTP) layers for faster text generation and improved quality, and it is trained using NVFP4 quantization to maximize compute efficiency. The model has 12B active parameters and 120B parameters in total.
+
+The supported languages include: English, French, German, Italian, Japanese, Spanish, and Chinese
+
+This model is ready for commercial use.
+
+License/Terms of Use
+
+GOVERNING TERMS: The trial service is governed by the NVIDIA API Trial Terms of Service. Use of this model is governed by the NVIDIA Nemotron Open Model License.
+
+Benchmarks
+Benchmark Nemotron 3 Super Qwen3.5-122B-A10B GPT-OSS-120B
+General Knowledge
+MMLU-Pro 83.73 86.70 81.00
+Reasoning
+AIME25 (no tools) 90.21 90.36 92.50
+HMMT Feb25 (no tools) 93.67 91.40 90.00
+HMMT Feb25 (with tools) 94.73 89.55 —
+GPQA (no tools) 79.23 86.60 80.10
+GPQA (with tools) 82.70 — 80.09
+LiveCodeBench (v5 2024-08↔2025-05) 81.19 78.93 88.00
+SciCode (subtask) 42.05 42.00 39.00
+HLE (no tools) 18.26 25.30 14.90
+HLE (with tools) 22.82 — 19.0
+Agentic
+Terminal Bench (hard subset) 25.78 26.80 24.00
+Terminal Bench Core 2.0 31.00 37.50 18.70
+SWE-Bench (OpenHands) 60.47 66.40 41.9
+SWE-Bench (OpenCode) 59.20 67.40 —
+SWE-Bench (Codex) 53.73 61.20 —
+SWE-Bench Multilingual (OpenHands) 45.78 — 30.80
+TauBench V2
+    Airline 56.25 66.0 49.2
+    Retail 62.83 62.6 67.80
+    Telecom 64.36 95.00 66.00
+    Average 61.15 74.53 61.0
+BrowseComp with Search 31.28 — 33.89
+BIRD Bench 41.80 — 38.25
+Chat & Instruction Following
+IFBench (prompt) 72.56 73.77 68.32
+Scale AI Multi-Challenge 55.23 61.50 58.29
+Arena-Hard-V2 73.88 75.15 90.26
+Long Context
+AA-LCR 58.31 66.90 51.00
+RULER-100 @ 256k 96.30 96.74 52.30
+RULER-100 @ 512k 95.67 95.95 46.70
+RULER-100 @ 1M 91.75 91.33 22.30
+Multilingual
+MMLU-ProX (avg over langs) 79.36 85.06 76.59
+WMT24++ (en→xx) 86.67 87.84 88.89
+
+All evaluation results were collected via Nemo Evaluator SDK and for most benchmarks, the Nemo Skills Harness. For reproducibility purposes, more details on the evaluation settings can be found in the Nemo Evaluator SDK configs folder and the reproducibility tutorial for Nemotron 3 Super. The open source container on Nemo Skills packaged via NVIDIA's Nemo Evaluator SDK used for evaluations can be found here. In addition to Nemo Skills, the evaluations also used dedicated open-source packaged containers for Tau-2 Bench (default prompt), Terminal Bench Hard (48 tasks), ScaleAI Multi Challenge Multi-turn Instruction Following, and Ruler.
+
+The following benchmarks are not onboarded yet in our open source tools and for these we used either their official open source implementation or otherwise an internal scaffolding that we plan to open source in the future: SWE Bench Verified (OpenHands), SWE Bench Multilingual (OpenHands), BrowseComp with Search (internal implementation with Serp API), Terminal Bench Core 2.0 (Harbor).
+
+Deployment Geography: Global
+Use Case
+
+NVIDIA-Nemotron-3-Super-120B-A12B-BF16 is a general purpose reasoning and chat model intended to be used in English, Code, and supported multilingual contexts. This model is optimized for collaborative agents and high-volume workloads. It is intended to be used by developers designing AI Agent systems, chatbots, RAG systems, and other AI-powered applications. This model is also suitable for complex instruction-following tasks and long-context reasoning.
+
+Release Date
+
+Hugging Face - 03/11/2026 via Hugging Face
+
+Reference(s)
+NVIDIA Nemotron 3 model family on Hugging Face
+NVIDIA Nemotron 3 Super Technical Report
+Model Architecture
+Architecture Type: Mamba2-Transformer Hybrid Latent Mixture of Experts (LatentMoE) with Multi-Token Prediction (MTP)
+Network Architecture: Nemotron Hybrid LatentMoE
+Number of model parameters: 120B Total / 12B Active
+Model Design
+
+The model utilizes the LatentMoE architecture, where tokens are projected into a smaller latent dimension for expert routing and computation, improving accuracy per byte. The Super model is pre-trained using NVFP4 quantization — the first model in the Nemotron 3 family trained at this precision. The majority of linear layers use NVFP4 for weights, activations, and gradients, while select layers (including latent projections, MTP layers, QKV/attention projections, and embeddings) are maintained in BF16 or MXFP8 for training stability. The model includes Multi-Token Prediction (MTP) layers using a shared-weight design across prediction heads. This improves training signal quality, enables faster inference via native speculative decoding, and supports more stable autoregressive drafting at longer draft lengths compared to independently trained offset heads.
+
+Training Methodology
+
+Stage 1: Pre-Training
+
+NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16 model was pre-trained for over 25T tokens using crawled and synthetic code, math, science, and general knowledge data. Training leveraged NVFP4 quantization for efficiency. All datasets are disclosed in the Training and Evaluation Datasets section of this document. Major portions of the pre-training corpus are released in the Nemotron-Pre-Training-Datasets collection.
+Software used for pre-training: Megatron-LM
+
+Stage 2: Supervised Fine-Tuning
+
+The model was further fine-tuned on synthetic code, math, science, tool calling, instruction following, structured outputs, and general knowledge data. This stage incorporated data designed to support long-range retrieval and multi-document aggregation. All datasets are disclosed in the Training and Evaluation Datasets section of this document. Major portions of the fine-tuning corpus are released in the Nemotron-Post-Training-v3 collection. Data Designer is one of the libraries used to prepare these corpora.
+
+Stage 3: Reinforcement Learning
+
+The model underwent multi-environment reinforcement learning using asynchronous GRPO (Group Relative Policy Optimization) across math, code, science, instruction following, multi-step tool use, multi-turn conversations, and structured output environments. It utilized an asynchronous RL architecture that fully decouples training from inference across separate GPU devices, leveraging in-flight weight updates and MTP to accelerate rollout generation. Conversational quality was further refined through RLHF. All datasets are disclosed in the Training and Evaluation Datasets section of this document. The RL environments and datasets are released as part of NeMo Gym.
+Software used for reinforcement learning: NeMo RL, NeMo Gym
+
+NVIDIA-Nemotron-3-Super-120B-A12B-BF16 model is a result of the above work.
+
+The end-to-end training recipe is available in the NVIDIA Nemotron Developer Repository. Evaluation results can be replicated using the NeMo Evaluator SDK. Data Designer is one of the libraries used to prepare the pre and post training datasets. More details on the datasets and synthetic data generation methods can be found in the technical report NVIDIA Nemotron 3 Super Technical Report.
+
+Input
+Input Type(s): Text
+Input Format(s): String
+Input Parameters: One-Dimensional (1D): Sequences
+Other Properties Related to Input: Maximum context length up to 1M tokens. Supported languages include: English, French, German, Italian, Japanese, Spanish, and Chinese
+Output
+Output Type(s): Text
+Output Format: String
+Output Parameters: One-Dimensional (1D): Sequences
+Other Properties Related to Output: Maximum context length up to 1M tokens
+
+Our AI models are designed and optimized to run on NVIDIA GPU-accelerated systems. By leveraging NVIDIA's hardware (e.g. GPU cores) and software frameworks (e.g., CUDA libraries), the model achieves faster training and inference times compared to CPU-only solutions.
+
+Software Integration
+Runtime Engine(s): NeMo 25.11.01
+Supported Hardware Microarchitecture Compatibility: NVIDIA Ampere - A100; NVIDIA Blackwell; NVIDIA Hopper - H100-80GB
+Operating System(s): Linux
+
+The integration of foundation and fine-tuned models into AI systems requires additional testing using use-case-specific data to ensure safe and effective deployment. Following the V-model methodology, iterative testing and validation at both unit and system levels are essential to mitigate risks, meet technical and functional requirements, and ensure compliance with safety and ethical standards before deployment.
+
+Model Version(s)
+v1.0 - GA
+Quick Start Guide
+
+For each inference backend - we'll be using the custom super_v3 reasoning parser - which you can obtain by following these instructions:
+
+Bash
+Copy
+wget https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16/blob/main/super_v3_reasoning_parser.py
+
+
+For advanced deployment configurations - visit this resource
+
+vLLM
+
+For more detailed information, please see this cookbook.
+
+Bash
+Copy
+pip install -U "vllm==0.15.1"
+
+export MODEL_CKPT=PATH/TO/MODEL/CHECKPOINT
+
+Bash
+Copy
+vllm serve $MODEL_CKPT \
+--served-model-name nvidia/nemotron-3-super \
+--async-scheduling \
+--dtype auto \
+--kv-cache-dtype fp8 \
+--tensor-parallel-size 4 \
+--pipeline-parallel-size 1 \
+--data-parallel-size 2 \
+--max-model-len 262144 \
+--enable-expert-parallel \
+--swap-space 0 \
+--trust-remote-code \
+--gpu-memory-utilization 0.9 \
+--enable-chunked-prefill \
+--mamba-ssm-cache-dtype float16 \
+--reasoning_parser super_v3
+
+
+Context length defaults to 256k above. To use up to 1M, set VLLM_ALLOW_LONG_MAX_MODEL_LEN=1 and --max-model-len 1M
+
+SGLang
+
+Container:
+
+Bash
+Copy
+docker pull lmsysorg/sglang:v0.5.9
+
+
+Or pip:
+
+Bash
+Copy
+pip install 'git+https://github.com/sgl-project/sglang.git#subdirectory=python'
+
+
+For more detailed information, please see this cookbook.
+
+Bash
+Copy
+python3 -m sglang.launch_server \
+--model PATH/TO/CHECKPOINT \
+--served-model-name nvidia/nemotron-3-super \
+--trust-remote-code \
+--tp 8 \
+--ep 4 \
+--tool-call-parser qwen3_coder \
+--reasoning-parser super_v3
+
+TRT-LLM
+
+Container:
+
+Bash
+Copy
+docker pull nvcr.io/nvidia/tensorrt-llm/release:1.3.0rc5
+
+
+For more detailed information, please see this cookbook.
+
+Bash
+Copy
+cat > ./extra-llm-api-config.yml << EOF
+kv_cache_config:
+enable_block_reuse: false
+mamba_ssm_cache_dtype: float32
+moe_config:
+backend: TRTLLM
+cuda_graph_config:
+enable_padding: true
+max_batch_size: 256
+enable_attention_dp: true
+EOF
+
+trtllm-serve PATH/TO/BF16/CHECKPOINT \
+--host 0.0.0.0 \
+--port 8123 \
+--backend pytorch \
+--max_batch_size 256 \
+--tp_size 8 --ep_size 8 \
+--max_num_tokens 8576 \
+--trust_remote_code \
+--reasoning_parser nano_v3 \
+--tool_parser qwen3_coder \
+--extra_llm_api_options extra-llm-api-config.yml
+
+API Client
+
+The examples below use the OpenAI-compatible client and work with any of the serving backends above.
+
+NOTE: For coding agents add the following to the API call - extra_body={“chat_template_kwargs”: {“force_nonempty_content”: True}
+
+Python
+Copy
+from openai import OpenAI
+client = OpenAI(base_url="http://localhost:8000/v1", api_key="EMPTY")
+MODEL = "nvidia/nemotron-3-super"
+
+
+Reasoning ON (default)
+
+Python
+Copy
+response = client.chat.completions.create(
+model=MODEL,
+messages=[{"role": "user", "content": "Write a haiku about GPUs"}],
+max_tokens=16000,
+temperature=1.0,
+top_p=0.95,
+extra_body={"chat_template_kwargs": {"enable_thinking": True}}
+)
+print(response.choices[0].message.content)
+
+
+Reasoning OFF
+
+Python
+Copy
+response = client.chat.completions.create(
+model=MODEL,
+messages=[{"role": "user", "content": "What is the capital of Japan?"}],
+max_tokens=16000,
+temperature=1.0,
+top_p=0.95,
+extra_body={"chat_template_kwargs": {"enable_thinking": False}}
+)
+print(response.choices[0].message.content)
+
+
+Low-effort reasoning
+
+Uses significantly fewer reasoning tokens than full thinking mode. Recommended as a starting point before tuning explicit token budgets.
+
+Python
+Copy
+response = client.chat.completions.create(
+model=MODEL,
+messages=[{"role": "user", "content": "What is the capital of Japan?"}],
+max_tokens=16000,
+temperature=1.0,
+top_p=0.95,
+extra_body={"chat_template_kwargs": {"enable_thinking": True, "low_effort": True}}
+)
+print(response.choices[0].message.content)
+
+OpenCode
+
+OpenCode is an AI coding agent that runs in your terminal. It connects to any OpenAI-compatible endpoint, making it compatible with all three serving backends above (vLLM, SGLang, and TRT-LLM).
+
+Create or update your ~/.config/opencode/opencode.json:
+
+JSON
+Copy
+{
+"$schema": "https://opencode.ai/config.json",
+"model": "local/nvidia-nemotron-3-super",
+"provider": {
+"local": {
+"npm": "@ai-sdk/openai-compatible",
+"name": "local_backend",
+"options": {
+"baseURL": "http://localhost:8000/v1",
+"apiKey": "EMPTY"
+},
+"models": {
+"nvidia-nemotron-3-super": {
+"name": "nvidia/nemotron-3-super",
+"limit": {
+"context": 1000000,
+"output": 32768
+}
+}
+}
+}
+},
+"agent": {
+"build": {
+"temperature": 1.0,
+"top_p": 0.95,
+"max_tokens": 32000
+},
+"plan": {
+"temperature": 1.0,
+"top_p": 0.95,
+"max_tokens": 32000
+}
+}
+}
+
+
+Update baseURL to match whichever backend you are running. The default port above (8000) matches the vLLM example; SGLang and TRT-LLM use 30000 and 8123 respectively.
+
+To learn more about other supported agent scaffolds - check out this resource
+
+Advanced: Budget-Controlled Reasoning
+Transformers
+
+The model has been integrated into 🤗 Transformers since v5.3.0. We recommend using the Nemotron 3 Super container from the NeMo Framework to ensure all required libraries are available.
+
+Python
+Copy
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+tokenizer = AutoTokenizer.from_pretrained("nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16")
+model = AutoModelForCausalLM.from_pretrained(
+"nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+torch_dtype=torch.bfloat16,
+device_map="auto"
+)
+
+
+If your Transformers version is lower than v5.3.0, please add trust_remote_code=True when loading the model:
+
+Python
+Copy
+model = AutoModelForCausalLM.from_pretrained(
+"nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+torch_dtype=torch.bfloat16,
+device_map="auto",
+trust_remote_code=True
+)
+
+
+Please note that the model supports up to a 1M context size, although the default context size in the Hugging Face configuration is 256k due to higher VRAM requirements.
+
+Here is an example of generating outputs with reasoning enabled (the default):
+
+Python
+Copy
+messages = [
+{"role": "user", "content": "Write a haiku about GPUs"},
+]
+
+tokenized_chat = tokenizer.apply_chat_template(
+messages,
+tokenize=True,
+add_generation_prompt=True,
+return_tensors="pt"
+).to(model.device)
+
+if not isinstance(tokenized_chat, torch.Tensor):
+input_ids = tokenized_chat["input_ids"]
+else:
+input_ids = tokenized_chat
+
+outputs = model.generate(
+input_ids,
+max_new_tokens=50,
+temperature=1.0,
+top_p=0.95,
+eos_token_id=tokenizer.eos_token_id
+)
+
+print(tokenizer.decode(outputs[0]))
+
+
+To disable reasoning, add enable_thinking=False to apply_chat_template(). By default, enable_thinking is set to True.
+
+Python
+Copy
+tokenized_chat = tokenizer.apply_chat_template(
+messages,
+tokenize=True,
+enable_thinking=False,
+add_generation_prompt=True,
+return_tensors="pt"
+).to(model.device)
+
+Training and Evaluation Datasets
+Training
+
+Data Modality: Text The total size: 15,573,172,908,990 Tokens Total number of datasets: 153 Dataset partition: Training [100%], testing [0%], validation [0%] Time period for training data collection: 2013 to February 24, 2026 Time period for testing data collection: 2013 to February 24, 2026 Time period for validation data collection: 2013 to February 24, 2026 Data Collection Method by dataset: Hybrid: Automated, Human, Synthetic Labeling Method by dataset: Hybrid: Automated, Human, Synthetic
+
+NVIDIA-Nemotron-3-Super-120B-A12B-BF16 is pre-trained on a large corpus of high-quality curated and synthetically-generated data. It is trained in the English language, as well as 19 other languages and 43 programming languages. Our sources cover a variety of document types such as: webpages, dialogue, articles, and other written materials. The corpus spans domains including legal, math, science, finance, and more. We also include a small portion of question-answering, and alignment style data to improve model accuracy. The model was trained for approximately 25 trillion tokens.
+
+The post-training corpus for NVIDIA-Nemotron-3-Super-120B-A12B-BF16 of high-quality curated and synthetically-generated data. Primary languages used for post-training include English, French, German, Italian, Japanese, Spanish, and Chinese.
+
+These datasets, such as FinePDFs, EssentialWeb, HotpotQA, SQuAD, and HelpSteer3, do not collectively or exhaustively represent all demographic groups (and proportionally therein). For instance, these datasets do not contain explicit mentions of demographic classes such as age, gender, or ethnicity in 64-99% of samples, depending on the source. In the subset where such terms are present, document-based datasets (FinePDFs and EssentialWeb) contain representational skews, such as references to "male" outnumbering those to "female", and mentions of "White" as the most frequent among ethnic identifiers (comprising 43-44% of ethnicity mentions). To mitigate these imbalances, we recommend considering evaluation techniques such as bias audits, fine-tuning with demographically balanced datasets, and mitigation strategies like counterfactual data augmentation to align with the desired model behavior. This evaluation used a 3,000-sample subset per dataset, identified as the optimal threshold for maximizing embedder accuracy.
+
+During post-training, we generate synthetic data by distilling trajectories, solutions, and translations from strong teacher models and agent systems, often grounded in real tasks or documents and aggressively filtered for quality. For math, code, and science, we start from curated problem sets and use open source permissive models such as GPT-OSS-120B to produce step-by-step reasoning traces, candidate solutions, best-of-n selection traces, and verified CUDA kernels. For long-context and science, we build synthetic QA and reasoning data by retrieving passages from long documents, generating MCQ/OpenQA questions and answers, and paraphrasing them into multiple prompt/response formats to ensure diversity. Across all pipelines we stack automated verification—compilers, numerical checks, language identification—to ensure our data is high quality.
+
+For all domains, we apply a unified data filtering pipeline to ensure that only high-quality, license-compliant, and verifiable samples are used for post-training. We first discard malformed examples using structural checks (e.g., missing tool definitions when tool calls are present). We then aggressively filter reasoning traces exhibiting pathological repetition, such as repeated n-grams within a sliding window or across the entire trajectory, which we found to be a strong indicator of malformed or low-quality reasoning. Finally, based on internal audits of synthetically generated datasets, we observed that some teacher models occasionally produce reasoning traces and final responses that implicitly align with specific political entities or promote nationalistic narratives. To mitigate this, we apply targeted keyword- and regex-based filters and remove all trajectories matching such behavior.
+
+Alongside the model, we release our final pre-training and post-training data, as outlined in this section. For ease of analysis, there is a sample set that is ungated. For all remaining code, math and multilingual data, gating and approval is required, and the dataset is permissively licensed for model training purposes.
+
+More details on the datasets and synthetic data generation methods can be found in the technical report NVIDIA Nemotron 3 Super.
+
+Click to explore the full dataset catalogue used for training
+Evaluation Dataset
+Data Collection Method by dataset: Hybrid: Human, Synthetic
+Labeling Method by dataset: Hybrid: Automated, Human, Synthetic
+Inference
+Acceleration Engine: PyTorch
+Test Hardware:
+NVIDIA Hopper
+1-8x H100
+1-8x H200
+NVIDIA Grace Blackwell
+GB200
+Ethical Considerations
+
+NVIDIA believes Trustworthy AI is a shared responsibility and we have established policies and practices to enable development for a wide array of AI applications. When downloaded or used in accordance with our terms of service, developers should work with their internal model team to ensure this model meets requirements for the relevant industry and use case and addresses unforeseen product misuse.
+
+We advise against circumvention of any provided safety guardrails contained in the Model without a substantially similar guardrail appropriate for your use case. For more details: Safety and Explainability Subcards.
+
+For more detailed information on ethical considerations for this model, please see the Model Card++ Bias, and Privacy Subcards.
+
+Please report model quality, risk, security vulnerabilities or NVIDIA AI Concerns here.
+
+Citation
+Bibtex
+Copy
+@misc{nvidia_nemotron_3_2025,
+title = {NVIDIA Nemotron 3: Efficient and Open Intelligence},
+author = {{NVIDIA}},
+year = {2025},
+url = {https://arxiv.org/abs/2512.20856},
+note = {White Paper}
+}
+
+Terms of Use
+Privacy Policy
+Your Privacy Choices
+Contact
+
+Copyright © 2026 NVIDIA Corporation

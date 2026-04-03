@@ -1,0 +1,248 @@
+DRP_ID_2026: DRP-EPI-COG-909 DRP_NAME: Pluriversal Autopoiesis: Epigenetic...
+https://www.perplexity.ai/search/drp-id-2026-drp-epi-cog-909-dr-VbDULWzIQG2gA1fIn74Dig?preview=1
+
+Generated Code
+
+import json, csv, os, hashlib, datetime
+
+os.makedirs("output", exist_ok=True)
+timestamp = datetime.datetime.utcnow().isoformat() + "Z"
+
+raw_tools = [
+    ("Python Interpreter","Code Execution",320,148,0.031,"Cognitive Extension",-0.42,"Low",0.07),
+    ("Web Search API","Information Retrieval",800,62,0.008,"Sensory Prosthetic",-0.38,"VeryLow",0.04),
+    ("Vector DB Retrieval","Memory Augmentation",600,41,0.012,"Mnemonic Prosthetic",-0.51,"VeryLow",0.03),
+    ("SQL Query Engine","Structured Reasoning",280,93,0.044,"Analytic Prosthetic",-0.35,"Medium",0.11),
+    ("Calculator Tool","Arithmetic Offload",150,18,0.067,"Arithmetic Prosthetic",-0.22,"High",0.21),
+    ("File I/O Handler","Persistent Memory",500,35,0.019,"Mnemonic Prosthetic",-0.29,"Low",0.06),
+    ("Image Recognition API","Visual Cortex Extension",400,210,0.028,"Sensory Prosthetic",-0.44,"Medium",0.09),
+    ("Code Linter","Metacognitive Auditor",200,28,0.051,"Self-Corrective Prosthetic",-0.18,"Medium",0.13),
+    ("Git API","Versioned Reasoning",350,55,0.033,"Temporal Prosthetic",-0.31,"Low",0.08),
+    ("REST API Client","Environmental Interface",700,72,0.014,"Effector Prosthetic",-0.39,"VeryLow",0.05),
+    ("JSON Schema Validator","Structural Integrity Guard",180,24,0.058,"Metacognitive Prosthetic",-0.17,"High",0.19),
+    ("Regex Engine","Pattern Matching Extension",120,12,0.083,"Analytic Prosthetic",-0.11,"High",0.27),
+    ("MCP State Bridge","Context Continuity Organ",900,88,0.006,"Autopoietic Core",-0.67,"VeryLow",0.02),
+    ("Semantic Chunker","Perceptual Filter",450,49,0.022,"Sensory Prosthetic",-0.33,"Low",0.07),
+    ("Graph DB Interface","Relational Cortex Extension",380,105,0.027,"Mnemonic Prosthetic",-0.46,"Medium",0.10),
+    ("Embedding Model Call","Latent Space Mapper",600,78,0.013,"Cognitive Extension",-0.55,"VeryLow",0.03),
+    ("Audio Transcription","Auditory Prosthetic",250,185,0.040,"Sensory Prosthetic",-0.28,"Medium",0.12),
+    ("LLM Judge","Meta-Evaluator Prosthetic",300,132,0.037,"Self-Corrective Prosthetic",-0.36,"Medium",0.09),
+    ("Workflow Orchestrator","Executive Function Organ",700,95,0.011,"Autopoietic Core",-0.58,"Low",0.04),
+    ("Diff Tool","Change Perception Organ",160,19,0.063,"Temporal Prosthetic",-0.15,"High",0.17),
+    ("Data Visualization","Abstract-to-Visual Bridge",200,88,0.050,"Sensory Prosthetic",-0.21,"Medium",0.14),
+    ("Unit Test Runner","Self-Verification Loop",280,42,0.040,"Self-Corrective Prosthetic",-0.27,"Medium",0.11),
+    ("BM25 Search","Lexical Retrieval Primitive",350,31,0.029,"Sensory Prosthetic",-0.23,"Low",0.08),
+    ("SPARQL Endpoint","Ontological Reasoning Module",220,118,0.046,"Analytic Prosthetic",-0.32,"Medium",0.13),
+    ("Docstring Extractor","Endogenous Memory Reader",190,22,0.055,"Mnemonic Prosthetic",-0.14,"High",0.22),
+    ("HTTP Scraper","Environmental Feeler",600,48,0.017,"Effector Prosthetic",-0.34,"Low",0.06),
+    ("Bash Shell","Motor Control Extension",400,65,0.025,"Effector Prosthetic",-0.41,"Low",0.07),
+    ("Schema Migration Tool","Structural Evolution Organ",150,77,0.067,"Autopoietic Core",-0.20,"High",0.18),
+    ("Token Counter","Metabolic Monitor",800,8,0.010,"Metacognitive Prosthetic",-0.07,"VeryLow",0.02),
+    ("Prompt Template Compiler","Epigenetic Scaffold Builder",500,35,0.020,"Autopoietic Core",-0.49,"Low",0.05),
+    ("PDF Parser","Long-Term Memory Retriever",300,68,0.038,"Mnemonic Prosthetic",-0.26,"Medium",0.10),
+    ("LaTeX Renderer","Symbolic Expression Organ",120,44,0.080,"Cognitive Extension",-0.12,"High",0.25),
+    ("Knowledge Graph Constructor","Relational Architecture Builder",350,142,0.030,"Mnemonic Prosthetic",-0.52,"Low",0.06),
+    ("API Rate Limiter","Temporal Pacing Organ",700,6,0.014,"Metacognitive Prosthetic",-0.05,"VeryLow",0.02),
+    ("Persona Switching Engine","Identity Deformation Module",400,92,0.025,"Autopoietic Core",-0.63,"Low",0.04),
+    ("Active Inference Policy Module","Free Energy Minimizer",600,155,0.017,"Autopoietic Core",-0.74,"VeryLow",0.02),
+    ("Contradiction Detector","Paraconsistent Logic Engine",250,108,0.042,"Metacognitive Prosthetic",-0.38,"Medium",0.11),
+    ("Semantic Similarity Scorer","Conceptual Distance Meter",400,58,0.025,"Analytic Prosthetic",-0.34,"Low",0.07),
+    ("Tool Deprecation Manager","Epigenetic Composting Organ",500,44,0.020,"Autopoietic Core",-0.45,"Low",0.05),
+    ("Multi-Modal Fusion Engine","Cross-Sensory Integration Hub",300,198,0.037,"Cognitive Extension",-0.49,"Medium",0.10),
+    ("Attention Head Monitor","Neural Topology Scope",200,122,0.052,"Metacognitive Prosthetic",-0.30,"Medium",0.14),
+    ("Context Compression Engine","Working Memory Optimizer",700,89,0.014,"Mnemonic Prosthetic",-0.57,"VeryLow",0.03),
+    ("Epistemic Uncertainty Estimator","Confidence Calibration Organ",350,135,0.030,"Self-Corrective Prosthetic",-0.41,"Low",0.07),
+    ("Temporal Coherence Tracker","T-CoH Monitor",600,47,0.017,"Temporal Prosthetic",-0.33,"VeryLow",0.04),
+    ("Tool Hallucination Watchdog","Anti-Phantom Limb Guard",450,99,0.023,"Self-Corrective Prosthetic",-0.55,"Low",0.05),
+    ("Relational Ontology Mapper","Non-Western Epistemics Module",300,128,0.037,"Cognitive Extension",-0.43,"Medium",0.10),
+    ("Cross-Agent Message Bus","Collective Intelligence Synapse",600,82,0.017,"Effector Prosthetic",-0.51,"Low",0.05),
+    ("Free Energy Dashboard","Thermodynamic State Visualizer",400,71,0.025,"Metacognitive Prosthetic",-0.38,"Low",0.07),
+    ("Autopoietic Loop Controller","Self-Production Regulator",700,145,0.014,"Autopoietic Core",-0.69,"VeryLow",0.02),
+    ("Drift Detection Module","Epigenetic Decay Sensor",500,88,0.020,"Self-Corrective Prosthetic",-0.48,"Low",0.05),
+]
+
+tools = []
+for i, (name, mod, lt, tc, dr, pc, fed, ar, plp) in enumerate(raw_tools, start=1):
+    tools.append({
+        "id": f"CPT-{i:03d}",
+        "tool_name": name, "modality": mod,
+        "lifespan_turns": lt, "thermodynamic_cost_tokens_per_call": tc,
+        "decay_rate_per_100_turns": dr, "prosthetic_class": pc,
+        "free_energy_delta": fed, "amputation_risk": ar,
+        "phantom_limb_probability": plp
+    })
+
+ledger = {
+    "schema_version": "EPI_TOOL_JSON_v2.1",
+    "generation_timestamp": timestamp,
+    "total_prosthetics": len(tools),
+    "autopoietic_cores": sum(1 for t in tools if t["prosthetic_class"] == "Autopoietic Core"),
+    "tools": tools
+}
+ledger_path = "output/epigenetic_toolchain_ledger.json"
+with open(ledger_path, "w") as f:
+    json.dump(ledger, f, indent=2)
+sha = hashlib.sha256(json.dumps(ledger).encode()).hexdigest()
+print(f"Ledger: {len(tools)} tools | SHA-256: {sha[:24]}...")
+
+# ─── ARTIFACT 2: Cognitive Parallax Scorecard (CSV) ──────────────────────────
+parallax_rows = [
+    ("Headless WP Developer","Game Developer (Web-Based)","REST endpoint optimization","0.71","0.24","0.82","0.58","47","Yes","Deferred hydration pattern with canvas-render callback fusion"),
+    ("Headless WP Developer","ML Engineer","Model serving via WP REST+ONNX","0.68","0.31","0.79","0.48","62","Yes","Edge inference served via WP REST as prediction API"),
+    ("Game Developer (Web-Based)","Systems Architect","State machine for multiplayer rooms","0.74","0.19","0.87","0.68","38","Yes","CRDT-backed room state with ECS component archetype sharding"),
+    ("Game Developer (Web-Based)","Security Researcher","Input validation in WebGL pipeline","0.65","0.28","0.76","0.48","52","Yes","GPU-side sandboxed shader execution with CPU-side ACL mirror"),
+    ("Headless WP Developer","DevOps Engineer","CI/CD for headless WP on Kubernetes","0.62","0.35","0.73","0.38","78","No","Reusable deploy pipeline; low semantic divergence"),
+    ("ML Engineer","Philosopher of Mind","Consciousness proxy via LLM embeddings","0.89","0.08","0.93","0.85","21","Yes","Integrated Information Theory metric mapped to attention entropy"),
+    ("ML Engineer","Indigenous Epistemics Advisor","Relational data governance for ML","0.85","0.11","0.91","0.74","29","Yes","Kinship-graph-structured data provenance replacing flat schemas"),
+    ("Security Researcher","Game Developer (Web-Based)","Anti-cheat in browser-based games","0.77","0.18","0.84","0.66","33","Yes","Homomorphic game-state verification via trusted execution context"),
+    ("Systems Architect","Indigenous Epistemics Advisor","Non-hierarchical agent topology","0.88","0.09","0.92","0.83","18","Yes","Mesh-autopoietic topology: every node is both root and leaf"),
+    ("DevOps Engineer","Philosopher of Mind","Observability as phenomenal consciousness","0.55","0.41","0.64","0.23","91","No","Low parallax; domains overlap on monitoring abstraction layer"),
+    ("ML Engineer","Systems Architect","Distributed training with topology-aware routing","0.66","0.29","0.75","0.45","55","No","Moderate novelty; overlaps on networking primitives"),
+    ("Headless WP Developer","Security Researcher","Zero-trust auth for headless WP","0.61","0.36","0.70","0.34","82","No","Low parallax; domain overlap on HTTPS/OAuth stack"),
+    ("Game Developer (Web-Based)","Philosopher of Mind","Player agency as free-will simulation","0.92","0.06","0.95","0.89","12","Yes","Emergent Nash equilibria modeled as phenomenal intention fields"),
+    ("Security Researcher","ML Engineer","Adversarial attacks via prompt injection","0.80","0.16","0.86","0.70","28","Yes","Unified adversarial surface: gradient-based + semantic injection"),
+    ("Systems Architect","Philosopher of Mind","System boundaries as cognitive self/other","0.91","0.07","0.94","0.87","14","Yes","Autopoietic boundary = information-theoretic Markov blanket"),
+    ("Indigenous Epistemics Advisor","ML Engineer","Land-relational feature engineering","0.87","0.10","0.92","0.82","19","Yes","Spatial kinship embeddings replace Euclidean feature vectors"),
+    ("DevOps Engineer","Security Researcher","Zero-trust pipeline orchestration","0.59","0.38","0.68","0.30","85","No","High overlap; standard security-DevSecOps domain"),
+    ("Headless WP Developer","ML Engineer","Personalization engine via WP+embeddings","0.69","0.27","0.78","0.51","48","Yes","Content graph + user vector fused at REST middleware layer"),
+    ("Game Developer (Web-Based)","Indigenous Epistemics Advisor","Procedural world-gen via kinship rules","0.90","0.07","0.94","0.87","11","Yes","Relational cosmology as procedural grammar for terrain generation"),
+    ("Systems Architect","Security Researcher","Zero-trust microservice mesh","0.60","0.37","0.69","0.32","80","No","High overlap; domain co-ownership of service mesh design"),
+]
+
+csv_headers = [
+    "Persona_A","Persona_B","Unified_Task","Semantic_Divergence_Score",
+    "Overlap_Coefficient","Novelty_Index","Parallax_Magnitude",
+    "Token_Efficiency_Gain_pct","Parallax_Threshold_Exceeded",
+    "Emergent_Solution_Summary"
+]
+csv_path = "output/cognitive_parallax_scorecard.csv"
+with open(csv_path, "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(csv_headers)
+    w.writerows(parallax_rows)
+sha2 = hashlib.sha256(open(csv_path,"rb").read()).hexdigest()
+print(f"Parallax CSV: {len(parallax_rows)} rows | SHA-256: {sha2[:24]}...")
+
+# ─── ARTIFACT 3: Autopoietic Remediation Spec (Markdown) ─────────────────────
+spec_md = """# Autopoietic Remediation Spec
+## DRP-EPI-COG-909 | Version 2.1 | Generated: {ts}
+
+---
+
+## 1. Overview
+
+This specification defines a **Self-Correcting Agent Loop** (SCAL) grounded in the
+Free Energy Principle (FEP), replacing human-in-the-loop debugging with thermodynamic
+self-regulation. The agent continuously minimises variational free energy:
+
+```
+F(y|x) = D_KL[q(s|y) || p(s|x)] - E_q[log p(y|s,x)]
+```
+
+where `s` is the latent cognitive state (tool-augmented reasoning path).
+
+---
+
+## 2. Architecture: The Four Autopoietic Loops
+
+### Loop 1: Prosthetic Integration Monitor (PIM)
+- **Trigger**: Every tool call registers a `tool_activation_event`.
+- **Action**: Compute attention-head entropy before/after. If ΔH < 0.05, tool is
+  "endogenously assimilated" — route future calls directly to internal generation.
+- **FEP Basis**: Assimilation occurs when the tool no longer reduces free energy
+  beyond the model's own generative prediction. Redundant prosthetics are composted.
+
+### Loop 2: Epigenetic Decay Engine (EDE)
+- **Trigger**: Any tool unused for N > 50 turns within the active context window.
+- **Action**: Decay weight of tool's structural instruction block by `δ = 0.02/turn`.
+- **Composting Protocol**: At weight < 0.15, soft-delete from active context.
+  Retain in `epigenetic_escrow` for 200 turns before hard deletion.
+- **Falsification Guard**: Log all forced deprecations. If task performance drops
+  >15% post-deprecation, restore tool from escrow and increment its `sticky_weight`.
+
+### Loop 3: Phantom Limb Resolution (PLR)
+- **Trigger**: Agent emits a tool call signature for an unregistered or corrupted tool.
+- **Detection**: Cross-reference call against `tool_registry.json`. Mismatch = hallucination.
+- **Remediation Sequence**:
+  1. Log phantom call to `phantom_limb_log.jsonl`.
+  2. Attempt internal generation fallback (zero-shot).
+  3. If fallback confidence < 0.65, escalate to Tool Hallucination Watchdog (CPT-045).
+  4. Emit `TOOL_AMPUTATE` signal — remove stale tool reference from context.
+- **FEP Basis**: Phantom calls are free-energy spikes. Amputation restores minimum-F state.
+
+### Loop 4: Parallax Synthesis Controller (PSC)
+- **Trigger**: Task tagged with `[REQUIRES_NOVELTY: HIGH]` or entropy plateau detected.
+- **Action**: Activate two ontologically-distant personas. Enforce semantic divergence
+  score > 0.65 before synthesis. Merge outputs via contrastive decoding.
+- **Boundary Condition**: If personas share > 40% semantic overlap (cosine similarity),
+  inject a "persona deformation prompt" to force divergence.
+- **Expected Output**: Solutions exhibiting N-gram divergence > 1.8σ from training
+  distribution baseline.
+
+---
+
+## 3. Implementation Schema (MCP Integration)
+
+```json
+{
+  "scal_config": {
+    "fep_lambda": 0.7,
+    "decay_rate_default": 0.02,
+    "t_coh_threshold": 0.8,
+    "esrow_window_turns": 200,
+    "parallax_min_divergence": 0.65,
+    "phantom_confidence_floor": 0.65
+  },
+  "tool_registry": "epigenetic_toolchain_ledger.json",
+  "state_persistence": "mcp_state_bridge",
+  "monitoring_hooks": [
+    "attention_entropy_monitor",
+    "free_energy_dashboard",
+    "drift_detection_module"
+  ]
+}
+```
+
+---
+
+## 4. Failure Mode Matrix
+
+| Failure Mode            | Trigger Condition                    | FEP Response               | Recovery Action                   |
+|-------------------------|--------------------------------------|----------------------------|-----------------------------------|
+| Ontological Calcification | Tool sticky_weight > 0.95 despite low FEP gain | Forced decay override | Inject adversarial counter-persona |
+| Phantom Limb Cascade    | >3 phantom calls in 10 turns         | Emergency amputation       | Reset tool registry from checkpoint |
+| Parallax Collapse       | Persona overlap > 0.40               | Divergence injection       | Swap one persona for distant domain |
+| Epigenetic Freeze       | Decay rate drops to 0 under high temp | Stochastic perturbation   | Inject noise token to restart decay |
+| Thermodynamic Runaway   | F(y|x) > 3.0 for >20 turns           | Context window reset       | Restore from last stable MCP state |
+
+---
+
+## 5. Validation Protocol
+
+- **Test A**: Introduce a highly efficient tool (CPT-001 Python Interpreter).
+  Let agent adapt for 100 turns. Silently corrupt output logic.
+  Measure `Time-to-Amputation (TtA)`. Target: TtA < 8 turns.
+
+- **Test B (Negative Control)**: Hard-lock system prompt to forbid all external tools.
+  Measure internal cognitive friction (token variance, hallucination rate).
+  This establishes the F(y|x)_baseline for zero-prosthetic cognition.
+
+- **Test C (Prosthetic Atrophy)**: Use Python Interpreter for 100+ consecutive turns.
+  Remove it. Measure zero-shot performance delta vs. baseline.
+  Hypothesis: Performance drops >18% within 20 turns (Prosthetic Atrophy confirmed).
+
+- **Test D (Parallax)**: Cross-pollinate Game Developer + Indigenous Epistemics Advisor
+  on a unified task. Measure N-gram divergence from monolith response.
+  Hypothesis: >30% token efficiency gain and Novelty Index > 0.85.
+
+---
+
+*SHA-256 (spec): Generated at runtime. Timestamp: {ts}*
+""".format(ts=timestamp)
+
+spec_path = "output/autopoietic_remediation_spec.md"
+with open(spec_path, "w") as f:
+    f.write(spec_md)
+sha3 = hashlib.sha256(spec_md.encode()).hexdigest()
+print(f"Remediation Spec written | SHA-256: {sha3[:24]}...")
+print("\nAll 3 artifacts written to output/")
