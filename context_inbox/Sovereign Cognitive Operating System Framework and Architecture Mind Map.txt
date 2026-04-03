@@ -1,0 +1,62 @@
+Sovereign Cognitive Operating System Framework and Architecture
+Sovereign Cognitive Operating System (SCOS)
+<
+Rapid Prototyper Agent (Blitz)
+<
+Architectural Frameworks
+<
+PDL v1.0 Decorators
+<
+VULCAN (Software Architect)
+<
+Epistemic Logic & Math
+<
+Incremental Isolation
+<
+Nitinol Memory
+<
+Success Metrics
+<
+UASTP
+<
+HPS-PDCE
+<
+DCCD
+<
++++ContextLock (Anti-Rot)
++++DCCDSchemaGuard (Logit Masking)
++++MereologyRoute (Part-Whole)
++++SagaRecovery (Rollback)
++++EpistemicEscrow (Uncertainty)
+DDD Enforcement
+<
+Analytical Lenses
+<
+RCC-8 (Spatial Reasoning)
+Belnapian 4-Valued Logic
+Topological Data Analysis (TDA)
+Betti-1 Number Tracking
+One Major Change Rule
+Manifold Alpha/Beta/Gamma Events
+Max 3 Mutations per Turn
+Austenite (Drafting Phase)
+Martensite (Code Locking)
+Symbolic Scars Ledger
+CFDI < 0.15
+Time-to-First-Paint (TTFP)
+AST Compliance
+Cognitive Contracts (CxB)
+Skill vs Tool Unification
+Intermediate Representation (IR)
+Hierarchical Prompt Stratification
+Topological Causal Sculpting
+Ethics-Intent-Context-System
+Draft-Conditioned Decoding
+Projection Tax Elimination
+Two-Pass State Machine
+Bounded Contexts
+Shared Database Rejection
+C4 Model Blueprints
+Bricolage (Minimalism)
+Failure Pattern Taxonomy
+Code Archaeology

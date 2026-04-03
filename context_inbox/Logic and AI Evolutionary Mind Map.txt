@@ -1,0 +1,68 @@
+The Architecture of Reason: Mapping the Neuro-Symbolic AI Evolution
+Logic and AI: Evolutionary Mind Map
+<
+Theoretical Foundations
+<
+Contemporary Challenges
+<
+Architectural Solutions
+<
+Ecosystem Divergence
+<
+Security & Governance
+<
+Economic Theory (Recursive Displacement)
+<
+Logical Languages for Declarative Knowledge
+Symbolic Logic Semantics
+Deductive Inference Analysis
+LLM Reasoning Failures
+<
+The Projection Tax
+<
+Semantic Saponification
+<
+Neuro-Symbolic Hybrid Models
+<
+SCOS & Autoresearch
+<
+Formal Guardrails
+<
+Anthropic (MCP)
+<
+OpenAI (CFG)
+<
+Google (Gemini)
+<
+Intent-Based Access Control (IBAC)
+Saga-Style Compensating Transactions
+Agentic Safety Orchestration Layer (ASOL)
+Defect Remediation Deficit (DRD) Weaponisation
+The Cognitive Discontinuity
+Recursive Substitution Loop
+The L.A.C. Economy (Land, Automation, Capital)
+Competence Insolvency & Pipeline Collapse
+Stochastic Pattern Completion Limitations
+Complex Proof Planning Inability
+Lack of Common Sense Relations
+KL-Projection Trajectory Distortion
+Thermodynamic Attention Saponification
+Accuracy vs Validity Dissociation
+Thermodynamic Decay of Causal Chains
+Galton's Law of Mediocrity
+Structural Collapse into Narrative Tropes
+Draft-Conditioned Constrained Decoding (DCCD)
+SIMR Embedded Reasoning Protocols
+ESSIM Epistemic Stratification
+5-Minute Training Loops
+val_bpb Evaluation Metric
+Program.md Instruction Scaffolding
+MereologyRoute Ontological Bounding
+PetzoldSequence State Machines
+ContextLock Entropy Monitoring
+Stateful Reflective Manifold
+Persistent JSON-RPC Protocol
+Constrained Synchronous Automaton
+Strict Structured Outputs
+Multimodal Cognitive State Machine
+Thought Signature Continuity

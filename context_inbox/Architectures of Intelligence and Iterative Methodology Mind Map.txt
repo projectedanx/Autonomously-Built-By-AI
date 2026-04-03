@@ -1,0 +1,57 @@
+Architectures of Intelligence and Iterative Methodology
+Advanced LLM and Project Methodologies
+<
+LLM Optimization Techniques
+<
+AI Risks and Evolution
+<
+Project Management Methodologies
+<
+Open Knowledge and Media
+<
+Fine-tuning
+<
+Prompt Engineering
+<
+Data Imputation
+<
+Model Degradation
+<
+Drift-Sovereignty Dualism
+<
+Agile Frameworks
+<
+Implementation Strategies
+<
+Barriers to Success
+<
+Wikimedia Commons
+<
+Pre-training vs. Post-training
+Parameter-efficient tuning (LoRA)
+Benefits: Token savings, Tone, Tool-calling
+Data-centric mindset
+Prompt Chaining
+Few-shot & Zero-shot
+Chain-of-Thought (CoT)
+CSV-style prompting
+Group-wise methods
+Correlation thresholds
+Semantic Drift
+Model Collapse
+Entropic Drift
+Semantic Geology
+Epistemic Integrity
+Dual-Process Planning (DPDP)
+Scrum
+Kanban
+Scaled Agile (SAFe)
+Iterative Development
+Stakeholder Engagement
+Hybrid Methodologies
+Resistance to Change
+Skill Gaps
+Organizational Alignment
+Free Licenses (CC BY-SA, CC0)
+Public Domain
+VisibleWikiWomen Campaign

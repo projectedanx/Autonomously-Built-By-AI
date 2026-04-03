@@ -1,0 +1,59 @@
+Cognitive Mapping and Circuit Distillation in Neural Architectures
+Theory of Mind and Circuit Distillation in AI
+<
+Circuit Distillation
+<
+Theory of Mind (ToM) in LLMs
+<
+Advanced Reasoning Architectures
+<
+Open Source Model Flows
+<
+Core Concept
+<
+Technical Components
+<
+Evaluation Tasks
+<
+Modeling Frameworks
+<
+Literal vs. Functional ToM
+<
+Benchmarking
+<
+Recursive Meta-Prompting
+<
+System Implementations
+<
+Olmo 3
+<
+Model Scaling
+<
+Mechanistic distillation
+Internal algorithm transfer
+Component-level alignment
+Ablation-based mapping
+CKA similarity loss
+Composite objective function
+Entity tracking
+Theory of Mind (ToM)
+Belief-Desire-Intention (BDI)
+Simulation Theory
+Decompose-ToM
+Literal: Behavior prediction
+Functional: In-context adaptation
+Process consistency gap
+SI-Bench (authentic dialogues)
+Social-IQ (multimodal)
+Sally-Anne false-belief test
+Functorial task mapping
+Writer Monad refinement
+Recursive context trees
+ReCAP (backtracking revision)
+Recursive Language Models (RLM)
+MiCRo (cognitive specialization)
+Transparent training lifecycle
+Think/Instruct/RL-Zero paths
+Dolma 3/Dolci datasets
+32B parameter efficiency
+Inference-time scaling

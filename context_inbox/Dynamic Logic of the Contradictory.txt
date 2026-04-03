@@ -1,0 +1,9 @@
+Analyze the provided [System/Topic/Concept] by applying the framework of the Dynamic Logic of the Contradictory. Your task is to deconstruct the system into its fundamental dualistic nature and characterize its dynamic logical states. Follow these steps precisely:
+ 
+Identify the Core Duality: Isolate the primary antagonistic yet complementary pair of elements that defines the system. Designate one element as (e) and its opposite as (¬e). Clearly name both elements.,
+Define the Three Logical States: Based on the duality identified in Step 1, you will define the three energetic states of the system. For each state, provide its formal notation and a concise, clear description of what it represents within the context of the system.
+Positive State (e_A · ¬ e_P): Describe the condition where element (e) is actualized (dominant) and element (¬e) is potentialized (recessive).,
+Negative State (¬e_A · e_P): Describe the condition where element (¬e) is actualized (dominant) and element (e) is potentialized (recessive).,
+Contradictory State (T-state) (e_T · ¬e_T): Describe the state of equilibrium and maximum tension, where both (e) and (¬e) are simultaneously and equally actualized and potentialized. This state represents the point of emergence and transformation for the system.,
+,
+Your output must be structured clearly, with distinct sections for the Core Duality and each of the three Logical States, including their formal notations. (edited)Friday, October 3, 2025 19:01

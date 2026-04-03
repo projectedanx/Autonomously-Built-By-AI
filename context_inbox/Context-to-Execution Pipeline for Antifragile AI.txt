@@ -1,0 +1,208 @@
+Context-to-Execution Pipeline for Antifragile AI
+Context-to-Execution Pipeline (CxEP) for Antifragile AI
+<
+Foundational Principles (Cognitive Architecture)
+<
+Pillar I: Prompt Engineering (Instructional Blueprint)
+<
+Pillar II: Context Engineering (Executable Knowledge Bundle)
+<
+Pillar III: Epistemic Engineering (Governance Protocol)
+<
+Systemic Synthesis and Verifiable AI
+<
+Product Requirement Prompt (PRP) as Cognitive Contract
+<
+Cognitive Architecture: Conceptual Blending Theory (CBT-P)
+<
+CxEP Definition
+<
+Three Core Pillars (Clinical Analogy)
+<
+Addressing AI Alignment
+<
+The Epistemic Layer (Missing Ingredient)
+<
+Antifragility as Design Goal
+<
+Prompt-Blueprint Pattern (Four Mandatory Slots)
+<
+Sub-Patterns
+<
+Anti-Patterns & Failure Modes
+<
+Context-Bundle Pattern (Six Canonical Slots)
+<
+High-Fidelity Grounding (Advanced RAG)
+<
+Anti-Patterns & Failure Modes
+<
+Epistemic-Protocol Pattern
+<
+Core Governance Mechanism: REFLEXIVE_CHECK
+<
+Core Governance Mechanism: Algorithmic Reparation (REFLEXIVE_REPAIR)
+<
+Anti-Patterns & Failure Modes
+<
+Unified CxEP Workflow Cycle
+<
+Core Tenets of Verifiable AI by Design
+<
+Systemic Integrity Metrics
+<
+PRP as a Formal Model (Directed Acyclic Graph - DAG)
+<
+Causal Lineage (Edges)
+<
+Ontology of PRP Construction Patterns
+<
+PRP Anti-Patterns (Scar Library)
+<
+CBT as Formal Cognitive Graph (Integration Network)
+<
+Symbolic Operators
+<
+Verification Architecture
+<
+Meta-Blend: CBT ↔ AI Architecture (Isomorphism)
+<
+Integrated Cognitive Architecture
+Formal Framework: Manages flow of instruction, knowledge, verification
+Moves beyond simple linear data flow (prompt -> context -> output)
+Prompt Engineering: Clinical Guideline (Instructional Precision)
+Context Engineering: Patient Chart (High-Fidelity Grounding)
+Epistemic Engineering: Clinical Audit (Self-Governance/Verification)
+Outer Alignment: Specified by Prompt Engineering (Purpose/Constraints)
+Inner Alignment: Ensured by Context & Epistemic Engineering (Adherence)
+Structured framework for determining valid claims
+Absence causes systemic failures (hallucinations, contradictions)
+Prevents False Closure (confident assertion without verifiable basis)
+CxEP Components for Epistemic Layer
+<
+System learns and grows stronger from shocks (not just robust)
+Core Mechanism: Algorithmic Reparation
+Failure logged as Symbolic Scar (training data for internal governance)
+Develops 'Immune Memory'
+Task (Clear, unambiguous primary objective)
+Context (Declares scope of information utilized)
+Constraint (Explicit, machine-parsable rules/boundaries)
+Format (Declarative schema, e.g., JSON Schema)
+Chain-of-Thought (CoT) for Causal Transparency
+<
+Few-Shot Conditioning for Reasoning
+<
+Task-Constraint Confusion (Contradictory instructions)
+Redundant or Hallucinated CoT (Plausible but disconnected steps)
+Implicit Constraint (Assumed constraint not explicitly stated)
+Instructions (System prompt, task definition)
+Knowledge (External, verifiable facts, often via RAG)
+Tools (Definitions/responses of available functions)
+Memory (Short-Term/Long-Term context history)
+State (Global 'scratchpad' for workflow context)
+Query (Immediate user input)
+Mitigates Naive RAG issues (noise, low precision)
+Pre-Retrieval Techniques
+<
+Post-Retrieval Techniques
+<
+Provenance Tagging (Mandatory Source IDs for Verifiability)
+Retrieval Noise (Irrelevant/contradictory context)
+<
+Context Collapse (Context Window limit exceeded, truncation)
+Provenance Loss (Data untagged, triggers Escrow Mode)
+Codifies governance rules explicitly
+Schema includes: pattern_id, name, triggers, components, failure_modes
+Triggered by Uncertainty Quantification
+Types of Uncertainty
+<
+Quantification Methods (Proxy for Epistemic Uncertainty)
+<
+Activated when REFLEXIVE_CHECK fails
+Utilizes RL-based self-correction (e.g., SCoRe methodology)
+Failure, repair, reinforcement cycle fuels antifragility
+Logs Symbolic Scars (REPAIR.cxep.log) for policy updates
+False Closure (Confident, incorrect answer; uncertainty undetected)
+Untested Postconditions (Output violates semantic constraint)
+Behavior Collapse (RL model learns brittle correction strategy)
+Instruction (Pillar I: prompt-blueprint formalized)
+Grounding (Pillar II: context-bundle assembled with provenance)
+Generation (Core LLM: initial response + CoT)
+Verification (Pillar III: uncertainty, structural, causal audits)
+Governance (Success or Escrow Mode/Algorithmic Reparation)
+Traceability (Guaranteed by Source Provenance Ratio)
+Explainability (Provided by Machine-Auditable CoT)
+Auditability (Instantiated through Epistemic Engineering/Logs)
+Causal Step Density (Transparency of reasoning)
+Source Provenance Ratio (Tracing claims to source, target ≥ 95%)
+Self-Test Pass Rate (Adherence to rules, target ≥ 98%)
+Semantic Drift Delta (Stability of concepts, target ≤ 0.12)
+Epistemic Uncertainty Rate (Frequency of self-doubt)
+Nodes: Schema fields, constraints, invariants
+Directed Edges: Causal/logical flow
+Ensures workflow is finite, prevents recursion
+Transforms prompt from instructions to self-executing program
+Purpose → Outputs (Ensures Purpose Fidelity)
+Outputs → Validations (Establishes self-verifying nature)
+Validations → Revisions (Defines failure protocol via Escrow Triggers)
+Verifiable Constraint Loop (prp-constraint-002)
+<
+Epistemic Scaffolding Block (prp-epistemic-001)
+<
+Purpose Fidelity Trace (prp-fidelity-001)
+<
+Circular Logic (Symbolic Tautology): Analogy to Circular Dependency
+Goal–Constraint Inversion: Operational constraint overrides strategic goal
+False Completeness (Hallucinatory Closure): Simulation without ground
+Nodes: Input Spaces (1/2), Generic Space, Blended Space
+Edges: Directed Cognitive Operators
+map (Establishes counterpart connections)
+project (Copies elements selectively to Blend)
+compress (Reduces cognitive distance of vital relations, e.g., Time)
+emerge (Generates novel structure)
+<
+Causal Faithfulness (Traceability of emergent features)
+Typological Drift (Detects abstraction collapse/incoherence)
+Confidence–Fidelity Divergence Index (CFDI)
+<
+Provenance Trace (PROV-agent schema for auditability)
+Mental Space ↔ Context Window / Working Memory
+Input Spaces ↔ External Knowledge Bases (RAG Sources)
+Selective Projection ↔ Retrieval Step in RAG / Attention
+Emergent Structure ↔ Generative Synthesis by LLM
+Elaboration ↔ Chain-of-Thought / Multi-Step Agentic Reasoning
+Prompt Blueprint: Rules of Reasoning
+Context Bundle: Verifiable Evidence
+Epistemic Protocol: Governance Mechanism
+Guides breakdown into intermediate steps
+CoT is Machine-Auditable Proof of Work
+Variations: Zero-Shot CoT, Few-Shot CoT
+Enables in-context learning via exemplars ('shots')
+Conditions model on specific reasoning pathway/format
+Requires: High Exemplar Quality, Format Consistency
+Information Density Enhancement
+Query Transformation (e.g., HyDE)
+Strategic Chunking (e.g., semantic)
+Re-ranking (secondary model refines selection)
+Contextual Compression (filters irrelevant content)
+Context Distraction (loss of focus)
+Context Confusion (tangential/incorrect output)
+Context Clash (contradictory info)
+Aleatoric (Irreducible randomness in data)
+Epistemic (Reducible lack of model knowledge/parameters)
+Model Ensembles (Measuring disagreement)
+Monte Carlo Dropout (Measuring output variance)
+Internal Activation Analysis
+Embeds testable constraint + proof sketch requirement
+Analogy: Strategy/Observer (Behavioral)
+Guides intermediate reasoning (CoT, self-critique)
+Counteracts Epistemic Collapse
+Analogy: Decorator (Structural)
+Mandates machine-readable link to Mission/Objective
+Counteracts Semantic Drift
+Analogy: Chain of Responsibility (Behavioral)
+Composition
+Completion
+Elaboration ('Running the blend')
+Quantifies gap: |Confidence Score - Fidelity Score|
+High CFDI triggers Epistemic Escrow

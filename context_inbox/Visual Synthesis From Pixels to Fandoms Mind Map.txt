@@ -1,0 +1,67 @@
+Visual Synthesis: From Pixels to Fandoms
+Image Creation and Processing
+<
+Image Denoising
+<
+AI Image Generation
+<
+Photography Techniques
+<
+Fan Culture and Content
+<
+Linear Filters
+<
+Non-linear Filters
+<
+Technologies
+<
+Prompt Engineering
+<
+Ethical Challenges
+<
+Low-Light
+<
+Landscape
+<
+Fanfiction
+<
+Platforms
+<
+Fan Economy
+<
+Spatial Wiener Filter
+Gaussian Filter
+Median Filter
+Bilateral Filter
+Trilateral Filter
+Anisotropic Filter
+Diffusion Models
+Neural Networks
+Stable Diffusion
+Midjourney
+DALL-E
+Subject
+Style and Aesthetics
+Composition and Framing
+Advanced Parameters
+Negative Prompts
+Intellectual Property
+Deepfakes and Misinformation
+Privacy and Facial Recognition
+Training Data Bias
+Wide Aperture
+Slow Shutter Speed
+High ISO
+Tripod Stability
+RAW Format
+Histogram/ETTR
+Depth of Field
+Fandoms
+Alternate Universe (AU)
+Slash Genre
+Archive of Our Own (AO3)
+Wattpad
+FanFiction.net
+Emotional Capital
+Monetization Models
+Market Influence

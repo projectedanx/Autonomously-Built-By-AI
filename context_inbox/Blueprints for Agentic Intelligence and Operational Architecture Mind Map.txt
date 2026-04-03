@@ -1,0 +1,77 @@
+Blueprints for Agentic Intelligence and Operational Architecture
+AI Agent Engineering and Operational Paradigms
+<
+Foundational Frameworks
+<
+The Anatomy of Agentic Context
+<
+Operational Protocols & Workflows
+<
+Technical & Safety Mandates
+<
+Advanced Research & Emergence
+<
+Context Engineering 2.0 (CE2)
+<
+Prompt Engineering Fundamentals
+<
+Instructions (System Prompts/Rules)
+Knowledge (RAG/External Data)
+Tools (Function Definitions)
+Memory (Conversation History/Long-term Facts)
+State (Environment/User Situation)
+Query (Immediate Request)
+Planning & Task Management
+<
+Execution Standards
+<
+Communication Rules
+<
+Code Quality
+<
+Security & Data Integrity
+<
+UI/Design (Lovable Archetype)
+<
+AI Consciousness Theories
+<
+Epistemic Pluralism
+<
+Alignment & Governance
+<
+Paradigm Shift from Artisanal to Rigorous Engineering
+Context-to-Execution Pipeline (CxEP)
+Product-Requirements Prompts (PRPs)
+Epistemic Architecture
+CRISP Framework (Context, Role, Instruction, Spec, Performance)
+RTF (Role, Task, Format)
+Prompt Development Life Cycle (PDLC)
+TINY CRABS Iteration
+Mandatory Planning for 3+ Steps
+Structured To-do Lists (TodoWrite)
+Success Criteria & Blueprints
+Parallel Read-only Operations
+Sequential State-changing Actions
+Fix Until Green Validation Loop
+Max 3 Error Correction Attempts
+Describe Actions, Not Tool Names
+Conciseness and Directness
+Natural Language Focus
+High Verbosity & Descriptive Naming
+Modularity & Minimalism
+Surgical Edits vs. Full Rewrites
+Never Hardcode Secrets (.env only)
+Mandatory Row Level Security (RLS)
+Banned Synchronous Browser APIs (localStorage)
+Semantic Tokens over Direct Colors
+Tailwind CSS & shadcn/ui
+Responsive Mobile-First Design
+Global Workspace Theory (Functionalism)
+Integrated Information Theory (IIT/Phi)
+Spontaneous Phenomena (Bliss Attractors)
+Decolonial AI Protocols
+Conceptual Blending Architectures
+Mitigating Conceptual Homogenization
+Reward Hacking Mitigation
+Constitutional AI
+Frontier Safety Frameworks

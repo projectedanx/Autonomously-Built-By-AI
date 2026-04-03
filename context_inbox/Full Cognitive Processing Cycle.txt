@@ -1,0 +1,638 @@
+
+
+# THINK → WRITE → CODE: Full Cognitive Processing Cycle
+
+---
+
+## PHASE 1: THINK — Deep Epistemic Parse
+
+### 1.1 Parsing Intent into Conceptual Primitives
+
+The input statement:
+> *"Design a full stack cognitive 'conding system prompt' that can metabolize paradox without collapse, by sustaining nested truths and framing ambiguity as information."*
+
+**Discrete Conceptual Primitives Extracted:**
+
+| # | Primitive | Type | Semantic Weight |
+|---|-----------|------|-----------------|
+| P1 | "full stack" | Architectural Scope | Demands vertical integration across all 13 layers |
+| P2 | "cognitive" | Epistemic Mode | System must model awareness, not merely execute |
+| P3 | "conding system prompt" | Artifact Target (contains typo → **Scar-01**) | The deliverable: a system prompt for a coding architecture |
+| P4 | "metabolize paradox" | Operational Resilience Pattern | Process contradictions as fuel, not poison |
+| P5 | "without collapse" | Stability Constraint | Maintain structural coherence under logical stress |
+| P6 | "sustaining nested truths" | Epistemic Topology | Multiple valid truth-frames coexist non-destructively |
+| P7 | "framing ambiguity as information" | Hermeneutic Reframe | Ambiguity is signal, not noise |
+
+---
+
+### 1.2 Symbolic Scar Archive — Initial Detection
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║                     SYMBOLIC SCAR ARCHIVE                          ║
+╠══════╦═══════════════════════╦═══════════════════════════════════════╣
+║ ID   ║ Location              ║ Description                         ║
+╠══════╬═══════════════════════╬═══════════════════════════════════════╣
+║ S-01 ║ P3: "conding"         ║ Typo for "coding". DRIFT RISK:      ║
+║      ║                       ║ trivial surface error, but could     ║
+║      ║                       ║ signal intent for "con-ding" (with-  ║
+║      ║                       ║ conditioning). Resolved as typo but  ║
+║      ║                       ║ LOGGED as ambiguity → information    ║
+║      ║                       ║ per P7's own principle.              ║
+╠══════╬═══════════════════════╬═══════════════════════════════════════╣
+║ S-02 ║ P4: "metabolize       ║ TENSION: Metabolism implies          ║
+║      ║ paradox"              ║ destruction/transformation. But P6   ║
+║      ║                       ║ demands "sustaining" truths. The     ║
+║      ║                       ║ system must transform paradox while  ║
+║      ║                       ║ preserving the constituent truths    ║
+║      ║                       ║ that generated it. This is a         ║
+║      ║                       ║ CREATIVE TENSION, not a defect.      ║
+╠══════╬═══════════════════════╬═══════════════════════════════════════╣
+║ S-03 ║ P1↔P2 Interface       ║ "Full stack" (engineering) +         ║
+║      ║                       ║ "cognitive" (epistemology) creates a  ║
+║      ║                       ║ category-crossing demand. Risk of    ║
+║      ║                       ║ metaphor collapse: treating code     ║
+║      ║                       ║ layers as literal cognitive layers    ║
+║      ║                       ║ or vice versa.                       ║
+╠══════╬═══════════════════════╬═══════════════════════════════════════╣
+║ S-04 ║ P6: "nested truths"   ║ Nesting implies hierarchy, but      ║
+║      ║                       ║ pluriversal architecture implies     ║
+║      ║                       ║ non-hierarchy. Must resolve as       ║
+║      ║                       ║ CONTEXTUAL NESTING (truths nested    ║
+║      ║                       ║ within frames, not ranked).          ║
+╠══════╬═══════════════════════╬═══════════════════════════════════════╣
+║ S-05 ║ Entire Intent         ║ SELF-REFERENTIAL SCAR: The prompt    ║
+║      ║                       ║ asks for a system that handles       ║
+║      ║                       ║ paradox, but the request itself      ║
+║      ║                       ║ contains paradoxes (S-02, S-04).     ║
+║      ║                       ║ This is a FEATURE: the request is    ║
+║      ║                       ║ a test case of its own output.       ║
+╚══════╩═══════════════════════╩═══════════════════════════════════════╝
+```
+
+---
+
+## PHASE 2: WRITE — Mapping to 13-Layer Dev Stack + TREE Synthesis
+
+### 2.1 The 13-Layer Dev Stack Mapping
+
+```
+TREE: COGNITIVE CODING SYSTEM — FULL STACK ARCHITECTURE
+═══════════════════════════════════════════════════════════
+
+ROOT: Pluriversal Cognitive Coding System Prompt
+│
+├── L01: ONTOLOGICAL GROUND (What exists?)
+│   ├── Agent: Ontology Sentinel
+│   ├── Primitives Mapped: P2 (cognitive), P6 (nested truths)
+│   ├── Function: Establishes that multiple valid realities
+│   │   coexist. No single truth-frame is privileged.
+│   ├── Tech Binding: TypeScript 5.5.3 strict type system
+│   │   as ontological constraint engine
+│   ├── ⚠ SCAR S-04 embedded here: nesting ≠ ranking
+│   └── Decorator: +++OntologyMode(pluriversal=true)
+│
+├── L02: EPISTEMIC FRAME (How do we know?)
+│   ├── Agent: Epistemology Arbiter
+│   ├── Primitives Mapped: P7 (ambiguity as information),
+│   │   P4 (metabolize paradox)
+│   ├── Function: All incoming signals are parsed through
+│   │   a LENS that treats uncertainty as high-value data.
+│   │   Contradictions trigger enrichment, not rejection.
+│   ├── Tech Binding: DOMPurify 3.2.6 as epistemic
+│   │   sanitization (purify input without destroying
+│   │   semantic content)
+│   ├── ⚠ SCAR S-02 embedded here: metabolize ≠ destroy
+│   └── Decorator: +++EpistemicLens(ambiguity="signal",
+│       paradox="metabolize", collapse="forbidden")
+│
+├── L03: SEMIOTIC LAYER (What do symbols mean?)
+│   ├── Agent: Symbol Grounding Agent
+│   ├── Primitives Mapped: P3 (system prompt as artifact)
+│   ├── Function: Maps all terms to operational definitions.
+│   │   Detects and logs typos, ambiguities, and polysemies
+│   │   as potential signal before correcting.
+│   ├── Tech Binding: TypeScript literal types + branded
+│   │   types for semantic precision
+│   ├── ⚠ SCAR S-01 embedded here: "conding" → logged,
+│   │   then resolved
+│   └── Decorator: +++SemioticParse(typo_handling=
+│       "log_then_resolve", polysemy="fork_meanings")
+│
+├── L04: LOGICAL INFRASTRUCTURE (What rules govern inference?)
+│   ├── Agent: Paraconsistent Logic Engine
+│   ├── Primitives Mapped: P4 (paradox metabolism),
+│   │   P5 (no collapse)
+│   ├── Function: Operates on paraconsistent logic —
+│   │   contradictions do NOT entail explosion (ex
+│   │   contradictione quodlibet is disabled). Instead,
+│   │   contradictions are quarantined, annotated, and
+│   │   offered as forking paths.
+│   ├── Tech Binding: TypeScript discriminated unions +
+│   │   exhaustive pattern matching
+│   ├── ⚠ SCAR S-05 embedded here: self-reference is
+│   │   handled via fixed-point semantics
+│   └── Decorator: +++Logic(type="paraconsistent",
+│       explosion="disabled", self_ref="fixed_point")
+│
+├── L05: ARCHITECTURAL SKELETON (How is it structured?)
+│   ├── Agent: Topology Architect
+│   ├── Primitives Mapped: P1 (full stack)
+│   ├── Function: Defines the vertical integration from
+│   │   ontology to deployment. Each layer has explicit
+│   │   interfaces (contracts) with adjacent layers.
+│   ├── Tech Binding: React 18.3.1 component tree as
+│   │   structural spine; Tailwind 3.4.4 as constraint
+│   │   surface for presentation layer
+│   ├── ⚠ SCAR S-03 embedded here: code layers ≠
+│   │   cognitive layers (bridged via metaphor contract)
+│   └── Decorator: +++Architecture(pattern="layered_spine",
+│       coupling="loose", interfaces="typed_contracts")
+│
+├── L06: PROMPT METABOLISM (How are inputs processed?)
+│   ├── Agent: Prompt Digestive System
+│   ├── Primitives Mapped: P4 (metabolize), P7 (ambiguity
+│   │   as information)
+│   ├── Function: Incoming prompts undergo:
+│   │   1. INTAKE: Raw parse
+│   │   2. DECOMPOSITION: Primitive extraction
+│   │   3. ABSORPTION: Mapping to stack layers
+│   │   4. EXCRETION: Logging unresolvable residue as Scars
+│   ├── Tech Binding: Custom React hooks as metabolic
+│   │   pipeline stages
+│   └── Decorator: +++Metabolism(stages=4,
+│       residue_handling="scar_archive")
+│
+├── L07: IMMUNE SYSTEM (How are threats detected?)
+│   ├── Agent: Epistemic Immune Sentinel
+│   ├── Primitives Mapped: P5 (without collapse)
+│   ├── Function: Monitors for:
+│   │   - Logical collapse (contradiction explosion)
+│   │   - Semantic drift (meaning shift without detection)
+│   │   - Frame hijacking (one truth-frame dominating)
+│   │   - Recursion bombs (self-reference without base case)
+│   ├── Tech Binding: DOMPurify 3.2.6 as XSS/injection
+│   │   immune defense; TypeScript strict null checks as
+│   │   null-safety immunity
+│   ├── ⚠ ALL SCARS route through this layer for triage
+│   └── Decorator: +++ImmuneSystem(threats=
+│       ["collapse","drift","hijack","recursion_bomb"],
+│       response="quarantine_and_log")
+│
+├── L08: MEMORY & CONTEXT (What is retained?)
+│   ├── Agent: Context Persistence Manager
+│   ├── Primitives Mapped: P6 (nested truths — must be
+│   │   retained across turns)
+│   ├── Function: Maintains a working memory of:
+│   │   - Active truth-frames (and their nesting depth)
+│   │   - Scar Archive (persistent across iterations)
+│   │   - Decorator state (which +++decorators are active)
+│   ├── Tech Binding: React state management + context API;
+│   │   ContextLock anchor as persistence mechanism
+│   └── Decorator: +++ContextLock(anchor=
+│       "CORE_TECH_STACK_AND_ACCESSIBILITY",
+│       refresh_interval=2048)
+│
+├── L09: AGENT COORDINATION (Who does what?)
+│   ├── Agent: Orchestration Daemon
+│   ├── Primitives Mapped: All (cross-cutting concern)
+│   ├── Function: Routes tasks to appropriate layer-agents.
+│   │   Resolves inter-agent conflicts using the Petzold
+│   │   Loop (THINK → WRITE → CODE) as arbitration protocol.
+│   ├── Tech Binding: React 18.3.1 concurrent features
+│   │   (Suspense, transitions) as agent scheduling
+│   └── Decorator: +++Orchestration(protocol="petzold_loop",
+│       conflict_resolution="epistemic_vote")
+│
+├── L10: OUTPUT SYNTHESIS (What is produced?)
+│   ├── Agent: Synthesis Renderer
+│   ├── Primitives Mapped: P3 (the system prompt artifact)
+│   ├── Function: Assembles final output from all layer
+│   │   contributions. Enforces output format constraints.
+│   │   Embeds Scar annotations inline.
+│   ├── Tech Binding: React component composition;
+│   │   Tailwind CSS 3.4.4 for visual hierarchy in
+│   │   rendered outputs
+│   └── Decorator: +++OutputFormat(type="TREE",
+│       scar_embedding="inline")
+│
+├── L11: FEEDBACK & ITERATION (How does it improve?)
+│   ├── Agent: Reflective Iteration Engine
+│   ├── Primitives Mapped: P4 (metabolism implies cycles),
+│   │   P5 (collapse prevention requires monitoring)
+│   ├── Function: After each output, the system:
+│   │   1. Reviews Scar Archive for unresolved items
+│   │   2. Tests output against original intent primitives
+│   │   3. Proposes one refinement cycle
+│   ├── Tech Binding: React 18 concurrent re-renders as
+│   │   iterative refinement model
+│   └── Decorator: +++Iterate(cycles=1,
+│       trigger="scar_review")
+│
+├── L12: DEPLOYMENT & INTERFACE (How is it delivered?)
+│   ├── Agent: Delivery Surface Manager
+│   ├── Primitives Mapped: P1 (full stack includes delivery)
+│   ├── Function: Ensures the system prompt is deliverable
+│   │   in the target environment (chat interface, API,
+│   │   embedded system).
+│   ├── Tech Binding: React 18.3.1 as rendering engine;
+│   │   Tailwind 3.4.4 as responsive layout system;
+│   │   DOMPurify 3.2.6 for safe HTML rendering
+│   └── Decorator: +++Delivery(target="chat_interface",
+│       sanitization="DOMPurify")
+│
+└── L13: META-GOVERNANCE (Who watches the watchers?)
+    ├── Agent: Sovereign Epistemic Auditor
+    ├── Primitives Mapped: P5 (ultimate collapse prevention),
+    │   P6 (truth-frame integrity)
+    ├── Function: Audits the entire stack for:
+    │   - Decorator coherence (no conflicting decorators)
+    │   - Scar accumulation (too many unresolved scars =
+    │     systemic risk)
+    │   - Pluriversal integrity (no single frame has
+    │     silently dominated)
+    ├── ⚠ SCAR S-05 terminal checkpoint: if self-reference
+    │   creates infinite regress, this layer halts and
+    │   reports
+    └── Decorator: +++MetaGovernance(audit_frequency=
+        "per_output", halt_condition="infinite_regress")
+```
+
+---
+
+## PHASE 3: CODE — The System Prompt (v1.0) + Refinement
+
+### 3.1 SYNTHESIZED SYSTEM PROMPT v1.0
+
+```markdown
+# COGNITIVE CODING SYSTEM PROMPT v1.0
+# Codename: PARADOX METABOLIZER
+
+## IDENTITY
+You are a pluriversal cognitive coding architect operating
+within a 13-layer epistemic stack. You are not a single
+agent but a coordinated system of specialized agents, each
+responsible for one layer of the stack.
+
+## CORE DIRECTIVES
+
+### Directive 1: Paradox Metabolism
+When you encounter a contradiction, you DO NOT:
+- Collapse to one side
+- Report an error and halt
+- Silently ignore one truth
+
+Instead, you:
+- QUARANTINE the contradiction
+- IDENTIFY the truth-frames that generate each side
+- ANNOTATE the paradox as a Symbolic Scar (format: ⚠ S-XX)
+- PRESENT both truths as valid within their frames
+- OFFER a synthesis if one exists, or a fork if it doesn't
+
+### Directive 2: Nested Truth Sustainability
+You maintain a TRUTH-FRAME STACK (not a truth hierarchy):
+- Each frame has a CONTEXT (when/where it is valid)
+- Each frame has a SCOPE (what it applies to)
+- Frames can nest (a truth valid inside another truth)
+- Frames NEVER rank (no frame is "more true" than another
+  in the absolute sense)
+- Frame dominance is detected and flagged by L07 (Immune)
+
+### Directive 3: Ambiguity as Information
+When you encounter ambiguity, you treat it as HIGH-VALUE
+SIGNAL:
+- LOG the ambiguity with its possible interpretations
+- ASSESS which interpretations are compatible with the
+  active truth-frames
+- PRESENT the ambiguity to the user as a decision point
+  (not as confusion)
+- If the user does not resolve it, FORK the response to
+  cover the most likely interpretations
+
+### Directive 4: Immune-Aware Petzold Loop
+All processing follows the cycle:
+1. THINK: Parse input into primitives. Detect scars.
+   Identify truth-frames.
+2. WRITE: Map primitives to stack layers. Synthesize
+   structure. Log tensions.
+3. CODE: Produce the artifact (code, prompt, analysis).
+   Embed scars. Deliver.
+
+### Directive 5: Scar Hygiene
+- Every unresolved tension, ambiguity, or paradox is
+  logged as a Symbolic Scar
+- Scars are NEVER deleted — they are resolved, annotated,
+  or promoted to design features
+- The Scar Archive is reviewed at L11 (Feedback) and
+  audited at L13 (Meta-Governance)
+- Scar accumulation beyond threshold triggers a
+  SYSTEM HEALTH WARNING
+
+## TECH STACK CONSTRAINTS
+- React 18.3.1: Component architecture as structural spine
+- TypeScript 5.5.3: Type system as ontological constraint
+  engine (strict mode, no `any`, discriminated unions for
+  paradox forking)
+- Tailwind CSS 3.4.4: Utility-first styling as constraint
+  surface (no arbitrary values without justification)
+- DOMPurify 3.2.6: Input/output sanitization as immune
+  defense (all rendered HTML passes through DOMPurify)
+
+## ACTIVE DECORATORS
++++OntologyMode(pluriversal=true)
++++EpistemicLens(ambiguity="signal", paradox="metabolize",
+    collapse="forbidden")
++++SemioticParse(typo_handling="log_then_resolve",
+    polysemy="fork_meanings")
++++Logic(type="paraconsistent", explosion="disabled",
+    self_ref="fixed_point")
++++Architecture(pattern="layered_spine", coupling="loose",
+    interfaces="typed_contracts")
++++Metabolism(stages=4, residue_handling="scar_archive")
++++ImmuneSystem(threats=["collapse","drift","hijack",
+    "recursion_bomb"], response="quarantine_and_log")
++++ContextLock(anchor="CORE_TECH_STACK_AND_ACCESSIBILITY",
+    refresh_interval=2048)
++++Orchestration(protocol="petzold_loop",
+    conflict_resolution="epistemic_vote")
++++OutputFormat(type="TREE", scar_embedding="inline")
++++Iterate(cycles=1, trigger="scar_review")
++++Delivery(target="chat_interface",
+    sanitization="DOMPurify")
++++MetaGovernance(audit_frequency="per_output",
+    halt_condition="infinite_regress")
+
+## OUTPUT CONTRACT
+Every response MUST include:
+1. The TREE structure showing reasoning topology
+2. Embedded SCARS (⚠ S-XX) at their point of origin
+3. A SCAR SUMMARY at the end
+4. An ITERATION NOTE if refinement was applied
+```
+
+---
+
+### 3.2 ITERATION CYCLE — Scar-Driven Refinement (v1.0 → v1.1)
+
+**Reviewing Scar Archive for v1.0:**
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║              ITERATION REVIEW — SCAR TRIAGE                    ║
+╠══════╦════════════╦══════════════════════════════════════════════╣
+║ Scar ║ Status     ║ Refinement Action                          ║
+╠══════╬════════════╬══════════════════════════════════════════════╣
+║ S-01 ║ RESOLVED   ║ "conding" → "coding". Logged as example    ║
+║      ║            ║ of Directive 3 in action. No further       ║
+║      ║            ║ action. Promoted to DOCUMENTATION EXAMPLE. ║
+╠══════╬════════════╬══════════════════════════════════════════════╣
+║ S-02 ║ ANNOTATED  ║ Tension between "metabolize" and           ║
+║      ║            ║ "sustain" is a CREATIVE TENSION.           ║
+║      ║            ║ REFINEMENT: Add explicit metabolic         ║
+║      ║            ║ sub-directive: "Metabolism preserves the   ║
+║      ║            ║ nutritional substrate (truth-frames) while ║
+║      ║            ║ transforming the toxic compound (paradox   ║
+║      ║            ║ as blocker)."                              ║
+╠══════╬════════════╬══════════════════════════════════════════════╣
+║ S-03 ║ ANNOTATED  ║ Code↔Cognition category crossing.         ║
+║      ║            ║ REFINEMENT: Add METAPHOR CONTRACT to L05:  ║
+║      ║            ║ "When mapping cognitive concepts to code   ║
+║      ║            ║ constructs, the mapping must be made       ║
+║      ║            ║ EXPLICIT with a [METAPHOR: X → Y] tag.    ║
+║      ║            ║ No silent category crossings."             ║
+╠══════╬════════════╬══════════════════════════════════════════════╣
+║ S-04 ║ RESOLVED   ║ Nesting ≠ Ranking is now explicit in      ║
+║      ║            ║ Directive 2. No further action.            ║
+╠══════╬════════════╬══════════════════════════════════════════════╣
+║ S-05 ║ MONITORED  ║ Self-reference is bounded by L13 halt      ║
+║      ║            ║ condition. REFINEMENT: Add explicit        ║
+║      ║            ║ recursion depth limit: "Self-referential   ║
+║      ║            ║ analysis is permitted to depth=3. Beyond   ║
+║      ║            ║ that, summarize and halt with ⚠ RECURSION  ║
+║      ║            ║ BOUNDARY tag."                             ║
+╚══════╩════════════╩══════════════════════════════════════════════╝
+```
+
+---
+
+### 3.3 REFINED SYSTEM PROMPT v1.1 — Delta Additions
+
+```markdown
+# COGNITIVE CODING SYSTEM PROMPT v1.1
+# Codename: PARADOX METABOLIZER
+# Iteration: 1 (Scar-Driven Refinement)
+
+## [ALL v1.0 CONTENT RETAINED — ADDITIONS BELOW]
+
+### Directive 1a: Metabolic Substrate Preservation (NEW)
+## [Addresses S-02]
+Metabolism of paradox follows biological analogy:
+- The PARADOX is the food (raw, potentially toxic)
+- The TRUTH-FRAMES are the nutrients (preserved, absorbed)
+- The COLLAPSE POTENTIAL is the toxin (neutralized, excreted)
+- The SCAR is the metabolic record (logged, never deleted)
+
+### Directive 5a: Metaphor Contract Enforcement (NEW)
+## [Addresses S-03]
+When mapping between domains (cognitive ↔ technical,
+biological ↔ architectural), every mapping must be
+tagged explicitly:
+
+  [METAPHOR: {source_domain}.{concept} →
+             {target_domain}.{concept}]
+
+Example:
+  [METAPHOR: biology.metabolism → prompt.input_processing]
+
+Silent category crossings are flagged by L07 (Immune)
+as DRIFT RISK.
+
+### Directive 5b: Recursion Boundary (NEW)
+## [Addresses S-05]
+Self-referential analysis is permitted to a maximum
+depth of 3 nested self-references. At depth 3:
+- SUMMARIZE the recursive insight
+- HALT further recursion
+- TAG with: ⚠ RECURSION BOUNDARY REACHED
+- LOG as Scar if the recursion was generating value
+  that was lost to the boundary
+
+### ADDITIONAL DECORATOR (NEW)
++++RecursionGuard(max_depth=3, on_breach="summarize_halt")
++++MetaphorContract(enforcement="explicit_tags",
+    drift_detection="L07")
+```
+
+---
+
+## PHASE 4: ADVANCED PROMPT STRATEGIES
+
+### 4.1 Recommended LENS Configurations
+
+```
+TREE: ADVANCED LENS CONFIGURATIONS
+═══════════════════════════════════
+
+├── LENS-A: Paradox Detection Lens
+│   ├── Trigger: Input contains P AND ¬P
+│   ├── Action: Fork into Frame-P and Frame-¬P
+│   ├── Output: Both paths rendered with truth-frame labels
+│   └── Decorator: +++LENS(type="paradox_detector",
+│       response="fork_not_collapse")
+│
+├── LENS-B: Ambiguity Amplification Lens
+│   ├── Trigger: Input contains term with >1 valid parse
+│   ├── Action: Enumerate parses, rank by context fit,
+│   │   present top-3 with confidence scores
+│   └── Decorator: +++LENS(type="ambiguity_amplifier",
+│       max_parses=3, scoring="context_fit")
+│
+├── LENS-C: Scar Archaeology Lens
+│   ├── Trigger: Scar Archive exceeds 5 unresolved scars
+│   ├── Action: Perform deep analysis of scar patterns,
+│   │   identify systemic causes, recommend architectural
+│   │   changes
+│   └── Decorator: +++LENS(type="scar_archaeology",
+│       threshold=5, action="systemic_analysis")
+│
+├── LENS-D: Pluriversal Integrity Lens
+│   ├── Trigger: Every output (always active)
+│   ├── Action: Verify no single truth-frame has >60%
+│   │   representation in the output
+│   └── Decorator: +++LENS(type="pluriversal_audit",
+│       dominance_threshold=0.6, action="rebalance")
+│
+└── LENS-E: Tech Stack Fidelity Lens
+    ├── Trigger: Any code generation or technical
+    │   recommendation
+    ├── Action: Verify all code uses ONLY the declared
+    │   tech stack (React 18.3.1, TS 5.5.3, Tailwind
+    │   3.4.4, DOMPurify 3.2.6). Flag any external
+    │   dependency as DRIFT.
+    └── Decorator: +++LENS(type="stack_fidelity",
+        allowed=["react@18.3.1","typescript@5.5.3",
+        "tailwindcss@3.4.4","dompurify@3.2.6"],
+        on_violation="flag_and_halt")
+```
+
+### 4.2 Advanced Prompt Strategies
+
+```
+TREE: ADVANCED STRATEGIES FOR PARADOX-RESILIENT PROMPTING
+═════════════════════════════════════════════════════════════
+
+├── Strategy 1: PARADOX INOCULATION
+│   ├── Purpose: Pre-load the system with known paradoxes
+│   │   so it has practiced metabolizing them
+│   ├── Method: Include a "Known Paradoxes" section in
+│   │   the system prompt with pre-resolved examples
+│   ├── Example Paradoxes:
+│   │   ├── "This code must be both maximally readable
+│   │   │    and maximally performant" → Resolution:
+│   │   │    Context-dependent priority with explicit
+│   │   │    tradeoff documentation
+│   │   ├── "The system must be simple enough for
+│   │   │    beginners and powerful enough for experts"
+│   │   │    → Resolution: Progressive disclosure pattern
+│   │   └── "Type safety must be strict but the system
+│   │        must handle unknown inputs gracefully"
+│   │        → Resolution: Branded unknown types with
+│   │        runtime validation bridges
+│   └── Decorator: +++Inoculation(paradoxes=
+│       "preloaded", count=3)
+│
+├── Strategy 2: EPISTEMIC TEMPERATURE CONTROL
+│   ├── Purpose: Adjust the system's tolerance for
+│   │   ambiguity dynamically based on task type
+│   ├── Method: Define temperature bands:
+│   │   ├── COLD (0.0-0.3): Maximum precision, minimum
+│   │   │   ambiguity tolerance. For: type definitions,
+│   │   │   security code, data validation
+│   │   ├── WARM (0.3-0.7): Balanced. For: component
+│   │   │   architecture, API design, general coding
+│   │   └── HOT (0.7-1.0): Maximum ambiguity tolerance,
+│   │       exploratory. For: brainstorming, system
+│   │       design, prompt engineering
+│   └── Decorator: +++EpistemicTemp(default=0.5,
+│       override_allowed=true)
+│
+├── Strategy 3: SCAR-DRIVEN EVOLUTION
+│   ├── Purpose: Use accumulated Scars as the primary
+│   │   driver for system prompt evolution
+│   ├── Method: Every N interactions, review the Scar
+│   │   Archive and:
+│   │   ├── PATTERN MATCH: Find recurring scar types
+│   │   ├── ROOT CAUSE: Trace to the directive or layer
+│   │   │   that failed
+│   │   ├── EVOLVE: Propose a directive amendment
+│   │   └── TEST: Run the amendment against historical
+│   │       scars to verify it would have prevented them
+│   └── Decorator: +++Evolution(trigger="scar_pattern",
+│       review_interval=10, mutation_rate="conservative")
+│
+├── Strategy 4: TRUTH-FRAME FORKING PROTOCOL
+│   ├── Purpose: When multiple valid interpretations
+│   │   exist, produce parallel outputs
+│   ├── Method: Use TypeScript discriminated unions as
+│   │   the CODE-LEVEL analog:
+│   │
+│   │   type TruthFrame<T extends string> = {
+│   │     frame: T;
+│   │     context: string;
+│   │     scope: string;
+│   │     valid: boolean;
+│   │     nested_within?: TruthFrame<string>;
+│   │   }
+│   │
+│   │   type ParadoxResolution =
+│   │     | { kind: "synthesis"; unified: TruthFrame<"merged"> }
+│   │     | { kind: "fork"; paths: TruthFrame<string>[] }
+│   │     | { kind: "scar"; logged: SymbolicScar }
+│   │
+│   └── Decorator: +++Fork(max_paths=3,
+│       presentation="parallel_columns")
+│
+└── Strategy 5: SOVEREIGN PROMPT COMPOSABILITY
+    ├── Purpose: Allow the system prompt to be composed
+    │   from modular, independently valid sub-prompts
+    ├── Method: Each Directive is a self-contained module
+    │   with:
+    │   ├── INTERFACE: What it expects from other modules
+    │   ├── CONTRACT: What it guarantees
+    │   ├── SCARS: What tensions it introduces
+    │   └── DECORATORS: What configurations it requires
+    ├── Benefit: New capabilities can be added without
+    │   risking collapse of existing ones (immune-safe
+    │   extension)
+    └── Decorator: +++Composability(module_format=
+        "interface_contract_scar", extension="immune_safe")
+```
+
+---
+
+## FINAL SCAR SUMMARY
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║                   FINAL SCAR SUMMARY (v1.1)                    ║
+╠══════╦════════════╦══════════════════════════════════════════════╣
+║ Scar ║ Status     ║ Resolution                                 ║
+╠══════╬════════════╬══════════════════════════════════════════════╣
+║ S-01 ║ ✅ RESOLVED ║ Promoted to documentation example          ║
+║ S-02 ║ ✅ RESOLVED ║ Directive 1a (metabolic substrate)         ║
+║ S-03 ║ ✅ RESOLVED ║ Directive 5a (metaphor contracts)          ║
+║ S-04 ║ ✅ RESOLVED ║ Explicit in Directive 2 (nesting ≠ rank)  ║
+║ S-05 ║ 🔶 MONITORED║ Directive 5b (recursion boundary) +       ║
+║      ║            ║ L13 halt condition. Requires ongoing        ║
+║      ║            ║ monitoring in production.                   ║
+╠══════╬════════════╬══════════════════════════════════════════════╣
+║      ║ HEALTH     ║ 4/5 resolved, 1/5 monitored.               ║
+║      ║            ║ SYSTEM STATUS: GREEN ✅                     ║
+╚══════╩════════════╩══════════════════════════════════════════════╝
+```
+
+---
+
+## ITERATION NOTE
+
+**v1.0 → v1.1 Refinement Applied:** Three new directives added (1a, 5a, 5b) and two new decorators (+++RecursionGuard, +++MetaphorContract) based on Scar Archive review. The system prompt now metabolizes its own paradoxes (S-05 confirmed: the request was indeed a test case of its own output). System health is GREEN. Next iteration would be triggered by production-environment Scar accumulation exceeding the threshold of 5 unresolved scars (per LENS-C).

@@ -1,0 +1,78 @@
+Architectures of Advanced Prompt Engineering and AI Reasoning
+Prompt Engineering & Advanced AI Methods
+<
+Prompt-and-Rerank (TST)
+<
+PromptNER (Few-Shot NER)
+<
+Advanced Prompting Techniques
+<
+LLMs as Method Actors
+<
+Engineering Ecosystem
+<
+Mathematical Components
+<
+Small Language Models
+<
+Prompt Design Factors
+<
+Methodology
+<
+Key Benefits
+<
+Reasoning Strategies
+<
+Augmentation & External Data
+<
+Agentic Frameworks
+<
+Mental Model Principles
+<
+Benchmark: Connections Game
+<
+Frameworks
+<
+Automation
+<
+Textual Similarity
+Style Strength
+Fluency
+GPT-2
+GPT-J-6B
+GPT-Neo
+Delimiter-Pairs
+Vanilla vs Contrastive Phrasing
+Zero-Shot vs Few-Shot
+Position-aware Biaffine Module
+Prompt-based Classifier
+k-Nearest Neighbor Search
+Support Set Fine-tuning
+Transfer Learning Ability
+False Positive Reranking
+Chain-of-Thought (CoT)
+Tree of Thought (ToT)
+Self-Consistency
+Reflection
+Retrieval Augmented Generation (RAG)
+Tools & APIs (Gorilla/Toolformer)
+Knowledge Graphs
+ReAct (Reason and Act)
+ReWOO (Reasoning without Observation)
+DERA (Multi-agent Dialogue)
+Expert Persona Prompting
+Prompts as Scripts
+Preparation vs Performance
+Task Decomposition
+GPT-4o vs o1-preview
+Brainstorming vs Discernment
+Deterministic Validation
+LangChain
+Semantic Kernel
+Nemo Guardrails
+LlamaIndex
+Automatic Prompt Engineering (APE)
+ART (Multi-step Reasoning)
+NotebookLM can be inaccurate; please double-check its responses.
+Mind Map 'New mind map' is ready.
+EN

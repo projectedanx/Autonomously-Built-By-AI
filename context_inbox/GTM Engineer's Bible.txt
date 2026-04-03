@@ -1,0 +1,59 @@
+*
+Conigma
+The Claude
+GTM Engineer's Bible
+1
+Claude Prompt Library for SaaS (1300+)
+SaaS Positioning, Messaging & Landing Pages That Convert (200)
+Cold Outreach (LinkedIn & Email) + Content That Compounds (200)
+Product Marketing + Saas Sales Enablement That Closes (200)
+Customer Retention, Expansion & Growth Strategy (200)
+Al Integration + Founder Strategy (200)
+SEO, Organic Growth, Onboarding & Activation (200)
+Founder-Led Growth + LinkedIn Lead Generation (115)
+2
+The Claude Power User System for GTM Teams
+Top Settings
+Prompts
+Computer Use
+Memory & Context
+Search & Research
+Artifacts
+Integrations
+Advanced Workflows
+The Iteration Framework
+Common Mistakes
+Quick-Win Prompts
+4
+The Claude Code GTM Engineer's Playbook
+Why Claude Code Now
+Getting Set Up
+Claude Code Operations & The WAT Framework
+Building Your First Workflow
+Project Setup & Environment
+Claude Skills
+Deploying Automations with Modal & Trigger.dev
+Agent Teams & Scheduled Tasks
+Tokens & Context Windows for GTM Engineers
+RAG for GTM Projects
+Turning n8n Workflow into App
+APIs & MCPs for GTM Engineers
+Sub-agents for GTM Engineers
+Browser Automation for GTM Engineers
+GitHub & Worktrees for GTM Engineers
+3
+Boris Cherny's full Claude Code setup
+Run Multiple Sessions at the Same Time
+Install Your CLAUDE.md File
+Use Opus 4.5 With Thinking for Everything
+Set Up Your CLAUDE.md and Check It Into Git
+Tag Claude in Code Reviews to Update CLAUDE.md
+Always Start in Plan Mode
+Set Up Slash Commands for Every Repeated Task
+Install Your Subagents
+Add a PostToolUse Hook to Format Code
+Set Safe Permissions Instead of Skipping Them Connect
+Claude to Your Tools via MCP
+Handle Long Tasks With Background Verification
+Always Give Claude a Way to Verify Its Own Work
+You

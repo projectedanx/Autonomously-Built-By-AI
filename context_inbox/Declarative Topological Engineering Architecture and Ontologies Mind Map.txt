@@ -1,0 +1,73 @@
+Declarative Topological Engineering: Architecture and Ontologies
+Declarative Topological Engineering (DTE)
+<
+Mechanistic Foundations
+<
+Declarative Prompt Decorators
+<
+Formal Ontologies
+<
+Constraint-Based Decoding
+<
+Performance Metrics & Diagnostics
+<
+Failure Modes & Mitigation
+<
+Attention as Topological Routing
+Latent Manifold Geometry
+Layer 8, Head 11 Bottleneck
+Adjectival Attention Dilution
+Cognitive & Generative Family
+<
+Expressive & Systemic Family
+<
+Topological Deformers
+<
+Winston's Mereology
+<
+Allen's Interval Algebra
+<
+Region Connection Calculus (RCC-8)
+<
+Draft-Conditioned Constrained Decoding (DCCD)
+100% Schema Adherence
+Token-level Masking
+JSONSchemaBench Compliance
+Decorator Quality Score (DQS)
+Entity-to-Token Density (0.15-0.165)
+Flesch Reading Ease (60-80)
+Determinism Score (>0.95)
+Logit Variance Analysis
+Pink Elephant (RLHF Priming)
+Semantic Drift (Long-Context)
+Transitivity Fallacies
+Dimensionality Collapse
+Autonymic Bypass Mitigation
++++Reasoning
++++Brainstorm
++++Critique
++++Debate
++++Socratic
++++Tone
++++OutputFormat
++++Import
++++Refine
++++ContextLock
++++AdjectivalBound
++++MereologicalAnchor
++++AutonymicBypass
++++SpatialBind
+Component-Integral Object
+Member-Collection
+Portion-Mass
+Stuff-Object
+Feature-Activity
+Place-Area
+Ordered Relations
+Overlap Relations
+Containment Relations
+Disconnected (DC)
+Externally Connected (EC)
+Partial Overlap (PO)
+Tangential Proper Part (TPP)
+Non-Tangential Proper Part (NTPP)

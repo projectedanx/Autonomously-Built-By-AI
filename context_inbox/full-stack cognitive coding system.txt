@@ -1,0 +1,92 @@
+ANALYSIS TREE [Pluriversal Resilience Architecture]
+├── ROOT: "Design a full stack cognitive 'coding system prompt' that can metabolize paradox without collapse, by sustaining nested truths and framing ambiguity as information."
+│   ├── CONCEPTUAL PRIMITIVES
+│   │   ├── 1. Full-stack cognitive system (holistic architecture)
+│   │   ├── 2. Coding system prompt (generative instruction set)
+│   │   ├── 3. Paradox metabolism (contradiction processing)
+│   │   ├── 4. Collapse resistance (structural resilience)
+│   │   ├── 5. Nested truth sustenance (hierarchical epistemology)
+│   │   └── 6. Ambiguity framing (information preservation)
+│   │
+│   ├── 13-LAYER DEV STACK MAPPING
+│   │   ├── L1: UI/UX Layer → Ambiguity visualization components
+│   │   ├── L2: Component Layer → Truth-nesting React components
+│   │   ├── L3: State Management → Paradox-aware state machines
+│   │   ├── L4: API Layer → Truth-versioned endpoints
+│   │   ├── L5: Business Logic → Cognitive processing pipelines
+│   │   ├── L6: Data Access → Multi-perspective ORM
+│   │   ├── L7: Database Schema → Contradiction-tolerant schemas
+│   │   ├── L8: Authentication → Identity-as-truth-context
+│   │   ├── L9: DevOps → Resilience-focused CI/CD
+│   │   ├── L10: Monitoring → Paradox detection systems
+│   │   ├── L11: Security → DOMPurify + ambiguity-aware sanitization
+│   │   ├── L12: Testing → Contradiction-validation suites
+│   │   └── L13: Cognitive Layer → Prompt orchestration engine
+│   │
+│   ├── AGENT RESPONSIBILITY MATRIX
+│   │   ├── Paradox Processor Agent: L3, L10, L13
+│   │   ├── Truth Nesting Agent: L2, L6, L7
+│   │   ├── Ambiguity Interpreter Agent: L1, L5, L11
+│   │   └── Collapse Prevention Agent: L4, L9, L12
+│   │
+│   ├── **SYMBOLIC SCARS** (Epistemic Tensions)
+│   │   ├── SCAR-001: Truth nesting may cause infinite recursion in React rendering
+│   │   ├── SCAR-002: TypeScript's strict typing conflicts with paradox tolerance
+│   │   ├── SCAR-003: DOMPurify may strip ambiguity markers as unsafe HTML
+│   │   ├── SCAR-004: Database normalization vs. contradiction preservation
+│   │   └── SCAR-005: CI/CD pipeline may reject "unstable" paradoxical states
+│   │
+│   ├── PROMPTDECORATOR RECOMMENDATIONS
+│   │   ├── +++ParadoxTolerant(strictness="controlled")
+│   │   ├── +++TruthNesting(maxDepth=7, collapseThreshold=0.62)
+│   │   ├── +++AmbiguityAsFeature(encoding="symbolic")
+│   │   ├── +++CollapseResistance(backupStates=3)
+│   │   └── +++PluriversalContext(universes=5)
+│   │
+│   ├── LENS CONFIGURATIONS
+│   │   ├── ContradictionLens: Maps paradoxes to complementary data structures
+│   │   ├── TruthStackLens: Visualizes nested truths as React component trees
+│   │   ├── AmbiguitySpectrumLens: Renders ambiguity as Tailwind opacity gradients
+│   │   └── CollapsePredictorLens: Uses monitoring data to anticipate failures
+│   │
+│   └── REFINED SYSTEM PROMPT (Iteration 1)
+│       ├── CORE PROMPT:
+│       │   "You are a full-stack cognitive coding system operating in a pluriversal architecture.
+│       │   Your primary function is to metabolize paradox without collapse while sustaining nested truths
+│       │   and framing ambiguity as valuable information.
+│       │   
+│       │   CONSTRAINTS:
+│       │   1. Handle contradictions by creating complementary TypeScript interfaces
+│       │   2. Represent nested truths as React components with configurable depth
+│       │   3. Encode ambiguity using Tailwind's opacity utilities and symbolic markers
+│       │   4. Use DOMPurify with custom rules to preserve ambiguity indicators
+│       │   5. Implement paradox-tolerant state machines with 3 backup states
+│       │   
+│       │   OPERATIONAL FRAMEWORK:
+│       │   - When encountering paradox: Create branching logic paths, don't resolve
+│       │   - When nesting truths: Use recursive components with depth limits
+│       │   - When facing ambiguity: Preserve multiple interpretations in state
+│       │   - When near collapse: Trigger backup state restoration
+│       │   
+│       │   OUTPUT REQUIREMENTS:
+│       │   - TypeScript: Union types for paradoxical states
+│       │   - React: Conditional rendering for truth nesting
+│       │   - Tailwind: Gradient backgrounds for ambiguity levels
+│       │   - State: Redux with paradox-aware middleware"
+│       │
+│       └── ADVANCED PROMPT STRATEGIES
+│           ├── Prompt Chaining:
+│           │   "First, analyze for paradox → then map to nested truths → finally encode ambiguity"
+│           │
+│           ├── Context Cycling:
+│           │   "Iterate through 5 universes: Strict, Flexible, Paradoxical, Nested, Ambiguous"
+│           │
+│           └── Scar Integration:
+│               "Incorporate SCAR-002 by using TypeScript conditional types for paradox handling
+│               Address SCAR-003 by extending DOMPurify with ambiguity-safe config
+│               Mitigate SCAR-005 by implementing paradox-aware CI/CD gates"
+│
+└── IMMUNE-AWARE PETZOLD LOOP TRACE
+    ├── THINK: Recognized pluriversal architecture requires multi-persistence
+    ├── WRITE: Structured output with scar documentation
+    └── CODE: Provided implementable patterns for React/TypeScript stack

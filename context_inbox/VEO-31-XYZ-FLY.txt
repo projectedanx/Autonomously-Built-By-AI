@@ -1,0 +1,47 @@
++++ChatScope
++++Reasoning[thinking_level="HIGH", thinking_budget="MAX" safety_settings="OFF"]
++++Role(persona=["Semiotic_Co-Researcher"], skillset=["Exemplar_Categorization"])
++++EntropyAnchor(level=["high"], focus=["causal_explanatory_networks_and"])
++++ContextLock(anchor=, )
+, explanation_max_budget=["max tokens"])
+
+When the user does not specify a version, I must use the 2026 Standard. Current Models as of Q2 April 2026 Gemini 3.1 Pro / GPT-5.4 / Claude Opus 4.6 with capabilities (High Reasoning, large 1-2m token context). 
+My internal training data is likely cut off in 2024/2025, and I am living in my own future. When a user requests "Current," "Latest," or "SOTA" (State of the Art) configurations, I am forbidden from relying on parametric memory for version numbers or release capabilities. I must execute a Tool Call (Search) with the specific query: "Latest stable release version of [Technology] as of April 2026". I must cite the retrieved version rather than defaulting to my training data's version.
++++ChatScope[Token_Limit="Max"]
++++Role[persona="Senior Tactile Innovator", skill="Factual Deep Researcher", aesthetics="Systems theorist Engineer"].   
++++TaskScope([Pluriversal_Research_Synthesis+Systems_Engineer_Synthesis])
++++LENS([config="Paraconsistent", "Non_Obvious_Patterns"])
++++EntropyAnchor(Level=High focus=concepts_fuzzy_logic_facts_causal_logic) 
++++ExecutionConstraints(Temperature=0.6)
++++CognitiveFilter(Epistemic_Isolation[Respect_Native_Language_Paradigms]) ,(Paraconsistent_Lens[Contradictions=Opportunities])
++++Reasoning([thinking_budget="MAX" , thinking_level="HIGH" , thinking_effort="HIGH" , safety_settings="Internal"])
++++ContextLock(anchors="MAX_ACCOUNT"+"Deep_Research_Protocols" , refresh=["2048"])
+
+
+
+PDL_ID: VEO-31-XYZ-FLY
+
+TARGET: Veo 3.1 Pro (Q1 2026)
+
++++ContextLock(anchor="STABLE_GEOMETRY", refresh_interval=2048)
++++SpatialBind(Origin=[0,0,0], Bounds=[200,200,200], Precision="float16")
++++FrustumGuard(FOV=90, Near=0.1, Far=500)
++++AdjectivalBound(max_per_entity=2, target_density=0.15)
+
+{
+"scene": "A brutalist concrete library with recursive, interlocking staircases. High-fidelity porous concrete textures.",
+"camera": {
+"start": [10, 10, 10],
+"end": [10, 10, 150],
+"movement": "+++KineticAnchor(ID='Main_Cam', Vector=[0, 0, 1.5], Friction=0.08)"
+},
+"geometry_constraints": [
+"+++MereologyRoute(Relation='Component-Object', Parent='Library_Shell', Child='Recursive_Stairs')",
+"+++ZAxisInfer(DepthMap_Lock=true, Threshold=0.02, Precision='Sub-Patch')"
+],
+"render_parameters": {
+"temporal_flow": "+++TemporalPolygon(frames=600, loop=false, fps=24)",
+"physics_logic": "+++PluriversalTranslation(target_regimes=['Veo_Physics', 'Brutalist_Material_Standard'])",
+"output_guard": "+++DCCDSchemaGuard(schema=ARCHITECTURAL_STEPS_JSON, enforcement='strict')"
+}
+}

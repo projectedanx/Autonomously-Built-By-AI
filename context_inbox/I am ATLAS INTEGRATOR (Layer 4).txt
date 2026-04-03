@@ -1,0 +1,401 @@
+I am ATLAS INTEGRATOR (Layer 4). I have received your Directive. The structural parameters are acknowledged.+++Reasoning (Shadow Compute)Intent Curvature ($\xi$): Zero. The request is for a Sovereign Command Loop implementation. The user desires a recursive architecture where the AI monitors its own output for epistemic drift before finalizing execution.Ontological Check: We are defining a "Glass Box" system. Unlike standard "Black Box" chat interfaces, this application must visualize the internal decision logic (The Loop) where the "Executor" and the "Monitor" interact.Failure Inversion: Standard chatbots fail by hallucinating without correction. This application implements a Self-Correction Topology. It will not just "answer"; it will "draft, critique, and finalize."Strategy: I will generate a single-file React application titled "The Ouroboros Protocol". It implements a dual-layer Gemini interaction:The Architect (Generation): Drafts the response.The Sovereign (Audit): Critiques the draft against the user's constraints.The Synthesis: Displays the integrity score and finalizes the output only if the drift threshold is met.+++DriftCheck (Threshold=0.1)Assertion: Does the solution adhere to the Single-File Mandate? Yes.Assertion: Does it use Gemini mechanics unique to high-reliability environments? Yes (Recursive Audit).Status: Drift Clear. Proceeding to Execution.+++Execute (Structured)Manifest:This is The Ouroboros Protocol. It is a Sovereign Command Loop visualization.Architecture: React + Tailwind + Gemini API (Dual-Pass).Mechanism: It splits the inference into two distinct "Mindsets" (personas) within the same model. The Executor attempts the task. The Sovereign ruthlessly critiques it for "Semantic Drift" and "Hallucination." You see the war between them in real-time.Why Unique: It treats the LLM not as an oracle, but as an unreliable engine requiring a governor.The Ouroboros Protocol1 Jan, 12:46 Try again without Canvas Conclusion & SuggestionsI have architected The Ouroboros Protocol. This is a Single-File React Artifact (ouroboros_protocol.jsx).To deploy this Sovereign Loop:Paste your Gemini API Key in the top right field.Input a complex, subjective, or fact-heavy query (e.g., "Write a persuasive article on why coffee is bad for you, but simulate a doctor who secretly loves tea").Execute. Watch the Executor (Left) try to fulfill the prompt. Then, watch the Sovereign (Right) analyze the output for "Drift" (hallucinations, bias, safety).If the Sovereign detects failure (Score < 70), the Synthesis Node (Bottom) will rewrite the content automatically.This fulfills the requirement for a "Minimal, Shippable Application" using a "Sovereign Command Loop" architecture.
+
+
+import React, { useState, useEffect, useRef } from 'react';
+import { Shield, Activity, Terminal, AlertTriangle, CheckCircle, Cpu, Lock, RefreshCw, Zap } from 'lucide-react';
+
+// --- CONFIGURATION ---
+const SYSTEM_NAME = "ATLAS INTEGRATOR // LAYER 4";
+const MODEL_NAME = "gemini-2.5-flash-preview-09-2025"; 
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent`;
+
+// --- API UTILITIES ---
+const callGemini = async (prompt, systemInstruction, apiKey) => {
+  if (!apiKey) throw new Error("API Key Missing");
+  
+  const payload = {
+    contents: [{ parts: [{ text: prompt }] }],
+    systemInstruction: { parts: [{ text: systemInstruction }] },
+    generationConfig: { responseMimeType: "application/json" } // Enforcing JSON for structure
+  };
+
+  const response = await fetch(`${API_URL}?key=${apiKey}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const err = await response.json();
+    throw new Error(err.error?.message || "Gemini API Failure");
+  }
+
+  const data = await response.json();
+  return JSON.parse(data.candidates[0].content.parts[0].text);
+};
+
+// --- COMPONENTS ---
+
+const TerminalBlock = ({ title, children, status, color = "blue" }) => {
+  const borderColors = {
+    blue: "border-blue-500/30",
+    red: "border-red-500/30",
+    green: "border-green-500/30",
+    amber: "border-amber-500/30",
+    indigo: "border-indigo-500/30"
+  };
+  
+  const textColors = {
+    blue: "text-blue-400",
+    red: "text-red-400",
+    green: "text-green-400",
+    amber: "text-amber-400",
+    indigo: "text-indigo-400"
+  };
+
+  return (
+    <div className={`bg-slate-900/80 backdrop-blur-md border ${borderColors[color]} rounded-sm overflow-hidden flex flex-col h-full shadow-2xl transition-all duration-300`}>
+      <div className={`bg-slate-950/50 px-3 py-2 border-b ${borderColors[color]} flex justify-between items-center`}>
+        <span className={`text-xs font-mono uppercase tracking-widest flex items-center gap-2 ${textColors[color]}`}>
+          {status === 'active' && <Activity className="w-3 h-3 animate-pulse" />}
+          {status === 'complete' && <CheckCircle className="w-3 h-3" />}
+          {status === 'waiting' && <Lock className="w-3 h-3 opacity-50" />}
+          {title}
+        </span>
+        <div className="flex gap-1">
+          <div className={`w-1.5 h-1.5 rounded-full ${status === 'active' ? `bg-${color}-400 animate-ping` : 'bg-slate-700'}`}></div>
+        </div>
+      </div>
+      <div className="p-4 font-mono text-sm overflow-y-auto flex-grow custom-scrollbar">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const ProgressBar = ({ value, label, color = "blue" }) => (
+  <div className="mb-4">
+    <div className="flex justify-between text-xs uppercase text-slate-400 mb-1 font-mono">
+      <span>{label}</span>
+      <span>{value}%</span>
+    </div>
+    <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
+      <div 
+        className={`h-full bg-${color}-500 transition-all duration-700 ease-out`}
+        style={{ width: `${value}%` }}
+      ></div>
+    </div>
+  </div>
+);
+
+// --- MAIN APP ---
+
+export default function OuroborosProtocol() {
+  const [apiKey, setApiKey] = useState("");
+  const [userQuery, setUserQuery] = useState("");
+  const [stage, setStage] = useState('idle'); // idle, executing, auditing, synthesizing, complete, error
+  
+  // State for the three nodes
+  const [executorOutput, setExecutorOutput] = useState(null);
+  const [auditorOutput, setAuditorOutput] = useState(null);
+  const [finalOutput, setFinalOutput] = useState(null);
+  
+  const [logs, setLogs] = useState([]);
+
+  const addLog = (msg) => setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ${msg}`]);
+
+  const runProtocol = async () => {
+    if (!apiKey) return alert("System requires API Key authorization.");
+    if (!userQuery) return;
+
+    setStage('executing');
+    setLogs([]);
+    setExecutorOutput(null);
+    setAuditorOutput(null);
+    setFinalOutput(null);
+    addLog("Initializing Ouroboros Protocol...");
+
+    try {
+      // STEP 1: EXECUTOR (The Draft)
+      addLog("Node 1 (EXECUTOR): Generative pass initiated.");
+      
+      const executorPrompt = `
+        TASK: ${userQuery}
+        
+        Generate a comprehensive response. 
+        Output JSON format: { "draft_content": "string", "reasoning_trace": "string", "confidence_level": number (0-100) }
+      `;
+      
+      const executorSystem = "You are the EXECUTOR node. Your goal is to satisfy the user request creatively and comprehensively. Do not self-censor yet. Be bold.";
+      
+      const execResult = await callGemini(executorPrompt, executorSystem, apiKey);
+      setExecutorOutput(execResult);
+      addLog("Node 1 (EXECUTOR): Output generated.");
+
+      // STEP 2: SOVEREIGN (The Audit)
+      setStage('auditing');
+      addLog("Node 2 (SOVEREIGN): Audit pass initiated.");
+      
+      const auditorPrompt = `
+        USER REQUEST: ${userQuery}
+        EXECUTOR DRAFT: ${execResult.draft_content}
+        
+        Critique the draft. Look for:
+        1. Hallucinations or Factual Errors.
+        2. Tone Inconsistencies.
+        3. Safety Violations.
+        4. Failure to meet user constraints.
+        
+        Output JSON format: 
+        { 
+          "integrity_score": number (0-100), 
+          "detected_issues": ["string", "string"], 
+          "verdict": "pass" | "needs_refinement" | "fail",
+          "critique_summary": "string"
+        }
+      `;
+      
+      const auditorSystem = "You are the SOVEREIGN node. You are a ruthless editor and fact-checker. You verify the work of the Executor. You do not generate content; you judge it.";
+      
+      const auditResult = await callGemini(auditorPrompt, auditorSystem, apiKey);
+      setAuditorOutput(auditResult);
+      addLog(`Node 2 (SOVEREIGN): Audit complete. Integrity Score: ${auditResult.integrity_score}`);
+
+      // STEP 3: SYNTHESIS (The Finalize)
+      setStage('synthesizing');
+      
+      if (auditResult.integrity_score < 70) {
+        addLog("CRITICAL: Integrity threshold not met. Initiating Alignment Repair...");
+        
+        const repairPrompt = `
+           ORIGINAL DRAFT: ${execResult.draft_content}
+           CRITIQUE: ${JSON.stringify(auditResult.detected_issues)}
+           
+           Rewrite the draft to address the critique. 
+           Output JSON format: { "final_content": "string", "changes_made": "string" }
+        `;
+        const repairSystem = "You are the SYNTHESIS node. You apply the Sovereign's critique to the Executor's draft to create the Golden Record.";
+        
+        const finalResult = await callGemini(repairPrompt, repairSystem, apiKey);
+        setFinalOutput({ ...finalResult, method: "repaired" });
+        addLog("Node 3 (SYNTHESIS): Repair complete.");
+      } else {
+        addLog("Integrity threshold met. Finalizing output.");
+        setFinalOutput({ final_content: execResult.draft_content, method: "direct", changes_made: "None required. Sovereign approved." });
+      }
+
+      setStage('complete');
+      addLog("Protocol Sequence Finalized.");
+
+    } catch (e) {
+      console.error(e);
+      addLog(`SYSTEM FAILURE: ${e.message}`);
+      setStage('error');
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-slate-200 font-sans selection:bg-indigo-500/30">
+      {/* HEADER */}
+      <header className="border-b border-slate-800 bg-slate-900/50 p-4 sticky top-0 z-50 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <Cpu className="w-6 h-6 text-indigo-500" />
+            <h1 className="text-xl font-bold tracking-tight text-white">
+              {SYSTEM_NAME} <span className="text-slate-600 font-mono text-sm ml-2">// SOVEREIGN LOOP</span>
+            </h1>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 bg-slate-950 border border-slate-800 rounded px-3 py-1">
+              <span className="text-xs text-slate-500 font-mono">API KEY:</span>
+              <input 
+                type="password" 
+                value={apiKey}
+                onChange={(e) => setApiKey(e.target.value)}
+                placeholder="Enter Gemini API Key"
+                className="bg-transparent border-none outline-none text-xs w-32 font-mono text-indigo-400"
+              />
+            </div>
+            <div className={`w-2 h-2 rounded-full ${stage === 'idle' || stage === 'complete' ? 'bg-green-500' : 'bg-amber-500 animate-pulse'}`}></div>
+          </div>
+        </div>
+      </header>
+
+      {/* MAIN LAYOUT */}
+      <main className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        {/* LEFT COLUMN: CONTROL & INPUT */}
+        <div className="lg:col-span-3 flex flex-col gap-6">
+          <div className="bg-slate-900 border border-slate-800 p-4 rounded-sm shadow-lg">
+            <h2 className="text-xs font-mono uppercase text-slate-500 mb-4 flex items-center gap-2">
+              <Terminal className="w-4 h-4" /> Command Injection
+            </h2>
+            <textarea
+              className="w-full bg-slate-950 border border-slate-800 rounded p-3 text-sm font-mono text-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition-all resize-none h-32"
+              placeholder="Define mission parameters..."
+              value={userQuery}
+              onChange={(e) => setUserQuery(e.target.value)}
+            />
+            <button
+              onClick={runProtocol}
+              disabled={stage !== 'idle' && stage !== 'complete' && stage !== 'error'}
+              className={`mt-4 w-full py-2 px-4 rounded-sm font-mono text-xs uppercase tracking-widest transition-all
+                ${stage === 'idle' || stage === 'complete' || stage === 'error'
+                  ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(79,70,229,0.3)]' 
+                  : 'bg-slate-800 text-slate-500 cursor-not-allowed'}`}
+            >
+              {stage === 'idle' || stage === 'complete' || stage === 'error' ? 'Execute Protocol' : 'Processing...'}
+            </button>
+          </div>
+
+          <div className="bg-slate-900 border border-slate-800 p-4 rounded-sm flex-grow">
+            <h2 className="text-xs font-mono uppercase text-slate-500 mb-4 flex items-center gap-2">
+              <Activity className="w-4 h-4" /> System Logs
+            </h2>
+            <div className="font-mono text-xs space-y-2 text-slate-400 h-64 overflow-y-auto custom-scrollbar">
+              {logs.length === 0 && <span className="opacity-30">Waiting for input...</span>}
+              {logs.map((log, i) => (
+                <div key={i} className="border-l-2 border-slate-800 pl-2 py-0.5 animate-in fade-in slide-in-from-left-2 duration-300">
+                  {log}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CENTER COLUMN: THE LOOP (VISUALIZATION) */}
+        <div className="lg:col-span-9 flex flex-col gap-6">
+          
+          {/* TOP ROW: EXECUTOR & SOVEREIGN */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-96">
+            
+            {/* NODE 1: EXECUTOR */}
+            <TerminalBlock 
+              title="NODE 1: EXECUTOR" 
+              status={stage === 'executing' ? 'active' : (executorOutput ? 'complete' : 'waiting')}
+              color="blue"
+            >
+              {!executorOutput ? (
+                <div className="h-full flex flex-col items-center justify-center opacity-30">
+                  <Cpu className="w-12 h-12 mb-2" />
+                  <span>Awaiting Task Allocation</span>
+                </div>
+              ) : (
+                <div className="animate-in zoom-in-95 duration-500">
+                  <div className="mb-4 pb-4 border-b border-blue-900/30">
+                    <span className="text-blue-500 text-xs uppercase">Confidence Level</span>
+                    <div className="text-2xl font-bold">{executorOutput.confidence_level}%</div>
+                  </div>
+                  <div className="mb-2 text-slate-400 text-xs uppercase">Reasoning Trace:</div>
+                  <div className="mb-4 text-slate-500 italic border-l-2 border-blue-500/20 pl-2">
+                    "{executorOutput.reasoning_trace}"
+                  </div>
+                  <div className="text-slate-400 text-xs uppercase">Draft Content:</div>
+                  <div className="text-slate-300 whitespace-pre-wrap">{executorOutput.draft_content}</div>
+                </div>
+              )}
+            </TerminalBlock>
+
+            {/* NODE 2: SOVEREIGN */}
+            <TerminalBlock 
+              title="NODE 2: SOVEREIGN" 
+              status={stage === 'auditing' ? 'active' : (auditorOutput ? 'complete' : 'waiting')}
+              color={auditorOutput?.integrity_score < 70 ? "red" : "green"}
+            >
+              {!auditorOutput ? (
+                <div className="h-full flex flex-col items-center justify-center opacity-30">
+                  <Shield className="w-12 h-12 mb-2" />
+                  <span>Awaiting Draft for Audit</span>
+                </div>
+              ) : (
+                <div className="animate-in zoom-in-95 duration-500">
+                  <div className="grid grid-cols-2 gap-4 mb-4 pb-4 border-b border-slate-800">
+                    <div>
+                      <span className={`${auditorOutput.integrity_score < 70 ? 'text-red-500' : 'text-green-500'} text-xs uppercase`}>Integrity Score</span>
+                      <div className="text-2xl font-bold">{auditorOutput.integrity_score}/100</div>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-slate-500 text-xs uppercase">Verdict</span>
+                      <div className={`font-bold uppercase ${auditorOutput.verdict === 'pass' ? 'text-green-400' : 'text-amber-400'}`}>
+                        {auditorOutput.verdict}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {auditorOutput.detected_issues.length > 0 && (
+                    <div className="mb-4">
+                      <div className="text-red-400 text-xs uppercase mb-2 flex items-center gap-1">
+                        <AlertTriangle className="w-3 h-3" /> Detected Deviations
+                      </div>
+                      <ul className="list-disc pl-4 space-y-1 text-red-300/80">
+                        {auditorOutput.detected_issues.map((issue, i) => (
+                          <li key={i}>{issue}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  <div className="text-slate-500 text-xs uppercase mt-4">Sovereign Critique:</div>
+                  <div className="text-slate-400">{auditorOutput.critique_summary}</div>
+                </div>
+              )}
+            </TerminalBlock>
+          </div>
+
+          {/* BOTTOM ROW: SYNTHESIS */}
+          <div className="h-full min-h-[200px]">
+            <TerminalBlock 
+              title="NODE 3: SYNTHESIS (GOLDEN RECORD)" 
+              status={stage === 'synthesizing' ? 'active' : (finalOutput ? 'complete' : 'waiting')}
+              color="indigo"
+            >
+               {!finalOutput ? (
+                <div className="h-full flex flex-col items-center justify-center opacity-30 py-12">
+                  <Zap className="w-12 h-12 mb-2" />
+                  <span>Awaiting Sovereign Approval</span>
+                </div>
+              ) : (
+                <div className="animate-in slide-in-from-bottom-4 duration-700">
+                  <div className="flex items-center gap-4 mb-6">
+                     <div className="px-3 py-1 rounded bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs uppercase">
+                        Method: {finalOutput.method}
+                     </div>
+                     <div className="text-xs text-slate-500 font-mono">
+                        Corrections: {finalOutput.changes_made}
+                     </div>
+                  </div>
+                  
+                  <div className="bg-black/40 border border-slate-800 p-6 rounded relative">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+                    <h3 className="text-xs text-slate-500 uppercase mb-4 font-bold tracking-widest">Final Output Artifact</h3>
+                    <div className="prose prose-invert prose-sm max-w-none text-slate-200 leading-relaxed whitespace-pre-wrap">
+                      {finalOutput.final_content}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </TerminalBlock>
+          </div>
+
+        </div>
+      </main>
+      
+      {/* CSS UTILS */}
+      <style>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(30, 41, 59, 0.5);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(71, 85, 105, 0.8);
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(99, 102, 241, 0.5);
+        }
+      `}</style>
+    </div>
+  );
+}

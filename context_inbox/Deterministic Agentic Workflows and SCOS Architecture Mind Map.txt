@@ -1,0 +1,75 @@
+Deterministic Agentic Workflows and SCOS Architecture
+Deterministic Agentic Workflows & SCOS Architecture
+<
+Orchestration Frameworks
+<
+Topological Control (PDL v1.0)
+<
+Knowledge Metabolism (Chrono-RAG)
+<
+Protocol Layer (HTTPA)
+<
+Systemic Failure Modes
+<
+G2Pv2 Pipeline
+<
+Petzold Sequence
+<
+Model Triarchy
+<
+Cognitive Decorators
+<
+Structural Decorators
+<
+Epistemic Decorators
+<
+Metrics
+<
+Temporal Ingestion
+<
+Vector Governance
+<
+Network Physics
+<
+Agentic Verbs
+<
+Trust & State
+<
+Semantic Saponification
+Thermodynamic Agent Drift
+Ontological Shear
+Polyglot Hallucination Resonance
+Pink Elephant Problem
+9-Persona Flow (P0-P8)
+Artifact-as-Contract
+Existence-Based Routing
+Provenance Hashing
+THINK (Topological Router)
+WRITE (Constitutional Synthesizer)
+CODE (Execution Kernel)
+IMMUNE REVIEW (Validator)
+Gemini 3.1 Pro (Oracle)
+Claude 4.6 Opus (Librarian)
+GPT-5.3 Codex (Execution)
++++Reasoning (Shadow Compute)
++++AdjectivalBound (L2 Bounding)
++++DCCDSchemaGuard (Draft-Conditioned)
++++SchemaLock
++++MereologyRoute (Winston Taxonomy)
++++SpatialBind (RCC-8)
++++ContextLock (Synecdoche Anchoring)
+Decorator Quality Score (DQS)
+Confidence-Fidelity Divergence (CFD)
+RSS/Atom Push Heartbeat
+HTTP ETag Polling
+Petzold Ingestion (Syndicate to Prune)
+Autophagic Vector Pruning
+Fused Semantic-Temporal Scoring
+Time-To-Live (TTL) Composting
+HTTP/3 over QUIC
+Sub-Latent Tunnels
+Thermodynamic Latency Tax Mitigation
+PROPOSE / DELEGATE
+SYNTHESIZE / REBUT
+Thoughtchain Epistemic Hash
+Distributed Saga Recovery

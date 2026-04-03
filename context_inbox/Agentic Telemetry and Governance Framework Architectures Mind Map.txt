@@ -1,0 +1,81 @@
+Agentic Telemetry and Governance Framework Architectures
+Agentic Telemetry and Governance Integration
+<
+Agentic Telemetry Service (ATS)
+<
+Runtime Governance
+<
+Drift Detection
+<
+Sovereign Research Mesh
+<
+Evaluation and Benchmarking
+<
+Central Ingestion
+<
+Event Schema
+<
+OpenTelemetry Mapping
+<
+Sovereignty Gradient
+<
+Temporal Conformance
+<
+Risk Management
+<
+Behavioral Metrics
+<
+Detection Logic
+<
+Core Artifacts
+<
+Agent Archetypes
+<
+SCOS Substrate
+<
+ABC Framework
+<
+CI/CD Integration
+<
+Cognitive Events
+Action Events
+Coordination Events
+agent.response
+tool.invoke
+plan.start
+Traces as Spans
+ATS Events as Span Events
+Aggregate Metrics
+Tier 1: Personal
+Tier 2: Local Swarm
+Tier 3: Cloud Sovereign
+FSM-based Monitoring
+Sequence Verification
+Action Containment
+Risk Tier Manager
+Virtual Weight Synthesis
+Drift Sentinel
+Latency
+Error Rate
+Tool Usage Patterns
+Output Length
+Goal-conditioned Baselines
+Z-score Outliers
+Consecutive Thresholds
+Deep Research Prompt (DRP)
+Product Requirement Prompt (PRP)
+Knowledge Capsule
+Inquiry Architect
+Evidence Harvester
+Causal Synthesist
+Metacognitive Auditor
+Forge Council
+Epistemic Matrix
+Symbolic Scars
+NATS Event Bus
+Task Validity
+Outcome Validity
+Benchmark Reporting
+Pytest Automation
+Regression Gating
+Artifact Preservation

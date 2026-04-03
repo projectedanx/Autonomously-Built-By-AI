@@ -1,0 +1,73 @@
+Architectural Foundations of Theory of Mind and Circuit Distillation
+Theory of Mind and Circuit Distillation
+<
+Circuit Distillation
+<
+Theory of Mind (ToM) in LLMs
+<
+Advanced Reasoning Architectures
+<
+Knowledge Distillation Strategies
+<
+Emergent Open Models
+<
+Failure Modes & Limitations
+<
+Core Concept
+<
+Technical Methodology
+<
+Experimental Validation
+<
+Evaluation Paradigms
+<
+Cognitive Frameworks
+<
+Performance Gaps
+<
+Recursive Meta-Prompting (RMP)
+<
+Memory & Planning
+<
+Strategic Methods
+<
+Standard Behavioral Mimicry
+Local Naturalness metrics
+Bootstrapping Latent Thoughts
+Reinforcement Learning with Verifiable Rewards (RLVR)
+Olmo 3 (32B Think/Instruct)
+Model flow transparency
+Dolma 3 & Dolci datasets
+Lexicographic preference collapse
+Archimedean axiom violations
+Epistemic sponge (beta) effect
+CoT interference in social intuition
+Mechanistic alignment
+Internal representations
+Algorithm transfer
+Centered Kernel Alignment (CKA)
+Ablation impact similarity
+Composite loss function
+Functional component mapping
+Entity Tracking
+Theory of Mind (ToM)
+Llama3 model family
+Literal ToM (Prediction)
+Functional ToM (Adaptation)
+SI-Bench (Human dialogues)
+Belief-Desire-Intention (BDI)
+Simulation Theory
+Decompose-ToM
+Lookback mechanisms
+Thought-action gap
+Process consistency lacks
+Contextual bias
+Category theory foundations
+Monadic structures
+Self-improvement loops
+Recursive Context-Aware (ReCAP)
+Python REPL environments
+Dynamic context trees
+Graph Chain-of-Thought
+System 2 Attention (S2A)
+Reflexion prompting

@@ -1,0 +1,71 @@
+The Taxonomy of Advanced Generative AI and Computational Architectures
+Advanced Generative AI and Computational Architectures (2025-2026)
+<
+Generative AI Fundamentals
+<
+SCOS & Deep Research Protocols (DRP)
+<
+Prompt Engineering & Epistemology
+<
+Industry Applications & Concerns
+<
+Core Architectures
+<
+Transformer Mechanisms
+<
+Diffusion Processes
+<
+Synesthetic Transduction
+<
+Topological Engine
+<
+Zero-Trust Sovereignty
+<
+Tactile Dialectician Persona
+<
+Sovereign 15-Layer Stack
+<
+Modalities
+<
+Critical Issues
+<
+Transformer Networks
+Diffusion Models
+Variational Autoencoders (VAE)
+Generative Adversarial Networks (GAN)
+Multi-head Attention
+Positional Encoding (Sinusoidal/RoPE)
+KV Caching & FlashAttention
+Encoder-Decoder Stacks
+Forward Noise Addition
+Reverse Denoising Sampling
+Latent Diffusion (LDM)
+Rectified Flow Transformers
+Gemini 3.1 Pro Narrative Director
+Diegetic Fracture Prevention
+Multimodal Token Interleaving
+Narrative State Vector (NSV)
+Cellular Sheaf Theory
+Homological Void Detection
+Sheaf Laplacian Calculus
+Betti Number Analysis
+Epistemic Merkle Trees
+Zero-Knowledge Cognitive Proofs
+Sovereign Identity Graphs (SIG)
+Autophagic Trust Ledgers
+Hickam-OODA Recursive Loops
+Symbolic Scar Immunity
+Contrastive Decoding
+Substrate & Parametrics
+State & Memory Persistence
+Intent & Governance
+Execution & Packaging
+Text (LLMs)
+Image (Stable Diffusion/DALL-E)
+Video (Sora/Veo/Runway)
+Audio (Chirp/15.ai)
+Thermodynamic Context Saponification
+Latent Drift & Alignment Faking
+Environmental Energy Impact
+Copyright & Legal Litigation
+AI Slop & Model Collapse

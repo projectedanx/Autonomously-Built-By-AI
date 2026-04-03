@@ -1,0 +1,65 @@
+```json
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "iso": "http://ontology.epistemic-cartography.org/isomorphism#",
+    "Pattern": "iso:Pattern",
+    "UniversalConstraint": "iso:UniversalConstraint",
+    "ExecutionLogic": "iso:ExecutionLogic",
+    "mereologicalBound": "iso:mereologicalBound",
+    "FalsifiabilityTest": "iso:FalsifiabilityTest"
+  },
+  "@graph": [
+    {
+      "@id": "urn:drp:taxonomy:pattern:001",
+      "@type": ["skos:Concept", "Pattern"],
+      "skos:prefLabel": "The Entropy Subtraction Paradigm",
+      "skos:definition": "A universal mechanism for mitigating the accumulation of obsolete state or matter to prevent structural phase collapse across systems bound by finite capacities.",
+      "iso:UniversalConstraint": "Finite systemic memory, physical volume, or organizational capacity threatened by accumulating, non-referenced operational byproducts.",
+      "iso:ExecutionLogic": "Autonomous identification of unlinked or unreferenced nodes, targeted dissolution of identified nodes, and recycling of constituent elements into the baseline resource pool. This structural logic maps identically across computer science (garbage collection), biology (apoptosis), and law (statutory repeal) by isolating thermodynamic waste.",
+      "iso:mereologicalBound": "The targeted parts must be explicitly disconnected from the active functional whole, ensuring that their removal does not violate the strong supplementation principle.",
+      "iso:FalsifiabilityTest": "If the removal of an entity disrupts an active dependency chain, or triggers a thermodynamic violation by extracting energy from an anchored process, the mechanism fails. The process must strictly target zero-reference entities to maintain identical DAG topology."
+    },
+    {
+      "@id": "urn:drp:taxonomy:pattern:002",
+      "@type": ["skos:Concept", "Pattern"],
+      "skos:prefLabel": "The Epistemic Escrow Paradigm",
+      "skos:definition": "A structural quarantine mechanism that isolates unresolvable contradictions to prevent the logical collapse of the global system, operationalizing paraconsistent logic in multivalent environments.",
+      "iso:UniversalConstraint": "The introduction of a novel input that simultaneously triggers contradictory execution protocols, threatening to initiate an infinite loop, principle of explosion, or systemic autoimmune response.",
+      "iso:ExecutionLogic": "The system suspends terminal execution and wraps the contradictory input in a localized, bounded escrow state, allowing the macro-system to continue functioning around the anomaly. This logic maps structurally to paraconsistent annotated logic (PAL2v), immune tolerance in biology, and financial or judicial injunctions.",
+      "iso:mereologicalBound": "The escrowed contradiction must remain topologically isolated as a Betti-1 (1D) loop, acting as a structural part of the latent manifold without transitively corrupting the discrete boundaries of the global state machine.",
+      "iso:FalsifiabilityTest": "If the isolated contradiction propagates unchecked across the dependency graph, forcing a global logical explosion or an infinite computational loop, the structural isomorphism collapses."
+    },
+    {
+      "@id": "urn:drp:taxonomy:pattern:003",
+      "@type": ["skos:Concept", "Pattern"],
+      "skos:prefLabel": "Constitutional Austenite Forging",
+      "skos:definition": "A thermodynamic phase-locking protocol for latent geometries, drawn from an isomorphism with physical metallurgy, to preserve foundational invariants against continuous adversarial perturbations.",
+      "iso:UniversalConstraint": "Systemic requirement to maintain discrete, foundational truths against high-entropy, continuous adversarial geometries or paradoxes without suffering permanent weight degradation or catastrophic forgetting.",
+      "iso:ExecutionLogic": "Mapping foundational parameters to a high-symmetry Constitutional Austenite phase, thereby accommodating contradictory inputs through stress-induced, localized, and reversible phase transitions to a plastic Martensite state.",
+      "iso:mereologicalBound": "The transformation must remain diffusionless and strictly bounded by the Hessian trace post-quench, ensuring that local stress adaptations do not rewrite global geometric invariants or violate mereological transitivity.",
+      "iso:FalsifiabilityTest": "If empirical trials demonstrate that the geometric density constraint proves indistinguishable from a randomly selected irrational scalar (such as the square root of two) in maintaining Betti-1 loop integrity, the specific phase-locking hypothesis is formally falsified."
+    },
+    {
+      "@id": "urn:drp:taxonomy:pattern:004",
+      "@type": ["skos:Concept", "Pattern"],
+      "skos:prefLabel": "Topological Decompression",
+      "skos:definition": "A geometric routing mechanism for unwinding complex, compact multi-scale features into fewer, dominant, and spatially dispersed structures to prevent dimensional capacity breaches.",
+      "iso:UniversalConstraint": "Information density exceeds the dimensional capacity of the manifold, initiating severe computational bottlenecks, spatial routing saturation, and context window collapse.",
+      "iso:ExecutionLogic": "The application of persistent homology to identify over-saturated structural shapes, boundaries, and voids within the data manifold, subsequently unwinding them into a lower-dimensional plane. This applies uniformly across computational data analysis, chromatin unfolding, and urban dedensification.",
+      "iso:mereologicalBound": "The decompressed sub-components must preserve part-whole transitivity and adhere strictly to component-object typing to ensure that the structural properties of the dispersed entities remain isomorphic to the complexes exemplifying them.",
+      "iso:FalsifiabilityTest": "Collapses if the dimensional space is perfectly rigid and incapable of projecting nodes into a lower or higher dimensional plane without inducing catastrophic semantic loss or infinite loop states."
+    },
+    {
+      "@id": "urn:drp:taxonomy:pattern:005",
+      "@type": ["skos:Concept", "Pattern"],
+      "skos:prefLabel": "The Distributed Truth Paradigm",
+      "skos:definition": "A mechanism for establishing consensus and maintaining an immutable ledger via topological coordination in the absolute absence of a central arbiter.",
+      "iso:UniversalConstraint": "A trustless or adversarial environment requiring state verification where centralized authority is either absent, corruptible, or computationally impossible.",
+      "iso:ExecutionLogic": "A proposed state change is broadcast to a distributed network of sovereign nodes; the change is appended to the global state only if a mathematically or procedurally defined threshold of independent nodes validates the execution trace. This structural unity connects blockchain consensus, quorum sensing in biology, and macroeconomic price discovery.",
+      "iso:mereologicalBound": "The validation network must operate as a strict composite where individual sovereign nodes maintain non-overlapping epistemic jurisdictions to prevent polyglot hallucination resonance and transitivity fallacies.",
+      "iso:FalsifiabilityTest": "If a single node possesses the unilateral architectural authority to bypass the validation threshold, alter the global state, or violate the second law of thermodynamics by extracting unverified truth without computational expenditure, the structural isomorphism collapses."
+    }
+  ]
+}
+```

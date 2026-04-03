@@ -1,0 +1,58 @@
+Paraconsistent Logic and Quantum Computational Systems
+Paraconsistent Logic and Computation
+<
+Paraconsistent Turing Machines (ParTM)
+<
+Entangled ParTMs (EParTM)
+<
+Quantum Set Theory (QST)
+<
+Logic and Machine Learning
+<
+Foundational Concepts
+<
+Description Logics (DL-Lite)
+<
+Axiomatization
+<
+Quantum Simulation
+<
+Complexity
+<
+PNS5 Logic
+Non-separable Conjunction
+Entangled States Simulation
+Relative Phase Introduction
+NP-complete Problem Speed-up
+Boolean Valued Models
+Heyting Valued Models
+Dedekind Real Numbers
+Topos Quantum Theory (TQT)
+Paraconsistent ZFC Models
+ParaQNN Architecture
+<
+Paraconsistent-Lib
+<
+Principle of Explosion (ECQ)
+NF-paraconsistency
+Quasi-negation
+F-structures (Fidel)
+Logics of Formal Inconsistency (LFI)
+Inconsistency Handling
+Distance-based Semantics
+Minimal Model Features
+Deterministic TMs (DTM)
+Non-deterministic TMs (NDTM)
+Theory LFI1*
+Superposed States
+Deutsch Problem
+Deutsch-Jozsa Problem
+BParTM-PTIME
+Equivalence to DTM
+Dialetheist Logic Layer
+Equation-free Discovery
+Quantum Decoherence Learning
+Rabi and Lindblad Dynamics
+Python Library
+PAL2v Algorithms
+Para-analyzer
