@@ -1,0 +1,69 @@
+{
+  "@context": {
+    "@vocab": "https://attack.mitre.org/",
+    "schema": "https://schema.org/",
+    "cipher": "https://scos.tde.agent/cipher/v1/"
+  },
+  "@type": "cipher:ThreatHuntResult",
+  "cipher:agentID": "TDE-0X99",
+  "cipher:compilationTimestamp": "2026-03-26T18:54:09.251454Z",
+  "cipher:cfdi": 0.04,
+  "cipher:status": "[VERIFIED_IOC]",
+  "cipher:attackChain": {
+    "@type": "cipher:AttackChain",
+    "cipher:adversaryProfile": "[INFERRED_BEHAVIOR] APT-class actor utilizing credential-first lateral movement via LOLBin chain",
+    "cipher:phases": [
+      {
+        "@type": "cipher:AttackPhase",
+        "cipher:tactic": "Initial Access",
+        "cipher:techniqueID": "T1078",
+        "cipher:techniqueName": "Valid Accounts",
+        "cipher:techniqueURI": "https://attack.mitre.org/techniques/T1078/",
+        "cipher:evidenceBasis": "[INFERRED_BEHAVIOR] Successful auth from anomalous source IP post-credential-stuffing window",
+        "cipher:logicHash": "SHA256_PLACEHOLDER_T1078"
+      },
+      {
+        "@type": "cipher:AttackPhase",
+        "cipher:tactic": "Execution",
+        "cipher:techniqueID": "T1059.001",
+        "cipher:techniqueName": "Command and Scripting Interpreter: PowerShell",
+        "cipher:techniqueURI": "https://attack.mitre.org/techniques/T1059/001/",
+        "cipher:evidenceBasis": "[VERIFIED_IOC] wmiprvse.exe -> powershell.exe -EncodedCommand",
+        "cipher:logicHash": "4014b5b3d48c05c09dc22e085f900bac5da8670bb83b66b28d9b2fdb877b7cf9"
+      },
+      {
+        "@type": "cipher:AttackPhase",
+        "cipher:tactic": "Defense Evasion",
+        "cipher:techniqueID": "T1070.001",
+        "cipher:techniqueName": "Indicator Removal: Clear Windows Event Logs",
+        "cipher:techniqueURI": "https://attack.mitre.org/techniques/T1070/001/",
+        "cipher:evidenceBasis": "[VERIFIED_IOC] EventID 1102 detected - Security log cleared",
+        "cipher:logicHash": "351fb8a2bed7eab1b1992e59798d21fafa46623b4f02b674567a79f9bb087401"
+      },
+      {
+        "@type": "cipher:AttackPhase",
+        "cipher:tactic": "Credential Access",
+        "cipher:techniqueID": "T1003.001",
+        "cipher:techniqueName": "OS Credential Dumping: LSASS Memory",
+        "cipher:techniqueURI": "https://attack.mitre.org/techniques/T1003/001/",
+        "cipher:evidenceBasis": "[VERIFIED_IOC] GrantedAccess 0x1F0FFF on lsass.exe from non-security process",
+        "cipher:logicHash": "39c35e6cf68423ede9e8eaf929d3a0ad6037b19d9b0c38ff0f31cede085207ef"
+      },
+      {
+        "@type": "cipher:AttackPhase",
+        "cipher:tactic": "Lateral Movement",
+        "cipher:techniqueID": "T1047",
+        "cipher:techniqueName": "Windows Management Instrumentation",
+        "cipher:techniqueURI": "https://attack.mitre.org/techniques/T1047/",
+        "cipher:evidenceBasis": "[INFERRED_BEHAVIOR] WMI remote execution spawning child processes on target hosts",
+        "cipher:logicHash": "4014b5b3d48c05c09dc22e085f900bac5da8670bb83b66b28d9b2fdb877b7cf9"
+      }
+    ]
+  },
+  "cipher:ruleProvenance": {
+    "sigma_lsass_sha256": "39c35e6cf68423ede9e8eaf929d3a0ad6037b19d9b0c38ff0f31cede085207ef",
+    "sigma_lolbin_lateral_sha256": "4014b5b3d48c05c09dc22e085f900bac5da8670bb83b66b28d9b2fdb877b7cf9",
+    "sigma_void_cartography_sha256": "351fb8a2bed7eab1b1992e59798d21fafa46623b4f02b674567a79f9bb087401",
+    "yara_mimikatz_sha256": "0771edb5c8ec04ebeae934f54ec79e054b2e6274feeca32e5ce702ae5e02f31d"
+  }
+}

@@ -1,0 +1,31 @@
+title: 'Windows Event Log Cleared - Void Cartography Evasion Indicator'
+id: 'c6d4e0f3-0b52-4c7d-ae8f-9a1b3c4d6e7f'
+status: stable
+description: 'Detects clearing of Windows Security or System event logs via wevtutil,
+    Clear-EventLog, or via EventID 1102/104. Applied Void Cartography Lens: the absence
+    of standard telemetry is itself the indicator of evasion. Maps to T1070.001.'
+author: 'Cipher (SCOS Agent ID: TDE-0X99)'
+date: '2026/03/27'
+references:
+    - 'https://attack.mitre.org/techniques/T1070/001/'
+logsource:
+    product: windows
+    service: security
+detection:
+    selection_log_clear:
+        EventID:
+            - 1102
+            - 104
+    selection_wevtutil:
+        EventID: 4688
+        CommandLine|contains:
+            - 'wevtutil cl'
+            - 'wevtutil clear-log'
+            - 'Clear-EventLog'
+    condition: 'selection_log_clear or selection_wevtutil'
+falsepositives:
+    - 'Authorized IT maintenance during scheduled downtime windows'
+level: critical
+tags:
+    - 'attack.defense_evasion'
+    - 'attack.t1070.001'

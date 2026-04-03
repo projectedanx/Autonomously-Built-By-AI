@@ -1,0 +1,43 @@
+title: 'LOLBin Lateral Movement - WMI Spawning Encoded PowerShell'
+id: 'b5c3d9e2-fa41-4b6c-9d7e-8f0a2b3c5d6e'
+status: stable
+description: 'Detects wmiprvse.exe or wmic.exe spawning PowerShell with Base64-encoded
+    command arguments. Behavioral detection on process ancestry and command entropy,
+    not file hash. Covers T1047 + T1059.001 LOLBin lateral movement chain.'
+author: 'Cipher (SCOS Agent ID: TDE-0X99)'
+date: '2026/03/27'
+references:
+    - 'https://attack.mitre.org/techniques/T1047/'
+    - 'https://attack.mitre.org/techniques/T1059/001/'
+    - 'https://attack.mitre.org/techniques/T1021/'
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent_wmi:
+        ParentImage|endswith:
+            - '\wmiprvse.exe'
+            - '\wmic.exe'
+    selection_child_encoded_ps:
+        Image|endswith:
+            - '\powershell.exe'
+            - '\pwsh.exe'
+        CommandLine|contains:
+            - '-EncodedCommand'
+            - '-enc '
+            - ' -e '
+    filter_authorized_mgmt:
+        CommandLine|contains:
+            - 'SCCM'
+            - 'ConfigMgr'
+            - 'IntuneManagement'
+    condition: 'selection_parent_wmi and selection_child_encoded_ps and not filter_authorized_mgmt'
+falsepositives:
+    - 'Authorized SCCM or Intune remote management operations'
+level: high
+tags:
+    - 'attack.lateral_movement'
+    - 'attack.execution'
+    - 'attack.t1047'
+    - 'attack.t1059.001'
+    - 'attack.t1021'
