@@ -1,0 +1,37 @@
+{
+  "prp_version": "1.0",
+  "metadata": {
+    "id": "PRP-CRITICAL-REQ-20260404-140511-CDC82B",
+    "author": "Meta-Prompt Designer (Automated Scaffold)",
+    "drp_lineage": "DRP-CRITICAL-REQUIREMENTS-PRP-2026",
+    "source_file": "Together Mixture Of Agents (MoA).md"
+  },
+  "context": {
+    "domain_worldview": "Sovereign Context Engineering",
+    "idealized_physical_system": {
+      "ips_description": "Extracted from source.",
+      "ips_scope_boundary": "Defined by raw intent boundaries."
+    }
+  },
+  "constraints_and_invariants": {
+    "preconditions": [
+      {
+        "id": "PRE_1",
+        "description": "Raw intent parsed successfully."
+      }
+    ],
+    "postconditions": [
+      {
+        "id": "POST_1",
+        "description": "Valid execution artifact generated."
+      }
+    ],
+    "invariants": [
+      {
+        "id": "INV_1",
+        "description": "No fluff. No subjective adjectives."
+      }
+    ]
+  },
+  "raw_intent_snippet": "# Together Mixture Of Agents (MoA)\n\n## ![][image1] What is Together MoA?\n\nMixture of Agents (MoA) is a novel approach that leverages the collective strengths of multiple LLMs to enhance performance, achieving state-of-the-art results. By employing a layered architecture where each layer comprises several LLM agents, **MoA significantly outperforms** GPT-4 Omni\u2019s 57.5% on AlpacaEval 2.0 with a score of 65.1%, using only open-source models\\!\n\nThe way Together MoA works is that given a prompt, like..."
+}
