@@ -2,7 +2,15 @@ import sys
 import os
 from state_manager import StateManager
 
-def main():
+def main() -> None:
+    """Main entry point for the Sovereign Context Engineering Workspace orchestrator.
+
+    Determines the current session's role (SOVEREIGN, WORKER, or IDLE) based on
+    the workspace state, and executes the corresponding protocol logic.
+
+    Returns:
+        None
+    """
     manager = StateManager()
     role = manager.determine_session_role()
 

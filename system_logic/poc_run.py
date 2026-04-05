@@ -3,7 +3,17 @@ from prp_forge import PRPForge
 from task_dispatcher import TaskDispatcher
 from state_manager import StateManager
 
-def run_poc():
+def run_poc() -> None:
+    """Executes a Proof of Concept (POC) run of the Sovereign workflow.
+
+    This function simulates the role of the Sovereign Node. It reads the
+    first unprocessed context file from the inbox, generates a Cognitive
+    Contract (PRP) from it using the PRPForge, dispatches a task based on
+    that PRP, and finally marks the context file as processed.
+
+    Returns:
+        None
+    """
     manager = StateManager()
     forge = PRPForge()
     dispatcher = TaskDispatcher()

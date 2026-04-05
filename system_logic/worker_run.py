@@ -2,7 +2,17 @@ import os
 import json
 from state_manager import StateManager
 
-def run_worker():
+def run_worker() -> None:
+    """Executes the worker swarm protocol.
+
+    This function claims a pending task from the delegated tasks directory,
+    reads the task and its associated Cognitive Contract (PRP), simulates
+    the execution of the task to generate an artifact, and then marks the
+    task as complete.
+
+    Returns:
+        None
+    """
     manager = StateManager()
 
     tasks = manager.get_pending_tasks()
