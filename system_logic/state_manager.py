@@ -21,6 +21,8 @@ class StateManager:
         self.contracts_dir = os.path.join(self.root, "cognitive_contracts")
         self.tasks_dir = os.path.join(self.root, "delegated_tasks")
         self.completed_dir = os.path.join(self.root, "completed_artifacts")
+        self.scar_archive_dir = os.path.join(self.root, "scar_archive")
+        self.scars_file = os.path.join(self.scar_archive_dir, "scars.yaml")
         self.state_file = os.path.join(self.root, ".workspace_state.json")
 
         self._ensure_dirs()
@@ -31,7 +33,7 @@ class StateManager:
         Returns:
             None
         """
-        for d in [self.inbox_dir, self.contracts_dir, self.tasks_dir, self.completed_dir]:
+        for d in [self.inbox_dir, self.contracts_dir, self.tasks_dir, self.completed_dir, self.scar_archive_dir]:
             os.makedirs(d, exist_ok=True)
 
     def get_unprocessed_context(self) -> list:
@@ -129,6 +131,36 @@ class StateManager:
         with open(self.state_file, 'w') as f:
             json.dump(state, f, indent=2)
 
+    def record_scar(self, scar_data: dict) -> None:
+        """Records a Symbolic Scar to scars.yaml, implementing Autophagic Debridement.
+
+        Args:
+            scar_data: The dictionary containing scar information (id, timestamp, etc.).
+        """
+        import yaml
+
+        # Load existing scars
+        scars = []
+        if os.path.exists(self.scars_file):
+            try:
+                with open(self.scars_file, 'r') as f:
+                    scars = yaml.safe_load(f) or []
+            except Exception:
+                scars = []
+
+        # Append new scar
+        scars.append(scar_data)
+
+        # Autophagic Debridement: prune if > 40
+        if len(scars) > 40:
+            scars = scars[-40:]
+
+        # Write back
+        with open(self.scars_file, 'w') as f:
+            yaml.dump(scars, f, default_flow_style=False, sort_keys=False)
+
+        self._git_commit(f"Recorded scar: {scar_data.get('id', 'UNKNOWN')}")
+
     def _git_commit(self, message: str) -> None:
         """Commits changes to the git repository with the given message.
 
@@ -168,3 +200,37 @@ class StateManager:
             return "SOVEREIGN"
 
         return "IDLE"
+
+    def reingest_artifacts(self) -> None:
+        """Copies completed artifacts back into context_inbox with a REINGESTED_ prefix.
+
+        Prevents infinite loops by not re-ingesting artifacts that already have
+        the REINGESTED_ prefix, or if they have already been processed.
+        """
+        import shutil
+        from glob import glob
+
+        all_artifacts = glob(os.path.join(self.completed_dir, "*.md"))
+        count = 0
+
+        state = self._load_state()
+        processed = state.get("processed_context", [])
+
+        for artifact_path in all_artifacts:
+            filename = os.path.basename(artifact_path)
+
+            # Prevent infinite loops
+            if filename.startswith("REINGESTED_"):
+                continue
+
+            new_filename = f"REINGESTED_{filename}"
+            if new_filename in processed:
+                continue
+
+            dst = os.path.join(self.inbox_dir, new_filename)
+            if not os.path.exists(dst):
+                shutil.copy2(artifact_path, dst)
+                count += 1
+
+        if count > 0:
+            self._git_commit(f"Re-ingested {count} artifacts into context_inbox")

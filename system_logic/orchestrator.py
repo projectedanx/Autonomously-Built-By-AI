@@ -72,6 +72,8 @@ def main() -> None:
 
             manager.complete_task(target_task, artifact_content, artifact_name)
             print(f"Task completed. Artifact saved to /completed_artifacts/{artifact_name}")
+        print("Running artifact re-ingestion cycle...")
+        manager.reingest_artifacts()
 
     else:
         print("Workspace is IDLE. No pending tasks and no new context.")
