@@ -81,3 +81,6 @@ This will claim a task from `/delegated_tasks/`, simulate execution based on the
 
 ---
 *Initiated via DRP-CRITICAL-REQUIREMENTS-PRP-2026*
+
+### Knowledge Memory Update
+The `agent_profiles` directory has been restructured to house agent definitions categorized by distinct personas/roles. Each folder contains the specific markdown and yaml files associated with that agent profile. This improves organization and facilitates the Sovereign Node's ability to easily dispatch tasks to specific agents based on their defined Cognitive Contracts (PRPs).
