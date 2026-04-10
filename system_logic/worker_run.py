@@ -2,25 +2,13 @@ import os
 import json
 from state_manager import StateManager
 
-def run_worker() -> None:
-    """Executes the worker swarm protocol.
+def execute_task(manager: StateManager, target_task: str) -> None:
+    """Executes a single task based on its Cognitive Contract (PRP).
 
-    This function claims a pending task from the delegated tasks directory,
-    reads the task and its associated Cognitive Contract (PRP), simulates
-    the execution of the task to generate an artifact, and then marks the
-    task as complete.
-
-    Returns:
-        None
+    Args:
+        manager: The StateManager instance.
+        target_task: The file path to the task to execute.
     """
-    manager = StateManager()
-
-    tasks = manager.get_pending_tasks()
-    if not tasks:
-        print("No pending tasks.")
-        return
-
-    target_task = tasks[0]
     print(f"Claiming task: {target_task}")
 
     # 1. Read Task
@@ -44,6 +32,27 @@ def run_worker() -> None:
     # 4. Complete Task
     manager.complete_task(target_task, artifact_content, artifact_name)
     print(f"Task completed. Artifact saved to /completed_artifacts/{artifact_name}")
+
+def run_worker() -> None:
+    """Executes the worker swarm protocol.
+
+    This function claims a pending task from the delegated tasks directory,
+    reads the task and its associated Cognitive Contract (PRP), simulates
+    the execution of the task to generate an artifact, and then marks the
+    task as complete.
+
+    Returns:
+        None
+    """
+    manager = StateManager()
+
+    tasks = manager.get_pending_tasks()
+    if not tasks:
+        print("No pending tasks.")
+        return
+
+    target_task = tasks[0]
+    execute_task(manager, target_task)
 
 if __name__ == "__main__":
     run_worker()
