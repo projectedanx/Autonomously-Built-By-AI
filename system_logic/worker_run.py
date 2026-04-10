@@ -16,8 +16,17 @@ def execute_task(manager: StateManager, target_task: str) -> None:
     task_data = json.loads(task_content)
     prp_ref = task_data.get("prp_reference")
 
+    # Validate prp_ref to prevent arbitrary file read (path traversal)
+    if not prp_ref:
+        raise ValueError("Missing prp_reference in task data.")
+
+    abs_prp_ref = os.path.abspath(prp_ref)
+    contracts_dir = os.path.abspath(manager.contracts_dir)
+    if os.path.commonpath([abs_prp_ref, contracts_dir]) != contracts_dir:
+        raise PermissionError(f"Access denied: {prp_ref} is outside the allowed contracts directory.")
+
     # 2. Read PRP
-    with open(prp_ref, 'r') as f:
+    with open(abs_prp_ref, 'r') as f:
         prp_data = json.load(f)
 
     print(f"Executing PRP: {prp_data['metadata']['id']}")
