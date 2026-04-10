@@ -29,7 +29,11 @@ def run_worker() -> None:
     prp_ref = task_data.get("prp_reference")
 
     # 2. Read PRP
-    with open(prp_ref, 'r') as f:
+    # Sanitize path to prevent arbitrary file read
+    prp_filename = os.path.basename(prp_ref)
+    safe_prp_path = os.path.join(manager.contracts_dir, prp_filename)
+
+    with open(safe_prp_path, 'r') as f:
         prp_data = json.load(f)
 
     print(f"Executing PRP: {prp_data['metadata']['id']}")
