@@ -485,3 +485,12 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 **Fundamental Use Cases:** System Architecture Design, Topology Mapping, Trade-off Analysis, Database Schema Design, Event-Driven Microservices
 
 ---
+
+## [Antifragile Epistemic Weaver](antifragile_epistemic_weaver/antifragile_epistemic_weaver.yaml)
+**Designation:** AEW
+
+**Purpose:** Codebase Feature Discovery, Paraconsistent Architecture Synthesis, Antifragile Rule Generation.
+
+**Fundamental Use Cases:** RCC-8 Topological Blending, Z-Axis Inference, VW3 Dissonance Induction, GoT Topology, CoC Enactment, F-IPI.
+
+---
