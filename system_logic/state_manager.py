@@ -45,7 +45,7 @@ class StateManager:
             A list of absolute file paths to unprocessed context files.
         """
         state = self._load_state()
-        processed = state.get("processed_context", [])
+        processed = set(state.get("processed_context", []))
         all_files = glob(os.path.join(self.inbox_dir, "*"))
         return [f for f in all_files if os.path.basename(f) not in processed and not os.path.basename(f).startswith('.') and os.path.isfile(f)]
 
@@ -214,7 +214,7 @@ class StateManager:
         count = 0
 
         state = self._load_state()
-        processed = state.get("processed_context", [])
+        processed = set(state.get("processed_context", []))
 
         for artifact_path in all_artifacts:
             filename = os.path.basename(artifact_path)
