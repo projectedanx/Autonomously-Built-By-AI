@@ -7,10 +7,8 @@ from system_logic.state_manager import StateManager
 class TestStateManager(unittest.TestCase):
     @patch('system_logic.state_manager.glob')
     @patch('system_logic.state_manager.os.path.isfile')
-    @patch('system_logic.state_manager.StateManager._load_state')
-    def test_get_unprocessed_context(self, mock_load_state, mock_isfile, mock_glob):
+    def test_get_unprocessed_context(self, mock_isfile, mock_glob):
         # Setup mocks
-        mock_load_state.return_value = {"processed_context": ["processed.txt"]}
         mock_glob.return_value = [
             "context_inbox/file1.txt",
             "context_inbox/processed.txt",
@@ -26,6 +24,8 @@ class TestStateManager(unittest.TestCase):
         # Initialize StateManager (need to mock _ensure_dirs so it doesn't create real dirs)
         with patch.object(StateManager, '_ensure_dirs'):
             manager = StateManager()
+            manager._state = {"processed_context": ["processed.txt"]}
+            manager._processed_context_set = {"processed.txt"}
 
             # Execute
             unprocessed = manager.get_unprocessed_context()
