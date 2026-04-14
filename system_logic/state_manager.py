@@ -25,6 +25,9 @@ class StateManager:
         self.scars_file = os.path.join(self.scar_archive_dir, "scars.yaml")
         self.state_file = os.path.join(self.root, ".workspace_state.json")
 
+        self._state = None
+        self._processed_context_set = None
+
         self._ensure_dirs()
 
     def _ensure_dirs(self) -> None:
@@ -44,10 +47,9 @@ class StateManager:
         Returns:
             A list of absolute file paths to unprocessed context files.
         """
-        state = self._load_state()
-        processed = set(state.get("processed_context", []))
+        self._load_state()
         all_files = glob(os.path.join(self.inbox_dir, "*"))
-        return [f for f in all_files if os.path.basename(f) not in processed and not os.path.basename(f).startswith('.') and os.path.isfile(f)]
+        return [f for f in all_files if os.path.basename(f) not in self._processed_context_set and not os.path.basename(f).startswith('.') and os.path.isfile(f)]
 
     def mark_context_processed(self, filename: str) -> None:
         """Marks a given context file as processed in the workspace state.
@@ -61,9 +63,10 @@ class StateManager:
         state = self._load_state()
         if "processed_context" not in state:
             state["processed_context"] = []
-        if filename not in state["processed_context"]:
+
+        if filename not in self._processed_context_set:
             state["processed_context"].append(filename)
-        self._save_state(state)
+            self._save_state(state)
 
     def get_pending_tasks(self) -> list:
         """Retrieves a list of pending task files.
@@ -105,22 +108,28 @@ class StateManager:
         self._git_commit(f"Completed task: {os.path.basename(task_file)} -> {artifact_name}")
 
     def _load_state(self) -> dict:
-        """Loads the workspace state from the state file.
+        """Loads and caches the workspace state from the state file.
 
         Returns:
-            A dictionary containing the parsed workspace state, or an empty
-            dictionary if the file does not exist or is invalid JSON.
+            A dictionary containing the parsed workspace state.
         """
+        if self._state is not None:
+            return self._state
+
         if os.path.exists(self.state_file):
             with open(self.state_file, 'r') as f:
                 try:
-                    return json.load(f)
+                    self._state = json.load(f)
                 except json.JSONDecodeError:
-                    return {}
-        return {}
+                    self._state = {}
+        else:
+            self._state = {}
+
+        self._processed_context_set = set(self._state.get("processed_context", []))
+        return self._state
 
     def _save_state(self, state: dict) -> None:
-        """Saves the provided state dictionary to the workspace state file.
+        """Saves and caches the provided state dictionary.
 
         Args:
             state: The dictionary representing the new workspace state.
@@ -128,6 +137,8 @@ class StateManager:
         Returns:
             None
         """
+        self._state = state
+        self._processed_context_set = set(self._state.get("processed_context", []))
         with open(self.state_file, 'w') as f:
             json.dump(state, f, indent=2)
 
@@ -213,8 +224,7 @@ class StateManager:
         all_artifacts = glob(os.path.join(self.completed_dir, "*.md"))
         count = 0
 
-        state = self._load_state()
-        processed = set(state.get("processed_context", []))
+        self._load_state()
 
         for artifact_path in all_artifacts:
             filename = os.path.basename(artifact_path)
@@ -224,7 +234,7 @@ class StateManager:
                 continue
 
             new_filename = f"REINGESTED_{filename}"
-            if new_filename in processed:
+            if new_filename in self._processed_context_set:
                 continue
 
             dst = os.path.join(self.inbox_dir, new_filename)
