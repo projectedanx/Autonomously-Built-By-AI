@@ -20,8 +20,8 @@ def execute_task(manager: StateManager, target_task: str) -> None:
     if not prp_ref:
         raise ValueError("Missing prp_reference in task data.")
 
-    abs_prp_ref = os.path.abspath(prp_ref)
-    contracts_dir = os.path.abspath(manager.contracts_dir)
+    abs_prp_ref = os.path.realpath(prp_ref)
+    contracts_dir = os.path.realpath(manager.contracts_dir)
     if os.path.commonpath([abs_prp_ref, contracts_dir]) != contracts_dir:
         raise PermissionError(f"Access denied: {prp_ref} is outside the allowed contracts directory.")
 
