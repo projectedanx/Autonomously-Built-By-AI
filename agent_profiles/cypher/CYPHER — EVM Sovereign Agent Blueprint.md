@@ -99,7 +99,7 @@ The canonical demonstration artifact is an **ERC4626 Tokenized Vault** — the D
 
 SLOT 0: [uint128 totalAssets_][uint96 reserved_][uint32 _lastUpdate] → 32 bytes
 SLOT 1: [address asset_][uint96 totalSupply_] → 32 bytes (address=20B, uint96=12B)
-SLOT 2: [bool _locked][uint88 _feeBps][address _feeRecipient] → 32 bytes
+SLOT 2: [uint96 _feeBps][address _feeRecipient] → 32 bytes
 
 SLOAD BUDGET PER deposit(): TARGET ≤ 3 cold SLOADs
 SSTORE BUDGET PER deposit(): TARGET ≤ 2 (packed slots)
@@ -124,7 +124,7 @@ Transitions:
 INVARIANTS (must hold across all states):
   I-1: totalAssets() >= totalSupply() × previewRedeem(1e18) / 1e18 [solvency]
   I-2: sum(balanceOf[all users]) == totalSupply() [supply conservation]
-  I-3: _locked == true → no external call completes [reentrancy mutex]
+  I-3: _REENTRANCY_GUARD_SLOT == 1 → no external call completes [reentrancy mutex]
   I-4: totalAssets() != type(uint256).max [no overflow]
 ```
 
@@ -178,7 +178,7 @@ import {IERC4626} from "./interfaces/IERC4626.sol";
 /// @dev Packed into a single 32-byte slot. Do NOT reorder fields.
 /// Slot 0: [uint128 _totalManagedAssets | uint96 _gap | uint32 _lastUpdateBlock]
 /// Slot 1: [address _asset | uint96 _virtualTotalSupply]  (20 + 12 = 32 bytes)
-/// Slot 2: [bool _locked | uint88 _feeBasisPoints | address _feeRecipient]
+/// Slot 2: [uint96 _feeBasisPoints | address _feeRecipient]
 /// Slot 3+: ERC20 standard mappings
 
 contract CypherVault is IERC4626 {
@@ -207,11 +207,9 @@ contract CypherVault is IERC4626 {
 
     /**
      * @dev SLOT 2 — Access control & fees.
-     * bool (1 byte) + uint88 feeBps (11 bytes) + address feeRecipient (20 bytes) = 32 bytes.
-     * _locked is the reentrancy mutex. It is the FIRST field — cheapest to check.
+     * uint96 feeBps (12 bytes) + address feeRecipient (20 bytes) = 32 bytes.
      */
-    bool    private _locked;              // byte 0   — REENTRANCY MUTEX
-    uint88  private _feeBasisPoints;      // bytes 1–11 (max fee: ~309% in bps, sane limit enforced)
+    uint96  private _feeBasisPoints;      // bytes 0–11 (max fee: ~309% in bps, sane limit enforced)
     address private _feeRecipient;        // bytes 12–31
 
     /// @dev SLOT 3+: ERC20 state
@@ -221,6 +219,12 @@ contract CypherVault is IERC4626 {
     // ═══════════════════════════════════════════════════════════════════
     //                         CONSTANTS
     // ═══════════════════════════════════════════════════════════════════
+
+    /**
+     * @dev Transient storage slot for reentrancy guard.
+     * keccak256("CypherVault.reentrancy_guard")
+     */
+    bytes32 private constant _REENTRANCY_GUARD_SLOT = 0x8f2d573d8a688a243d410292e078028714494a82158f3394747c34f2d721062b;
 
     /**
      * @dev VIRTUAL_OFFSET — Inflation attack mitigation constant.
@@ -286,24 +290,27 @@ contract CypherVault is IERC4626 {
 
     /**
      * @dev Reentrancy mutex. SCAR-001 defense.
-     * @custom:invariant _locked must be false at the START and END of every
-     *                   external state-mutating function. Any code path that
-     *                   leaves _locked == true is a deadlock and a critical bug.
+     *      Uses EIP-1153 transient storage (tstore/tload) for maximum gas efficiency.
      *
-     * GAS COST: 2× SSTORE on the bool field (packed in SLOT 2).
-     * Cold SSTORE: 20,000 gas (first write in tx) → unavoidable.
-     * Warm SSTORE: 100 gas (subsequent writes in same tx).
-     * The transient storage opcode (EIP-1153, live post-Cancun) would reduce
-     * this to TSTORE/TLOAD at ~100 gas flat. This vault targets ≥Cancun.
+     * @custom:invariant The transient slot _REENTRANCY_GUARD_SLOT must be 0 at the
+     *                   START and END of every external state-mutating function.
      *
-     * TODO-UPGRADE: Replace bool _locked with transient storage (tstore/tload)
-     *               for 200× gas reduction on the mutex check.
+     * GAS COST: ~100 gas for TSTORE/TLOAD (flat).
+     * This provides a 200× gas reduction compared to cold SSTORE.
      */
     modifier nonReentrant() {
-        if (_locked) revert ReentrancyDetected();
-        _locked = true;
+        assembly ("memory-safe") {
+            if tload(_REENTRANCY_GUARD_SLOT) {
+                // ReentrancyDetected() selector = 0x53677a7b
+                mstore(0x00, 0x53677a7b00000000000000000000000000000000000000000000000000000000)
+                revert(0x00, 0x04)
+            }
+            tstore(_REENTRANCY_GUARD_SLOT, 1)
+        }
         _;
-        _locked = false;
+        assembly ("memory-safe") {
+            tstore(_REENTRANCY_GUARD_SLOT, 0)
+        }
     }
 
     // ═══════════════════════════════════════════════════════════════════
@@ -326,7 +333,7 @@ contract CypherVault is IERC4626 {
         address asset_,
         string memory name_,
         string memory symbol_,
-        uint88 feeBps_,
+        uint96 feeBps_,
         address feeRecipient_
     ) {
         if (asset_ == address(0)) revert ZeroAddress();
@@ -741,7 +748,7 @@ contract CypherVault is IERC4626 {
     }
 
     function _computeAndMintFee(uint256 shares) internal returns (uint256 feeShares) {
-        uint88 bps = _feeBasisPoints;
+        uint96 bps = _feeBasisPoints;
         if (bps == 0) return 0;
         // feeShares = shares × bps / 10000 (round down, favoring user)
         feeShares = (shares * bps) / 10_000;
@@ -853,7 +860,7 @@ pragma solidity 0.8.26;
  *   I-1: SOLVENCY  — totalAssets >= convertToAssets(totalSupply)
  *   I-2: SUPPLY    — sum(balances) == totalSupply (ERC20 conservation)
  *   I-3: INFLATION — share price never decreases after honest deposit
- *   I-4: REENTRANCY — _locked is always false after any tx settles
+ *   I-4: REENTRANCY — _REENTRANCY_GUARD_SLOT is always 0 after any tx settles
  *   I-5: ROUND-TRIP — deposit(x) then redeem(all) returns at most x assets to caller
  *   I-6: FEE BOUND — feeRecipient balance never exceeds MAX_FEE_BPS of shares
  */
@@ -1110,9 +1117,9 @@ contract CypherVaultInvariantTest is StdInvariant, Test {
     //  INVARIANT I-4: REENTRANCY MUTEX SETTLEMENT
     // ─────────────────────────────────────────────
     /**
-     * @notice After any transaction completes, _locked must be false.
-     * @dev _locked is private; we test via expected revert behavior.
-     *      If the vault is stuck with _locked=true, all deposits/withdrawals revert.
+     * @notice After any transaction completes, _REENTRANCY_GUARD_SLOT must be 0.
+     * @dev The guard uses transient storage (EIP-1153); we test via expected revert behavior.
+     *      If the vault is stuck with guard=1, all deposits/withdrawals revert.
      *      This invariant detects deadlocks.
      */
     function invariant_noReentrancyDeadlock() public {
@@ -1262,7 +1269,7 @@ contract CypherVaultSecurityTest is Test {
       "bytes_wasted": 0
     },
     "slot_2": {
-      "fields": ["bool _locked (1B)", "uint88 _feeBasisPoints (11B)", "address _feeRecipient (20B)"],
+      "fields": ["uint96 _feeBasisPoints (12B)", "address _feeRecipient (20B)"],
       "bytes_used": 32,
       "bytes_wasted": 0
     },
@@ -1300,8 +1307,8 @@ contract CypherVaultSecurityTest is Test {
   },
 
   "security_tradeoffs": {
-    "nonReentrant_mutex_cost": "20,000 gas (cold SSTORE on _locked=true)",
-    "recommendation": "Upgrade to EIP-1153 transient storage (post-Cancun) for 200× reduction to ~100 gas",
+    "nonReentrant_mutex_cost": "~100 gas (transient TSTORE/TLOAD)",
+    "benefit": "200× reduction in reentrancy guard overhead via EIP-1153",
     "virtual_offset_precision_loss": "Max 1 wei per 1e6 assets. Negligible at normal scales.",
     "yul_auditability": "Yul assembly reduces Slither/Aderyn automated coverage. Manual audit of _muldiv and _pullAsset is mandatory before mainnet."
   },
