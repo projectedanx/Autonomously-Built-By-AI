@@ -1,10 +1,10 @@
 import sys
 import os
 import json
-from state_manager import StateManager
-from prp_forge import PRPForge
-from task_dispatcher import TaskDispatcher
-from worker_run import execute_task
+from system_logic.state_manager import StateManager
+from system_logic.prp_forge import PRPForge
+from system_logic.task_dispatcher import TaskDispatcher
+from system_logic.worker_run import execute_task
 
 class Orchestrator:
     """Core class that orchestrates the workflow components."""
