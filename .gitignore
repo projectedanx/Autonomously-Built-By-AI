@@ -4,3 +4,4 @@ cognitive_contracts/PRP-*.json
 delegated_tasks/TASK_*.json
 completed_artifacts/ARTIFACT_*.md
 .workspace_state.json
+.coverage

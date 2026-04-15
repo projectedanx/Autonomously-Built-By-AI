@@ -1,6 +1,6 @@
 import os
 import json
-from state_manager import StateManager
+from system_logic.state_manager import StateManager
 
 def execute_task(manager: StateManager, target_task: str) -> None:
     """Executes a single task based on its Cognitive Contract (PRP).
