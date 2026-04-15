@@ -90,7 +90,7 @@ class StateManager:
             content = f.read()
         return content
 
-    def complete_task(self, task_file: str, artifact_content: str, artifact_name: str) -> None:
+    def complete_task(self, task_file: str, artifact_content: str, artifact_name: str, commit: bool = True) -> None:
         """Saves a completed artifact, removes the task file, and commits the change.
 
         Args:
@@ -105,7 +105,8 @@ class StateManager:
         with open(artifact_path, 'w') as f:
             f.write(artifact_content)
         os.remove(task_file)
-        self._git_commit(f"Completed task: {os.path.basename(task_file)} -> {artifact_name}")
+        if commit:
+            self._git_commit(f"Completed task: {os.path.basename(task_file)} -> {artifact_name}")
 
     def _load_state(self) -> dict:
         """Loads and caches the workspace state from the state file.

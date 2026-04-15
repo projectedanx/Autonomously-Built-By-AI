@@ -63,7 +63,11 @@ def main() -> None:
         print("Action required: Claim task, execute strictly to PRP constraints, and commit artifact.")
 
         for target_task in tasks:
-            execute_task(orchestrator.manager, target_task)
+            execute_task(orchestrator.manager, target_task, commit=False)
+
+        if tasks:
+            orchestrator.manager._git_commit(f"Completed {len(tasks)} tasks.")
+
         print("Running artifact re-ingestion cycle...")
         orchestrator.manager.reingest_artifacts()
 
