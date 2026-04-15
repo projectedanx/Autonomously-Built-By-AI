@@ -2,7 +2,7 @@ import os
 import json
 from state_manager import StateManager
 
-def execute_task(manager: StateManager, target_task: str) -> None:
+def execute_task(manager: StateManager, target_task: str, commit: bool = True) -> None:
     """Executes a single task based on its Cognitive Contract (PRP).
 
     Args:
@@ -39,7 +39,7 @@ def execute_task(manager: StateManager, target_task: str) -> None:
     artifact_name = f"ARTIFACT_{prp_data['metadata']['id']}.md"
 
     # 4. Complete Task
-    manager.complete_task(target_task, artifact_content, artifact_name)
+    manager.complete_task(target_task, artifact_content, artifact_name, commit=commit)
     print(f"Task completed. Artifact saved to /completed_artifacts/{artifact_name}")
 
 def run_worker() -> None:
