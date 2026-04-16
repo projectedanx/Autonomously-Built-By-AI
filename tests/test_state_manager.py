@@ -48,10 +48,13 @@ def test_claim_task(tmp_path):
         f.write(expected_content)
 
     # Call claim_task
-    actual_content = manager.claim_task(task_file_path)
+    actual_content, claimed_path = manager.claim_task(task_file_path)
 
     # Verify the content matches
     assert actual_content == expected_content, "The returned content should match the file content"
+    assert claimed_path == task_file_path + ".claimed", "The claimed path should have .claimed suffix"
+    assert os.path.exists(claimed_path), "Claimed task file should exist"
+    assert not os.path.exists(task_file_path), "Original task file should be renamed"
 
 def test_claim_task_not_found(tmp_path):
     # Initialize StateManager with a temporary workspace

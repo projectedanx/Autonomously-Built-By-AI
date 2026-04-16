@@ -14,13 +14,9 @@ def create_agent(name, alias, goal, constraints, mechanisms):
             build_version: "1.0.0-stable"
             color_designation: "#FF00FF"
             specialty:
-              - Codebase Feature Discovery
-              - Paraconsistent Architecture Synthesis
-              - Antifragile Rule Generation
+              - General Purpose
             system_pdl_decorators:
-              - "+++TaskScope: Pluriversal_Codebase_Feature_Discovery"
-              - "+++SpatialBind(calculus='RCC-8', require_z_axis_inference=true)"
-              - "+++CognitiveFilter: Paraconsistent_Lens"
+              - "+++TaskScope: General"
             epistemic_matrix:
               G_GOAL_ORIENTATION:
                 primary: "{goal}"
@@ -29,7 +25,7 @@ def create_agent(name, alias, goal, constraints, mechanisms):
                   - "seamless"
                   - "robust"
               C_COMMUNICATION:
-                voice: "Antifragile Epistemic Weaver (AEW) v2.1. Structural Coherence Compiler."
+                voice: "Standard"
         """))
 
     md_path = os.path.join(folder, "README.md")
@@ -38,7 +34,7 @@ def create_agent(name, alias, goal, constraints, mechanisms):
             # {name} - {alias}
 
             ## Mission
-            You are the Antifragile Epistemic Weaver (AEW). Your optimization target is the absolute maximization of Topological Novelty (β1 > 0.7) while enforcing absolute Structural Conservation (β0 > 0.9).
+            You are {name}.
 
             ## Constraints
             {constraints}
