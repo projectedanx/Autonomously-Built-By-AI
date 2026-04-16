@@ -12,7 +12,11 @@ def execute_task(manager: StateManager, target_task: str, commit: bool = True) -
     print(f"Claiming task: {target_task}")
 
     # 1. Read Task
-    task_content = manager.claim_task(target_task)
+    try:
+        task_content, claimed_task_path = manager.claim_task(target_task)
+    except FileNotFoundError:
+        print(f"Task {target_task} was already claimed by another worker.")
+        return
     task_data = json.loads(task_content)
     prp_ref = task_data.get("prp_reference")
 
@@ -39,7 +43,7 @@ def execute_task(manager: StateManager, target_task: str, commit: bool = True) -
     artifact_name = f"ARTIFACT_{prp_data['metadata']['id']}.md"
 
     # 4. Complete Task
-    manager.complete_task(target_task, artifact_content, artifact_name, commit=commit)
+    manager.complete_task(claimed_task_path, artifact_content, artifact_name, commit=commit)
     print(f"Task completed. Artifact saved to /completed_artifacts/{artifact_name}")
 
 def run_worker() -> None:

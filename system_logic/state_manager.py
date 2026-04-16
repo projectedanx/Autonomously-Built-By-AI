@@ -75,20 +75,31 @@ class StateManager:
             A list of file paths to pending tasks (JSON, YAML, or MD files).
         """
         all_tasks = glob(os.path.join(self.tasks_dir, "*.json")) + glob(os.path.join(self.tasks_dir, "*.yaml")) + glob(os.path.join(self.tasks_dir, "*.md"))
-        return [t for t in all_tasks if os.path.isfile(t)]
+        return [t for t in all_tasks if os.path.isfile(t) and not t.endswith(".claimed")]
 
-    def claim_task(self, task_file: str) -> str:
-        """Reads and returns the content of a task file.
+    def claim_task(self, task_file: str) -> tuple[str, str]:
+        """Atomically claims a task file and returns its content.
+
+        Uses os.rename to prevent race conditions among concurrent workers.
 
         Args:
-            task_file: The path to the task file to read.
+            task_file: The path to the task file to claim.
 
         Returns:
-            The raw string content of the task file.
+            A tuple containing the raw string content of the task file and the new claimed path.
+
+        Raises:
+            FileNotFoundError: If the task has already been claimed by another worker.
         """
-        with open(task_file, 'r') as f:
+        claimed_file = task_file + ".claimed"
+        try:
+            os.rename(task_file, claimed_file)
+        except OSError:
+            raise FileNotFoundError(f"Task {task_file} already claimed or does not exist.")
+
+        with open(claimed_file, 'r') as f:
             content = f.read()
-        return content
+        return content, claimed_file
 
     def complete_task(self, task_file: str, artifact_content: str, artifact_name: str, commit: bool = True) -> None:
         """Saves a completed artifact, removes the task file, and commits the change.

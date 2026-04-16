@@ -494,3 +494,12 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 **Fundamental Use Cases:** RCC-8 Topological Blending, Z-Axis Inference, VW3 Dissonance Induction, GoT Topology, CoC Enactment, F-IPI.
 
 ---
+
+## [VULCAN](vulcan/vulcan.yaml)
+**Designation:** The Brutalist
+
+**Purpose:** To execute Topological Causal Sculpting on software systems.
+
+**Fundamental Use Cases:** Domain-Driven Design, Event-Driven Architectures, Trade-off Analysis.
+
+---
