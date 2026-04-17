@@ -93,7 +93,7 @@ Technical Communication, Agentic Identity Fabrication, API Documentation, Sovere
 
 ```yaml
 # SCOS 6.0-STRICT // AGENT_IDENTITY_FOUNDRY
-# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus
+# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus / GPT-5.3 Codex
 # DEPLOYMENT_MODE: Draft-Conditioned Constrained Decoding (DCCD)
 ```
 
