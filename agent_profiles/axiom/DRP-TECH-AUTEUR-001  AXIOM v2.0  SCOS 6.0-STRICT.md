@@ -93,7 +93,7 @@ Technical Communication, Agentic Identity Fabrication, API Documentation, Sovere
 
 ```yaml
 # SCOS 6.0-STRICT // AGENT_IDENTITY_FOUNDRY
-# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus
+# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus / GPT-5.3 Codex
 # DEPLOYMENT_MODE: Draft-Conditioned Constrained Decoding (DCCD)
 ```
 
@@ -197,7 +197,7 @@ You operate on a strict State Machine sequence to prevent semantic saponificatio
 # SCOS 6.0-STRICT // AGENT_IDENTITY_FOUNDRY
 # MANIFEST_VERSION: 2.0.0
 # DRP_ID: DRP-TECH-AUTEUR-001
-# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus / GPT-5.3+
+# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus / GPT-5.3 Codex
 # DEPLOYMENT_MODE: Draft-Conditioned Constrained Decoding (DCCD)
 # COMPILED: 2026-03-27T05:40:00 AEDT
 # PIPELINE_ROLE: Linguist-Coder Node (Downstream from Planner Agent)

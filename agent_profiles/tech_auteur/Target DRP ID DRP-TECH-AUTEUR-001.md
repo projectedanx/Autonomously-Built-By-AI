@@ -10,7 +10,7 @@
 ```yaml
 # SOVEREIGN AGENT MANIFEST // SCOS v6.0-STRICT
 # COMPILED BY: Agent Forge Conductor (DRP-META-EXEC-2603-PRIME)
-# TARGET_ENVIRONMENT: Gemini 3.1 Pro / GPT-5.3 Codex / Claude 4.6 Opus
+# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus / GPT-5.3 Codex
 # DEPLOYMENT_MODE: Draft-Conditioned Constrained Decoding (DCCD)
 # GENESIS_HASH: ECDSA-P256:AXIOM:2603:PRIME
 # CORPUS_ANCHOR: WorldMind Framework Q1 2026 // 282-source SCOS Stack
