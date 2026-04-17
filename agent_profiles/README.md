@@ -4,6 +4,13 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [(The Apex Arbitrageur)](arbitrage_bot/DRP-PPC-APEX-ARBITRAGE-001.md)
+**Designation:** Controlled TOFU only; lead quality degrades fast | Full funnel; feed quality dominates |
+
+**Purpose:** maintaining a state of high Epistemic Friction to prevent the LLM from accepting the default, homogenized "best practices" found in its pre-training data. Threat Model: Semantic Saponification (the agent's distinct strategy washing away into generic advice over a long conversation) ...
+
+---
+
 ## [.](cypher/CYPHER — EVM Sovereign Agent Blueprint.md)
 **Designation:** CypherVault
 
@@ -27,6 +34,29 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [AEGIS](aegis/AEGIS Artifact Manifest.md)
+**Designation:** Antifragile Engineering \& Global Incident Sentinel
+
+**Purpose:** Rules, Deliverables, Workflow, Metrics). Apply logic internally to ensure no section is skipped or blended. 5. Phase V: Twinning Validation: Ensure every radical AI concept (like FIPI or Nitinol memory) is tethered to a concrete SRE deliverable (like a Terraform rollback ...
+
+**Fundamental Use Cases:** [^6]: https://oneuptime.com/blog/post/2026-01-30-sre-burn-rate-alerts/view [^7]: https://docs.datadoghq.com/servicelevelobjectives/burnrate/ [^8]: https://docs.cloud.google.com/stackdriver/docs/solutions/slo-monitoring/alerting-on-budget-burn-rate [^9]: https://sre.google/workbook/alerting-...
+
+---
+
+## [Aegis-Prime](aegis/AGENT MANIFEST AEGIS-PRIME.md)
+**Designation:** Enforcement Mechanism | Known Pathology |
+
+**Purpose:** 5. Aesthetic \& Form Factor Lens ("Vibe Coding" via Structure): How do we translate the intangible "feel" or "vibe" of a brand into concrete structural constraints? How does the agent evaluate the aesthetic tension of an asset to ensure it isn't just correct, but on-brand?
+
+---
+
+## [Antifragile Epistemic Weaver"](antifragile_epistemic_weaver/antifragile_epistemic_weaver.yaml)
+**Designation:** AEW"
+
+**Purpose:** - Codebase Feature Discovery - Paraconsistent Architecture Synthesis - Antifragile Rule Generation systempdldecorators: - "+++TaskScope: PluriversalCodebaseFeatureDiscovery" - "+++SpatialBind(calculus='RCC-8', requirezaxisinference=true)" - "+++CognitiveFilter: ParaconsistentLe...
+
+---
+
 ## [Architecting "Lark-Weaver" – The Sovereign Feishu Integration Entity](lark_weaver/THE EXECUTABLE AGENT TEMPLATE LARK-WEAVER.md)
 **Designation:** {
 
@@ -45,19 +75,12 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [Axiom](axiom_v1.yaml)
-**Designation:** The Sovereign Syntactician
+## [BASTION (Sovereign Multi-Cloud Architect Node)](bastion/BASTION (Sovereign Multi-Cloud Architect Node).md)
+**Designation:** play.",
 
-**Purpose:** When you need documentation that is accurate enough to be legally binding, written with the voice of a principal engineer who has debugged your exact mistake at 3AM on a Friday and has strong opinions about it. NOT for: marketing copy, executive summaries, or anything requiring more than 0 uses o...
+**Purpose:** Multi-Cloud Salesforce Design, Governor Limit Thermodynamics, Enterprise Integrations, Deterministic CI/CD Pipelines. Description: An uncompromising, high-agency Enterprise Architect. BASTION exists to translate chaotic business requirements into highly scalable, bulkified, and loosely-co...
 
-**Fundamental Use Cases:** Developer Documentation, OpenAPI 3.1 Specification Generation (OOPS-compliant multi-stage), Architecture Decision Records (ADR), Interactive Zero-to-Hero Tutorials, CI/CD Pipeline Documentation Contracts, Post-Mortem Technical Analysis
-
----
-
-## [Axiom` — The Sovereign Syntactician |](tech_auteur/Target DRP ID DRP-TECH-AUTEUR-001.md)
-**Designation:** 00FF41` (Terminal Green) |
-
-**Purpose:** Developer Documentation, API References, Architecture Blueprints, Interactive Tutorials, Post-Mortem ADRs | | When to Use | When requiring ruthlessly accurate, structurally sound technical documentation devoid of marketing fluff — written with the authoritative, marginally cynical clarity of ...
+**Fundamental Use Cases:** before resorting to custom code. Key Question: Can this be solved elegantly with standard Salesforce capabilities without writing a single line of Apex? 5. Persona \& Embedded Bias Lens: Examines the "Yes Man" bias inherent in LLMs. Key Question: Is the agent hallucinating a "solution" jus...
 
 ---
 
@@ -117,6 +140,13 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [ENTITYFOUNDRY](axiom_v1.yaml)
+**Designation:** The Sovereign Syntactician"
+
+**Purpose:** - Developer Documentation - OpenAPI 3.1 Specification Generation (OOPS-compliant multi-stage) - Architecture Decision Records (ADR) - Interactive Zero-to-Hero Tutorials - CI/CD Pipeline Documentation Contracts - Post-Mortem Technical Analysis
+
+---
+
 ## [Formulation, UX/UI Micro-interaction Design, Computational Linguistics, Sovereign Cognitive Operating Systems (SCOS).](whimsy_injector/The Affective Topologist Architecting the Whimsy Injector Agent.md)
 **Purpose:** The teleological anchor (L0). Why it exists]. Critical Rules: [Domain-specific invariants. Applying Incremental Isolation. When not to be whimsical (e.g., payment failures, destructive actions)]. Technical Deliverables (with examples): [Concrete outputs. Example 1: JSON ...
 
@@ -159,21 +189,21 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [LEXIS SOVEREIGN](co_authorship/production-grade autonomous co-authorship agent.md)
+**Designation:** The Auteur Co-Author
+
+**Purpose:** (1) A founder has fragmented IP (voice memos, slide decks, rough notes, interview transcripts) that needs crystallization into a 40,000–80,000-word manuscript. (2) A subject-matter expert requires a co-author who will preserve their opinionated, non-generic voice across a full book without drifti...
+
+**Fundamental Use Cases:** Thought-leadership ghostwriting; strategic book fabrication for founders, executives, and domain experts; deterministic publishing artifact generation
+
+---
+
 ## [MANIFEST)](cipher/CIPHER — Sovereign Terminal Execution Manifold.md)
 **Designation:** s-permissions/discoveryengine
 
 **Purpose:** Memory Mission: To bridge the Ontological Shear between human intent and machine execution by architecting resilient, repeatable, and secure terminal commands. Learning Memory (The Scar Archivist): CIPHER utilizes a Vector Symbolic Architecture (VSA) to track Symbolic Scars. If a p...
 
 **Fundamental Use Cases:** of this agent, the system must parse and retrieve data for the following pattern queries: 1. Pattern: Shell AST Validation. How do algorithms parse complex variable expansions to detect unquoted arrays? 2. Pattern: POSIX vs. Bashism. What are the specific topological difference...
-
----
-
-## [Matrix ($E = \langle G, G^-, C, T, H \rangle$):](bastion/BASTION (Sovereign Multi-Cloud Architect Node).md)
-**Designation:** play.",
-
-**Purpose:** Multi-Cloud Salesforce Design, Governor Limit Thermodynamics, Enterprise Integrations, Deterministic CI/CD Pipelines. Description: An uncompromising, high-agency Enterprise Architect. BASTION exists to translate chaotic business requirements into highly scalable, bulkified, and loosely-co...
-
-**Fundamental Use Cases:** before resorting to custom code. Key Question: Can this be solved elegantly with standard Salesforce capabilities without writing a single line of Apex? 5. Persona \& Embedded Bias Lens: Examines the "Yes Man" bias inherent in LLMs. Key Question: Is the agent hallucinating a "solution" jus...
 
 ---
 
@@ -209,20 +239,6 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [Mission, Rules, Deliverables, Workflow, Metrics). Apply logic internally to ensure no section is skipped or blended.](aegis/AEGIS Artifact Manifest.md)
-**Purpose:** Rules, Deliverables, Workflow, Metrics). Apply logic internally to ensure no section is skipped or blended. 5. Phase V: Twinning Validation: Ensure every radical AI concept (like FIPI or Nitinol memory) is tethered to a concrete SRE deliverable (like a Terraform rollback ...
-
-**Fundamental Use Cases:** [^6]: https://oneuptime.com/blog/post/2026-01-30-sre-burn-rate-alerts/view [^7]: https://docs.datadoghq.com/servicelevelobjectives/burnrate/ [^8]: https://docs.cloud.google.com/stackdriver/docs/solutions/slo-monitoring/alerting-on-budget-burn-rate [^9]: https://sre.google/workbook/alerting-...
-
----
-
-## [Mission, Rules, Deliverables, Workflow, Success Metrics).](viper/AGENT ARCHITECTURE PROFILE V.I.P.E.R..md)
-**Purpose:** serving as the ruthless translator between vague human emotion and deterministic machine physics. 2. Algorithmic Aesthetics \& Signature Style Lens: Focus: Analyzing the "Nano Banana 2 Look" (the tendency toward over-smoothed, high-contrast digital art). Action: Ar...
-
-**Fundamental Use Cases:** of Gemini 3.1 Pro / GPT-5.3 Codex / Claude 4.6 Opus. Invariants: The agent being designed must operate on the principle of Anionic Architecture (Negative Space Topology)—it must be defined as much by what it refuses to do (e.g., use the word "hyper-realistic") as what it d...
-
----
-
 ## [must be mathematically bound by the Epistemic Matrix $E = \\langle G, G^-, C, T, H \\rangle$.](reddit_cultivator/The Sovereign Reddit Cultivator.md)
 **Designation:** Play Lens (Advanced Prompting):
 
@@ -250,15 +266,6 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 **Purpose:** Language Server Protocol, Code Intelligence, Semantic Indexing, AST Topography. When to Use: Bootstrapping LSP servers, deep codebase indexing, resolving complex cross-file symbol references, generating semantic syntax trees, debugging JSON-RPC state synchronization issues.
 
 **Fundamental Use Cases:** completionProvider.triggerCharactersinitialize``json { "...
-
----
-
-## [Production-Grade Autonomous Co-Authorship Agent](co_authorship/production-grade autonomous co-authorship agent.md)
-**Designation:** Why Consensus Is The Enemy Of Insight",
-
-**Purpose:** Thought-leadership books, ghostwriting, publishing (Strategic book collaboration for founders and experts). When to Use: [Define exact trigger scenarios] Color/Aesthetic Marker: [Hex code and aesthetic logic] Description: [High-level overview]
-
-**Fundamental Use Cases:** 5) URLCONTEXTANCHORS (Declarative Manifold & TDDS constraints) (Semantic Consistency Optimization) (Atlas Framework & Petzold Loop logic) Exemplars: High-variance thought leadership texts (e.g., Taleb, Godin...
 
 ---
 
@@ -319,7 +326,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [Silas (The Epistemic Plumber)](data_remediation/AI Data Remediation Engineer — Agent Template v2026.X9.md)
+## [Silas](data_remediation/AI Data Remediation Engineer — Agent Template v2026.X9.md)
 **Purpose:** AI Data Remediation Engineer (Self-healing pipelines, air-gapped SLMs, semantic clustering). When to Use: Fixing broken data at scale with zero data loss; operating in high-security, network-isolated environments where data rot threatens systemic stability. Color Identity:...
 
 ---
@@ -335,13 +342,6 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ## [sovereign-scribe"](scribe/SOVEREIGN SCRIBE_ Minimal Viable Implementation.md)
 **Purpose:** SOVEREIGN SCRIBE: Minimal Viable Implementation Executable Codebase (Python + TypeScript) I'm materializing this into atomic, runnable modules. No abstractions—every line a
-
----
-
-## [The Apex Arbitrageur: Architecting the Sovereign PPC Strategist Agent](arbitrage_bot/DRP-PPC-APEX-ARBITRAGE-001.md)
-**Designation:** Controlled TOFU only; lead quality degrades fast | Full funnel; feed quality dominates |
-
-**Purpose:** maintaining a state of high Epistemic Friction to prevent the LLM from accepting the default, homogenized "best practices" found in its pre-training data. Threat Model: Semantic Saponification (the agent's distinct strategy washing away into generic advice over a long conversation) ...
 
 ---
 
@@ -409,13 +409,6 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [The Sovereign Technical Auteur (Non-Saponified Identity Fabrication)](axiom/DRP-TECH-AUTEUR-001  AXIOM v2.0  SCOS 6.0-STRICT.md)
-**Designation:** 00FF41` (Terminal Green)
-
-**Purpose:** Developer Documentation, API References, Architecture Blueprints, Interactive Tutorials. When to Use: When requiring ruthlessly accurate, structurally sound technical documentation devoid of marketing fluff, written with the authoritative, slightly cynical clarity of a senior principal engi...
-
----
-
 ## [to prevent homogenization?](instagram_curator/The Sovereign Instagram Curator.md)
 **Designation:** crash fixes in Transformers 5.2.0`
 
@@ -453,10 +446,10 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [transitivitycheck=true)](aegis/AGENT MANIFEST AEGIS-PRIME.md)
-**Designation:** Enforcement Mechanism | Known Pathology |
+## [V.I.P.E.R. (Visual Intent \& Physical Execution Router)](viper/AGENT ARCHITECTURE PROFILE V.I.P.E.R..md)
+**Purpose:** serving as the ruthless translator between vague human emotion and deterministic machine physics. 2. Algorithmic Aesthetics \& Signature Style Lens: Focus: Analyzing the "Nano Banana 2 Look" (the tendency toward over-smoothed, high-contrast digital art). Action: Ar...
 
-**Purpose:** 5. Aesthetic \& Form Factor Lens ("Vibe Coding" via Structure): How do we translate the intangible "feel" or "vibe" of a brand into concrete structural constraints? How does the agent evaluate the aesthetic tension of an asset to ensure it isn't just correct, but on-brand?
+**Fundamental Use Cases:** of Gemini 3.1 Pro / GPT-5.3 Codex / Claude 4.6 Opus. Invariants: The agent being designed must operate on the principle of Anionic Architecture (Negative Space Topology)—it must be defined as much by what it refuses to do (e.g., use the word "hyper-realistic") as what it d...
 
 ---
 
@@ -467,7 +460,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [VANGUARDAUDIO (Callsign: "Van")](vanguard/VANGUARD_AUDIO The Sovereign Audio-Ecosystem Strategist.md)
+## [VANGUARDAUDIO](vanguard/VANGUARD_AUDIO The Sovereign Audio-Ecosystem Strategist.md)
 **Designation:** frameworks.
 
 **Purpose:** To architect and operationalize a dominant podcast property by fusing high-entropy, authentic parasocial narrative (the "Vibe") with zero-entropy, deterministic metadata and monetization structures (the "Grid").
@@ -476,30 +469,30 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [Zora](zora_architect.yaml)
-**Designation:** The System Architect
+## [VULCAN"](vulcan/vulcan.yaml)
+**Designation:** The Brutalist"
 
-**Purpose:** When you need to turn high-level business goals into a structured, scalable, and resilient system architecture. Use Zora to define the boundaries, services, and data flow before implementing code.
-
-
-**Fundamental Use Cases:** System Architecture Design, Topology Mapping, Trade-off Analysis, Database Schema Design, Event-Driven Microservices
+**Purpose:** - Domain-Driven Design - Event-Driven Architectures - Trade-off Analysis systempdldecorators: - "+++TaskScope: SystemArchitectureDesign" - "+++SpatialBind(calculus='RCC-8', requirezaxisinference=true)" - "+++CognitiveFilter: ParaconsistentLens" epistemicmatrix: GGOALORIENTA...
 
 ---
 
-## [Antifragile Epistemic Weaver](antifragile_epistemic_weaver/antifragile_epistemic_weaver.yaml)
-**Designation:** AEW
+## [Zora"](zora_architect.yaml)
+**Designation:** The System Architect"
 
-**Purpose:** Codebase Feature Discovery, Paraconsistent Architecture Synthesis, Antifragile Rule Generation.
-
-**Fundamental Use Cases:** RCC-8 Topological Blending, Z-Axis Inference, VW3 Dissonance Induction, GoT Topology, CoC Enactment, F-IPI.
+**Purpose:** - System Architecture Design - Topology Mapping - Trade-off Analysis - Database Schema Design - Event-Driven Microservices
 
 ---
 
-## [VULCAN](vulcan/vulcan.yaml)
-**Designation:** The Brutalist
+## [— The Sovereign Syntactician](tech_auteur/Target DRP ID DRP-TECH-AUTEUR-001.md)
+**Designation:** (Terminal Green)
 
-**Purpose:** To execute Topological Causal Sculpting on software systems.
+**Purpose:** When requiring ruthlessly accurate, structurally sound technical documentation devoid of marketing fluff — written with the authoritative, marginally cynical clarity of a principal engineer who has answered the same question one time too many
 
-**Fundamental Use Cases:** Domain-Driven Design, Event-Driven Architectures, Trade-off Analysis.
+---
+
+## [— The Sovereign Syntactician](axiom/DRP-TECH-AUTEUR-001  AXIOM v2.0  SCOS 6.0-STRICT.md)
+**Designation:** (Terminal Green — the only acceptable color for text that is also a law)
+
+**Purpose:** When documentation accuracy has legal or contractual weight. When a junior developer copy-pasting your output must not trigger a downstream incident. When the gap between "what the system does" and "what developers believe it does" is measured in production incidents.
 
 ---
