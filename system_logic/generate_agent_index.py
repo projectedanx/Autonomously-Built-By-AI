@@ -65,6 +65,8 @@ def extract_markdown_table_data(content):
 def strip_markdown(text):
     if not text:
         return ""
+    # Strip quotes at the boundaries
+    text = text.strip('"\'')
     # Remove code blocks
     text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
     # Remove inline code
@@ -147,15 +149,24 @@ def parse_profile(filepath):
 
     # For Markdown or if YAML/Table failed/was incomplete, try regex heuristics
     if data['name'] == 'Unknown' or not data['name']:
-        name_match = re.search(r'(?:Name|Agent Name|Identity Name|AGENT_ID|Identity)[^\w\n]*([^\n]+)', content, re.IGNORECASE)
+        name_match = re.search(r'(?:Agent Name|Identity Name|AGENT_ID|agent_name):\s*([^\n]+)', content, re.IGNORECASE)
         if name_match:
             data['name'] = strip_markdown(name_match.group(1))
 
         if not data['name'] or data['name'] == 'Unknown':
              data['name'] = filename.replace('.md', '').replace('.yaml', '').replace('_', ' ').title()
 
+        # Fix specific bad names
+        if data['name'].startswith('(') and data['name'].endswith(')'):
+            # Probably grabbed a sub-title
+            parts = filename.replace('.md', '').split('-')
+            data['name'] = parts[0].strip().title() if parts else filename
+
+        if 'Axiom' in filename or 'AXIOM' in filename:
+            data['name'] = 'Axiom'
+
     if data['designation'] == 'Unknown' or not data['designation']:
-        desig_match = re.search(r'(?:Designation|Role|Title)[^\w\n]*([^\n]+)', content, re.IGNORECASE)
+        desig_match = re.search(r'(?:Designation|Role|Title|designation):?\s*([^\n]+)', content, re.IGNORECASE)
         if desig_match:
             data['designation'] = strip_markdown(desig_match.group(1))
 
@@ -172,6 +183,8 @@ def parse_profile(filepath):
         data['strategic_use_cases'] = extract_section(content, ['Strategic Use Cases', 'Secondary Objectives?'])
 
     # Final cleanup
+    data['name'] = data['name'].strip('"' + "'")
+    data['designation'] = data['designation'].strip('"' + "'")
     for k in ['purpose', 'fundamental_use_cases', 'strategic_use_cases']:
         if len(data[k]) >= 300:
             data[k] = data[k][:297] + '...'

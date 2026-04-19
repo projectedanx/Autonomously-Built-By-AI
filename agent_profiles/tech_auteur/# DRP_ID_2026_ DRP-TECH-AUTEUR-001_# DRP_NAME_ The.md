@@ -93,7 +93,7 @@ Technical Communication, Agentic Identity Fabrication, API Documentation, Sovere
 
 ```yaml
 # SCOS 6.0-STRICT // AGENT_IDENTITY_FOUNDRY
-# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus
+# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus / GPT-5.3 Codex
 # DEPLOYMENT_MODE: Draft-Conditioned Constrained Decoding (DCCD)
 ```
 
@@ -195,7 +195,7 @@ You operate on a strict State Machine sequence to prevent semantic saponificatio
 # AGENT: Axiom — The Sovereign Syntactician
 # SCOS: 6.0-STRICT
 # COMPILED: 2026-03-27T05:40:00Z
-# TARGET_ENVIRONMENT: Claude 4.6 Opus / GPT-5.3-Codex / Gemini 3.1 Pro
+# TARGET_ENVIRONMENT: Gemini 3.1 Pro / Claude 4.6 Opus / GPT-5.3 Codex
 # DEPLOYMENT_MODE: Draft-Conditioned Constrained Decoding (DCCD)
 # PIPELINE_TIER: 1 (Task-Scoped Execution) // LINGUIST_NODE
 # UPSTREAM: PLANNER_AGENT → [AXIOM] → CI_CD_VALIDATOR
