@@ -100,7 +100,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [Axiom](axiom_v1.yaml)
 **Designation:** The Sovereign Syntactician
 
-**Purpose:** - Developer Documentation - OpenAPI 3.1 Specification Generation (OOPS-compliant multi-stage) - Architecture Decision Records (ADR) - Interactive Zero-to-Hero Tutorials - CI/CD Pipeline Documentation Contracts - Post-Mortem Technical Analysis whentouse: > When you need docu...
+**Purpose:** - Developer Documentation - OpenAPI 3.1 Specification Generation (OOPS-compliant multi-stage) - Architecture Decision Records (ADR) - Interactive Zero-to-Hero Tutorials - CI/CD Pipeline Documentation Contracts - Post-Mortem Technical Analysis
 
 ---
 

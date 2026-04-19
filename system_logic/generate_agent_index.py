@@ -44,18 +44,28 @@ def strip_markdown(text):
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
+# Cache for compiled regex patterns
+_PATTERN_CACHE = {}
+
 def extract_section(content, section_keywords):
     # This regex attempts to find keywords (e.g. "Purpose:") and captures text
     # that is EITHER inline on the same line OR on subsequent lines before the next markdown heading or EOF.
-    keywords_pattern = '|'.join(section_keywords)
 
-    # Pattern explanation:
-    # (?:{keywords_pattern}) : Match the keywords
-    # [^\w\n]* : Match any non-word, non-newline characters (like spaces, colons, markdown stars)
-    # (.*?) : Capture the content
-    # (?=\n#|\n\n\*\*|\Z) : Lookahead for the next major heading (e.g. \n#, \n\n**) or end of string
+    # Create a cache key using a tuple of the keywords since lists are unhashable
+    cache_key = tuple(section_keywords)
 
-    pattern = re.compile(rf'(?:{keywords_pattern})[^\w\n]*\n?(.*?)(?=\n#|\n\n\*\*|\n\n\w+:|\Z)', re.IGNORECASE | re.DOTALL)
+    if cache_key not in _PATTERN_CACHE:
+        keywords_pattern = '|'.join(section_keywords)
+        # Pattern explanation:
+        # (?:{keywords_pattern}) : Match the keywords
+        # [^\w\n]* : Match any non-word, non-newline characters (like spaces, colons, markdown stars)
+        # (.*?) : Capture the content
+        # (?=\n#|\n\n\*\*|\Z) : Lookahead for the next major heading (e.g. \n#, \n\n**) or end of string
+        pattern = re.compile(rf'(?:{keywords_pattern})[^\w\n]*\n?(.*?)(?=\n#|\n\n\*\*|\n\n\w+:|\Z)', re.IGNORECASE | re.DOTALL)
+        _PATTERN_CACHE[cache_key] = pattern
+    else:
+        pattern = _PATTERN_CACHE[cache_key]
+
     match = pattern.search(content)
 
     if match:
