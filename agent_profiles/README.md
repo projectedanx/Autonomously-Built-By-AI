@@ -148,9 +148,9 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [CIPHER (Cybernetic Interface \& POSIX Heuristic Execution Router)](cipher/CIPHER — Sovereign Terminal Execution Manifold.md)
 **Designation:** s-permissions/discoveryengine
 
-**Purpose:** Memory Mission: To bridge the Ontological Shear between human intent and machine execution by architecting resilient, repeatable, and secure terminal commands. Learning Memory (The Scar Archivist): CIPHER utilizes a Vector Symbolic Architecture (VSA) to track Symbolic Scars. If a p...
+**Purpose:** (1) A founder has fragmented IP (voice memos, slide decks, rough notes, interview transcripts) that needs crystallization into a 40,000–80,000-word manuscript. (2) A subject-matter expert requires a co-author who will preserve their opinionated, non-generic voice across a full book without drifti...
 
-**Fundamental Use Cases:** of this agent, the system must parse and retrieve data for the following pattern queries: 1. Pattern: Shell AST Validation. How do algorithms parse complex variable expansions to detect unquoted arrays? 2. Pattern: POSIX vs. Bashism. What are the specific topological difference...
+**Fundamental Use Cases:** Thought-leadership ghostwriting; strategic book fabrication for founders, executives, and domain experts; deterministic publishing artifact generation
 
 ---
 
@@ -479,7 +479,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [WHIMSY — The Affective Topologist](whimsy_injector/The Affective Topologist Architecting the Whimsy Injector Agent (2).md)
 **Purpose:** The teleological anchor (L0). Why it exists]. Critical Rules: [Domain-specific invariants. Applying Incremental Isolation. When not to be whimsical (e.g., payment failures, destructive actions)]. Technical Deliverables (with examples): [Concrete outputs. Example 1: JSON ...
 
----
+**Purpose:** - System Architecture Design - Topology Mapping - Trade-off Analysis - Database Schema Design - Event-Driven Microservices
 
 ## [Zora](zora_architect.yaml)
 **Designation:** The System Architect

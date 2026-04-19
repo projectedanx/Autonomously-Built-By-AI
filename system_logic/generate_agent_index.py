@@ -21,6 +21,47 @@ def extract_yaml_data(content):
     except Exception:
         return None
 
+def extract_markdown_table_data(content):
+    """Extracts data from a markdown table, looking for specific keys."""
+    data = {}
+    lines = content.split('\n')
+    in_table = False
+
+    # We'll map table keys (lowercased) to our target fields
+    key_mapping = {
+        'agent name': 'name',
+        'designation': 'designation',
+        'agent specialty': 'fundamental_use_cases',
+        'when to use': 'purpose',
+        'description': 'description'
+    }
+
+    for line in lines:
+        if line.strip().startswith('|') and '|' in line[1:]:
+            in_table = True
+            parts = [p.strip() for p in line.split('|')[1:-1]]
+            if len(parts) >= 2:
+                # Remove markdown formatting like ** or *
+                key_raw = re.sub(r'[*_]', '', parts[0]).lower().strip()
+                val_raw = strip_markdown(parts[1])
+
+                for k, v in key_mapping.items():
+                    if k in key_raw:
+                        data[v] = val_raw
+
+                # Handle designation fallback
+                if 'name' in key_raw and ' — ' in strip_markdown(parts[1]):
+                    # Sometimes name and designation are combined like "NAME — Designation"
+                    name_parts = strip_markdown(parts[1]).split(' — ')
+                    data['name'] = name_parts[0].strip()
+                    if len(name_parts) > 1 and 'designation' not in data:
+                        data['designation'] = name_parts[1].strip()
+        elif in_table and not line.strip().startswith('|'):
+            # Reached end of table
+            in_table = False
+
+    return data if data else None
+
 def strip_markdown(text):
     if not text:
         return ""
@@ -84,6 +125,7 @@ def parse_profile(filepath):
 
     filename = os.path.basename(filepath)
 
+    # First try YAML parsing
     yaml_data = extract_yaml_data(content)
     if yaml_data and isinstance(yaml_data, dict):
         data['name'] = yaml_data.get('agent_name', yaml_data.get('name', 'Unknown'))
@@ -92,8 +134,20 @@ def parse_profile(filepath):
         specialty = yaml_data.get('specialty', [])
         if isinstance(specialty, list):
             data['fundamental_use_cases'] = ', '.join(specialty)
+    else:
+        # If YAML fails, try Markdown table parsing
+        table_data = extract_markdown_table_data(content)
+        if table_data:
+            if 'name' in table_data: data['name'] = table_data['name']
+            if 'designation' in table_data: data['designation'] = table_data['designation']
+            if 'purpose' in table_data: data['purpose'] = table_data['purpose']
+            if 'fundamental_use_cases' in table_data: data['fundamental_use_cases'] = table_data['fundamental_use_cases']
 
-    # For Markdown or if YAML failed/was incomplete, try regex heuristics
+            # If description was in the table but not purpose, use it for purpose
+            if not data['purpose'] and 'description' in table_data:
+                data['purpose'] = table_data['description']
+
+    # For Markdown or if YAML/Table failed/was incomplete, try regex heuristics
     if data['name'] == 'Unknown' or not data['name']:
         name_match = re.search(r'(?:Agent Name|Identity Name|AGENT_ID|agent_name):\s*([^\n]+)', content, re.IGNORECASE)
         if name_match:
