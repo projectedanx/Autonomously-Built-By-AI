@@ -62,27 +62,36 @@ def extract_markdown_table_data(content):
 
     return data if data else None
 
+_RE_CODE_BLOCK = re.compile(r'```.*?```', flags=re.DOTALL)
+_RE_INLINE_CODE = re.compile(r'`[^`]+`')
+_RE_HTML_TAGS = re.compile(r'<[^>]+>')
+_RE_MD_LINKS = re.compile(r'\[([^\]]+)\]\([^\)]+\)')
+_RE_HEADING = re.compile(r'#+\s+')
+_RE_FORMATTING = re.compile(r'[*_]')
+_RE_JSON_ELEMENTS = re.compile(r'^\s*".*?":\s*.*?,?\s*$', flags=re.MULTILINE)
+_RE_WHITESPACE = re.compile(r'\s+')
+
 def strip_markdown(text):
     if not text:
         return ""
     # Strip quotes at the boundaries
     text = text.strip('"\'')
     # Remove code blocks
-    text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
+    text = _RE_CODE_BLOCK.sub('', text)
     # Remove inline code
-    text = re.sub(r'`[^`]+`', '', text)
+    text = _RE_INLINE_CODE.sub('', text)
     # Remove html tags
-    text = re.sub(r'<[^>]+>', '', text)
+    text = _RE_HTML_TAGS.sub('', text)
     # Remove markdown links
-    text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)
+    text = _RE_MD_LINKS.sub(r'\1', text)
     # Remove heading markers
-    text = re.sub(r'#+\s+', '', text)
+    text = _RE_HEADING.sub('', text)
     # Remove formatting chars (*, _, etc.)
-    text = re.sub(r'[*_]', '', text)
+    text = _RE_FORMATTING.sub('', text)
     # Remove json-like structural elements (e.g. "key": "value",)
-    text = re.sub(r'^\s*".*?":\s*.*?,?\s*$', '', text, flags=re.MULTILINE)
+    text = _RE_JSON_ELEMENTS.sub('', text)
     # Condense whitespace
-    text = re.sub(r'\s+', ' ', text)
+    text = _RE_WHITESPACE.sub(' ', text)
     return text.strip()
 
 # Cache for compiled regex patterns
