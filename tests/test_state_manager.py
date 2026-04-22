@@ -83,3 +83,46 @@ def test_complete_task_missing_file(tmp_path):
 
         # Verify that _git_commit was NOT called because removing the non-existent task file raised an error
         mock_git_commit.assert_not_called()
+
+def test_mark_context_processed(tmp_path):
+    manager = StateManager(workspace_root=str(tmp_path))
+    filename = "test_context.txt"
+
+    manager.mark_context_processed(filename)
+
+    state = manager._load_state()
+    assert filename in state["processed_context"]
+    assert filename in manager._processed_context_set
+
+def test_mark_context_processed_idempotency(tmp_path):
+    manager = StateManager(workspace_root=str(tmp_path))
+    filename = "test_context.txt"
+
+    manager.mark_context_processed(filename)
+    manager.mark_context_processed(filename)
+
+    state = manager._load_state()
+    assert state["processed_context"].count(filename) == 1
+
+def test_get_unprocessed_context_filtering(tmp_path):
+    manager = StateManager(workspace_root=str(tmp_path))
+
+    # Create two files in inbox
+    file1 = "file1.txt"
+    file2 = "file2.txt"
+    for f in [file1, file2]:
+        with open(os.path.join(manager.inbox_dir, f), "w") as f_out:
+            f_out.write("content")
+
+    unprocessed = manager.get_unprocessed_context()
+    assert len(unprocessed) == 2
+    assert any(file1 in f for f in unprocessed)
+    assert any(file2 in f for f in unprocessed)
+
+    # Mark file1 as processed
+    manager.mark_context_processed(file1)
+
+    unprocessed_after = manager.get_unprocessed_context()
+    assert len(unprocessed_after) == 1
+    assert any(file2 in f for f in unprocessed_after)
+    assert not any(file1 in f for f in unprocessed_after)
