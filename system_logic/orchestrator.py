@@ -14,7 +14,7 @@ class Orchestrator:
         self.forge = PRPForge()
         self.dispatcher = TaskDispatcher()
 
-    def process_context_file(self, target_file: str) -> None:
+    def process_context_file(self, target_file: str, defer_save: bool = False) -> None:
         """Processes a single context file: generates a PRP, dispatches a task, and marks as processed."""
         filename = os.path.basename(target_file)
         print(f"Processing context: {filename}")
@@ -27,7 +27,7 @@ class Orchestrator:
         task_path = self.dispatcher.dispatch_task(prp_path)
         print(f"Dispatched Task: {task_path}")
 
-        self.manager.mark_context_processed(filename)
+        self.manager.mark_context_processed(filename, defer_save=defer_save)
         print("Marked context as processed in StateManager.")
 
 def main() -> None:
@@ -54,7 +54,10 @@ def main() -> None:
         print("Action required: Parse context, generate PRPs, and delegate tasks.")
 
         for target_file in unprocessed:
-            orchestrator.process_context_file(target_file)
+            orchestrator.process_context_file(target_file, defer_save=True)
+
+        if unprocessed:
+            orchestrator.manager.save_state()
 
     elif role == "WORKER":
         print("Executing WORKER Swarm Protocol (Session 1-N)...")

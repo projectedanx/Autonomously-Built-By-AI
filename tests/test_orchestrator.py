@@ -33,4 +33,4 @@ def test_process_context_file(mock_task_dispatcher_class, mock_prp_forge_class, 
     mock_forge.generate_prp.assert_called_once_with("mock_raw_intent", filename)
     mock_forge.save_prp.assert_called_once_with({"mock": "data"}, "mock_prp_id")
     mock_dispatcher.dispatch_task.assert_called_once_with("/mock/path/prp.json")
-    mock_manager.mark_context_processed.assert_called_once_with(filename)
+    mock_manager.mark_context_processed.assert_called_once_with(filename, defer_save=False)
