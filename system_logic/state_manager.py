@@ -51,11 +51,12 @@ class StateManager:
         all_files = glob(os.path.join(self.inbox_dir, "*"))
         return [f for f in all_files if os.path.basename(f) not in self._processed_context_set and not os.path.basename(f).startswith('.') and os.path.isfile(f)]
 
-    def mark_context_processed(self, filename: str) -> None:
+    def mark_context_processed(self, filename: str, defer_save: bool = False) -> None:
         """Marks a given context file as processed in the workspace state.
 
         Args:
             filename: The name of the file to mark as processed.
+            defer_save: If True, updates in-memory state but defers disk write.
 
         Returns:
             None
@@ -66,7 +67,9 @@ class StateManager:
 
         if filename not in self._processed_context_set:
             state["processed_context"].append(filename)
-            self._save_state(state)
+            self._processed_context_set.add(filename)
+            if not defer_save:
+                self._save_state(state)
 
     def get_pending_tasks(self) -> list:
         """Retrieves a list of pending task files.
@@ -153,6 +156,12 @@ class StateManager:
         self._processed_context_set = set(self._state.get("processed_context", []))
         with open(self.state_file, 'w') as f:
             json.dump(state, f, indent=2)
+
+
+    def save_state(self) -> None:
+        """Explicitly saves the current in-memory state to disk."""
+        if self._state is not None:
+            self._save_state(self._state)
 
     def record_scar(self, scar_data: dict) -> None:
         """Records a Symbolic Scar to scars.yaml, implementing Autophagic Debridement.
