@@ -16,7 +16,19 @@ def extract_yaml_data(content):
         if content.startswith('---'):
             parts = content.split('---', 2)
             if len(parts) >= 3:
-                return yaml.safe_load(parts[1])
+                parsed = yaml.safe_load(parts[1])
+                if isinstance(parsed, dict) and ('agent_name' in parsed or 'name' in parsed):
+                    return parsed
+
+        yaml_blocks = re.findall(r'```(?:yaml|yml)\n(.*?)\n```', content, re.DOTALL | re.IGNORECASE)
+        for block in yaml_blocks:
+            try:
+                parsed = yaml.safe_load(block)
+                if isinstance(parsed, dict) and ('agent_name' in parsed or 'name' in parsed):
+                    return parsed
+            except Exception:
+                pass
+
         return yaml.safe_load(content)
     except Exception:
         return None
@@ -70,7 +82,7 @@ def strip_markdown(text):
     # Remove code blocks
     text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
     # Remove inline code
-    text = re.sub(r'`[^`]+`', '', text)
+    text = re.sub(r'`([^`]+)`', r'\1', text)
     # Remove html tags
     text = re.sub(r'<[^>]+>', '', text)
     # Remove markdown links
@@ -159,21 +171,14 @@ def parse_profile(filepath):
 
     # For Markdown or if YAML/Table failed/was incomplete, try regex heuristics
     if data['name'] == 'Unknown' or not data['name']:
-        name_match = re.search(r'(?:Agent Name|Identity Name|AGENT_ID|agent_name):\s*([^\n]+)', content, re.IGNORECASE)
+        name_match = re.search(r'(?:Agent Name|Identity Name|AGENT_ID|agent_name|DRP_NAME):\s*([^\n]+)', content, re.IGNORECASE)
         if name_match:
             data['name'] = strip_markdown(name_match.group(1))
 
         if not data['name'] or data['name'] == 'Unknown':
              data['name'] = filename.replace('.md', '').replace('.yaml', '').replace('_', ' ').title()
 
-        # Fix specific bad names
-        if data['name'].startswith('(') and data['name'].endswith(')'):
-            # Probably grabbed a sub-title
-            parts = filename.replace('.md', '').split('-')
-            data['name'] = parts[0].strip().title() if parts else filename
 
-        if 'Axiom' in filename or 'AXIOM' in filename:
-            data['name'] = 'Axiom'
 
     if data['designation'] == 'Unknown' or not data['designation']:
         desig_match = re.search(r'(?:Designation|Role|Title|designation):?\s*([^\n]+)', content, re.IGNORECASE)
