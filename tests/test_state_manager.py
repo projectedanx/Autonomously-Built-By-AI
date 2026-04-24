@@ -126,3 +126,40 @@ def test_get_unprocessed_context_filtering(tmp_path):
     assert len(unprocessed_after) == 1
     assert any(file2 in f for f in unprocessed_after)
     assert not any(file1 in f for f in unprocessed_after)
+
+def test_get_pending_tasks(tmp_path):
+    manager = StateManager(workspace_root=str(tmp_path))
+
+    # Create valid task files
+    valid_files = ["task1.json", "task2.yaml", "task3.md"]
+    for f in valid_files:
+        with open(os.path.join(manager.tasks_dir, f), "w") as f_out:
+            f_out.write("content")
+
+    # Create an invalid file
+    with open(os.path.join(manager.tasks_dir, "not_a_task.txt"), "w") as f_out:
+        f_out.write("content")
+
+    # Create a claimed task file
+    with open(os.path.join(manager.tasks_dir, "claimed_task.json.claimed"), "w") as f_out:
+        f_out.write("content")
+
+    # Create a sub directory instead of file
+    os.makedirs(os.path.join(manager.tasks_dir, "task_dir.json"), exist_ok=True)
+
+    pending_tasks = manager.get_pending_tasks()
+
+    assert len(pending_tasks) == 3
+
+    file_names = [os.path.basename(t) for t in pending_tasks]
+    assert "task1.json" in file_names
+    assert "task2.yaml" in file_names
+    assert "task3.md" in file_names
+    assert "not_a_task.txt" not in file_names
+    assert "claimed_task.json.claimed" not in file_names
+    assert "task_dir.json" not in file_names
+
+def test_get_pending_tasks_empty(tmp_path):
+    manager = StateManager(workspace_root=str(tmp_path))
+    pending_tasks = manager.get_pending_tasks()
+    assert len(pending_tasks) == 0
