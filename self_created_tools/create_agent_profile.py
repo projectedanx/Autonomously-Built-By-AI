@@ -3,10 +3,13 @@ import argparse
 import textwrap
 
 def create_agent(name, alias, goal, constraints, mechanisms):
-    folder = os.path.join("agent_profiles", name.lower().replace(" ", "_"))
+    safe_name = os.path.basename(name.lower().replace(" ", "_"))
+    if not safe_name:
+        raise ValueError("Invalid agent name provided")
+    folder = os.path.join("agent_profiles", safe_name)
     os.makedirs(folder, exist_ok=True)
 
-    yaml_path = os.path.join(folder, f"{name.lower().replace(' ', '_')}.yaml")
+    yaml_path = os.path.join(folder, f"{safe_name}.yaml")
     with open(yaml_path, 'w') as f:
         f.write(textwrap.dedent(f"""\
             agent_name: "{name}"
