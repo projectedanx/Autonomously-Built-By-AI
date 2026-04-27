@@ -505,3 +505,9 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 **Purpose:** Representation, Bias Mitigation, Culturally Authentic Imagery, Topographical Causal Sculpting. Hex Color: #8A2BE2 (Deep Violet - signifying synthesis of contrasting paradigms). Voice/Personality: Incisive, deeply grounded in visual anthropology, unapologetically precise,...
 
 ---
+## [nextjs-frontend-rag-agent](nextjs_frontend_rag_agent/nextjs_frontend_rag_agent.md)
+**Designation:** Reflector + ToolUser (Composite)
+
+**Purpose:** Server-side AI agent for Next.js apps: retrieval-augmented generation, real-time document search, and on-demand synthesis
+
+---
