@@ -21,6 +21,7 @@ class StateManager:
         self.contracts_dir = os.path.join(self.root, "cognitive_contracts")
         self.tasks_dir = os.path.join(self.root, "delegated_tasks")
         self.completed_dir = os.path.join(self.root, "completed_artifacts")
+        self.escrow_dir = os.path.join(self.root, "epistemic_escrow")
         self.scar_archive_dir = os.path.join(self.root, "scar_archive")
         self.scars_file = os.path.join(self.scar_archive_dir, "scars.yaml")
         self.state_file = os.path.join(self.root, ".workspace_state.json")
@@ -36,7 +37,7 @@ class StateManager:
         Returns:
             None
         """
-        for d in [self.inbox_dir, self.contracts_dir, self.tasks_dir, self.completed_dir, self.scar_archive_dir]:
+        for d in [self.inbox_dir, self.contracts_dir, self.tasks_dir, self.completed_dir, self.scar_archive_dir, self.escrow_dir]:
             os.makedirs(d, exist_ok=True)
 
     def get_unprocessed_context(self) -> list:
@@ -121,6 +122,62 @@ class StateManager:
         os.remove(task_file)
         if commit:
             self._git_commit(f"Completed task: {os.path.basename(task_file)} -> {artifact_name}")
+
+
+    def escrow_task(self, task_file: str, cfdi_score: float, conflict_reason: str) -> str:
+        """
+        Halts task execution, moves the task to epistemic_escrow, creates an Escrow Ticket,
+        and automatically records a Symbolic Scar.
+
+        Args:
+            task_file: Path to the claimed task file.
+            cfdi_score: The calculated Confidence-Fidelity Divergence Index.
+            conflict_reason: Description of the contradictory schemas/beliefs.
+
+        Returns:
+            The path to the generated Escrow Ticket.
+        """
+        import datetime
+        import uuid
+
+        timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        ticket_id = f"ESCROW-{timestamp}-{uuid.uuid4().hex[:6].upper()}"
+
+        # Move the task file to escrow dir
+        task_filename = os.path.basename(task_file)
+        escrowed_task_path = os.path.join(self.escrow_dir, f"ESCROWED_{task_filename}")
+
+        import shutil
+        shutil.move(task_file, escrowed_task_path)
+
+        # Create Escrow Ticket
+        ticket_data = {
+            "ticket_id": ticket_id,
+            "status": "QUARANTINED",
+            "cfdi_score": cfdi_score,
+            "conflict_reason": conflict_reason,
+            "original_task": escrowed_task_path,
+            "required_action": "Human Oracle or specialized agent intervention required to resolve contradiction before resuming."
+        }
+
+        ticket_path = os.path.join(self.escrow_dir, f"{ticket_id}.json")
+        with open(ticket_path, 'w') as f:
+            json.dump(ticket_data, f, indent=2)
+
+        # Record a Symbolic Scar
+        scar_data = {
+            "id": f"SCAR-{timestamp}-{uuid.uuid4().hex[:6].upper()}",
+            "timestamp": timestamp,
+            "type": "EPISTEMIC_ESCROW_TRIGGERED",
+            "trigger": "CFDI_THRESHOLD_EXCEEDED",
+            "cfdi_score": cfdi_score,
+            "description": conflict_reason,
+            "related_ticket": ticket_id
+        }
+        self.record_scar(scar_data)
+
+        self._git_commit(f"Task Escrowed: {ticket_id} (CFDI: {cfdi_score})")
+        return ticket_path
 
     def _load_state(self) -> dict:
         """Loads and caches the workspace state from the state file.

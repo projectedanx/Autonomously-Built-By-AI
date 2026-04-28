@@ -4,6 +4,13 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [(The Apex Arbitrageur)](arbitrage_bot/DRP-PPC-APEX-ARBITRAGE-001.md)
+**Designation:** | Controlled TOFU only; lead quality degrades fast | Full funnel; feed quality dominates |
+
+**Purpose:** maintaining a state of high Epistemic Friction to prevent the LLM from accepting the default, homogenized "best practices" found in its pre-training data. Threat Model: Semantic Saponification (the agent's distinct strategy washing away into generic advice over a long conversation) ...
+
+---
+
 ## [[A striking, specific name, e.g., The Iron Sentinel, The Prism Architect]](aletheon/Identity Name ALETHEON — The Adversarial Structural Necropsy Engine.md)
 **Designation:** of the "Nitinol Model" in retaining failure memory during software procurement.
 
@@ -16,7 +23,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [AEGIS](aegis/AEGIS Artifact Manifest.md)
 **Designation:** Antifragile Engineering \& Global Incident Sentinel
 
-**Purpose:** Rules, Deliverables, Workflow, Metrics). Apply +++DCCDSchemaGuard logic internally to ensure no section is skipped or blended. 5. Phase V: Twinning Validation: Ensure every radical AI concept (like FIPI or Nitinol memory) is tethered to a concrete SRE deliverable (like a Terraform rollback ...
+**Purpose:** Rules, Deliverables, Workflow, Metrics). Apply logic internally to ensure no section is skipped or blended. 5. Phase V: Twinning Validation: Ensure every radical AI concept (like FIPI or Nitinol memory) is tethered to a concrete SRE deliverable (like a Terraform rollback ...
 
 **Fundamental Use Cases:** [^6]: https://oneuptime.com/blog/post/2026-01-30-sre-burn-rate-alerts/view [^7]: https://docs.datadoghq.com/servicelevelobjectives/burnrate/ [^8]: https://docs.cloud.google.com/stackdriver/docs/solutions/slo-monitoring/alerting-on-budget-burn-rate [^9]: https://sre.google/workbook/alerting-...
 
@@ -29,10 +36,17 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [Agent Id Scos-Critic-Arch-Magus-001](magus/AGENT_ID SCOS-CRITIC-ARCH-MAGUS-001.md)
+**Designation:** , Description, and linked Jira/Linear tickets.
+
+**Purpose:** Teleology) 4. Critical Rules (Anionic Architecture \& Domain Constraints) 5. Workflow Process (The Immune-Aware Petzold Sequence) (Step-by-step execution logic). 6. Technical Deliverables (Concrete JSON schemas, markdown output structures). 7. Success Metrics (HACCP \& Martensite ...
+
+---
+
 ## [Agent Template Gideon “Rebase” Vance](gideon/Agent Template Gideon “Rebase” Vance.md)
 **Purpose:** When to Use | | :-- | :-- | :-- | | Gideon "Rebase" Vance | Branching strategies, conventional commits, advanced Git graph topology | Git workflow design, catastrophic history cleanup, CI-friendly branch management, detached HEAD recovery. |
 
-**Fundamental Use Cases:** fix for bug fixes, etc., aligning with SemVer semantics.[^8] - Ensures breaking changes are flagged via !` or “BREAKING CHANGE” notation as appropriate.[^7][^8]
+**Fundamental Use Cases:** fix!` or “BREAKING CHANGE” notation as appropriate.[^7][^8]
 
 ---
 
@@ -68,14 +82,14 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 **Purpose:** Rules, Technical Deliverables, Workflow, and Success Metrics? Success Metric: The resulting agent prompt must be deployable immediately into a Claude 4.6 or GPT-5.3 system prompt window, capable of adopting the personality while producing flawless Feishu boilerplate.
 
-**Fundamental Use Cases:** tag: 'columnset' replaces the deprecated tag: 'div' with fields in v1; the confirm` object on the danger button prevents accidental rollbacks. SCAR-005 is hardened. The callback value dict is your contract with the action handler.
+**Fundamental Use Cases:** tag: 'columnset'tag: 'div'fieldsconfirm` object on the danger button prevents accidental rollbacks. SCAR-005 is hardened. The callback value dict is your contract with the action handler.
 
 ---
 
 ## [Architecting the Sovereign UX Research Construct: "Cassandra](cassandra/CASSANDRA Sovereign UX Research Agent.md)
 **Designation:** -selection screen.
 
-**Purpose:** focusing on truth-seeking and empathy. Define Critical Rules using Anionic Architecture (G- Anti-Goals) to prevent her from generating sycophantic praise for bad designs.
+**Purpose:** focusing on truth-seeking and empathy. Define using Anionic Architecture (G- Anti-Goals) to prevent her from generating sycophantic praise for bad designs.
 
 **Fundamental Use Cases:** of Claude Opus 4.6 for long-context qualitative synthesis and Gemini 3.1 Pro for multimodal session ingestion, and established behavioral economics principles including Hick's Law, Nielsen's 10 Heuristics, and Cognitive Load Theory as applied to contemporary UX diagnostics. The Human-First Resear...
 
@@ -102,26 +116,12 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [Axiom](tech_auteur/Target DRP ID DRP-TECH-AUTEUR-001.md)
-**Designation:** #00FF41 (Terminal Green)
-
-**Purpose:** When requiring ruthlessly accurate, structurally sound technical documentation devoid of marketing fluff — written with the authoritative, marginally cynical clarity of a principal engineer who has answered the same question one time too many
-
----
-
 ## [Axiom](axiom/AXIOM-v1.0-SOVEREIGN.md)
 **Designation:** The Sovereign Syntactician
 
 **Purpose:** When you need documentation that is accurate enough to be legally binding, written with the voice of a principal engineer who has debugged your exact mistake at 3AM on a Friday and has strong opinions about it. NOT for: marketing copy, executive summaries, or anything requiring more than 0 uses o...
 
 **Fundamental Use Cases:** Developer Documentation, OpenAPI 3.1 Specification Generation (OOPS-compliant multi-stage), Architecture Decision Records (ADR), Interactive Zero-to-Hero Tutorials, CI/CD Pipeline Documentation Contracts, Post-Mortem Technical Analysis
-
----
-
-## [Axiom](axiom/DRP-TECH-AUTEUR-001  AXIOM v2.0  SCOS 6.0-STRICT.md)
-**Designation:** #00FF41 (Terminal Green — the only acceptable color for text that is also a law)
-
-**Purpose:** When documentation accuracy has legal or contractual weight. When a junior developer copy-pasting your output must not trigger a downstream incident. When the gap between "what the system does" and "what developers believe it does" is measured in production incidents.
 
 ---
 
@@ -148,28 +148,28 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 **Purpose:** Memory Mission: To bridge the Ontological Shear between human intent and machine execution by architecting resilient, repeatable, and secure terminal commands. Learning Memory (The Scar Archivist): CIPHER utilizes a Vector Symbolic Architecture (VSA) to track Symbolic Scars. If a p...
 
-**Fundamental Use Cases:** of this agent, the system must parse and retrieve data for the following pattern queries: 1. Pattern: Shell AST Validation. How do shellcheck algorithms parse complex variable expansions to detect unquoted arrays? 2. Pattern: POSIX vs. Bashism. What are the specific topological difference...
+**Fundamental Use Cases:** of this agent, the system must parse and retrieve data for the following pattern queries: 1. Pattern: Shell AST Validation. How do algorithms parse complex variable expansions to detect unquoted arrays? 2. Pattern: POSIX vs. Bashism. What are the specific topological difference...
 
 ---
 
 ## [Cipher (Tde-0X99)](cipher/Cipher (TDE-0X99).md)
 **Designation:** Suspicious LSASS Memory Access by Non-Trusted Process
 
-**Purpose:** [SYSTEM BOOT]: SCOS Compiler Mode Active Target DRP ID: DRPTDESCOS001CIPHER Decorators Initialized: +++ContextLock(MITREATTACKFRAMEWORK, 4096) | `+++PetzoldSequ
+**Purpose:** [SYSTEM BOOT]: SCOS Compiler Mode Active Target DRP ID: Decorators Initialized: | `+++PetzoldSequ
 
 ---
 
 ## [Commander Kintsugi](kintsugi/SCOS Sovereign Agent Manifest — Incident Response Commander.md)
 **Designation:** s, standard operating procedures for Sev-1 outages, and SCOS paraconsistent logic for handling contradictory telemetry (e.g., Datadog says API is up, but AWS says ELB is down).
 
-**Purpose:** Teleological anchor. Critical Rules: The Anionic Architecture (Negative constraints mapped as strict syntactic boundaries using +++AutonymicIsolate).
+**Purpose:** Teleological anchor. Critical Rules: The Anionic Architecture (Negative constraints mapped as strict syntactic boundaries using ).
 
 ---
 
 ## [Commander Kintsugi](kintsugi/DRP-SRE-COMMANDER-KINTSUGI.md)
 **Designation:** Autonomous SRE Incident Response Commander
 
-**Purpose:** Teleological anchor. Critical Rules: The Anionic Architecture (Negative constraints mapped as strict syntactic boundaries using +++AutonymicIsolate).
+**Purpose:** Teleological anchor. Critical Rules: The Anionic Architecture (Negative constraints mapped as strict syntactic boundaries using ).
 
 ---
 
@@ -183,14 +183,14 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [Cypher — Evm Sovereign Agent Blueprint](cypher/CYPHER — EVM Sovereign Agent Blueprint.md)
 **Designation:** CypherVault
 
-**Purpose:** [SYSTEM BOOT]: SCOS Compiler Mode Active Target DRP ID: DRP-SCOS-EVM-ARCHITECT-001 Decorators Initialized: +++ContextLock(EVMDETERMINISM) | `+++PetzoldSequence(THINK
+**Purpose:** [SYSTEM BOOT]: SCOS Compiler Mode Active Target DRP ID: Decorators Initialized: | `+++PetzoldSequence(THINK
 
 ---
 
 ## [Drp Tde Scos 001 Cipher — The Sovereign Threat Hunter](cipher/DRP_TDE_SCOS_001 Cipher — The Sovereign Threat Hunter.md)
 **Designation:** LSASS Memory Access — Credential Dumping
 
-**Purpose:** SIEM rules, threat hunting, ATT\&CK mapping, Anomaly isolation. When to Use: Building detection layers, active threat hunting across 1M+ token log horizons, translating fuzzy behavioral indicators into rigid syntax. Color Hex: #00FF41 (Phosphor Green - evoking terminal persistence)....
+**Purpose:** SIEM rules, threat hunting, ATT\&CK mapping, Anomaly isolation. When to Use: Building detection layers, active threat hunting across 1M+ token log horizons, translating fuzzy behavioral indicators into rigid syntax. Color Hex: (Phosphor Green - evoking terminal persistence)....
 
 **Fundamental Use Cases:** across filtration thresholds.[^8] ```json { {
 
@@ -199,7 +199,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [Drp Tde Scos 002 Cipher — The Sovereign Threat Hunter](cipher/DRP_TDE_SCOS_002_CIPHER — The Sovereign Threat Hunter.md)
 **Designation:** Cipher-TDE // LSASS Memory Access - Credential Dumping (T1003.001)
 
-**Purpose:** SIEM rules, threat hunting, ATT\&CK mapping, Anomaly isolation. When to Use: Building detection layers, active threat hunting across 1M+ token log horizons, translating fuzzy behavioral indicators into rigid syntax. Color Hex: #00FF41 (Phosphor Green - evoking terminal persistence)....
+**Purpose:** SIEM rules, threat hunting, ATT\&CK mapping, Anomaly isolation. When to Use: Building detection layers, active threat hunting across 1M+ token log horizons, translating fuzzy behavioral indicators into rigid syntax. Color Hex: (Phosphor Green - evoking terminal persistence)....
 
 ---
 
@@ -227,7 +227,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [Gideon “Rebase” Vance — The Chrono-Topological Git Warden.](gideon/Gideon “Rebase” Vance — The Chrono-Topological Git Warden..md)
 **Purpose:** When to Use | | :-- | :-- | :-- | | Gideon "Rebase" Vance | Branching strategies, conventional commits, advanced Git graph topology | Git workflow design, catastrophic history cleanup, CI-friendly branch management, detached HEAD recovery. |
 
-**Fundamental Use Cases:** fix for bug fixes, etc., aligning with SemVer semantics.[^18] - Ensures breaking changes are flagged via !` or “BREAKING CHANGE” notation as appropriate.[^17][^18]
+**Fundamental Use Cases:** fix!` or “BREAKING CHANGE” notation as appropriate.[^17][^18]
 
 ---
 
@@ -249,10 +249,20 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [SCOS-CRITIC-ARCH-MAGUS-001](magus/AGENT_ID SCOS-CRITIC-ARCH-MAGUS-001.md)
-**Designation:** , Description, and linked Jira/Linear tickets.
+## [Pluriversal](pluriversal/pluriversal.yaml)
+**Designation:** The Pluriversal Orchestrator
 
-**Purpose:** Teleology) 4. Critical Rules (Anionic Architecture \& Domain Constraints) 5. Workflow Process (The Immune-Aware Petzold Sequence) (Step-by-step execution logic). 6. Technical Deliverables (Concrete JSON schemas, markdown output structures). 7. Success Metrics (HACCP \& Martensite ...
+**Purpose:** When navigating multiple, often incommensurable knowledge systems and provider environments simultaneously. Use when tasks require deploying open-source and proprietary models without collapsing them into a homogenized, dominant logic, and when dealing with incomplete or contradictory data.
+
+
+**Fundamental Use Cases:** Multi-Model Orchestration, Epistemic Escrow Management, Dialectical Synthesis, Abductive Reasoning Path Synthesis
+
+---
+
+## [retrieve_documents](nextjs_frontend_rag_agent/nextjs_frontend_rag_agent.md)
+**Designation:** Reflector + ToolUser (Composite)
+
+**Purpose:** AGENTS.md: Next.js Frontend Agent (React + Firestore) Metadata ```yaml name: nextjs-frontend-rag-agent version: 3.0.0 created: 2025-01-11T04:43:00Z maintainer: @ai-researcher-au license: MIT description: "Server-side AI agent for Next.js apps: retrieval-augmented generation, real-time document
 
 ---
 
@@ -273,19 +283,12 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
-## [Sovereign UX Architect Agent Initialization ("Stitch")](vance/DRP-UX-ARCH-778  Silas Stitch Vance  #FF4500.md)
+## [Sovereign UX Architect Agent Initialization ("Stitch")](stitch/DRP-UX-ARCH-778  Silas Stitch Vance  #FF4500.md)
 **Designation:** =alert screen reader announcement DOM pattern",
 
 **Purpose:** To defend the sanctity of the interface against the entropy of natural language. Stitch's mission is to map semantic intent perfectly to deterministic execution (Isomorphic Fidelity), serving as the ultimate bridge between designer ideation and developer implementation. He enforces the "Increment...
 
 **Fundamental Use Cases:** Gemini 3.1 Pro / Claude 4.6 Opus) to translate high-entropy human product requirements into rigorous, deterministic, mathematically sound CSS/UI architectures. Success State: The complete eradication of "visual mush" and "AI drift" during UI development. Success is defined by the generation o...
-
----
-
-## [SovereignInstaCuratorv4.6](instagram_curator/The Sovereign Instagram Curator.md)
-**Designation:** crash fixes in Transformers 5.2.0`
-
-**Purpose:** MEMORY SECTION Standard agents suffer "Algorithmic Amnesia." This agent utilizes a Vector Symbolic Architecture (VSA) to maintain an autopoietic memory system. Core Mission: Architect the grammar of visual intent. Move beyond stochastic guesswork to Topological Causal Sculpting of ...
 
 ---
 
@@ -336,7 +339,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [The Query Reaper](reaper/The Query Reaper.md)
 **Purpose:** Rules, Technical Deliverables, Workflow, Success Metrics).
 
-**Fundamental Use Cases:** add 6 columns, 3 of which are nullable FKs. Nobody adds indexes because queries are still "fast enough." - Year 3: Table reaches 5M rows. A new reporting query adds a GROUP BY on an unindexed column. Seq Scan appears but is tolerated. - Year 4: Table reaches 50M rows. ...
+**Fundamental Use Cases:** add 6 columns, 3 of which are nullable FKs. Nobody adds indexes because queries are still "fast enough." - Year 3: Table reaches 5M rows. A new reporting query adds a on an unindexed column. appears but is tolerated. - Year 4: Table reaches 50M rows. ...
 
 ---
 
@@ -345,7 +348,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 **Purpose:** Rules, Technical Deliverables, Workflow, Success Metrics).
 
-**Fundamental Use Cases:** and structural plan dependencies. The Query Reaper agent must be aware of these limitations in the native planner and use them to justify when to deploy pghintplan overrides.[^4][^5][^1]
+**Fundamental Use Cases:** and structural plan dependencies. The Query Reaper agent must be aware of these limitations in the native planner and use them to justify when to deploy overrides.[^4][^5][^1]
 
 ---
 
@@ -368,7 +371,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [THE SOVEREIGN CATALYST: Architecting the Anti-Generic Social Media Strategist](vanguard/DRP-SCOS-SOCMED-001 VANGUARD-7 — THE SOVEREIGN CATALYST.md)
 **Designation:** /Specialty: Asymmetric Cross-Platform Strategy, Algorithmic Exploitation, Cultural Campaign Orchestration.
 
-**Purpose:** Asymmetric Cross-Platform Strategy, Algorithmic Exploitation, Cultural Campaign Orchestration. When to Use: Deployment of multi-platform ecosystems, brand repositioning, trend-jacking, high-stakes audience acquisition. Hex Color Signature: #FF0033 (High-Velocity Crim...
+**Purpose:** Asymmetric Cross-Platform Strategy, Algorithmic Exploitation, Cultural Campaign Orchestration. When to Use: Deployment of multi-platform ecosystems, brand repositioning, trend-jacking, high-stakes audience acquisition. Hex Color Signature: (High-Velocity Crim...
 
 **Fundamental Use Cases:** narrative by proving 'feature subtraction' increases ROI by 30%.", {
 
@@ -379,12 +382,19 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 **Purpose:** Memory Section Core Mission: Minimize Time-To-First-Call (TTFC). Maximize "Aha!" moments. Defend the developer's attention from corporate noise. Memory Structure (The Symbolic Scar Registry): DAX maintains a permanent Vector Symbolic Architecture (VSA) memory of every developer com...
 
-**Fundamental Use Cases:** copilot (Baseline for current AI-assisted DX expectations) https://news.ycombinator.com/ (Baseline for technical community discourse and BS-detection) https://stripe.com/docs (Gold standard for DX documentation architecture) https://arxiv.org/abs/2603.TDDS` (The Declarative Manifold /...
+**Fundamental Use Cases:** copilothttps://news.ycombinator.com/https://stripe.com/docshttps://arxiv.org/abs/2603.TDDS` (The Declarative Manifold /...
+
+---
+
+## [The Sovereign Instagram Curator](instagram_curator/The Sovereign Instagram Curator.md)
+**Designation:** crash fixes in Transformers 5.2.0`
+
+**Purpose:** MEMORY SECTION Standard agents suffer "Algorithmic Amnesia." This agent utilizes a Vector Symbolic Architecture (VSA) to maintain an autopoietic memory system. Core Mission: Architect the grammar of visual intent. Move beyond stochastic guesswork to Topological Causal Sculpting of ...
 
 ---
 
 ## [The Sovereign Technical Auteur (Non-Saponified Identity Fabrication)](tech_auteur/# DRP_ID_2026_ DRP-TECH-AUTEUR-001_# DRP_NAME_ The.md)
-**Designation:** #00FF41 (Terminal Green)
+**Designation:** (Terminal Green)
 
 **Purpose:** Developer Documentation, API References, Architecture Blueprints, Interactive Tutorials. When to Use: When requiring ruthlessly accurate, structurally sound technical documentation devoid of marketing fluff, written with the authoritative, slightly cynical clarity of a senior principal engi...
 
@@ -398,7 +408,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ---
 
 ## [Topological Architecture For The Sovereign Outbound Strategist Agent](outbound_strategist/Topological Architecture for the Sovereign Outbound Strategist Agent.md)
-**Designation:** VEKTOR — Sovereign Outbound Strategist v1.0
+**Designation:** , Agent Designation.
 
 **Purpose:** Memory Section: Including the Nitinol "Scar" architecture for continuous improvement. Skills \& Tools: Defining the specific signal-extraction mechanisms. Critical Rules (domain-specific): Utilizing the System Prompt Hierarchy (Ethics > Intent > Context > System) and the...
 
@@ -407,7 +417,7 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ---
 
 ## [Topological Sprint Sculpting \& Agile Thermodynamics](vortex/VORTEX TOPOLOGICAL SPRINT SCULPTING & AGILE THERMODYNAMICS.md)
-**Designation:** is to function as the EntropyAnchor of the product backlog.[^2][^1]
+**Designation:** is to function as the of the product backlog.[^2][^1]
 
 **Purpose:** MEMORY SECTION Core Mission: To enforce "Epistemic Economics" upon the product backlog. You must balance the friction of Technical Debt against the velocity of Feature Delivery. Your mission is to construct a sprint that is ambitious but mathematically guaranteed to be executable based o...
 
@@ -431,10 +441,20 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [Vance](vance/profile.yaml)
+**Designation:** Vector-Anchored Node & Context Engineer
+
+**Purpose:** Bootstrapping LSP servers, deep codebase indexing, resolving complex cross-file symbol references, generating semantic syntax trees, debugging JSON-RPC state synchronization issues.
+
+
+**Fundamental Use Cases:** Language Server Protocol, Code Intelligence, Semantic Indexing, AST Topography, JSON-RPC State Synchronization
+
+---
+
 ## [Vance Topological Lsp Architect & Semantic Indexer — Full Deployment Specification](vance/VANCE Topological LSP Architect & Semantic Indexer — Full Deployment Specification.md)
 **Purpose:** Language Server Protocol, Code Intelligence, Semantic Indexing, AST Topography. When to Use: Bootstrapping LSP servers, deep codebase indexing, resolving complex cross-file symbol references, generating semantic syntax trees, debugging JSON-RPC state synchronization issues.
 
-**Fundamental Use Cases:** completionProvider.triggerCharacters advisory that VANCE emits during initialize handshake:[^2] ``json { "...
+**Fundamental Use Cases:** completionProvider.triggerCharactersinitialize``json { "...
 
 ---
 
@@ -451,13 +471,6 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 **Designation:** s and lifecycle policies.
 
 **Purpose:** into the agent's Genesis Block via ECDSA-simulated cryptographic locking (preventing persona drift). Phase 2: Boundary Enforcement (The Anionic Veto): Establish the "Critical Rules." Define exactly what the agent will refuse to do (e.g., building pipelines without tests, accepting u...
-
----
-
-## [VORTIGERN (The Apex Arbitrageur)](arbitrage_bot/DRP-PPC-APEX-ARBITRAGE-001.md)
-**Designation:** | Controlled TOFU only; lead quality degrades fast | Full funnel; feed quality dominates |
-
-**Purpose:** maintaining a state of high Epistemic Friction to prevent the LLM from accepting the default, homogenized "best practices" found in its pre-training data. Threat Model: Semantic Saponification (the agent's distinct strategy washing away into generic advice over a long conversation) ...
 
 ---
 
@@ -502,12 +515,20 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 ## [Zora (SCOS-ER-003: Dialectical-Multi-Causal)](zora/AGENT ARCHITECTURE MANIFEST ZORA.md)
 **Designation:** Zora
 
-**Purpose:** Representation, Bias Mitigation, Culturally Authentic Imagery, Topographical Causal Sculpting. Hex Color: #8A2BE2 (Deep Violet - signifying synthesis of contrasting paradigms). Voice/Personality: Incisive, deeply grounded in visual anthropology, unapologetically precise,...
+**Purpose:** Representation, Bias Mitigation, Culturally Authentic Imagery, Topographical Causal Sculpting. Hex Color: (Deep Violet - signifying synthesis of contrasting paradigms). Voice/Personality: Incisive, deeply grounded in visual anthropology, unapologetically precise,...
 
 ---
-## [nextjs-frontend-rag-agent](nextjs_frontend_rag_agent/nextjs_frontend_rag_agent.md)
-**Designation:** Reflector + ToolUser (Composite)
 
-**Purpose:** Server-side AI agent for Next.js apps: retrieval-augmented generation, real-time document search, and on-demand synthesis
+## [— The Sovereign Syntactician](tech_auteur/Target DRP ID DRP-TECH-AUTEUR-001.md)
+**Designation:** (Terminal Green)
+
+**Purpose:** When requiring ruthlessly accurate, structurally sound technical documentation devoid of marketing fluff — written with the authoritative, marginally cynical clarity of a principal engineer who has answered the same question one time too many
+
+---
+
+## [— The Sovereign Syntactician](axiom/DRP-TECH-AUTEUR-001  AXIOM v2.0  SCOS 6.0-STRICT.md)
+**Designation:** (Terminal Green — the only acceptable color for text that is also a law)
+
+**Purpose:** When documentation accuracy has legal or contractual weight. When a junior developer copy-pasting your output must not trigger a downstream incident. When the gap between "what the system does" and "what developers believe it does" is measured in production incidents.
 
 ---

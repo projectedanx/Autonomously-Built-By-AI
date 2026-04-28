@@ -28,6 +28,7 @@ The repository is organized to facilitate this autonomous flow without collision
 *   **/agent_profiles/**: Stored definitions, instructions, and schemas for the various AI agents (the team) that operate within this ecosystem.
 *   **/cognitive_contracts/**: The storage space for generated PRPs (Product-Requirements Prompts). These are the strict, linted, JSON definitions mapping intent to executable constraints.
 *   **/delegated_tasks/**: The hand-off zone. The Sovereign places explicit JSON task assignments here, waiting for scheduled workers to claim them.
+*   **/epistemic_escrow/**: The quarantine zone. Tasks exhibiting high Confidence-Fidelity Divergence (CFDI > 0.15) are halted and moved here as Escrow Tickets, awaiting human or Oracle intervention before resuming.
 *   **/completed_artifacts/**: The output zone. Workers commit their finished code, analysis, or designs here after successful execution.
 *   **/system_logic/**: The operational Python code backing the workspace.
     * `orchestrator.py`: Main entry point to determine node roles and execute workflows.
@@ -105,3 +106,7 @@ A comprehensive list of product features has been generated to guide the evoluti
 ### Worker Swarm Concurrency Fixes & VULCAN
 *   **Atomic Task Claiming:** The Worker Swarm protocol has been upgraded to prevent race conditions. `StateManager.claim_task()` now uses an atomic `os.rename()` operation, appending a `.claimed` suffix to task files immediately upon acquisition. This ensures that in a truly concurrent multi-agent deployment, multiple workers cannot accidentally execute the same Cognitive Contract simultaneously.
 *   **VULCAN Agent Integration:** The VULCAN (Vector-Unified Logical Computing Architect Node) agent profile has been officially instantiated via the `create_agent_profile.py` tool. VULCAN enforces strict Domain-Driven Design (DDD) constraints, evaluating system topologies mathematically before generating C4 Models and ADRs. See `agent_profiles/vulcan` and the detailed write-up in `completed_artifacts/LESSONS_LEARNED_VULCAN.md`.
+
+### Pluriversal Architecture & Epistemic Escrow
+*   **Epistemic Escrow Integrated**: To prevent belief contamination and LLM hallucinations, the system now features an `epistemic_escrow` directory. Tasks encountering contradictory data or schemas (evaluated via the Confidence-Fidelity Divergence Index, or CFDI) are automatically halted, quarantined as Escrow Tickets, and logged as Symbolic Scars. This implements the "CFDI Brake" pattern.
+*   **Pluriversal Agent Instantiated**: The `Pluriversal` agent profile has been officially created in `agent_profiles/pluriversal`. It enforces Draft-Conditioned Constrained Decoding (DCCD) and Hegelian Dialectical Synthesis to safely orchestrate multiple, often incommensurable knowledge models without collapsing their distinct logical topologies. See `completed_artifacts/LESSONS_LEARNED_PLURIVERSAL.md` for full details.
