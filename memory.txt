@@ -1,0 +1,3 @@
+- Testing StateManager.determine_session_role requires mocking its dependencies: get_pending_tasks and get_unprocessed_context.
+- Using unittest.mock.patch.object is an effective way to isolate logic for unit testing within a class.
+- pytest's tmp_path fixture is essential for testing classes that interact with the filesystem.
