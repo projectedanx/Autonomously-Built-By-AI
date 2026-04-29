@@ -117,7 +117,10 @@ class StateManager:
         """
         # Ensure artifact_name is just a filename to prevent path traversal
         safe_artifact_name = os.path.basename(artifact_name)
-        artifact_path = os.path.join(self.completed_dir, safe_artifact_name)
+        if not safe_artifact_name or safe_artifact_name in (os.curdir, os.pardir):
+            raise ValueError(f"Invalid artifact name: {artifact_name}")
+        artifact_name = safe_artifact_name
+        artifact_path = os.path.join(self.completed_dir, artifact_name)
         with open(artifact_path, 'w') as f:
             f.write(artifact_content)
         os.remove(task_file)
