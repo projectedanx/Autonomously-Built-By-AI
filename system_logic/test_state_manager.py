@@ -34,5 +34,26 @@ class TestStateManager(unittest.TestCase):
             self.assertEqual(len(unprocessed), 1)
             self.assertEqual(unprocessed[0], "context_inbox/file1.txt")
 
+    def test_complete_task_security(self):
+        import shutil
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as test_root:
+            manager = StateManager(test_root)
+            task_file = os.path.join(manager.tasks_dir, "task.json")
+            with open(task_file, "w") as f:
+                f.write("{}")
+
+            malicious_name = "../../malicious.txt"
+            manager.complete_task(task_file, "content", malicious_name, commit=False)
+
+            # Ensure it didn't escape to the test root (where it would have landed with ../../)
+            traversed_path = os.path.join(test_root, "malicious.txt")
+            self.assertFalse(os.path.exists(traversed_path))
+
+            # Ensure it was saved safely inside completed_artifacts
+            safe_path = os.path.join(manager.completed_dir, "malicious.txt")
+            self.assertTrue(os.path.exists(safe_path))
+
 if __name__ == '__main__':
     unittest.main()
