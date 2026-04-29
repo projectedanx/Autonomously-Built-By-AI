@@ -35,7 +35,6 @@ class TestStateManager(unittest.TestCase):
             self.assertEqual(unprocessed[0], "context_inbox/file1.txt")
 
     def test_complete_task_security(self):
-        import shutil
         import tempfile
 
         with tempfile.TemporaryDirectory() as test_root:
