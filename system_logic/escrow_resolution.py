@@ -2,6 +2,10 @@ import json
 import os
 import shutil
 from glob import glob
+from system_logic.fipi_forge import FIPIForge
+from system_logic.state_manager import StateManager
+from system_logic.fipi_forge import FIPIForge
+from system_logic.state_manager import StateManager
 
 class EscrowResolver:
     def __init__(self, workspace_root: str = "."):
@@ -9,6 +13,10 @@ class EscrowResolver:
         self.escrow_dir = os.path.join(self.root, "epistemic_escrow")
         self.tasks_dir = os.path.join(self.root, "delegated_tasks")
         self.contracts_dir = os.path.join(self.root, "cognitive_contracts")
+        self.fipi_forge = FIPIForge(workspace_root)
+        self.state_manager = StateManager(workspace_root)
+        self.fipi_forge = FIPIForge(workspace_root)
+        self.state_manager = StateManager(workspace_root)
 
     def get_pending_tickets(self):
         return glob(os.path.join(self.escrow_dir, "ESCROW-*.json"))
@@ -36,6 +44,16 @@ class EscrowResolver:
         if "human_resolution_blocks" not in prp_data["constraints_and_invariants"]:
             prp_data["constraints_and_invariants"]["human_resolution_blocks"] = []
 
+
+        # --- FIPI & FIGaC Integration ---
+        sic_id = self.fipi_forge.generate_sic(human_resolution, ticket_data.get("ticket_id"))
+        self.state_manager.resolve_scar(ticket_data.get("ticket_id"), human_resolution, sic_id)
+        # --------------------------------
+
+        # --- FIPI & FIGaC Integration ---
+        sic_id = self.fipi_forge.generate_sic(human_resolution, ticket_data.get("ticket_id"))
+        self.state_manager.resolve_scar(ticket_data.get("ticket_id"), human_resolution, sic_id)
+        # --------------------------------
         prp_data["constraints_and_invariants"]["human_resolution_blocks"].append({
             "resolved_ticket": ticket_data.get("ticket_id"),
             "resolution_directive": human_resolution

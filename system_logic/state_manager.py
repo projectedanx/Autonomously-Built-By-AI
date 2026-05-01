@@ -276,6 +276,71 @@ class StateManager:
         except subprocess.CalledProcessError as e:
             print(f"Git commit failed: {e}")
 
+    def resolve_scar(self, ticket_id: str, resolution_text: str, sic_id: str) -> None:
+        """Updates an existing scar in scars.yaml with human resolution data.
+
+        Args:
+            ticket_id: The ID of the Escrow Ticket related to the scar.
+            resolution_text: The human-provided resolution directive.
+            sic_id: The generated Semantic Integrity Constraint ID.
+        """
+        import yaml
+        import os
+        if not os.path.exists(self.scars_file):
+            return
+
+        with open(self.scars_file, 'r') as f:
+            try:
+                scars = yaml.safe_load(f) or []
+            except Exception:
+                return
+
+        updated = False
+        for scar in scars:
+            if scar.get("related_ticket") == ticket_id:
+                scar["resolution"] = resolution_text
+                scar["sic_id"] = sic_id
+                scar["status"] = "RESOLVED"
+                updated = True
+                break
+
+        if updated:
+            with open(self.scars_file, 'w') as f:
+                yaml.dump(scars, f, default_flow_style=False, sort_keys=False)
+            self._git_commit(f"Updated scar related to {ticket_id} with SIC {sic_id}")
+
+    def resolve_scar(self, ticket_id: str, resolution_text: str, sic_id: str) -> None:
+        """Updates an existing scar in scars.yaml with human resolution data.
+
+        Args:
+            ticket_id: The ID of the Escrow Ticket related to the scar.
+            resolution_text: The human-provided resolution directive.
+            sic_id: The generated Semantic Integrity Constraint ID.
+        """
+        import yaml
+        if not os.path.exists(self.scars_file):
+            return
+
+        with open(self.scars_file, 'r') as f:
+            try:
+                scars = yaml.safe_load(f) or []
+            except Exception:
+                return
+
+        updated = False
+        for scar in scars:
+            if scar.get("related_ticket") == ticket_id:
+                scar["resolution"] = resolution_text
+                scar["sic_id"] = sic_id
+                scar["status"] = "RESOLVED"
+                updated = True
+                break
+
+        if updated:
+            with open(self.scars_file, 'w') as f:
+                yaml.dump(scars, f, default_flow_style=False, sort_keys=False)
+            self._git_commit(f"Updated scar related to {ticket_id} with SIC {sic_id}")
+
     def determine_session_role(self) -> str:
         """Determines the role of the current session based on workspace state.
 

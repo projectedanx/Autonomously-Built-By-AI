@@ -10,6 +10,12 @@ The main goal of this workspace is to facilitate a structured, reproducible, and
 
 This system operates on a staggered, scheduled cadence:
 
+### 4. Failure-Informed Governance-as-Code (FIGaC) & FIPI Forge
+The system implements a direct bridge between Epistemic Escrow and global Governance-as-Code:
+- **Detection (AI)**: When the Confidence-Fidelity Divergence Index (CFDI) exceeds limits, the system halts and creates an Escrow ticket, generating a Symbolic Scar.
+- **Axiomatic Continuity (Human)**: A human Oracle provides the logic to resolve the paradox.
+- **Enforcement (AI)**: The  translates the human resolution into a formal Semantic Integrity Constraint (SIC), appends it to , and permanently hardens the swarm against the same failure mode.
+
 1.  **The Sovereign Node (Session 0):**
     - Ingests raw context, research, and ideas from the `/context_inbox/`.
     - Parses the intent and generates strict Cognitive Contracts (PRPs) via the `PRPForge` logic.
