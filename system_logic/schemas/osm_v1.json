@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Optical State Matrix (OSM_v1)",
+  "type": "object",
+  "properties": {
+    "OSM_ID": {
+      "type": "string"
+    },
+    "PDL_Decorators": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Base_Syntax": {
+      "type": "string"
+    },
+    "Negative_Space_Topology": {
+      "type": "string"
+    },
+    "Scar_Injections_Applied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Token_Economy_Score": {
+      "type": "integer"
+    },
+    "ADS_Final": {
+      "type": "number",
+      "maximum": 0.15
+    },
+    "HGI_Final": {
+      "type": "string",
+      "enum": ["100%"]
+    },
+    "SCR_Predicted": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "OSM_ID",
+    "PDL_Decorators",
+    "Base_Syntax",
+    "Negative_Space_Topology",
+    "ADS_Final",
+    "HGI_Final"
+  ]
+}

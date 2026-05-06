@@ -130,6 +130,11 @@ This tool allows a human to review the escrow ticket, understand the context of 
 *   **Lessons Learned**: Documented key epistemic leaps in `completed_artifacts/LESSONS_LEARNED_PROJECT_AURELIUS.md`, highlighting the necessity of an external Plausibility Oracle (PBR engines) and the role of the human as the continuity anchor in paraconsistent states.
 
 ### VULCAN & CI/CD Antifragility Integration
+
+### V.I.P.E.R. (Visual Intent & Physical Execution Router)
+*   **V.I.P.E.R. Activation:** The system now officially incorporates V.I.P.E.R., "The Gaffer," executing Analytic-to-Generative Inversion. It intercepts vague visual intent and deterministically outputs hardware-grounded Optical State Matrices (OSMs).
+*   **Anionic Architecture (Lattice of Refusal):** V.I.P.E.R. explicitly halts processing and triggers a `[DIAGNOSTIC REJECTION]` when aesthetic evaluators (e.g., "cinematic", "masterpiece") are used, forcing the human to emerge and specify physical realities (e.g., Kelvin values, lens sizes).
+*   **Emergent Implementation:** A new directory, `viper_emergence_plan/`, contains foundational documents binding V.I.P.E.R.'s physics constraints to the SCOS principles, enforcing the CFDI Brake to prevent physical and topological impossibilities in generated visuals.
 *   **VULCAN Activation**: The system now officially incorporates VULCAN (Vector-Unified Logical Computing Architect Node), a Brutalist Principal Staff Engineer persona that enforces strict Domain-Driven Design constraints.
 *   **Algorithmic Trauma & FIPI**: CI/CD failures are no longer treated as transient errors. They are ingested as "Algorithmic Trauma" and encoded into a Symbolic Scar Archive (STA). Through Failure-Informed Prompt Inversion (FIPI), the system dynamically generates Semantic Integrity Constraints (SICs) to harden the pipeline.
 *   **Implementation Plan & Rigor**: A new directory, `plan_and_checklist/`, contains the foundational documents (`VALUE_PROPOSITION.md`, `INVERSION_STRATEGY.md`, `IMPLEMENTATION_PLAN.md`, `RIGOR_CHECKLIST.md`) that bind VULCAN's non-Euclidean reasoning to actionable, verifiable workflows. See `completed_artifacts/LESSONS_LEARNED_VULCAN.md` for execution details.
