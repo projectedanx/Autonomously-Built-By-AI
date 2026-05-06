@@ -37,7 +37,7 @@ class StateManager:
         Returns:
             None
         """
-        for d in [self.inbox_dir, self.contracts_dir, self.tasks_dir, self.completed_dir, self.scar_archive_dir, self.escrow_dir]:
+        for d in (self.inbox_dir, self.contracts_dir, self.tasks_dir, self.completed_dir, self.scar_archive_dir, self.escrow_dir):
             os.makedirs(d, exist_ok=True)
 
     def get_unprocessed_context(self) -> list:
