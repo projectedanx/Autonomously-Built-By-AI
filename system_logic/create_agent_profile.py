@@ -33,6 +33,11 @@ def create_agent(name, designation, color, specialty, when_to_use, primary_goal,
     if not folder_name:
         folder_name = name.lower().replace(" ", "_")
 
+    # Sanitize folder_name to prevent path traversal
+    folder_name = os.path.basename(folder_name)
+    if not folder_name or folder_name in (os.curdir, os.pardir):
+        raise ValueError(f"Invalid folder name: {folder_name}")
+
     folder_path = os.path.join("agent_profiles", folder_name)
     os.makedirs(folder_path, exist_ok=True)
 
