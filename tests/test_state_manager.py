@@ -6,6 +6,11 @@ import pytest
 from system_logic.state_manager import StateManager
 
 def test_complete_task(tmp_path):
+    """Tests completing a task successfully, including git commits.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     # Initialize StateManager with a temporary workspace
     manager = StateManager(workspace_root=str(tmp_path))
 
@@ -37,6 +42,11 @@ def test_complete_task(tmp_path):
         mock_git_commit.assert_called_once_with(expected_message)
 
 def test_claim_task(tmp_path):
+    """Tests successfully claiming a pending task.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     # Initialize StateManager with a temporary workspace
     manager = StateManager(workspace_root=str(tmp_path))
 
@@ -57,6 +67,11 @@ def test_claim_task(tmp_path):
     assert not os.path.exists(task_file_path), "Original task file should be renamed"
 
 def test_claim_task_not_found(tmp_path):
+    """Tests claiming a missing task raises FileNotFoundError.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     # Initialize StateManager with a temporary workspace
     manager = StateManager(workspace_root=str(tmp_path))
 
@@ -68,6 +83,11 @@ def test_claim_task_not_found(tmp_path):
         manager.claim_task(task_file_path)
 
 def test_complete_task_missing_file(tmp_path):
+    """Tests completing a missing task raises FileNotFoundError.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     # Initialize StateManager with a temporary workspace
     manager = StateManager(workspace_root=str(tmp_path))
 
@@ -85,6 +105,11 @@ def test_complete_task_missing_file(tmp_path):
         mock_git_commit.assert_not_called()
 
 def test_mark_context_processed(tmp_path):
+    """Tests marking a context file as processed correctly updates state.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     manager = StateManager(workspace_root=str(tmp_path))
     filename = "test_context.txt"
 
@@ -95,6 +120,11 @@ def test_mark_context_processed(tmp_path):
     assert filename in manager._processed_context_set
 
 def test_mark_context_processed_idempotency(tmp_path):
+    """Tests marking a context file as processed is idempotent.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     manager = StateManager(workspace_root=str(tmp_path))
     filename = "test_context.txt"
 
@@ -105,6 +135,11 @@ def test_mark_context_processed_idempotency(tmp_path):
     assert state["processed_context"].count(filename) == 1
 
 def test_get_unprocessed_context_filtering(tmp_path):
+    """Tests retrieving unprocessed context filters out processed ones.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     manager = StateManager(workspace_root=str(tmp_path))
 
     # Create two files in inbox
@@ -128,6 +163,11 @@ def test_get_unprocessed_context_filtering(tmp_path):
     assert not any(file1 in f for f in unprocessed_after)
 
 def test_get_pending_tasks(tmp_path):
+    """Tests retrieving pending tasks correctly identifies valid tasks.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     manager = StateManager(workspace_root=str(tmp_path))
 
     # Create valid task files
@@ -160,6 +200,11 @@ def test_get_pending_tasks(tmp_path):
     assert "task_dir.json" not in file_names
 
 def test_get_pending_tasks_empty(tmp_path):
+    """Tests retrieving pending tasks when none exist.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     manager = StateManager(workspace_root=str(tmp_path))
     pending_tasks = manager.get_pending_tasks()
     assert len(pending_tasks) == 0

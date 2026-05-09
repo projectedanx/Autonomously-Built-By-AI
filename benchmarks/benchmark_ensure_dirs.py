@@ -5,6 +5,7 @@ import tempfile
 from system_logic.state_manager import StateManager
 
 def benchmark_ensure_dirs(num_iterations=10000):
+    """Benchmarks the _ensure_dirs method of StateManager."""
     with tempfile.TemporaryDirectory() as tmpdir:
         manager = StateManager(workspace_root=tmpdir)
 

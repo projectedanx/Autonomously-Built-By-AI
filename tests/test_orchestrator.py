@@ -6,6 +6,13 @@ from system_logic.orchestrator import Orchestrator
 @patch("system_logic.orchestrator.PRPForge")
 @patch("system_logic.orchestrator.TaskDispatcher")
 def test_process_context_file(mock_task_dispatcher_class, mock_prp_forge_class, mock_state_manager_class):
+    """Tests processing a context file by the Orchestrator.
+
+    Args:
+        mock_task_dispatcher_class: Mock for TaskDispatcher.
+        mock_prp_forge_class: Mock for PRPForge.
+        mock_state_manager_class: Mock for StateManager.
+    """
     # Setup mocks
     mock_manager = MagicMock()
     mock_state_manager_class.return_value = mock_manager

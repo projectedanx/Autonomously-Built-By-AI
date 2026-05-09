@@ -5,6 +5,11 @@ import pytest
 from system_logic.task_dispatcher import TaskDispatcher
 
 def test_task_dispatcher_init(tmp_path):
+    """Tests TaskDispatcher initialization.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     workspace = str(tmp_path)
     dispatcher = TaskDispatcher(workspace_root=workspace)
 
@@ -13,6 +18,11 @@ def test_task_dispatcher_init(tmp_path):
     assert dispatcher.tasks_dir == os.path.join(workspace, "delegated_tasks")
 
 def test_dispatch_task_default_role(tmp_path):
+    """Tests dispatching a task with the default WORKER role.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     workspace = str(tmp_path)
     # Ensure the delegated_tasks directory exists
     os.makedirs(os.path.join(workspace, "delegated_tasks"), exist_ok=True)
@@ -38,6 +48,11 @@ def test_dispatch_task_default_role(tmp_path):
     assert data["instructions"] == "Execute strictly according to the referenced Cognitive Contract (PRP)."
 
 def test_dispatch_task_custom_role(tmp_path):
+    """Tests dispatching a task with a custom role.
+
+    Args:
+        tmp_path: Pytest fixture for a temporary directory.
+    """
     workspace = str(tmp_path)
     os.makedirs(os.path.join(workspace, "delegated_tasks"), exist_ok=True)
 

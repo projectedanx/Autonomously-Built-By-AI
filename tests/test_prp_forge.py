@@ -2,6 +2,7 @@ import pytest
 from system_logic.prp_forge import PRPForge
 
 def test_generate_prp_structure():
+    """Tests the basic structure of a generated PRP."""
     forge = PRPForge()
     raw_content = "Test content"
     source_filename = "test.txt"
@@ -22,6 +23,7 @@ def test_generate_prp_structure():
     assert "source_file" in metadata
 
 def test_generate_prp_content_values():
+    """Tests the specific content values of a generated PRP."""
     forge = PRPForge()
     raw_content = "Test content"
     source_filename = "test.txt"
@@ -33,6 +35,7 @@ def test_generate_prp_content_values():
     assert prp["metadata"]["source_file"] == source_filename
 
 def test_generate_prp_id_consistency():
+    """Tests that the generated PRP ID matches the ID inside the PRP metadata."""
     forge = PRPForge()
     raw_content = "Test content"
     source_filename = "test.txt"
@@ -42,6 +45,7 @@ def test_generate_prp_id_consistency():
     assert prp_id.startswith("PRP-CRITICAL-REQ-")
 
 def test_generate_prp_snippet_truncation():
+    """Tests that long context intent snippets are correctly truncated."""
     forge = PRPForge()
     # 501 characters
     long_content = "A" * 501
@@ -52,6 +56,7 @@ def test_generate_prp_snippet_truncation():
     assert len(prp["raw_intent_snippet"]) == 503
 
 def test_generate_prp_short_content():
+    """Tests that short context intent snippets are handled correctly."""
     forge = PRPForge()
     short_content = "Short"
     prp, _ = forge.generate_prp(short_content, "test.txt")
@@ -60,6 +65,7 @@ def test_generate_prp_short_content():
     assert prp["raw_intent_snippet"] == "Short..."
 
 def test_generate_prp_id_uniqueness():
+    """Tests that consecutively generated PRPs have unique IDs."""
     forge = PRPForge()
     raw_content = "Test content"
     source_filename = "test.txt"

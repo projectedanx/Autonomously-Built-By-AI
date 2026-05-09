@@ -8,7 +8,9 @@ from system_logic.escrow_resolution import EscrowResolver
 from system_logic.state_manager import StateManager
 
 class TestEscrowResolution(unittest.TestCase):
+    """Tests for the EscrowResolver class, ensuring tickets can be retrieved and resolved correctly."""
     def setUp(self):
+        """Sets up a temporary workspace with necessary directories and mock files for testing."""
         self.temp_dir = tempfile.TemporaryDirectory()
         self.root = self.temp_dir.name
         self.manager = StateManager(self.root)
@@ -34,9 +36,11 @@ class TestEscrowResolution(unittest.TestCase):
             json.dump(self.task_data, f)
 
     def tearDown(self):
+        """Cleans up the temporary workspace after tests."""
         self.temp_dir.cleanup()
 
     def test_resolve_ticket(self):
+        """Tests that a ticket is correctly resolved, the PRP is updated, and the task is requeued."""
         # 1. Claim task and trigger escrow to set up the state
         task_content, claimed_path = self.manager.claim_task(self.task_path)
         ticket_path = self.manager.escrow_task(claimed_path, 0.20, "Test Conflict")
@@ -77,6 +81,11 @@ class TestEscrowResolution(unittest.TestCase):
 
     @patch('builtins.input', side_effect=['0', 'My resolution patch'])
     def test_main_cli_flow(self, mock_input):
+        """Tests the main interactive CLI flow for resolving escrow tickets.
+
+        Args:
+            mock_input: Mock for the built-in input function.
+        """
         # Setup escrow state
         task_content, claimed_path = self.manager.claim_task(self.task_path)
         ticket_path = self.manager.escrow_task(claimed_path, 0.20, "Test Conflict")

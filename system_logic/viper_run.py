@@ -1,6 +1,7 @@
 import json
 
 def run_viper_test():
+    """Runs a test of the VIPER-GAFFER system to check prompts against banned aesthetic evaluators."""
     prompt = "I want a nostalgic, beautiful portrait of an old woman in a Parisian cafe, very cinematic and emotional, masterpiece quality, 8k"
     banned_tokens = [
         "masterpiece", "epic", "stunning", "beautiful", "hyper-realistic",

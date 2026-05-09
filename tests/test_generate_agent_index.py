@@ -2,6 +2,7 @@ import pytest
 from system_logic.generate_agent_index import parse_profile
 
 def test_parse_profile_exception_handling():
+    """Tests that parse_profile returns None on an invalid filepath."""
     # Pass an invalid file path that will cause an exception
     invalid_filepath = "/invalid/path/that/does/not/exist_12345.md"
     result = parse_profile(invalid_filepath)

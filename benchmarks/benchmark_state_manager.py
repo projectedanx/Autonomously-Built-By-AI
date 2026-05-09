@@ -6,6 +6,11 @@ import tempfile
 from system_logic.state_manager import StateManager
 
 def benchmark_mark_context_processed(num_iterations=1000):
+    """Benchmarks the mark_context_processed method.
+
+    Args:
+        num_iterations (int): The number of iterations to run. Defaults to 1000.
+    """
     with tempfile.TemporaryDirectory() as tmpdir:
         manager = StateManager(workspace_root=tmpdir)
 
@@ -22,6 +27,11 @@ def benchmark_mark_context_processed(num_iterations=1000):
 
 
 def benchmark_mark_context_processed_deferred(num_iterations=1000):
+    """Benchmarks the mark_context_processed method with defer_save=True.
+
+    Args:
+        num_iterations (int): The number of iterations to run. Defaults to 1000.
+    """
     with tempfile.TemporaryDirectory() as tmpdir:
         manager = StateManager(workspace_root=tmpdir)
 
@@ -37,6 +47,11 @@ def benchmark_mark_context_processed_deferred(num_iterations=1000):
         print(f"Benchmark mark_context_processed_deferred with {num_iterations} iterations: {duration:.4f} seconds")
         print(f"Average time per call: {duration/num_iterations:.8f} seconds")
 def benchmark_get_unprocessed_context(num_files=1000):
+    """Benchmarks the get_unprocessed_context method.
+
+    Args:
+        num_files (int): The number of files to create in the inbox. Defaults to 1000.
+    """
     with tempfile.TemporaryDirectory() as tmpdir:
         manager = StateManager(workspace_root=tmpdir)
 
