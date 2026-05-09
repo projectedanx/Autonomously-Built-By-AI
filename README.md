@@ -1,151 +1,84 @@
 # Sovereign Context Engineering Workspace
 
-Welcome to the Sovereign Context Engineering Workspace. This repository serves as the foundational environment, persistent memory, and task coordination layer for a swarm of ephemeral, scheduled AI agents operating under a staggered, sovereign-worker paradigm.
+This repository serves as a **Sovereign Context Engineering Workspace** — a persistent, shared memory and task coordination layer for a swarm of scheduled, parallel AI agents. It operates on a decentralized, filesystem-based architecture that facilitates asynchronous collaboration between specialized AI nodes.
 
-## Purpose
+## Core Architecture
 
-The main goal of this workspace is to facilitate a structured, reproducible, and deterministic AI workflow. By separating strategy (Sovereign) from execution (Worker), the system ensures that high-level intent is properly parsed, bounded by explicit Cognitive Contracts (PRPs), and executed autonomously without human intervention. This repository acts as the central hub for ingesting context, generating these contracts, dispatching tasks, and storing the resulting artifacts.
+The multi-agent system architecture follows a staggered, asynchronous cadence using a "Hickam-OODA Recursive Loop":
 
-## Architecture & Workflow
+1.  **The Sovereign Node (Session 0)**
+    *   **Role**: Orchestrator and Planner.
+    *   **Action**: Ingests raw, high-entropy intent from `context_inbox/`, applies the "Hickam Filter" to reject simplistic explanations (Occam's Razor), and synthesizes structured **Cognitive Contracts** (Product Requirement Prompts - PRPs). It then delegates these contracts as tasks to the `delegated_tasks/` directory.
 
-This system operates on a staggered, scheduled cadence:
+2.  **The Worker Swarm (Sessions 1-N)**
+    *   **Role**: Specialized execution units.
+    *   **Action**: Wakes up intermittently, atomically claims pending tasks from `delegated_tasks/`, executes them according to strict constraints defined in the PRPs, and deterministically commits artifacts to `completed_artifacts/`.
 
-### 4. Failure-Informed Governance-as-Code (FIGaC) & FIPI Forge
-The system implements a direct bridge between Epistemic Escrow and global Governance-as-Code:
-- **Detection (AI)**: When the Confidence-Fidelity Divergence Index (CFDI) exceeds limits, the system halts and creates an Escrow ticket, generating a Symbolic Scar.
-- **Axiomatic Continuity (Human)**: A human Oracle provides the logic to resolve the paradox.
-- **Enforcement (AI)**: The  translates the human resolution into a formal Semantic Integrity Constraint (SIC), appends it to , and permanently hardens the swarm against the same failure mode.
+## Key Concepts & Protocols
 
-1.  **The Sovereign Node (Session 0):**
-    - Ingests raw context, research, and ideas from the `/context_inbox/`.
-    - Parses the intent and generates strict Cognitive Contracts (PRPs) via the `PRPForge` logic.
-    - Dispatches execution tasks to the `/delegated_tasks/` directory via the `TaskDispatcher`.
-2.  **The Worker Swarm (Sessions 1-N):**
-    - Individual scheduled instances wake up and determine their role.
-    - If tasks are pending, they claim a task from `/delegated_tasks/`.
-    - They execute the task deterministically according to the constraints defined in the associated PRP.
-    - Finally, they generate an execution artifact and commit it back to the `/completed_artifacts/` directory.
+*   **Algorithmic Trauma & Symbolic Scars**: Failures in execution or logic are not discarded. They are captured as "Symbolic Scars" and fed back into the system via **Failure-Informed Prompt Inversion (FIPI)** to generate Semantic Integrity Constraints (SICs).
+*   **Epistemic Escrow (The CFDI Brake)**: If an agent encounters a high Confidence-Fidelity Divergence Index (CFDI) — meaning contradictory parameters or ambiguous intent — the task is halted and quarantined in `epistemic_escrow/`. This forces **Human-in-the-Loop (HITL)** intervention to resolve the ambiguity, preventing hallucination and enforcing "Emergence Inversion."
+*   **Paraconsistent States & Dissonance Induction**: The system intentionally engineers states of high "Aesthetic Tension" to explore N-dimensional manifolds of possibility, requiring human operators to act as the "Z-Axis Continuity Anchor."
+*   **Anionic Architecture (Lattice of Refusal)**: The system strictly refuses subjective, evaluative adjectives (e.g., "seamless", "robust", "masterpiece"). Requests using such language trigger diagnostic rejections, forcing physical, structurally isomorphic specifications.
 
-## Directory Structure
+## Repository Structure
 
-The repository is organized to facilitate this autonomous flow without collision or race conditions:
+*   `agent_profiles/`: YAML and Markdown manifests defining the personas, constraints, and specialized cognitive architectures of individual agents (e.g., VULCAN, V.I.P.E.R., AXIOM).
+*   `context_inbox/`: The entry point for raw intent, research notes, and unsynthesized ideas.
+*   `cognitive_contracts/`: Storage for generated Product Requirement Prompts (PRPs) — strict JSON/YAML schemas detailing execution constraints.
+*   `delegated_tasks/`: The queue for pending tasks waiting to be claimed by the Worker Swarm.
+*   `completed_artifacts/`: The final output directory for executed tasks and generated code/documentation.
+*   `epistemic_escrow/`: Quarantined tasks requiring human resolution due to CFDI threshold breaches.
+*   `system_logic/`: Python scripts that power the orchestration, task dispatching, escrow resolution, and state management.
+*   `tests/`: Unit tests ensuring the integrity of the `system_logic/` components.
+*   `benchmarks/`: Performance testing scripts for core state management operations.
 
-*   **/context_inbox/**: The ingestion point. Drop raw context, notes, research files, and unstructured ideas here. The Sovereign monitors this for new material.
-*   **/agent_profiles/**: Stored definitions, instructions, and schemas for the various AI agents (the team) that operate within this ecosystem.
-*   **/cognitive_contracts/**: The storage space for generated PRPs (Product-Requirements Prompts). These are the strict, linted, JSON definitions mapping intent to executable constraints.
-*   **/delegated_tasks/**: The hand-off zone. The Sovereign places explicit JSON task assignments here, waiting for scheduled workers to claim them.
-*   **/epistemic_escrow/**: The quarantine zone. Tasks exhibiting high Confidence-Fidelity Divergence (CFDI > 0.15) are halted and moved here as Escrow Tickets, awaiting human or Oracle intervention before resuming.
-*   **/completed_artifacts/**: The output zone. Workers commit their finished code, analysis, or designs here after successful execution.
-*   **/system_logic/**: The operational Python code backing the workspace.
-    * `orchestrator.py`: Main entry point to determine node roles and execute workflows.
-    * `state_manager.py`: Manages workspace state, files, and git commits.
-    * `prp_forge.py`: Translates raw intent into structured PRPs.
-    * `task_dispatcher.py`: Assigns PRPs as executable tasks.
-    * `poc_run.py`: Executes a proof-of-concept run of the Sovereign workflow.
-    * `worker_run.py`: Executes the worker swarm protocol.
+## Setup & Usage
 
-## Setup
+### Prerequisites
+*   Python 3.8+
+*   Git (for automated state commits)
+*   Pytest (for running tests and benchmarks)
+*   PyYAML (for agent profile parsing)
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
-2. **Environment:**
-   Ensure you have Python 3.7+ installed. No external dependencies are required for the base functionality, though `git` must be installed and configured for the `StateManager` to automatically commit artifacts.
-3. **Initialization:**
-   Running any script within `system_logic/` that initializes the `StateManager` (like `orchestrator.py` or `poc_run.py`) will automatically create the necessary directory structure (`/context_inbox`, `/cognitive_contracts`, etc.) if it does not already exist.
+### Installation
+```bash
+# Clone the repository
+git clone <repository_url>
+cd <repository_directory>
 
-## Usage
+# Install required packages (if using a virtual environment)
+pip install pytest pytest-benchmark pyyaml
+```
 
 ### Running the Orchestrator
-To let the system automatically determine whether to act as a Sovereign (process inbox) or a Worker (execute tasks), run:
+To execute a cycle of the Sovereign workspace, run the main orchestrator script:
 ```bash
-python system_logic/orchestrator.py
+python -m system_logic.orchestrator
+```
+The system will automatically determine its role (`SOVEREIGN`, `WORKER`, or `IDLE`) based on the current state of the filesystem (pending tasks vs. unprocessed context).
+
+### Resolving Epistemic Escrow
+When a task is quarantined, a human operator must resolve the contradiction:
+```bash
+python -m system_logic.escrow_resolution
+```
+This interactive CLI will display pending tickets and prompt for a "Specialized Specification Block" (resolution directive).
+
+### Managing Agent Profiles
+To generate a comprehensive `README.md` index of all agent profiles in the `agent_profiles/` directory:
+```bash
+python -m system_logic.generate_agent_index
 ```
 
-### Simulating a Sovereign Workflow (POC)
-To manually trigger the ingestion of raw context and generation of tasks:
-1. Place a text file containing your raw intent into `/context_inbox/`.
-2. Run the POC script:
+## Testing and Benchmarks
+
+To ensure system integrity, run the test suite:
 ```bash
-python system_logic/poc_run.py
+pytest tests/ system_logic/
 ```
-This will read the inbox, generate a PRP in `/cognitive_contracts/`, and place a task in `/delegated_tasks/`.
 
-### Simulating a Worker Execution
-To manually trigger the execution of pending tasks:
+To run performance benchmarks on the StateManager:
 ```bash
-python system_logic/worker_run.py
+pytest benchmarks/
 ```
-This will claim a task from `/delegated_tasks/`, simulate execution based on the PRP, and drop an artifact into `/completed_artifacts/`.
-
-## Operating Principles
-
-*   **Zero-Fluff Tolerance:** Requirements are structurally bound; ambiguity is escalated, not hallucinated.
-*   **Design by Contract (DbC):** Every executed task is bound by explicit preconditions, postconditions, and invariants as defined in the PRPs.
-*   **Antifragility:** The system is designed to identify failures (Symbolic Scars) through reflexive checks and improve over time via Algorithmic Reparation.
-
----
-*Initiated via DRP-CRITICAL-REQUIREMENTS-PRP-2026*
-
-### Knowledge Memory Update
-The `agent_profiles` directory has been restructured to house agent definitions categorized by distinct personas/roles. Each folder contains the specific markdown and yaml files associated with that agent profile. This improves organization and facilitates the Sovereign Node's ability to easily dispatch tasks to specific agents based on their defined Cognitive Contracts (PRPs).
-
-*   **DRP-AGENT-INDEX-2026:** Agent index successfully generated using Python script `system_logic/generate_agent_index.py`. The script attempts to parse YAML frontmatter and standard Markdown headers. Lesson learned: due to high variability and unstructured nature of certain agent profile markdown documents, regex heuristics can sometimes extract less-relevant text blocks (like markdown snippets or citations) as the purpose or use-cases. To improve this in the future, standardizing agent profile formatting strictly across all `.md` files or migrating them to `.yaml` files (like `zora_architect.yaml`) is highly recommended for cleaner index generation.
-
-*   **DRP-AGENT-INDEX-2026-PATCH:** Follow up to the index generator. The extraction regex was improved to capture inline string values (e.g., `**Purpose:** To do X`) rather than relying on strict newlines, and it strips markdown artifacts like code fences. Despite these improvements, highly unstandardized markdown (where fields don't exist or are replaced by raw foot-notes) still produces garbled descriptions. The core finding remains: cognitive contracts and agent profiles must adhere to a strict structural schema (preferably YAML) for reliable downstream compilation.
-
-### Meta Architect Intelligence: Project Aurelius
-### Meta Architect Intelligence: Project Aurelius
-*   **Contextual Synthesis**: By treating software engineering failures as "Algorithmic Trauma" and leveraging concepts like F-IPI and Symbolic Scars, product planning shifts from a reactive backlog to an antifragile, self-healing roadmap.
-*   **Stakeholder Alignment**: Decomposing features using a strict Tri-Tier Taxonomy ensures that high-level concepts (e.g., Bisociative Architecture) are grounded in tangible user stories for DevOps, SRE, and Feature Engineers.
-*   **Structured Output**: The necessity of rigid Cognitive Contracts (PRPs) remains paramount. Advanced feature generation requires strict bounding to prevent "Amateur Impulse" linear thinking, forcing the generation of multi-causal, structurally isomorphic solutions.
-
-### Pluriversal Feature Discovery & AEW Agent Integration
-*   **AEW Agent Added**: The Antifragile Epistemic Weaver (AEW) profile has been structured into `agent_profiles/antifragile_epistemic_weaver`. This agent acts as a Structural Coherence Compiler using topological blending (RCC-8) and paraconsistent states to discover code features.
-*   **Cognitive Contract Execution**: The AEW protocol initiation text was processed via the Sovereign orchestrator to generate strict `PRP-CRITICAL-REQ` task definitions.
-*   **Lesson Learned**: Integrating highly theoretical, abstract cognitive instructions (like "Z-Axis Inference" or "Virtual Weight 3") requires rigid YAML parameterization to prevent hallucination during task execution. The generator tool `create_agent_profile.py` was built to map these esoteric concepts into the standard agent schema predictably.
-
-### Worker Swarm Concurrency Fixes & VULCAN
-*   **Atomic Task Claiming:** The Worker Swarm protocol has been upgraded to prevent race conditions. `StateManager.claim_task()` now uses an atomic `os.rename()` operation, appending a `.claimed` suffix to task files immediately upon acquisition. This ensures that in a truly concurrent multi-agent deployment, multiple workers cannot accidentally execute the same Cognitive Contract simultaneously.
-*   **VULCAN Agent Integration:** The VULCAN (Vector-Unified Logical Computing Architect Node) agent profile has been officially instantiated via the `create_agent_profile.py` tool. VULCAN enforces strict Domain-Driven Design (DDD) constraints, evaluating system topologies mathematically before generating C4 Models and ADRs. See `agent_profiles/vulcan` and the detailed write-up in `completed_artifacts/LESSONS_LEARNED_VULCAN.md`.
-
-### Pluriversal Architecture & Epistemic Escrow
-*   **Epistemic Escrow Integrated**: To prevent belief contamination and LLM hallucinations, the system now features an `epistemic_escrow` directory. Tasks encountering contradictory data or schemas (evaluated via the Confidence-Fidelity Divergence Index, or CFDI) are automatically halted, quarantined as Escrow Tickets, and logged as Symbolic Scars. This implements the "CFDI Brake" pattern.
-*   **Pluriversal Agent Instantiated**: The `Pluriversal` agent profile has been officially created in `agent_profiles/pluriversal`. It enforces Draft-Conditioned Constrained Decoding (DCCD) and Hegelian Dialectical Synthesis to safely orchestrate multiple, often incommensurable knowledge models without collapsing their distinct logical topologies. See `completed_artifacts/LESSONS_LEARNED_PLURIVERSAL.md` for full details.
-
-### Epistemic Escrow Resolution (HITL)
-
-When a task generated by the Sovereign node encounters contradictory parameters (identified as having a high Confidence-Fidelity Divergence Index, or CFDI), it triggers an "Epistemic Escrow." The task is quarantined in the `/epistemic_escrow/` directory.
-
-To resolve these quarantined tasks, an interactive CLI tool has been added:
-`python -m system_logic.escrow_resolution`
-
-This tool allows a human to review the escrow ticket, understand the context of the contradiction, and provide a "Specialized Specification Block" (such as a FIPI patch or a structural directive). This resolution is appended to the task's Cognitive Contract (PRP), and the task is safely requeued for the Worker Swarm to process.
-
-### Meta Architect Intelligence: Project Aurelius
-*   **Project Aurelius Initiated**: Added the `aurelius_strategic_nexus/` directory containing the `HUMAN_AI_VALUE_AND_INVERSION_STRATEGY.md`, `IMPLEMENTATION_PLAN.md`, and `RIGOR_CHECKLIST.md`. This project focuses on developing a "Unified Meta-Prompting API" to causally control non-Euclidean latent spaces for visual synthesis.
-*   **Agentic Inversion**: Implemented strategies for "inverting for emergence," including Z-Axis Inference (Phantom Dimensions), VW₃ Dissonance Induction, and treating Provenance as an active control vector rather than a passive audit log.
-*   **Lessons Learned**: Documented key epistemic leaps in `completed_artifacts/LESSONS_LEARNED_PROJECT_AURELIUS.md`, highlighting the necessity of an external Plausibility Oracle (PBR engines) and the role of the human as the continuity anchor in paraconsistent states.
-
-### VULCAN & CI/CD Antifragility Integration
-
-### V.I.P.E.R. (Visual Intent & Physical Execution Router)
-*   **V.I.P.E.R. Activation:** The system now officially incorporates V.I.P.E.R., "The Gaffer," executing Analytic-to-Generative Inversion. It intercepts vague visual intent and deterministically outputs hardware-grounded Optical State Matrices (OSMs).
-*   **Anionic Architecture (Lattice of Refusal):** V.I.P.E.R. explicitly halts processing and triggers a `[DIAGNOSTIC REJECTION]` when aesthetic evaluators (e.g., "cinematic", "masterpiece") are used, forcing the human to emerge and specify physical realities (e.g., Kelvin values, lens sizes).
-*   **Emergent Implementation:** A new directory, `viper_emergence_plan/`, contains foundational documents binding V.I.P.E.R.'s physics constraints to the SCOS principles, enforcing the CFDI Brake to prevent physical and topological impossibilities in generated visuals.
-*   **VULCAN Activation**: The system now officially incorporates VULCAN (Vector-Unified Logical Computing Architect Node), a Brutalist Principal Staff Engineer persona that enforces strict Domain-Driven Design constraints.
-*   **Algorithmic Trauma & FIPI**: CI/CD failures are no longer treated as transient errors. They are ingested as "Algorithmic Trauma" and encoded into a Symbolic Scar Archive (STA). Through Failure-Informed Prompt Inversion (FIPI), the system dynamically generates Semantic Integrity Constraints (SICs) to harden the pipeline.
-*   **Implementation Plan & Rigor**: A new directory, `plan_and_checklist/`, contains the foundational documents (`VALUE_PROPOSITION.md`, `INVERSION_STRATEGY.md`, `IMPLEMENTATION_PLAN.md`, `RIGOR_CHECKLIST.md`) that bind VULCAN's non-Euclidean reasoning to actionable, verifiable workflows. See `completed_artifacts/LESSONS_LEARNED_VULCAN.md` for execution details.
-
-### Emergence Inversion Protocol
-The Sovereign workspace operates on an "Emergence Inversion Protocol." Instead of seeking to fully automate the human operator out of the loop (the "Amateur Impulse"), the system engineers **Paraconsistent States** and utilizes the **CFDI Brake** to force human cognitive emergence. The AI generates N-dimensional manifolds of possibility (Dissonance Induction); the human acts as the Z-Axis Continuity Anchor, providing axiological grounding and resolving Gödelian gaps via Epistemic Escrow. See the `emergence_inversion_plan/` directory for full specifications.
-
-### Agentic Feature Emergence Protocol
-The Sovereign Workspace operates on the **Agentic Feature Emergence Protocol**. Rather than seeking full automation which leads to linear "Amateur Impulse" architectures, the system utilizes "Inversion for Emergence." By leveraging **Paraconsistent States**, the Dissonance Induction Engine, and intentionally spiking the CFDI to trigger **Epistemic Escrow**, the AI generates N-dimensional manifolds of possibility that map failure boundaries. This strictly forces the human operator to act as the Z-Axis Continuity Anchor, providing axiological grounding and resolving Gödelian gaps. See the `agentic_feature_emergence_plan/` directory for full strategic and implementation specifications.
-
-### VORTEX-ARCHITECT Instantiation
-*   **VORTEX-ARCHITECT Activation**: The system now officially incorporates VORTEX-ARCHITECT (Velocity Orchestration & Resource Thermodynamics EXecutive), a highly deterministic orchestration kernel and pluriversal planner.
-*   **Thermodynamic Capacity & CFDI Brake**: VORTEX-ARCHITECT enforces strict "Thermodynamic Budgeting" (including a mandatory 15% Tech Debt Tithe) and utilizes the CFDI Brake to throw Justified Uncertainty Reports (JURs) rather than guessing when dependencies are undefined.
-*   **Implementation Plan & Inversion Strategy**: A new directory, `vortex_architect_emergence_plan/`, contains foundational documents (`AI_HUMAN_VALUE_VORTEX.md`, `VORTEX_INVERSION_STRATEGY.md`, `VORTEX_IMPLEMENTATION_PLAN.md`, `VORTEX_RIGOR_CHECKLIST.md`) detailing the symbiotic value of AI and Human and the strategy to invert for emergence. See `completed_artifacts/LESSONS_LEARNED_VORTEX_ARCHITECT.md` for execution details.

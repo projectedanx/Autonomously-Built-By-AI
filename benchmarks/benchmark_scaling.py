@@ -6,6 +6,15 @@ import tempfile
 from system_logic.state_manager import StateManager
 
 def benchmark_mark_context_processed(num_iterations=1000, initial_count=0):
+    """Benchmarks the mark_context_processed method with scaling parameters.
+
+    Args:
+        num_iterations (int): The number of iterations to run. Defaults to 1000.
+        initial_count (int): The initial number of processed files. Defaults to 0.
+
+    Returns:
+        float: The duration of the benchmark in seconds.
+    """
     with tempfile.TemporaryDirectory() as tmpdir:
         manager = StateManager(workspace_root=tmpdir)
 
@@ -25,6 +34,15 @@ def benchmark_mark_context_processed(num_iterations=1000, initial_count=0):
         return duration
 
 def benchmark_get_unprocessed_context(num_files=1000, initial_count=10000):
+    """Benchmarks the get_unprocessed_context method with scaling parameters.
+
+    Args:
+        num_files (int): The number of files to create in the inbox. Defaults to 1000.
+        initial_count (int): The initial number of processed files. Defaults to 10000.
+
+    Returns:
+        float: The duration of the benchmark in seconds.
+    """
     with tempfile.TemporaryDirectory() as tmpdir:
         manager = StateManager(workspace_root=tmpdir)
 
@@ -49,6 +67,15 @@ def benchmark_get_unprocessed_context(num_files=1000, initial_count=10000):
         return duration
 
 def benchmark_reingest_artifacts(num_artifacts=100, initial_count=10000):
+    """Benchmarks the reingest_artifacts method with scaling parameters.
+
+    Args:
+        num_artifacts (int): The number of artifacts to reingest. Defaults to 100.
+        initial_count (int): The initial number of processed files. Defaults to 10000.
+
+    Returns:
+        float: The duration of the benchmark in seconds.
+    """
     with tempfile.TemporaryDirectory() as tmpdir:
         manager = StateManager(workspace_root=tmpdir)
 

@@ -8,7 +8,13 @@ from system_logic.fipi_forge import FIPIForge
 from system_logic.state_manager import StateManager
 
 class EscrowResolver:
+    """Resolves tasks that have been placed in Epistemic Escrow due to high CFDI."""
     def __init__(self, workspace_root: str = "."):
+        """Initializes the EscrowResolver.
+
+        Args:
+            workspace_root (str): The root directory of the workspace. Defaults to ".".
+        """
         self.root = workspace_root
         self.escrow_dir = os.path.join(self.root, "epistemic_escrow")
         self.tasks_dir = os.path.join(self.root, "delegated_tasks")
@@ -19,9 +25,20 @@ class EscrowResolver:
         self.state_manager = StateManager(workspace_root)
 
     def get_pending_tickets(self):
+        """Retrieves a list of pending escrow tickets.
+
+        Returns:
+            list: A list of file paths to pending escrow tickets.
+        """
         return glob(os.path.join(self.escrow_dir, "ESCROW-*.json"))
 
     def resolve_ticket(self, ticket_path: str, human_resolution: str):
+        """Resolves an escrow ticket with human input and requeues the task.
+
+        Args:
+            ticket_path (str): The path to the escrow ticket file.
+            human_resolution (str): The resolution provided by the human oracle.
+        """
         with open(ticket_path, 'r') as f:
             ticket_data = json.load(f)
 
@@ -79,6 +96,7 @@ class EscrowResolver:
         print(f"Successfully resolved and requeued task {task_filename}")
 
 def main():
+    """Main entry point for the interactive escrow resolution CLI."""
     resolver = EscrowResolver()
     tickets = resolver.get_pending_tickets()
 

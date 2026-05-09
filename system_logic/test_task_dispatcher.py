@@ -6,6 +6,7 @@ from unittest.mock import patch, mock_open
 from system_logic.task_dispatcher import TaskDispatcher
 
 class TestTaskDispatcher(unittest.TestCase):
+    """Tests for the TaskDispatcher class to ensure task payload creation is correct."""
 
     def test_init(self):
         """Test path assignments on initialization."""

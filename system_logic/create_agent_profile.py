@@ -3,6 +3,11 @@ import os
 import sys
 
 def get_yaml_template():
+    """Returns the YAML template string for creating agent profiles.
+
+    Returns:
+        str: The YAML template string.
+    """
     return """agent_name: "{name}"
 designation: "{designation}"
 build_version: "1.0.0"
@@ -30,6 +35,25 @@ critical_rules:
 """
 
 def create_agent(name, designation, color, specialty, when_to_use, primary_goal, secondary_goal, forbidden, voice, primary_mode, rules, folder_name=None):
+    """Creates an agent profile YAML file based on the provided parameters.
+
+    Args:
+        name (str): The name of the agent.
+        designation (str): The designation of the agent.
+        color (str): The hex color code for the agent.
+        specialty (str): Comma-separated list of specialties.
+        when_to_use (str): Description of when to use the agent.
+        primary_goal (str): The primary goal of the agent.
+        secondary_goal (str): The secondary goal of the agent.
+        forbidden (str): Comma-separated list of forbidden practices.
+        voice (str): The voice description of the agent.
+        primary_mode (str): The primary execution mode.
+        rules (str): Pipe-separated list of critical rules.
+        folder_name (str, optional): The folder name to save the profile in. Defaults to None.
+
+    Raises:
+        ValueError: If the folder name is invalid.
+    """
     if not folder_name:
         folder_name = name.lower().replace(" ", "_")
 

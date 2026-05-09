@@ -10,6 +10,14 @@ except ImportError:
     HAS_YAML = False
 
 def extract_yaml_data(content):
+    """Extracts YAML data from markdown content.
+
+    Args:
+        content (str): The text content potentially containing YAML.
+
+    Returns:
+        dict: The parsed YAML data as a dictionary, or None if extraction fails.
+    """
     if not HAS_YAML:
         return None
     try:
@@ -34,6 +42,7 @@ def extract_yaml_data(content):
         return None
 
 def extract_markdown_table_data(content):
+    """Extracts data from a markdown table, looking for specific keys."""
     """Extracts data from a markdown table, looking for specific keys."""
     data = {}
     lines = content.split('\n')
@@ -84,6 +93,14 @@ _RE_JSON_ELEMENTS = re.compile(r'^\s*".*?":\s*.*?,?\s*$', flags=re.MULTILINE)
 _RE_WHITESPACE = re.compile(r'\s+')
 
 def strip_markdown(text):
+    """Removes markdown formatting from a text string.
+
+    Args:
+        text (str): The string with markdown formatting.
+
+    Returns:
+        str: The stripped plain text string.
+    """
     if not text:
         return ""
     # Strip quotes at the boundaries
@@ -110,6 +127,15 @@ def strip_markdown(text):
 _PATTERN_CACHE = {}
 
 def extract_section(content, section_keywords):
+    """Extracts a specific section from markdown content based on keywords.
+
+    Args:
+        content (str): The markdown text content.
+        section_keywords (list): A list of keywords to search for to identify the section.
+
+    Returns:
+        str: The extracted plain text of the section.
+    """
     # This regex attempts to find keywords (e.g. "Purpose:") and captures text
     # that is EITHER inline on the same line OR on subsequent lines before the next markdown heading or EOF.
 
@@ -139,6 +165,14 @@ def extract_section(content, section_keywords):
     return ""
 
 def parse_profile(filepath):
+    """Parses an agent profile file (markdown or YAML) to extract key information.
+
+    Args:
+        filepath (str): The path to the profile file.
+
+    Returns:
+        dict: A dictionary containing the parsed profile data, or None if parsing fails.
+    """
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -216,6 +250,7 @@ def parse_profile(filepath):
     return data
 
 def main():
+    """Main entry point to scan for agent profiles and generate an index README."""
     base_dir = 'agent_profiles'
     profiles = []
 

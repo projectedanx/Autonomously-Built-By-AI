@@ -10,6 +10,11 @@ class FIPIForge:
     as Governance-as-Code.
     """
     def __init__(self, workspace_root: str = "."):
+        """Initializes the FIPIForge.
+
+        Args:
+            workspace_root (str): The root directory of the workspace. Defaults to ".".
+        """
         self.root = workspace_root
         self.constraints_file = os.path.join(self.root, "CONSTRAINTS.md")
 

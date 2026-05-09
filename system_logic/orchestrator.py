@@ -10,6 +10,7 @@ class Orchestrator:
     """Core class that orchestrates the workflow components."""
 
     def __init__(self):
+        """Initializes the Orchestrator by setting up the StateManager, PRPForge, and TaskDispatcher."""
         self.manager = StateManager()
         self.forge = PRPForge()
         self.dispatcher = TaskDispatcher()

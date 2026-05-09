@@ -5,9 +5,16 @@ from unittest.mock import patch
 from system_logic.state_manager import StateManager
 
 class TestStateManager(unittest.TestCase):
+    """Tests for the StateManager class, ensuring correct context processing and security."""
     @patch('system_logic.state_manager.glob')
     @patch('system_logic.state_manager.os.path.isfile')
     def test_get_unprocessed_context(self, mock_isfile, mock_glob):
+        """Tests that get_unprocessed_context correctly filters processed and hidden files.
+
+        Args:
+            mock_isfile: Mock for os.path.isfile.
+            mock_glob: Mock for glob.glob.
+        """
         # Setup mocks
         mock_glob.return_value = [
             "context_inbox/file1.txt",
@@ -18,6 +25,14 @@ class TestStateManager(unittest.TestCase):
 
         # isfile returns True for everything except the directory
         def isfile_side_effect(path):
+            """Side effect to simulate os.path.isfile behavior.
+
+            Args:
+                path (str): The path to check.
+
+            Returns:
+                bool: True if the path is considered a file, False otherwise.
+            """
             return path != "context_inbox/directory"
         mock_isfile.side_effect = isfile_side_effect
 
@@ -35,6 +50,7 @@ class TestStateManager(unittest.TestCase):
             self.assertEqual(unprocessed[0], "context_inbox/file1.txt")
 
     def test_complete_task_security(self):
+        """Tests that completing a task with a malicious path prevents directory traversal."""
         import tempfile
 
         with tempfile.TemporaryDirectory() as test_root:

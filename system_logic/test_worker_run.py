@@ -6,6 +6,13 @@ from system_logic.worker_run import run_worker
 @patch("system_logic.worker_run.StateManager")
 @patch("system_logic.worker_run.execute_task")
 def test_run_worker_no_tasks(mock_execute_task, mock_state_manager, capsys):
+    """Tests that run_worker correctly handles the case with no pending tasks.
+
+    Args:
+        mock_execute_task: Mock for execute_task function.
+        mock_state_manager: Mock for StateManager class.
+        capsys: Pytest fixture to capture stdout/stderr.
+    """
     mock_manager_instance = mock_state_manager.return_value
     mock_manager_instance.get_pending_tasks.return_value = []
 
@@ -18,6 +25,12 @@ def test_run_worker_no_tasks(mock_execute_task, mock_state_manager, capsys):
 @patch("system_logic.worker_run.StateManager")
 @patch("system_logic.worker_run.execute_task")
 def test_run_worker_with_tasks(mock_execute_task, mock_state_manager):
+    """Tests that run_worker correctly executes a pending task.
+
+    Args:
+        mock_execute_task: Mock for execute_task function.
+        mock_state_manager: Mock for StateManager class.
+    """
     mock_manager_instance = mock_state_manager.return_value
     mock_manager_instance.get_pending_tasks.return_value = ["task_1"]
 
