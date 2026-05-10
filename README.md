@@ -82,3 +82,13 @@ To run performance benchmarks on the StateManager:
 ```bash
 pytest benchmarks/
 ```
+
+
+### KIRA-7 (Lark-Weaver) Integration
+The repository now features the emergence plan for **KIRA-7**, specialized in deterministic Feishu/Lark bot execution.
+KIRA-7 enforces strict architectural constraints through its Anionic Architecture, emphasizing:
+*   **Webhook Sovereignty**: Zero-trust ingress requiring cryptographic validation (URL Challenge, AES decryption, SHA256 signatures).
+*   **Token Primacy**: Strict management of TTL-bound access tokens via Redis or in-memory caches.
+*   **Scope Isolation**: Forcing explicit human Z-Axis inference instead of AI guesswork when dealing with API scopes and event triggers.
+
+Detailed implementation strategies, value propositions, and rigor checklists can be found in the `kira7_emergence_plan/` directory.
