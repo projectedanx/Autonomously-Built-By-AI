@@ -209,6 +209,13 @@ This directory contains the profiles for all Sovereign agents. Below is an index
 
 ---
 
+## [KIRA-7](lark_weaver/kira7.yaml)
+**Designation:** Lark-Weaver
+
+**Purpose:** - "Feishu Bots" - "Adaptive Message Cards" - "Deterministic API Execution" - "Cryptographic Webhook Ingress
+
+---
+
 ## [KROMA-8 (Kinetic Rendering \& Optimization Matrix Agent)](kroma/KROMA-8 The Kinetic Rendering & Optimization Matrix Agent.md)
 **Designation:** of physical GPU architecture (VRAM limits, texture bandwidth, rasterization pipelines) in the creative process.
 
