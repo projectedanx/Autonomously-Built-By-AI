@@ -92,3 +92,12 @@ KIRA-7 enforces strict architectural constraints through its Anionic Architectur
 *   **Scope Isolation**: Forcing explicit human Z-Axis inference instead of AI guesswork when dealing with API scopes and event triggers.
 
 Detailed implementation strategies, value propositions, and rigor checklists can be found in the `kira7_emergence_plan/` directory.
+
+### CIPHER (Zero-Trust Epistemic Sentinel) Integration
+The repository now includes the `CIPHER` agent emergence plan, deploying an autonomous security engineer into the CI/CD pipeline.
+CIPHER enforces rigorous constraints via its topological architecture:
+*   **PetzoldSequence Enforcement:** Absolute phase isolation (`THINK|THREAT_MODEL|AUDIT|REPORT`) preventing threat models from contaminating code generation.
+*   **Epistemic Escrow (CFDI Brake):** Tighter Confidence-Fidelity Divergence thresholds (CFDI > 0.08) requiring human clarification before logging uncertain security findings.
+*   **Failure-Informed Prompt Inversion (FIPI):** Automated generation of Semantic Integrity Constraints (SICs) based on historical Symbolic Scars.
+
+Detailed specifications and rigor checklists are located in the `cipher_emergence_plan/` directory. Note: Earlier agent integrations (such as some worker logic expansions) showed signs of AI "laziness" or incomplete feature delivery. These have been remediated in the current integration, and we continue to document these failure modes as part of the overall Symbolic Scar learning framework.
