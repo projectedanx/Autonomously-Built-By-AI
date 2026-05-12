@@ -129,7 +129,7 @@ class StateManager:
             self._git_commit(f"Completed task: {os.path.basename(task_file)} -> {artifact_name}")
 
 
-    def escrow_task(self, task_file: str, cfdi_score: float, conflict_reason: str) -> str:
+    def escrow_task(self, task_file: str, cfdi_score: float, conflict_reason: str, is_cipher_task: bool = False) -> str:
         """
         Halts task execution, moves the task to epistemic_escrow, creates an Escrow Ticket,
         and automatically records a Symbolic Scar.
@@ -156,13 +156,18 @@ class StateManager:
         shutil.move(task_file, escrowed_task_path)
 
         # Create Escrow Ticket
+        required_action = "Human Oracle or specialized agent intervention required to resolve contradiction before resuming."
+        if is_cipher_task:
+            required_action = "MANDATORY_HUMAN_REVIEW: EpistemicEscrow triggered for CIPHER security audit. Do not bypass without resolving structural ambiguity."
+
         ticket_data = {
             "ticket_id": ticket_id,
             "status": "QUARANTINED",
             "cfdi_score": cfdi_score,
             "conflict_reason": conflict_reason,
             "original_task": escrowed_task_path,
-            "required_action": "Human Oracle or specialized agent intervention required to resolve contradiction before resuming."
+            "required_action": required_action,
+            "is_cipher_task": is_cipher_task
         }
 
         ticket_path = os.path.join(self.escrow_dir, f"{ticket_id}.json")
@@ -227,6 +232,7 @@ class StateManager:
 
     def record_scar(self, scar_data: dict) -> None:
         """Records a Symbolic Scar to scars.yaml, implementing Autophagic Debridement.
+        Handles CIPHER-specific scar tracking like activation_count and false_positive_count.
 
         Args:
             scar_data: The dictionary containing scar information (id, timestamp, etc.).
@@ -241,6 +247,16 @@ class StateManager:
                     scars = yaml.safe_load(f) or []
             except Exception:
                 scars = []
+
+        # Initialize CIPHER-specific counters if not present
+        if "activation_count" not in scar_data:
+            scar_data["activation_count"] = 0
+        if "false_positive_count" not in scar_data:
+            scar_data["false_positive_count"] = 0
+
+        # Extract topology for FIPI rule generation
+        if scar_data.get("type") == "FALSE_NEGATIVE":
+            scar_data["fipi_rule"] = f"+++PetzoldSequence: Enforce check for topology {scar_data.get('ast_topology_fingerprint', 'UNKNOWN')} in future AUDIT phases."
 
         # Append new scar
         scars.append(scar_data)
@@ -286,38 +302,6 @@ class StateManager:
         """
         import yaml
         import os
-        if not os.path.exists(self.scars_file):
-            return
-
-        with open(self.scars_file, 'r') as f:
-            try:
-                scars = yaml.safe_load(f) or []
-            except Exception:
-                return
-
-        updated = False
-        for scar in scars:
-            if scar.get("related_ticket") == ticket_id:
-                scar["resolution"] = resolution_text
-                scar["sic_id"] = sic_id
-                scar["status"] = "RESOLVED"
-                updated = True
-                break
-
-        if updated:
-            with open(self.scars_file, 'w') as f:
-                yaml.dump(scars, f, default_flow_style=False, sort_keys=False)
-            self._git_commit(f"Updated scar related to {ticket_id} with SIC {sic_id}")
-
-    def resolve_scar(self, ticket_id: str, resolution_text: str, sic_id: str) -> None:
-        """Updates an existing scar in scars.yaml with human resolution data.
-
-        Args:
-            ticket_id: The ID of the Escrow Ticket related to the scar.
-            resolution_text: The human-provided resolution directive.
-            sic_id: The generated Semantic Integrity Constraint ID.
-        """
-        import yaml
         if not os.path.exists(self.scars_file):
             return
 
