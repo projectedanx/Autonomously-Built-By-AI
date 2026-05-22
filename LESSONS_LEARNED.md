@@ -1,0 +1,18 @@
+# Frontend Dashboard Implementation: Structural Insights
+
+## Epistemic Grounding
+The objective of this task was to construct a Next.js dashboard bridging the human operator and the filesystem-based queues (`context_inbox`, `delegated_tasks`, `completed_artifacts`, `epistemic_escrow`). The primary directive was the strict adherence to the "Anionic Architecture" — defining the UI by the exclusion of subjective or evaluative terminology.
+
+## Architectural Decisions
+1. **Next.js App Router**: Utilized for standard API route generation and server-side logic encapsulation, specifically for secure filesystem traversal without exposing root paths to the client.
+2. **Directory Mapping**: The API route (`frontend/src/app/api/workspace/route.ts`) explicitly maps the core structural directories of the Sovereign Context Engineering Workspace, returning file metadata (name, size, modification date).
+3. **UI Composition**: Implemented via a data-dense, monochromatic UI leveraging Tailwind CSS. Visual state representations are confined to tabular data, strictly prohibiting narrative interpretation of system states.
+4. **CFDI and Constraints Integration**: System constraints (e.g., `CFDI_THRESHOLD_ACTIVE`, `SAGA_RECOVERY_MODE`) are hardcoded into the view as an ever-present reference to the operational paradigm, functioning as a passive cognitive anchor.
+
+## Constraint Adherence
+- **No_Evaluative_Adjectives**: The code and documentation intentionally omit terms describing the quality of the UI (e.g., "beautiful", "responsive", "seamless"). The UI is described solely by its function: mapping data states.
+- **No_Preamble**: Explanations begin directly with declarative statements concerning the technical implementation.
+- **Enforce_Bicameral_Output**: The output is structurally divided into code artifacts and this accompanying analytical ledger.
+
+## Identified Latencies/Risks
+- **Filesystem IO Bound**: The API route performs synchronous directory reads. In a highly active system with hundreds of files, this could introduce minor latencies. Future iterations might require a caching layer or asynchronous polling mechanism if the workspace scale increases significantly.

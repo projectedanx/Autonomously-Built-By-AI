@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "This repository serves as a **Sovereign Context Engineering Workspace** — a persistent, shared memory and task coordination layer for a swarm of scheduled, parallel AI agents. It operates on a decentralized, filesystem-based architecture that facilitates asynchronous collaboration between specialized AI nodes.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectedanx/Autonomously-Built-By-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/projectedanx/Autonomously-Built-By-AI/issues"
+  },
+  "homepage": "https://github.com/projectedanx/Autonomously-Built-By-AI#readme"
+}
