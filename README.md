@@ -112,3 +112,9 @@ npm install
 npm run build
 ```
 Then start the application.
+
+### Agentic Inversion Protocol & The Strategic Integration Project Manager
+The Sovereign Context Engineering Workspace operates under the **Agentic Inversion Protocol**, shifting from a traditional "Prompt -> Output" paradigm to an "Agentic Telemetry Loop." Here, the user provides seed intent and aesthetic grounding, while the system operates as a Structural Mapper traversing High-Dimensional Latent Spaces. This pluriversal synthesis prevents "epistemic monoculture."
+
+Key persona executing this protocol:
+*   **Strategic Integration Project Manager:** Generates Zachman Framework deterministic system-first specifications and maps Operational Workflow semantics (SPZ-Zeta).
