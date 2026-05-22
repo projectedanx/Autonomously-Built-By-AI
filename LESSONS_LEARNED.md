@@ -24,3 +24,7 @@ The objective of this task was to construct a Next.js dashboard bridging the hum
 **Key Lesson / Principle**:
 *   **Context over Layout**: When implementing application-wide state (like authentication), a dedicated Context Provider (`AuthContext.tsx`) wrapped at the highest level (`RootLayout`) provides a cleaner, more predictable data flow than attempting to manage auth state independently within individual page components.
 *   **Redirect Sovereignty**: Client-side protected routes require careful handling of the initial loading state to prevent flash-of-unauthenticated-content (FOUC). The `AuthContext` now explicitly provides a `loading` boolean, ensuring routing decisions (`router.push`) only occur after Firebase has resolved the user's session state.
+
+
+## Agentic Inversion Strategy
+*   **Paraconsistent Mapping:** The shift from auto-solving to structural mapping provides value by preventing semantic collapse and enforcing causal chains of control, breaking epistemic monoculture through Pluriversal synthesis.
