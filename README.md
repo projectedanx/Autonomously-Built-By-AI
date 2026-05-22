@@ -101,3 +101,14 @@ CIPHER enforces rigorous constraints via its topological architecture:
 *   **Failure-Informed Prompt Inversion (FIPI):** Automated generation of Semantic Integrity Constraints (SICs) based on historical Symbolic Scars.
 
 Detailed specifications and rigor checklists are located in the `cipher_emergence_plan/` directory. Note: Earlier agent integrations (such as some worker logic expansions) showed signs of AI "laziness" or incomplete feature delivery. These have been remediated in the current integration, and we continue to document these failure modes as part of the overall Symbolic Scar learning framework.
+
+### Dashboard Interface (Frontend)
+A Next.js application resides in the `frontend/` directory. It provides a visual orchestration panel mapping the states of the filesystem queues (`context_inbox`, `delegated_tasks`, `completed_artifacts`, `epistemic_escrow`).
+
+To run the dashboard locally:
+```bash
+cd frontend
+npm install
+npm run build
+```
+Then start the application.
