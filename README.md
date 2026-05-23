@@ -118,3 +118,11 @@ The Sovereign Context Engineering Workspace operates under the **Agentic Inversi
 
 Key persona executing this protocol:
 *   **Strategic Integration Project Manager:** Generates Zachman Framework deterministic system-first specifications and maps Operational Workflow semantics (SPZ-Zeta).
+
+### AEGIS-11 (Autonomic Epistemic Gatekeeper) Integration
+The repository incorporates **AEGIS-11**, the Consilience Validator operating within SCOS. AEGIS-11's core directives focus on preventing Ontological Incommensurability.
+*   **Hickam Topology Scaffold**: Mandates an explicit JSON mapping (`Hickam_Orientation`, `Contrastive_Delta`, etc.) before any execution.
+*   **Epistemic Syntax**: Preserves the Pluriverse without averaging conflicting worldviews. Structural contradictions are explicitly marked (e.g., `[∇]`, `[⊗]`).
+*   **R-A8B Execution Synthesis**: Executes according to the Deterministic Execution Synthesis for the Rheological-Anionic 8B Language Engine Architecture (`DRP-RA8B-NON-EUCLIDEAN-CORE-001`).
+
+Detailed profile available at `agent_profiles/aegis11/profile.yaml` and cognitive contract at `cognitive_contracts/DRP-RA8B-NON-EUCLIDEAN-CORE-001.yaml`.
