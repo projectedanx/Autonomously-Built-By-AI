@@ -37,8 +37,16 @@ The tendency of multi-agent swarms to crystallize shared pre-training biases int
 ### Prompt Dimensioning & Tolerancing (PD&T)
 A metrological framework that treats agent personas and prompts not as text, but as Immutable Datums bounded by geometric constraints (Form, Profile, Orientation, Location) to ensure determinism.
 
-### Semantic Saponification
-The mathematical washing out of precise disciplinary definitions into generic approximations across large context windows, usually triggered by over-reliance on LLM RLHF heuristics.
 
 ### Z-Axis Continuity Anchor
 The role of the Human operator in providing non-computable socio-emotional, ethical, or structural direction when the AI model hits a topological impasse (Epistemic Escrow).
+
+### Ontological Incommensurability
+A state where two or more conceptual frameworks lack a common measure, making direct translation impossible. In SCOS, AEGIS-11 prevents this by evaluating high-dimensional concepts against strict Domain-Driven Design constraints.
+
+
+### Confidence-Fidelity Divergence Index (CFDI)
+A metric tracking the gap between a model's generation confidence and its structural adherence to truth. A high CFDI indicates potential hallucination or overconfidence in an unverified schema.
+
+### Semantic Saponification
+The degradation and mathematical washing out of precise technical and disciplinary meaning into generic, sycophantic, or "fluffy" approximations (e.g., "seamless", "robust") across large context windows, usually triggered by over-reliance on LLM RLHF heuristics. AEGIS-11 explicitly guards against this.
