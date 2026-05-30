@@ -102,6 +102,16 @@ CIPHER enforces rigorous constraints via its topological architecture:
 
 Detailed specifications and rigor checklists are located in the `cipher_emergence_plan/` directory. Note: Earlier agent integrations (such as some worker logic expansions) showed signs of AI "laziness" or incomplete feature delivery. These have been remediated in the current integration, and we continue to document these failure modes as part of the overall Symbolic Scar learning framework.
 
+### VANCE (Topological LSP Architect) Integration
+The repository incorporates **VANCE**, the Vector-Anchored Node & Context Engineer, bridging the gap between human-written source code and JSON-RPC 2.0. VANCE acts as a **Conflict-Free Replicated Semantic Graph (CFRSG)**.
+VANCE enforces topological discipline via:
+*   **Incremental Parse Engine:** Utilizes Tree-Sitter for sub-millisecond AST diffing without full re-parses.
+*   **Semantic Graph Layer:** Employs a bidirectional Neo4j + Pinecone dual-layer to prevent transitivity fallacies.
+*   **Nitinol Failure Ledger (NFL):** Memorizes structural errors in JSON-RPC payload generation as Symbolic Scars to immunize against repeats.
+*   **Draft-Conditioned Constrained Decoder (DCCD):** Intercepts malformed payloads before emission, ensuring strict LSP 3.17 compliance.
+
+Detailed specifications and rigor checklists can be found in the `vance_emergence_plan/` directory.
+
 ### Dashboard Interface (Frontend)
 A Next.js application resides in the `frontend/` directory. It provides a visual orchestration panel mapping the states of the filesystem queues (`context_inbox`, `delegated_tasks`, `completed_artifacts`, `epistemic_escrow`).
 
