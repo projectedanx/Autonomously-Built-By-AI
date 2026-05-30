@@ -3,6 +3,10 @@
 ## Epistemic Grounding
 The objective of this task was to construct a Next.js dashboard bridging the human operator and the filesystem-based queues (`context_inbox`, `delegated_tasks`, `completed_artifacts`, `epistemic_escrow`). The primary directive was the strict adherence to the "Anionic Architecture" — defining the UI by the exclusion of subjective or evaluative terminology.
 
+## The Reversal Curse and Flat Embeddings
+**Lesson:** The "Reversal Curse" demonstrates that causal asymmetry in LLMs means they cannot reliably reverse-map symbols (e.g., from definition to callers) purely from parametric memory. Relying solely on flat vector embeddings without a geometric graph layer is fatal for Language Server precision.
+**Action Taken:** VANCE acts as a Conflict-Free Replicated Semantic Graph (CFRSG), maintaining a bidirectional topological mapping to definitively resolve `textDocument/references`. Flat embeddings act only as proximity oracles, strictly validated against the Neo4j graph structure.
+
 ## Architectural Decisions
 1. **Next.js App Router**: Utilized for standard API route generation and server-side logic encapsulation, specifically for secure filesystem traversal without exposing root paths to the client.
 2. **Directory Mapping**: The API route (`frontend/src/app/api/workspace/route.ts`) explicitly maps the core structural directories of the Sovereign Context Engineering Workspace, returning file metadata (name, size, modification date).

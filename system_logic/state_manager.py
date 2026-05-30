@@ -2,6 +2,12 @@ import os
 import json
 import subprocess
 from glob import glob
+import time
+
+try:
+    from system_logic.vance_indexer import VanceLSPMapper
+except ImportError:
+    VanceLSPMapper = None
 
 class StateManager:
     """Manages the state and filesystem interactions for the workspace.
@@ -22,6 +28,9 @@ class StateManager:
         self.tasks_dir = os.path.join(self.root, "delegated_tasks")
         self.completed_dir = os.path.join(self.root, "completed_artifacts")
         self.escrow_dir = os.path.join(self.root, "epistemic_escrow")
+
+        # Integrate VANCE LSP Mapper if available
+        self.vance_mapper = VanceLSPMapper() if VanceLSPMapper else None
         self.scar_archive_dir = os.path.join(self.root, "scar_archive")
         self.scars_file = os.path.join(self.scar_archive_dir, "scars.yaml")
         self.state_file = os.path.join(self.root, ".workspace_state.json")
@@ -106,6 +115,21 @@ class StateManager:
         return content, claimed_file
 
     def complete_task(self, task_file: str, artifact_content: str, artifact_name: str, commit: bool = True) -> None:
+        # Notify VANCE of artifact change (Mock LSP update)
+        if self.vance_mapper:
+            mock_payload = {
+                "jsonrpc": "2.0",
+                "method": "textDocument/didChange",
+                "params": {
+                    "textDocument": {
+                        "uri": f"file://{self.root}/completed_artifacts/{artifact_name}",
+                        "version": int(time.time())
+                    },
+                    "contentChanges": [{"text": artifact_content}]
+                }
+            }
+            self.vance_mapper.handle_did_change(mock_payload)
+
         """Saves a completed artifact, removes the task file, and commits the change.
 
         Args:
