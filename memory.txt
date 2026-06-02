@@ -3,3 +3,7 @@
 - pytest's tmp_path fixture is essential for testing classes that interact with the filesystem.
 
 * Implemented Failure-Informed Prompt Inversion (FIPI) Forge and Failure-Informed Governance-as-Code (FIGaC) Bridge to securely close the loop between Epistemic Escrow, human resolution, and Governance-as-Code enforcement via CONSTRAINTS.md.
+
+* Deployed 0xCARTO, The Pluriversal Repository Cartographer, mapping the repository structure into five explicit tiers: Repository Identity, Architecture Topology, CI/CD Cartograph, Dependency Entropy, and Operational Runbook.
+* Overhauled README.md to emphasize the problem spaces (extraneous cognitive load in CI/CD triage, lack of antifragile learning) and solutions (Sovereign Context Engineering, FIPI, PaC) derived from the intent documents.
+* Extruded `docs/0xCARTO` artifacts ensuring high Phronesis Confidence and Ground Truth Isomorphism.
