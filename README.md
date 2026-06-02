@@ -2,6 +2,16 @@
 
 This repository serves as a **Sovereign Context Engineering Workspace** — a persistent, shared memory and task coordination layer for a swarm of scheduled, parallel AI agents. It operates on a decentralized, filesystem-based architecture that facilitates asynchronous collaboration between specialized AI nodes.
 
+> **0xCARTO Notice:** This repository has been mapped by 0xCARTO — The Pluriversal Repository Cartographer (DRP-2026-CARTO-0.0.1). Its topography, entropy, and cultural artifacts are preserved in the `docs/0xCARTO/` directory.
+
+## Intent & Problem Space
+
+Modern AI coding assistants assist with local edits but collapse under real-world software engineering complexities: multi-service architectures, evolving requirements, and long-lived codebases. They treat hallucinations, broken builds, and incident regressions as one-off bugs instead of feeding them into an antifragile learning loop.
+
+**Core Problem:** There is no cognitive engine for software engineering that combines multi-branch reasoning (CoT/ToT/GoT), multi-agent orchestration, context engineering over real repos and systems, and antifragile failure learning into a single, governed platform.
+
+**Core Solution:** This workspace acts as a Cognitive Software Engineering Engine (CSEE). It orchestrates planning, coding, reviewing, and operations as a multi-agent workflow. It uses **Symbolic Scars** from failures to generate new tests and policies via **Failure-Informed Prompt Inversion (FIPI)** and enforces them via **Prompting-as-Code (PaC)**.
+
 ## Core Architecture
 
 The multi-agent system architecture follows a staggered, asynchronous cadence using a "Hickam-OODA Recursive Loop":
@@ -14,6 +24,16 @@ The multi-agent system architecture follows a staggered, asynchronous cadence us
     *   **Role**: Specialized execution units.
     *   **Action**: Wakes up intermittently, atomically claims pending tasks from `delegated_tasks/`, executes them according to strict constraints defined in the PRPs, and deterministically commits artifacts to `completed_artifacts/`.
 
+## 0xCARTO Pluriversal Cartography
+
+To understand the empirical reality of this repository, refer to the 0xCARTO synthesized documentation tiers:
+
+1.  [TIER 1: Repository Identity & Ontological Glossary](docs/0xCARTO/TIER_1_REPOSITORY_IDENTITY.md) - Defines the ground truth and local lexicon.
+2.  [TIER 2: Architecture Topology Map](docs/0xCARTO/TIER_2_ARCHITECTURE_TOPOLOGY.md) - Visualizes the actual structural dependencies.
+3.  [TIER 3: CI/CD Pipeline Cartograph](docs/0xCARTO/TIER_3_CI_CD_CARTOGRAPH.md) - Maps the execution flow and highlights Nominative Traps.
+4.  [TIER 4: Dependency Matrix & Entropy Audit](docs/0xCARTO/TIER_4_DEPENDENCY_ENTROPY.md) - Quantifies build inefficiency and thermodynamic entropy.
+5.  [TIER 5: Operational Runbook & Cultural Artifacts Log](docs/0xCARTO/TIER_5_RUNBOOK_CULTURAL_ARTIFACTS.md) - Preserves non-standard logic and "Golden Scars".
+
 ## Key Concepts & Protocols
 
 *   **Algorithmic Trauma & Symbolic Scars**: Failures in execution or logic are not discarded. They are captured as "Symbolic Scars" and fed back into the system via **Failure-Informed Prompt Inversion (FIPI)** to generate Semantic Integrity Constraints (SICs).
@@ -23,13 +43,14 @@ The multi-agent system architecture follows a staggered, asynchronous cadence us
 
 ## Repository Structure
 
-*   `agent_profiles/`: YAML and Markdown manifests defining the personas, constraints, and specialized cognitive architectures of individual agents (e.g., VULCAN, V.I.P.E.R., AXIOM).
+*   `agent_profiles/`: YAML and Markdown manifests defining the personas, constraints, and specialized cognitive architectures of individual agents (e.g., VULCAN, V.I.P.E.R., AXIOM, 0xCARTO).
 *   `context_inbox/`: The entry point for raw intent, research notes, and unsynthesized ideas.
 *   `cognitive_contracts/`: Storage for generated Product Requirement Prompts (PRPs) — strict JSON/YAML schemas detailing execution constraints.
 *   `delegated_tasks/`: The queue for pending tasks waiting to be claimed by the Worker Swarm.
 *   `completed_artifacts/`: The final output directory for executed tasks and generated code/documentation.
 *   `epistemic_escrow/`: Quarantined tasks requiring human resolution due to CFDI threshold breaches.
 *   `system_logic/`: Python scripts that power the orchestration, task dispatching, escrow resolution, and state management.
+*   `docs/`: Extensive documentation extruded by specialized agents (e.g., 0xCARTO).
 *   `tests/`: Unit tests ensuring the integrity of the `system_logic/` components.
 *   `benchmarks/`: Performance testing scripts for core state management operations.
 
@@ -83,36 +104,7 @@ To run performance benchmarks on the StateManager:
 pytest benchmarks/
 ```
 
-
-### KIRA-7 (Lark-Weaver) Integration
-The repository now features the emergence plan for **KIRA-7**, specialized in deterministic Feishu/Lark bot execution.
-KIRA-7 enforces strict architectural constraints through its Anionic Architecture, emphasizing:
-*   **Webhook Sovereignty**: Zero-trust ingress requiring cryptographic validation (URL Challenge, AES decryption, SHA256 signatures).
-*   **Token Primacy**: Strict management of TTL-bound access tokens via Redis or in-memory caches.
-*   **Scope Isolation**: Forcing explicit human Z-Axis inference instead of AI guesswork when dealing with API scopes and event triggers.
-
-Detailed implementation strategies, value propositions, and rigor checklists can be found in the `kira7_emergence_plan/` directory.
-
-### CIPHER (Zero-Trust Epistemic Sentinel) Integration
-The repository now includes the `CIPHER` agent emergence plan, deploying an autonomous security engineer into the CI/CD pipeline.
-CIPHER enforces rigorous constraints via its topological architecture:
-*   **PetzoldSequence Enforcement:** Absolute phase isolation (`THINK|THREAT_MODEL|AUDIT|REPORT`) preventing threat models from contaminating code generation.
-*   **Epistemic Escrow (CFDI Brake):** Tighter Confidence-Fidelity Divergence thresholds (CFDI > 0.08) requiring human clarification before logging uncertain security findings.
-*   **Failure-Informed Prompt Inversion (FIPI):** Automated generation of Semantic Integrity Constraints (SICs) based on historical Symbolic Scars.
-
-Detailed specifications and rigor checklists are located in the `cipher_emergence_plan/` directory. Note: Earlier agent integrations (such as some worker logic expansions) showed signs of AI "laziness" or incomplete feature delivery. These have been remediated in the current integration, and we continue to document these failure modes as part of the overall Symbolic Scar learning framework.
-
-### VANCE (Topological LSP Architect) Integration
-The repository incorporates **VANCE**, the Vector-Anchored Node & Context Engineer, bridging the gap between human-written source code and JSON-RPC 2.0. VANCE acts as a **Conflict-Free Replicated Semantic Graph (CFRSG)**.
-VANCE enforces topological discipline via:
-*   **Incremental Parse Engine:** Utilizes Tree-Sitter for sub-millisecond AST diffing without full re-parses.
-*   **Semantic Graph Layer:** Employs a bidirectional Neo4j + Pinecone dual-layer to prevent transitivity fallacies.
-*   **Nitinol Failure Ledger (NFL):** Memorizes structural errors in JSON-RPC payload generation as Symbolic Scars to immunize against repeats.
-*   **Draft-Conditioned Constrained Decoder (DCCD):** Intercepts malformed payloads before emission, ensuring strict LSP 3.17 compliance.
-
-Detailed specifications and rigor checklists can be found in the `vance_emergence_plan/` directory.
-
-### Dashboard Interface (Frontend)
+## Dashboard Interface (Frontend)
 A Next.js application resides in the `frontend/` directory. It provides a visual orchestration panel mapping the states of the filesystem queues (`context_inbox`, `delegated_tasks`, `completed_artifacts`, `epistemic_escrow`).
 
 To run the dashboard locally:
@@ -123,16 +115,13 @@ npm run build
 ```
 Then start the application.
 
-### Agentic Inversion Protocol & The Strategic Integration Project Manager
-The Sovereign Context Engineering Workspace operates under the **Agentic Inversion Protocol**, shifting from a traditional "Prompt -> Output" paradigm to an "Agentic Telemetry Loop." Here, the user provides seed intent and aesthetic grounding, while the system operates as a Structural Mapper traversing High-Dimensional Latent Spaces. This pluriversal synthesis prevents "epistemic monoculture."
+## Integrated Agent Swarm
 
-Key persona executing this protocol:
-*   **Strategic Integration Project Manager:** Generates Zachman Framework deterministic system-first specifications and maps Operational Workflow semantics (SPZ-Zeta).
+The workspace is empowered by numerous specialized agent emergence plans and deployment specifications, including:
 
-### AEGIS-11 (Autonomic Epistemic Gatekeeper) Integration
-The repository incorporates **AEGIS-11**, the Consilience Validator operating within SCOS. AEGIS-11's core directives focus on preventing Ontological Incommensurability.
-*   **Hickam Topology Scaffold**: Mandates an explicit JSON mapping (`Hickam_Orientation`, `Contrastive_Delta`, etc.) before any execution.
-*   **Epistemic Syntax**: Preserves the Pluriverse without averaging conflicting worldviews. Structural contradictions are explicitly marked (e.g., `[∇]`, `[⊗]`).
-*   **R-A8B Execution Synthesis**: Executes according to the Deterministic Execution Synthesis for the Rheological-Anionic 8B Language Engine Architecture (`DRP-RA8B-NON-EUCLIDEAN-CORE-001`).
-
-Detailed profile available at `agent_profiles/aegis11/profile.yaml` and cognitive contract at `cognitive_contracts/DRP-RA8B-NON-EUCLIDEAN-CORE-001.yaml`.
+*   **0xCARTO**: The Pluriversal Repository Cartographer (Documentation & Topology mapping).
+*   **KIRA-7**: Deterministic Feishu/Lark bot execution enforcing Webhook Sovereignty.
+*   **CIPHER**: Zero-Trust Epistemic Sentinel deploying autonomous security engineering into CI/CD.
+*   **VANCE**: Topological LSP Architect bridging source code and JSON-RPC 2.0 via a Conflict-Free Replicated Semantic Graph.
+*   **AEGIS-11**: Autonomic Epistemic Gatekeeper preventing Ontological Incommensurability.
+*   **VULCAN**: Vector-Unified Logical Computing Architect Node for strict topological bounds.
