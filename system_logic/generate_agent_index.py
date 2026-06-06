@@ -105,20 +105,30 @@ def strip_markdown(text):
         return ""
     # Strip quotes at the boundaries
     text = text.strip('"\'')
-    # Remove code blocks
-    text = _RE_CODE_BLOCK.sub('', text)
-    # Remove inline code
-    text = _RE_INLINE_CODE.sub('', text)
+
+    # Fast path: skip regex if characters are not present
+    if '`' in text:
+        # Remove code blocks
+        if '```' in text:
+            text = _RE_CODE_BLOCK.sub('', text)
+        # Remove inline code
+        text = _RE_INLINE_CODE.sub('', text)
     # Remove html tags
-    text = _RE_HTML_TAGS.sub('', text)
+    if '<' in text and '>' in text:
+        text = _RE_HTML_TAGS.sub('', text)
     # Remove markdown links
-    text = _RE_MD_LINKS.sub(r'\1', text)
+    if '[' in text and ']' in text:
+        text = _RE_MD_LINKS.sub(r'\1', text)
     # Remove heading markers
-    text = _RE_HEADING.sub('', text)
+    if '#' in text:
+        text = _RE_HEADING.sub('', text)
     # Remove formatting chars (*, _, etc.)
-    text = _RE_FORMATTING.sub('', text)
+    if '*' in text or '_' in text:
+        text = _RE_FORMATTING.sub('', text)
     # Remove json-like structural elements (e.g. "key": "value",)
-    text = _RE_JSON_ELEMENTS.sub('', text)
+    if '"' in text and ':' in text:
+        text = _RE_JSON_ELEMENTS.sub('', text)
+
     # Condense whitespace
     text = _RE_WHITESPACE.sub(' ', text)
     return text.strip()
