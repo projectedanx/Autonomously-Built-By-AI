@@ -487,6 +487,11 @@ class StateManager:
 
         self._load_state()
 
+        try:
+            existing_inbox = set(os.listdir(self.inbox_dir))
+        except FileNotFoundError:
+            existing_inbox = set()
+
         for artifact_path in all_artifacts:
             filename = os.path.basename(artifact_path)
 
@@ -498,8 +503,8 @@ class StateManager:
             if new_filename in self._processed_context_set:
                 continue
 
-            dst = os.path.join(self.inbox_dir, new_filename)
-            if not os.path.exists(dst):
+            if new_filename not in existing_inbox:
+                dst = os.path.join(self.inbox_dir, new_filename)
                 shutil.copy2(artifact_path, dst)
                 count += 1
 
