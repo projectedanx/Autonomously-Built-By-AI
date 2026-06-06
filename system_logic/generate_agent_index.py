@@ -37,7 +37,7 @@ def extract_yaml_data(content):
             except Exception:
                 pass
 
-        return yaml.safe_load(content)
+        return None
     except Exception:
         return None
 
