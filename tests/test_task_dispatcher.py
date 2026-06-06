@@ -1,6 +1,5 @@
 import os
 import json
-import pytest
 
 from system_logic.task_dispatcher import TaskDispatcher
 
