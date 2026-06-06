@@ -1,4 +1,3 @@
-import json
 
 def run_viper_test():
     """Runs a test of the VIPER-GAFFER system to check prompts against banned aesthetic evaluators."""
