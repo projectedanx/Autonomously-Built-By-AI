@@ -29,6 +29,7 @@ class StateManager:
         self.inbox_dir = os.path.join(self.root, "context_inbox")
         self.contracts_dir = os.path.join(self.root, "cognitive_contracts")
         self.tasks_dir = os.path.join(self.root, "delegated_tasks")
+        self._scars_cache = None
         self.completed_dir = os.path.join(self.root, "completed_artifacts")
         self.escrow_dir = os.path.join(self.root, "epistemic_escrow")
 
@@ -358,13 +359,17 @@ class StateManager:
         import yaml
 
         # Load existing scars
-        scars = []
-        if os.path.exists(self.scars_file):
-            try:
-                with open(self.scars_file, 'r') as f:
-                    scars = yaml.safe_load(f) or []
-            except Exception:
-                scars = []
+        if self._scars_cache is not None:
+            scars = self._scars_cache
+        else:
+            scars = []
+            if os.path.exists(self.scars_file):
+                try:
+                    with open(self.scars_file, 'r') as f:
+                        scars = yaml.safe_load(f) or []
+                except Exception:
+                    scars = []
+            self._scars_cache = scars
 
         # Initialize CIPHER-specific counters if not present
         if "activation_count" not in scar_data:
@@ -384,6 +389,7 @@ class StateManager:
             scars = scars[-40:]
 
         # Write back
+        self._scars_cache = scars
         with open(self.scars_file, 'w') as f:
             yaml.dump(scars, f, default_flow_style=False, sort_keys=False)
 
@@ -420,14 +426,18 @@ class StateManager:
         """
         import yaml
         import os
-        if not os.path.exists(self.scars_file):
-            return
 
-        with open(self.scars_file, 'r') as f:
-            try:
-                scars = yaml.safe_load(f) or []
-            except Exception:
+        if self._scars_cache is not None:
+            scars = self._scars_cache
+        else:
+            if not os.path.exists(self.scars_file):
                 return
+            with open(self.scars_file, 'r') as f:
+                try:
+                    scars = yaml.safe_load(f) or []
+                except Exception:
+                    return
+            self._scars_cache = scars
 
         updated = False
         for scar in scars:
@@ -439,6 +449,7 @@ class StateManager:
                 break
 
         if updated:
+            self._scars_cache = scars
             with open(self.scars_file, 'w') as f:
                 yaml.dump(scars, f, default_flow_style=False, sort_keys=False)
             self._git_commit(f"Updated scar related to {ticket_id} with SIC {sic_id}")
