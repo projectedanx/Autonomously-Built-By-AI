@@ -1,4 +1,3 @@
-import sys
 from system_logic.create_agent_profile import create_agent
 
 create_agent(
