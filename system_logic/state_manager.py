@@ -3,6 +3,9 @@ import json
 import subprocess
 from glob import glob
 import time
+import threading
+import tempfile
+import atexit
 
 try:
     from system_logic.vance_indexer import VanceLSPMapper
@@ -38,7 +41,18 @@ class StateManager:
         self._state = None
         self._processed_context_set = None
 
+        # Background writer thread variables
+        self._dirty = False
+        self._pending_state_json = None
+        self._bg_writer = None
+        self._writer_lock = threading.Lock()
+        self._io_lock = threading.Lock()
+        self._writer_stop_event = threading.Event()
+        self._write_version = 0
+        self._last_written_version = 0
+
         self._ensure_dirs()
+
 
     def _ensure_dirs(self) -> None:
         """Creates the required workspace directories if they do not exist.
@@ -213,6 +227,59 @@ class StateManager:
         self._git_commit(f"Task Escrowed: {ticket_id} (CFDI: {cfdi_score})")
         return ticket_path
 
+    def _start_bg_writer_if_needed(self):
+        with self._writer_lock:
+            if self._bg_writer is None or not self._bg_writer.is_alive():
+                self._writer_stop_event.clear()
+                self._bg_writer = threading.Thread(target=self._writer_loop, daemon=True)
+                self._bg_writer.start()
+                # Ensure we only register the atexit handler once
+                if not getattr(self, '_atexit_registered', False):
+                    atexit.register(self._stop_bg_writer)
+                    self._atexit_registered = True
+
+    def _writer_loop(self):
+        while not self._writer_stop_event.is_set():
+            if self._writer_stop_event.wait(0.1):  # Write every 0.1s if dirty
+                break
+            self._flush_to_disk()
+
+    def _flush_to_disk(self):
+        state_data = None
+        with self._writer_lock:
+            if self._dirty and self._pending_state_json is not None:
+                state_data = self._pending_state_json
+                self._pending_state_json = None
+                self._dirty = False
+
+        if state_data is not None:
+            version, state_to_serialize = state_data
+
+            with self._io_lock:
+                if version > self._last_written_version:
+                    fd, temp_path = tempfile.mkstemp(dir=os.path.dirname(self.state_file), prefix=".tmp_state_")
+                    try:
+                        with os.fdopen(fd, 'w') as f:
+                            f.write(state_to_serialize)
+                        os.replace(temp_path, self.state_file)
+                        self._last_written_version = version
+                    except Exception:
+                        if os.path.exists(temp_path):
+                            os.remove(temp_path)
+                        raise
+
+    def _stop_bg_writer(self):
+        self._writer_stop_event.set()
+        bg_thread = None
+        with self._writer_lock:
+            bg_thread = self._bg_writer
+
+        if bg_thread and bg_thread.is_alive():
+            # Join with timeout to avoid interpreter shutdown deadlocks,
+            # but give it a chance to finish its current write.
+            bg_thread.join(timeout=1.0)
+
+        self._flush_to_disk()
     def _load_state(self) -> dict:
         """Loads and caches the workspace state from the state file.
 
@@ -245,14 +312,41 @@ class StateManager:
         """
         self._state = state
         self._processed_context_set = set(self._state.get("processed_context", []))
-        with open(self.state_file, 'w') as f:
-            json.dump(state, f, indent=2)
+
+        # Serialize synchronously to avoid thread-safety issues with dict iteration
+        state_json = json.dumps(state, indent=2)
+
+        self._start_bg_writer_if_needed()
+        with self._writer_lock:
+            self._write_version += 1
+            self._pending_state_json = (self._write_version, state_json)
+            self._dirty = True
 
 
     def save_state(self) -> None:
         """Explicitly saves the current in-memory state to disk."""
         if self._state is not None:
-            self._save_state(self._state)
+            state_json = json.dumps(self._state, indent=2)
+
+            with self._writer_lock:
+                self._write_version += 1
+                version = self._write_version
+                self._dirty = False
+                self._pending_state_json = None
+
+            with self._io_lock:
+                if version > self._last_written_version:
+                    fd, temp_path = tempfile.mkstemp(dir=os.path.dirname(self.state_file), prefix=".tmp_state_")
+                    try:
+                        with os.fdopen(fd, 'w') as f:
+                            f.write(state_json)
+                        os.replace(temp_path, self.state_file)
+                        self._last_written_version = version
+                    except Exception:
+                        if os.path.exists(temp_path):
+                            os.remove(temp_path)
+                        raise
+
 
     def record_scar(self, scar_data: dict) -> None:
         """Records a Symbolic Scar to scars.yaml, implementing Autophagic Debridement.
