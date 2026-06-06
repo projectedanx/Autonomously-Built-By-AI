@@ -79,6 +79,34 @@ class TestEscrowResolution(unittest.TestCase):
         self.assertEqual(len(blocks), 1)
         self.assertEqual(blocks[0]["resolution_directive"], resolution_text)
 
+
+    def test_path_traversal_prevention(self):
+        """Tests that resolving a ticket with a prp_reference outside contracts_dir raises PermissionError."""
+        # Create a malicious task pointing outside the workspace directory
+        secret_file = "/tmp/secret.txt"
+        with open(secret_file, 'w') as f:
+            f.write("SUPER_SECRET_DATA")
+
+        malicious_task_filename = f"TASK_malicious.json"
+        malicious_task_path = os.path.join(self.manager.tasks_dir, malicious_task_filename)
+        malicious_task_data = {
+            "task_id": "malicious",
+            "status": "PENDING",
+            "prp_reference": secret_file
+        }
+        with open(malicious_task_path, 'w') as f:
+            json.dump(malicious_task_data, f)
+
+        # Claim task and trigger escrow
+        task_content, claimed_path = self.manager.claim_task(malicious_task_path)
+        ticket_path = self.manager.escrow_task(claimed_path, 0.20, "Test Conflict")
+
+        # Resolving the ticket should raise PermissionError
+        with self.assertRaises(PermissionError) as context:
+            self.resolver.resolve_ticket(ticket_path, "HUMAN ORACLE: Resolve malicious task.")
+
+        self.assertIn("Access denied", str(context.exception))
+
     @patch('builtins.input', side_effect=['0', 'My resolution patch'])
     def test_main_cli_flow(self, mock_input):
         """Tests the main interactive CLI flow for resolving escrow tickets.
