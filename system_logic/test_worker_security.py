@@ -1,5 +1,4 @@
 import pytest
-import os
 import json
 from state_manager import StateManager
 from worker_run import execute_task
