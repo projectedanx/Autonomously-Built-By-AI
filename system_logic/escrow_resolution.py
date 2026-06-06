@@ -48,7 +48,14 @@ class EscrowResolver:
             task_data = json.load(f)
 
         prp_ref = task_data.get("prp_reference")
+        if not prp_ref:
+            print("Error: Missing prp_reference in task data.")
+            return
+
         abs_prp_ref = os.path.realpath(os.path.join(self.root, prp_ref))
+        root_dir = os.path.realpath(self.root)
+        if os.path.commonpath([abs_prp_ref, root_dir]) != root_dir:
+            raise PermissionError(f"Access denied: {prp_ref} is outside the allowed workspace directory.")
 
         if abs_prp_ref in self._prp_cache:
             prp_data = self._prp_cache[abs_prp_ref]
