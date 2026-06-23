@@ -1,4 +1,5 @@
 import json
+import concurrent.futures
 import os
 import shutil
 from glob import glob
@@ -99,6 +100,11 @@ class EscrowResolver:
         os.remove(ticket_path)
         print(f"Successfully resolved and requeued task {task_filename}")
 
+
+def _load_ticket_data(ticket_path):
+    with open(ticket_path, 'r') as f:
+        return json.load(f)
+
 def main():
     """Main entry point for the interactive escrow resolution CLI."""
     resolver = EscrowResolver()
@@ -109,11 +115,12 @@ def main():
         return
 
     print(f"Found {len(tickets)} pending escrow tickets.")
-    for idx, ticket in enumerate(tickets):
-        with open(ticket, 'r') as f:
-            data = json.load(f)
-            print(f"[{idx}] Ticket: {data.get('ticket_id')} - CFDI: {data.get('cfdi_score')}")
-            print(f"    Conflict: {data.get('conflict_reason')}")
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        ticket_data_list = list(executor.map(_load_ticket_data, tickets))
+
+    for idx, data in enumerate(ticket_data_list):
+        print(f"[{idx}] Ticket: {data.get('ticket_id')} - CFDI: {data.get('cfdi_score')}")
+        print(f"    Conflict: {data.get('conflict_reason')}")
 
     try:
         choice = int(input("Select a ticket to resolve (index): "))
