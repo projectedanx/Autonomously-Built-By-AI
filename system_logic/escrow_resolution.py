@@ -30,28 +30,25 @@ class EscrowResolver:
         """
         return glob(os.path.join(self.escrow_dir, "ESCROW-*.json"))
 
-    def resolve_ticket(self, ticket_path: str, human_resolution: str):
-        """Resolves an escrow ticket with human input and requeues the task.
-
-        Args:
-            ticket_path (str): The path to the escrow ticket file.
-            human_resolution (str): The resolution provided by the human oracle.
-        """
+    def _load_ticket_and_task(self, ticket_path: str):
         with open(ticket_path, 'r') as f:
             ticket_data = json.load(f)
 
         escrowed_task_path = ticket_data.get("original_task")
         if not escrowed_task_path or not os.path.exists(escrowed_task_path):
             print(f"Error: Original task file {escrowed_task_path} not found.")
-            return
+            return None, None, None
 
         with open(escrowed_task_path, 'r') as f:
             task_data = json.load(f)
 
+        return ticket_data, task_data, escrowed_task_path
+
+    def _load_prp_data(self, task_data: dict):
         prp_ref = task_data.get("prp_reference")
         if not prp_ref:
             print("Error: Missing prp_reference in task data.")
-            return
+            return None, None
 
         abs_prp_ref = os.path.realpath(os.path.join(self.root, prp_ref))
         root_dir = os.path.realpath(self.root)
@@ -65,18 +62,21 @@ class EscrowResolver:
                 prp_data = json.load(f)
             self._prp_cache[abs_prp_ref] = prp_data
 
+        return prp_data, abs_prp_ref
+
+    def _update_prp_with_resolution(self, prp_data: dict, abs_prp_ref: str, ticket_id: str, human_resolution: str):
         if "constraints_and_invariants" not in prp_data:
             prp_data["constraints_and_invariants"] = {}
         if "human_resolution_blocks" not in prp_data["constraints_and_invariants"]:
             prp_data["constraints_and_invariants"]["human_resolution_blocks"] = []
 
-
         # --- FIPI & FIGaC Integration ---
-        sic_id = self.fipi_forge.generate_sic(human_resolution, ticket_data.get("ticket_id"))
-        self.state_manager.resolve_scar(ticket_data.get("ticket_id"), human_resolution, sic_id)
+        sic_id = self.fipi_forge.generate_sic(human_resolution, ticket_id)
+        self.state_manager.resolve_scar(ticket_id, human_resolution, sic_id)
         # --------------------------------
+
         prp_data["constraints_and_invariants"]["human_resolution_blocks"].append({
-            "resolved_ticket": ticket_data.get("ticket_id"),
+            "resolved_ticket": ticket_id,
             "resolution_directive": human_resolution
         })
 
@@ -84,6 +84,7 @@ class EscrowResolver:
             json.dump(prp_data, f, indent=2)
         self._prp_cache[abs_prp_ref] = prp_data
 
+    def _requeue_task(self, escrowed_task_path: str, ticket_path: str, task_data: dict):
         task_filename = os.path.basename(escrowed_task_path)
         if task_filename.startswith("ESCROWED_"):
             task_filename = task_filename[len("ESCROWED_"):]
@@ -99,6 +100,25 @@ class EscrowResolver:
         os.remove(escrowed_task_path)
         os.remove(ticket_path)
         print(f"Successfully resolved and requeued task {task_filename}")
+
+    def resolve_ticket(self, ticket_path: str, human_resolution: str):
+        """Resolves an escrow ticket with human input and requeues the task.
+
+        Args:
+            ticket_path (str): The path to the escrow ticket file.
+            human_resolution (str): The resolution provided by the human oracle.
+        """
+        ticket_data, task_data, escrowed_task_path = self._load_ticket_and_task(ticket_path)
+        if ticket_data is None:
+            return
+
+        prp_data, abs_prp_ref = self._load_prp_data(task_data)
+        if prp_data is None:
+            return
+
+        self._update_prp_with_resolution(prp_data, abs_prp_ref, ticket_data.get("ticket_id"), human_resolution)
+        self._requeue_task(escrowed_task_path, ticket_path, task_data)
+
 
 
 def _load_ticket_data(ticket_path):
