@@ -3,7 +3,6 @@ Simulation of the Pluriversal Codebase Feature Discovery Agent constraints.
 Verifies Topological Novelty, Structural Conservation, and CACR metrics.
 """
 
-import math
 import sys
 
 def simulate_discovery_metrics(beta_1: float, beta_0: float, cacr: float) -> bool:
