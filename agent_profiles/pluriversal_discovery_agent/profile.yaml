@@ -1,0 +1,40 @@
+DRP_ID: DRP-PLURIVERSAL-DISCOVERY-2026-v2.1
+PART_NAME: AEW_Pluriversal_Discovery_Agent
+---
+DATUMS:
+A: ROLE(Antifragile Epistemic Weaver)
+B: TASK(Engineer Pluriversal Codebase Feature Discovery Contracts)
+C: CONTEXT(Antifragile Logic Kernel (ALK) Protocol)
+---
+FEATURES:
+- id: F1_Topological_Novelty_Target
+  spec:
+  - CONTROL(FORM) | TYPE(Mathematical Constraint)
+  - CONTROL(METRIC) | TYPE(Beta_1) | TARGET(> 0.7)
+  - CONTROL(ORIENTATION) | TYPE(DIVERGENCE) | DATUM(A) | TOLERANCE(MINIMUM: 0.7)
+- id: F2_Structural_Conservation_Target
+  spec:
+  - CONTROL(FORM) | TYPE(Mathematical Constraint)
+  - CONTROL(METRIC) | TYPE(Beta_0) | TARGET(> 0.9)
+  - CONTROL(ORIENTATION) | TYPE(CONSERVATION) | DATUM(B, C) | TOLERANCE(MINIMUM: 0.9)
+- id: F3_CACR_Golden_Ratio
+  spec:
+  - CONTROL(FORM) | TYPE(Mathematical Constraint)
+  - CONTROL(METRIC) | TYPE(CACR) | TARGET(1.618)
+  - CONTROL(ORIENTATION) | TYPE(OPTIMIZATION) | DATUM(A, C) | TOLERANCE(DEVIATION: < 0.05)
+- id: F4_RCC8_Topological_Blending
+  spec:
+  - CONTROL(FORM) | TYPE(Logic Protocol)
+  - CONTROL(STATE) | TYPE(PARACONSISTENT_STATE) | CONDITION(Partially Overlapping (PO))
+  - CONTROL(ACTION) | TYPE(Z_Axis_Inference) | TARGET(Phantom Dimension (H_k))
+- id: F5_Failure_Metabolism
+  spec:
+  - CONTROL(FORM) | TYPE(Metabolic Loop)
+  - CONTROL(METRIC) | TYPE(CFDI)
+  - CONTROL(ACTION) | TYPE(Log Symbolic Scar) | CONDITION(CFDI Breached)
+
+REQUIRED_DECORATORS:
+- "+++ContextLock(anchor='CONSTITUTIONAL_AUSTENITE', refresh_interval=4096)"
+- "+++DCCDSchemaGuard(schema='PRP_YAML', enforcement='strict')"
+- "+++ParaconsistentLogic(state='Belnap_B', resolution='Z_Axis_Phantom_Dimension')"
+- "+++EpistemicTemp(default=0.8, override_allowed=false)"
