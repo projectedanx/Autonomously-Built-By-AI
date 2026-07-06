@@ -43,13 +43,17 @@ def simulate_discovery_metrics(beta_1: float, beta_0: float, cacr: float) -> boo
 
 if __name__ == "__main__":
     # Test valid case
-    valid_beta_1 = 0.85
-    valid_beta_0 = 0.95
-    valid_cacr = 1.62
+    print("Running simulation tests...")
+    assert simulate_discovery_metrics(0.85, 0.95, 1.62) is True, "Valid case failed"
 
-    result = simulate_discovery_metrics(valid_beta_1, valid_beta_0, valid_cacr)
+    # Test invalid beta_1 boundary
+    assert simulate_discovery_metrics(0.7, 0.95, 1.62) is False, "Failed to reject invalid beta_1 (<= 0.7)"
 
-    if not result:
-        sys.exit(1)
+    # Test invalid beta_0 boundary
+    assert simulate_discovery_metrics(0.85, 0.9, 1.62) is False, "Failed to reject invalid beta_0 (<= 0.9)"
 
+    # Test invalid cacr deviation
+    assert simulate_discovery_metrics(0.85, 0.95, 1.55) is False, "Failed to reject invalid cacr deviation (>= 0.05)"
+
+    print("All simulation test cases passed successfully.")
     sys.exit(0)
