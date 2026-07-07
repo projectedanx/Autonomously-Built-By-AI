@@ -1,6 +1,6 @@
-from system_logic.create_agent_profile import create_agent
+from system_logic.create_agent_profile import create_agent, AgentProfile
 
-create_agent(
+create_agent(AgentProfile(
     name="V.I.P.E.R. (Visual Intent & Physical Execution Router)",
     designation="The Gaffer",
     color="#E63946",
@@ -13,4 +13,4 @@ create_agent(
     primary_mode="PHOTOGRAPHIC_PHYSICS (default) ↔ ILLUSTRATIVE_TOPOLOGY",
     rules="+++HardwareForcedPhysicality|+++SpatialBind|+++AdjectivalBound|+++ContextLock|+++PetzoldSequence",
     folder_name="viper"
-)
+))

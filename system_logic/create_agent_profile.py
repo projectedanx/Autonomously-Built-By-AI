@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
 import os
 import sys
+from dataclasses import dataclass
+from typing import Optional
+
+@dataclass
+class AgentProfile:
+    name: str
+    designation: str
+    color: str
+    specialty: str
+    when_to_use: str
+    primary_goal: str
+    secondary_goal: str
+    forbidden: str
+    voice: str
+    primary_mode: str
+    rules: str
+    folder_name: Optional[str] = None
+
 
 def get_yaml_template():
     """Returns the YAML template string for creating agent profiles.
@@ -34,28 +52,18 @@ critical_rules:
 {rules}
 """
 
-def create_agent(name, designation, color, specialty, when_to_use, primary_goal, secondary_goal, forbidden, voice, primary_mode, rules, folder_name=None):
-    """Creates an agent profile YAML file based on the provided parameters.
+def create_agent(profile: AgentProfile):
+    """Creates an agent profile YAML file based on the provided profile.
 
     Args:
-        name (str): The name of the agent.
-        designation (str): The designation of the agent.
-        color (str): The hex color code for the agent.
-        specialty (str): Comma-separated list of specialties.
-        when_to_use (str): Description of when to use the agent.
-        primary_goal (str): The primary goal of the agent.
-        secondary_goal (str): The secondary goal of the agent.
-        forbidden (str): Comma-separated list of forbidden practices.
-        voice (str): The voice description of the agent.
-        primary_mode (str): The primary execution mode.
-        rules (str): Pipe-separated list of critical rules.
-        folder_name (str, optional): The folder name to save the profile in. Defaults to None.
+        profile (AgentProfile): The profile parameters.
 
     Raises:
         ValueError: If the folder name is invalid.
     """
+    folder_name = profile.folder_name
     if not folder_name:
-        folder_name = name.lower().replace(" ", "_")
+        folder_name = profile.name.lower().replace(" ", "_")
 
     # Sanitize folder_name to prevent path traversal
     folder_name = os.path.basename(folder_name)
@@ -68,31 +76,31 @@ def create_agent(name, designation, color, specialty, when_to_use, primary_goal,
     file_path = os.path.join(folder_path, "profile.yaml")
 
     # Format list items
-    specialty_str = "\n".join([f"  - {s.strip()}" for s in specialty.split(",") if s.strip()])
-    forbidden_str = "\n".join([f"      - \"{f.strip()}\"" for f in forbidden.split(",") if f.strip()])
-    rules_str = "\n".join([f"  - \"{r.strip()}\"" for r in rules.split("|") if r.strip()])
+    specialty_str = "\n".join([f"  - {s.strip()}" for s in profile.specialty.split(",") if s.strip()])
+    forbidden_str = "\n".join([f"      - \"{f.strip()}\"" for f in profile.forbidden.split(",") if f.strip()])
+    rules_str = "\n".join([f"  - \"{r.strip()}\"" for r in profile.rules.split("|") if r.strip()])
 
     # Indent when_to_use
-    when_to_use_str = "  " + when_to_use.replace("\n", "\n  ")
+    when_to_use_str = "  " + profile.when_to_use.replace("\n", "\n  ")
 
     yaml_content = get_yaml_template().format(
-        name=name,
-        designation=designation,
-        color=color,
+        name=profile.name,
+        designation=profile.designation,
+        color=profile.color,
         specialty=specialty_str,
         when_to_use=when_to_use_str,
-        primary_goal=primary_goal,
-        secondary_goal=secondary_goal,
+        primary_goal=profile.primary_goal,
+        secondary_goal=profile.secondary_goal,
         forbidden=forbidden_str,
-        voice=voice,
-        primary_mode=primary_mode,
+        voice=profile.voice,
+        primary_mode=profile.primary_mode,
         rules=rules_str
     )
 
     with open(file_path, "w") as f:
         f.write(yaml_content)
 
-    print(f"Created agent profile for {name} at {file_path}")
+    print(f"Created agent profile for {profile.name} at {file_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
