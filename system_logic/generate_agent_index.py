@@ -38,7 +38,8 @@ def extract_yaml_data(content):
                 pass
 
         return None
-    except Exception:
+    except Exception as e:
+        print(f"YAML parsing error: {e}")
         return None
 
 def extract_markdown_table_data(content):
