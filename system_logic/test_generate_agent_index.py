@@ -139,7 +139,7 @@ agent_name: Test Agent
         assert extract_yaml_data(content) is None
 
 def test_extract_yaml_data_general_exception(capsys):
-    with patch('system_logic.generate_agent_index.HAS_YAML', True), \\
+    with patch('system_logic.generate_agent_index.HAS_YAML', True),\
          patch('system_logic.generate_agent_index.yaml') as mock_yaml:
         mock_yaml.safe_load.side_effect = Exception("Mocked catastrophic failure")
         content = "---\\nagent_name: Test Agent\\n---"
