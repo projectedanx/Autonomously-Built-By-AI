@@ -39,7 +39,7 @@
     *   **Intended Use Cases**: High-reliability tasks requiring probabilistic grounding, logical deduction, and value alignment.
     *   **Prerequisites / Dependencies**: Multi-agent architectures or loop-capable orchestrators for tiers V-VII.
 
-### 2.2 Prompt Topographies: Cross-Domain Analysis.md
+### 2.2 Prompt Topographies_ Cross-Domain Analysis_.md
 
 1.  **Framework Name**: Prompt Topographies (Cultural Grammar Mapping)
     *   **Core Innovation**: Analyzes the structural grammar and cross-domain isomorphic patterns of effective prompts.
