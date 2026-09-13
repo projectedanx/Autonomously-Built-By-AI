@@ -47,3 +47,6 @@ The system demonstrated the irreducible friction necessary for true antifragilit
 
 ### Irreducible Friction
 We intentionally preserve the tension [Φ] between VULCAN's brutalist isolation constraints (β0 > 0.9) and the fluid, chaotic reality of CI/CD execution. We do not attempt to smooth this friction out; it is the generator of our system's continuous hardening.
+
+## DCCD and Saga Orchestrator Integration
+Migrated DCCDSchemaGuard and SagaOrchestrator to system_logic to enable executable, non-simulated cognitive constraints.
