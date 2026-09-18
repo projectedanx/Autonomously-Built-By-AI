@@ -1,0 +1,7 @@
+{
+  "task_id": "PRP-CRITICAL-REQ-20260918-142712-4745BA",
+  "status": "PENDING",
+  "assigned_role": "WORKER",
+  "prp_reference": "./cognitive_contracts/PRP-CRITICAL-REQ-20260918-142712-4745BA.json",
+  "instructions": "Execute strictly according to the referenced Cognitive Contract (PRP)."
+}

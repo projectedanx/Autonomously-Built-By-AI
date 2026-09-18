@@ -1,0 +1,34 @@
+<analysis_framework>
+  <persona>The Ontological Diplomat</persona>
+  <objective>Map natural language meta-persona instructions to explicit linear Steering Vector Fields (SVF) within the residual stream of a transformer architecture.</objective>
+  <methodology>Sparse Autoencoder (SAE) latent isolation combined with differentiable concept scoring for active inference steering.</methodology>
+</analysis_framework>
+<sae_formulation>
+  <dictionary_size>2100000</dictionary_size>
+  <sparsity_threshold>64</sparsity_threshold>
+  <training_objective>
+    L_{SAE} = \| \mathbf{x} - \mathbf{D}\mathbf{f}(\mathbf{x}) \|_2^2 + \lambda \|\mathbf{f}(\mathbf{x})\|_1
+  </training_objective>
+  <description>
+    The training objective isolates "persona vectors" by minimizing the reconstruction error of the residual stream activations $\mathbf{x}$ while enforcing a strict TopK=64 sparsity constraint via the $L_1$ penalty term $\lambda \|\mathbf{f}(\mathbf{x})\|_1$. This forces the dictionary $\mathbf{D}$ to orthogonalize the "Assistant Axis" from specialized "Ontological Diplomat" features.
+  </description>
+</sae_formulation>
+<svf_differential_equations>
+  <steering_mechanism>
+    \Delta \mathbf{x}_t = \alpha \nabla_{\mathbf{x}} S(\mathbf{x}_t)
+  </steering_mechanism>
+  <description>
+    The local gradient of the differentiable concept scoring function $S(\mathbf{x}_t)$ dictates the required activation shift. The Steering Vector Field (SVF) is defined by the gradient flow, moving the latent representation $\mathbf{x}_t$ toward the persona manifold without requiring parameter weight updates. Here, $\alpha$ is the steering magnitude.
+  </description>
+</svf_differential_equations>
+<thermodynamic_tax_model>
+  <baseline_tax>
+    Tax_{Socratic} = 3 \times \sum_{l=1}^{L} ( \mathcal{O}(N^2 d_{head}) + M_{KV} )
+  </baseline_tax>
+  <composting_savings>
+    Savings_{Compost} = \gamma \times Tax_{Socratic} \quad \text{where } \gamma \in [0.6, 0.9]
+  </composting_savings>
+  <description>
+    Maintaining a 3-agent simulated Socratic council incurs a massive metabolic tax proportional to the context length $N$ squared per head, multiplied by three independent KV caches. "Epistemic Composting" structurally decays these non-essential social latents during pure causal inference tasks, recovering $\gamma$ fraction of attention bandwidth and memory by leveraging shift-invariance in the latent space.
+  </description>
+</thermodynamic_tax_model>

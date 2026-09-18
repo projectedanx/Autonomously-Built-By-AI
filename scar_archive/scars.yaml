@@ -1,0 +1,189 @@
+- id: SCAR-20260918-142721-A3D73C
+  timestamp: 20260918-142721
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.197
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-A940AA.
+  related_ticket: ESCROW-20260918-142721-E30122
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142721-225353
+  timestamp: 20260918-142721
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.226
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-21C3A8.
+  related_ticket: ESCROW-20260918-142721-782652
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142721-7D63C3
+  timestamp: 20260918-142721
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.188
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-7AFDF7.
+  related_ticket: ESCROW-20260918-142721-D0D6BC
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142721-512B59
+  timestamp: 20260918-142721
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.159
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-71EFA4.
+  related_ticket: ESCROW-20260918-142721-AD26DF
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-6CDCF2
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.24
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-2BA17A.
+  related_ticket: ESCROW-20260918-142722-5E5792
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-718F70
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.172
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-4745BA.
+  related_ticket: ESCROW-20260918-142722-E1A44C
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-D0B4B5
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.208
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-930504.
+  related_ticket: ESCROW-20260918-142722-82F0C8
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-9015B7
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.203
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-81D13B.
+  related_ticket: ESCROW-20260918-142722-E8F20B
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-05D27A
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.204
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-6C1746.
+  related_ticket: ESCROW-20260918-142722-005527
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-F539A0
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.188
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-9B4640.
+  related_ticket: ESCROW-20260918-142722-279FA6
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-E8ED62
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.181
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-948D40.
+  related_ticket: ESCROW-20260918-142722-7F82EB
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-5DB65F
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.179
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142711-0018F1.
+  related_ticket: ESCROW-20260918-142722-46CBE4
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-69993C
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.236
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-B47E4E.
+  related_ticket: ESCROW-20260918-142722-1BB0CC
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-98AF43
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.223
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-AC5BE5.
+  related_ticket: ESCROW-20260918-142722-77C8AA
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-81FBF6
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.227
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-31B8DF.
+  related_ticket: ESCROW-20260918-142722-A8486B
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-E9CACF
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.223
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-A3C233.
+  related_ticket: ESCROW-20260918-142722-85795A
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142722-5C1952
+  timestamp: 20260918-142722
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.249
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-4464C9.
+  related_ticket: ESCROW-20260918-142722-E98225
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142723-1F23CB
+  timestamp: 20260918-142723
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.245
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-CFA4C1.
+  related_ticket: ESCROW-20260918-142723-213D99
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142723-0DEAF5
+  timestamp: 20260918-142723
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.243
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-A3BC54.
+  related_ticket: ESCROW-20260918-142723-0112B3
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142723-D436D4
+  timestamp: 20260918-142723
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.244
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142711-8B6C45.
+  related_ticket: ESCROW-20260918-142723-F0ACF5
+  activation_count: 0
+  false_positive_count: 0
+- id: SCAR-20260918-142723-EA2780
+  timestamp: 20260918-142723
+  type: EPISTEMIC_ESCROW_TRIGGERED
+  trigger: CFDI_THRESHOLD_EXCEEDED
+  cfdi_score: 0.245
+  description: Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-A9CB6D.
+  related_ticket: ESCROW-20260918-142723-F58FE5
+  activation_count: 0
+  false_positive_count: 0
