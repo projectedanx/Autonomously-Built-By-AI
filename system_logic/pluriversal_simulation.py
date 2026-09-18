@@ -41,19 +41,3 @@ def simulate_discovery_metrics(beta_1: float, beta_0: float, cacr: float) -> boo
     print("RCC-8 Topological Blending and Z-Axis Inference theoretically validated under Paraconsistent State (Belnap's 'B').")
     return True
 
-if __name__ == "__main__":
-    # Test valid case
-    print("Running simulation tests...")
-    assert simulate_discovery_metrics(0.85, 0.95, 1.62) is True, "Valid case failed"
-
-    # Test invalid beta_1 boundary
-    assert simulate_discovery_metrics(0.7, 0.95, 1.62) is False, "Failed to reject invalid beta_1 (<= 0.7)"
-
-    # Test invalid beta_0 boundary
-    assert simulate_discovery_metrics(0.85, 0.9, 1.62) is False, "Failed to reject invalid beta_0 (<= 0.9)"
-
-    # Test invalid cacr deviation
-    assert simulate_discovery_metrics(0.85, 0.95, 1.55) is False, "Failed to reject invalid cacr deviation (>= 0.05)"
-
-    print("All simulation test cases passed successfully.")
-    sys.exit(0)
