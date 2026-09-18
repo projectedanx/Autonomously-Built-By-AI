@@ -1,0 +1,12 @@
+{
+  "outcome_type": "ACCEPTED_PLAN",
+  "target_module": "system_logic/generate_agent_index.py",
+  "initial_cognitive_complexity_score": 43,
+  "hypothesis_summary": "The module `system_logic/generate_agent_index.py` exhibits high Cognitive Complexity, particularly in the `parse_profile` and `extract_markdown_table_data` functions (CCR001 violations). The monolithic structure of `parse_profile` handles multiple parsing strategies (YAML, Markdown tables, regex fallbacks) sequentially within a single execution block, violating the Single Responsibility Principle and complicating control flow. Hypothesis: Decomposing `parse_profile` into separate, focused strategy functions (e.g., `_apply_yaml_data`, `_apply_table_data`, `_apply_regex_heuristics`) and orchestrating them via simple delegation will reduce the peak cognitive complexity below the threshold (10), enhancing maintainability and align with the Generative Ratchet principle.",
+  "ACU_robustness_score": 0.88,
+  "tension_metric": {
+    "novelty_score": 0.65,
+    "grounding_score": 0.95
+  },
+  "justification_or_plan": "1. Run pytest to establish baseline. 2. Write a comprehensive refactoring script (`refactor_index.py`) that uses string replacement to rewrite the overly complex functions (`parse_profile` and helpers) into modular sub-functions. 3. Run the script. 4. Run `flake8` to fix formatting (E501, E302, etc.) using `autopep8`. 5. Re-run `radon cc -a system_logic/generate_agent_index.py` and `flake8 --max-cognitive-complexity=10 system_logic/generate_agent_index.py` to verify the fix. 6. Run `pytest` to verify behavior."
+}
