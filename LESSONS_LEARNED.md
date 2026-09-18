@@ -53,3 +53,9 @@ Migrated DCCDSchemaGuard and SagaOrchestrator to system_logic to enable executab
 
 ## Human-AI Tension Holding (Golden Scar Protocol)
 The Strategic Integration Project Manager implements a paraconsistent logic framework. The AI brings structural calculation and topological fit prediction, while the Human brings the semantic metrology to hold contradictions in tension without Algorithmic Shame. This synergy is mathematically represented by weighting empirical governance (Human reality) with the Golden Ratio (ϕ=1.618) and stochastic generation (AI) with 1.000, creating a [Φ] Golden Scar instead of a homogenized compromise.
+
+## Reflexive Repair Loop Integration
+- The system now incorporates a dual-system, two-speed cybernetic control loop (`ReflexiveRepairLoop`).
+- Implements bounded iterations (max 3 attempts) for probabilistic generation (System 1) checked against deterministic verification (System 2).
+- Automatically converts failures into Logic Violation Reports (LVRs) and reinjects them as negative constraints.
+- Triggers Epistemic Escrow and records a Symbolic Scar upon loop exhaustion to prevent continuous semantic drift (Chronotopological drift).
