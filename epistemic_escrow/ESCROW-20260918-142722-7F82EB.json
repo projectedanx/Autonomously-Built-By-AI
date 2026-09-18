@@ -1,0 +1,9 @@
+{
+  "ticket_id": "ESCROW-20260918-142722-7F82EB",
+  "status": "QUARANTINED",
+  "cfdi_score": 0.181,
+  "conflict_reason": "Simulated schema divergence detected in PRP-CRITICAL-REQ-20260918-142712-948D40.",
+  "original_task": "./epistemic_escrow/ESCROWED_TASK_PRP-CRITICAL-REQ-20260918-142712-948D40.json.claimed",
+  "required_action": "Human Oracle or specialized agent intervention required to resolve contradiction before resuming.",
+  "is_cipher_task": false
+}
