@@ -1,9 +1,0 @@
-Refactor generate_agent_index to reduce cognitive complexity
-
-* Decomposed monolithic `parse_profile` into strategy functions:
-  `_apply_yaml_data`, `_apply_table_data`, `_apply_regex_heuristics`
-* Decomposed `extract_markdown_table_data` using `_process_table_row`
-* Split regex application logic out of `strip_markdown`
-* Extracted main file writing logic to `_write_index_file`
-* Maintained exact 1-to-1 functionality.
-* Created ags_a_output.json artifact for pipeline verification.
