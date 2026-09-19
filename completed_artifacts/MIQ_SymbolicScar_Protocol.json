@@ -1,0 +1,17 @@
+{
+  "protocol_name": "MIQ_SymbolicScar_Protocol",
+  "miq_formula": "MIQ = (E_fric * 1.618) / max(delta_Intent, 0.001)",
+  "thresholds": {
+    "V_crit": 0.25
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "target_input_space": {"type": "string", "const": "Stare Decisis in Legal Precedent"},
+      "antagonistic_input_space": {"type": "string", "const": "Montage Theory in Filmmaking"},
+      "E_fric": {"type": "number"},
+      "delta_Intent": {"type": "number"},
+      "fipi_patch": {"type": "string"}
+    }
+  }
+}

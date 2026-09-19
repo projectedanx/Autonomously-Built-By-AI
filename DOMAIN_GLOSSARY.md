@@ -68,3 +68,12 @@ The actuator mechanism of the VCP. It directly appends corrective latent embeddi
 
 ### Semantic Drift Coefficient (SDC)
 A continuous sensor metric representing the instantaneous rate of semantic change (e.g., `1 - cos(h_t, V_0)`). Used as the primary gating mechanism to trigger VCP deliberation when exceeding a defined threshold ($\xi \ge 0.30$).
+
+### Dual-Helix Harness
+A hybrid self-improving agentic architecture that ensembles Reflexion's verbal metacognition loops (optimizing reasoning via Episodic Memory) with Voyager's executable code skill synthesis (optimizing actions via a Skill Library vector database).
+
+### Martensite Initiation Quotient (MIQ)
+The precise volume of contradictory error data required to force an agent to abandon a fossilized heuristic and undergo epistemic renewal.
+
+### Skill Drifting
+The accumulation of latent logical and syntactic errors in deeply nested executable primitives within a lifelong learning agent.
