@@ -69,3 +69,7 @@ The system now implements a JIT Swarm Orchestrator to decouple the cognitive wor
 ### Staged Advantage Estimation (SAE) vs GRPO
 *   **Context:** In preference-aligned reinforcement learning for multistep reasoning (e.g., Tree-OPO), standard GRPO relies on the assumption that all completions in a training group share a single, uniform prompt context, allowing advantage calculation via flat mean-centering.
 *   **Insight:** When optimizing against heterogeneous, off-policy prefixes of varying lengths and difficulties (Tree-OPO), flat mean-centering leads to extreme gradient variance and credit assignment failures. Staged Advantage Estimation (SAE) resolves this by formulating advantage calculation as a hierarchical convex optimization problem, projecting raw empirical rewards onto a closed, convex set that enforces tree-consistency constraints (parent-child and sibling-triplet). This guarantees 100% constraint satisfaction and maintains bounded advantage variance relative to standard-deviation-normalized inputs.
+
+## AACH Implementation (Purposeful Adaptation)
+**Lesson:** Traditional adaptive systems often fall into either "overcontrolled" rigidity (trapped in local optima) or "dissipative" chaos (runaway token costs).
+**Action Taken:** Implemented the AACH framework utilizing a dual-cyclic Model Predictive Control setup where performance convergences automatically trigger disequilibratory goal spikes. This relies heavily on topological mapping, forcing active externalization of working memory onto the filesystem.

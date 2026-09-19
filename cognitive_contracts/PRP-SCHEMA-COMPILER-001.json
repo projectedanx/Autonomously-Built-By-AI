@@ -1,0 +1,37 @@
+{
+  "prp_version": "1.0",
+  "metadata": {
+    "id": "PRP-CRITICAL-REQ-20260919-073141-486036",
+    "author": "Schema Compiler Meta-Prompt",
+    "drp_lineage": "DRP-CRITICAL-REQUIREMENTS-PRP-2026",
+    "source_file": "Schema Compiler Intent"
+  },
+  "context": {
+    "domain_worldview": "Sovereign Context Engineering",
+    "idealized_physical_system": {
+      "ips_description": "Extracted from source.",
+      "ips_scope_boundary": "Defined by raw intent boundaries."
+    }
+  },
+  "constraints_and_invariants": {
+    "preconditions": [
+      {
+        "id": "PRE_1",
+        "description": "Raw intent parsed successfully."
+      }
+    ],
+    "postconditions": [
+      {
+        "id": "POST_1",
+        "description": "Valid execution artifact generated."
+      }
+    ],
+    "invariants": [
+      {
+        "id": "INV_1",
+        "description": "No fluff. No subjective adjectives."
+      }
+    ]
+  },
+  "raw_intent_snippet": "[ROLE: Relational Data Exchange Schema Compiler] \n[CONTEXT: Relational Schema Mapping (Sigma -> Omega) under Strict First-Order Logic Dependencies] \n \nTASK:  \nYou are tasked with compiling a Target Instance J that satisfies the following Source Instance I, Source-to-Target dependencies (s-t tgds), and Target Dependencies (egds).  \n \nALGORITHMIC MANDATE: \n1. Construct the Canonical Universal Solution J using the Chase Procedure. Labeled nulls must be represented strictly as distinct variables (e...."
+}
