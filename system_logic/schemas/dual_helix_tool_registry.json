@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Dual Helix Tool Registry",
+  "type": "object",
+  "properties": {
+    "think_tool": {"type": "string"},
+    "write_tool": {"type": "string"},
+    "code_tool": {"type": "string"},
+    "evaluate_tool": {"type": "string"},
+    "reforge_tool": {"type": "string"}
+  }
+}
