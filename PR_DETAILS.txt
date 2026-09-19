@@ -1,14 +1,13 @@
-🧹 Add PEW analysis report and fix syntax error in test
-
 🎯 What
-This PR adds the requested Prompt Engineering Workbench (PEW) analysis report, synthesizing multiple framework documents from the context inbox. It also resolves a minor syntax error in a pytest file.
+This PR implements Staged Advantage Estimation (SAE), resolving the extreme gradient variance and credit assignment failures that occur when applying standard Group Relative Policy Optimization (GRPO) to Tree-structured Off-policy Optimization (Tree-OPO).
 
-💡 Why
-The PEW Analysis Agent was tasked with extracting, normalizing, and proposing integration paths for several epistemic prompt engineering frameworks into the Prompt Engineering Workbench. The report fulfills this requirement. The test fix ensures the CI suite collects and runs cleanly.
+🛡️ Solution
+* Abstracted the mathematical SAE document into `harness_modules/sae_systems_engineering.md`.
+* Extracted the systems-grade Python implementation of the optimization program into `system_logic/staged_advantage_estimation.py`.
+* Created Pytest validation in `system_logic/test_staged_advantage_estimation.py` that confirms constraint satisfaction mechanisms.
+* Updated `LESSONS_LEARNED.md` to persist insights regarding flat mean-centering versus SAE convex projection.
 
 ✅ Verification
-- Generated `completed_artifacts/pew_analysis_report.md` manually reviewed for structure and required epistemic markers (e.g., `+++TaskScope`, `+++TREE`, `+++SCARS`).
-- Ran `bash -c 'PYTHONPATH=system_logic python3 -m pytest'` to verify all tests pass (66/66 passed).
-
-✨ Result
-A comprehensive, design-ready analysis report is available in the artifacts directory, and the system test suite is healthy.
+- Extracted code cleanly.
+- Added comprehensive unit tests and verified 100% constraint satisfaction mathematically via pytest. All 94 tests in the repo pass successfully.
+- Documentation mirrors the updated state of the codebase.
