@@ -1,0 +1,37 @@
+{
+  "prp_version": "1.0",
+  "metadata": {
+    "id": "PRP-CRITICAL-REQ-20260919-073141-53F928",
+    "author": "Active Externalism Meta-Prompt",
+    "drp_lineage": "DRP-CRITICAL-REQUIREMENTS-PRP-2026",
+    "source_file": "Active Externalism Intent"
+  },
+  "context": {
+    "domain_worldview": "Sovereign Context Engineering",
+    "idealized_physical_system": {
+      "ips_description": "Extracted from source.",
+      "ips_scope_boundary": "Defined by raw intent boundaries."
+    }
+  },
+  "constraints_and_invariants": {
+    "preconditions": [
+      {
+        "id": "PRE_1",
+        "description": "Raw intent parsed successfully."
+      }
+    ],
+    "postconditions": [
+      {
+        "id": "POST_1",
+        "description": "Valid execution artifact generated."
+      }
+    ],
+    "invariants": [
+      {
+        "id": "INV_1",
+        "description": "No fluff. No subjective adjectives."
+      }
+    ]
+  },
+  "raw_intent_snippet": "[ROLE: Active Externalism Cognitive Orchestrator] \n[SCHEMA: Joint Human-AI Active Coupling System] \n \nTASK: \nYou must solve the following highly complex logic puzzle. However, you are restricted from performing the calculations entirely \"in your head\" (within your local context stream). You must treat your output buffer as an active \"epistemic scratchpad\" to offload memory and reorganize your internal system schema. \n \nOPERATIONAL INSTRUCTIONS: \n1. You must execute an \"Exploratory Epistemic Acti..."
+}

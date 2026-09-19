@@ -129,5 +129,7 @@ The workspace is empowered by numerous specialized agent emergence plans and dep
 *   **AEGIS-11**: Autonomic Epistemic Gatekeeper preventing Ontological Incommensurability.
 *   **VULCAN**: Vector-Unified Logical Computing Architect Node for strict topological bounds.
 *   **AEW Pluriversal Discovery Agent**: Antifragile Epistemic Weaver (AEW) engineered for Pluriversal Codebase Feature Discovery, utilizing RCC-8 topological blending and paraconsistent Z-Axis inference to maximize topological novelty while enforcing absolute structural conservation.
-
+*   **Schema Compiler**: Relational Data Exchange compiler optimizing Canonical Universal Solution via the Chase Procedure, ensuring maximal generality for target schemas.
+*   **Active Externalism Orchestrator**: DES-class agent utilizing external epistemic scratchpads to solve multi-variable logic constraints while preserving internal memory allocation.
+*   **Goal Tuner**: Internal Model Control feed-forward tuner establishing equilbratory reduction and disequilibratory production for dynamic goal adjustment in volatile strategic planning.
 * **Epistemic Architectures**: Integrated `DCCDSchemaGuard` and `SagaOrchestrator` from harness models into active runtime to bridge semantic generation and zero-entropy validation.

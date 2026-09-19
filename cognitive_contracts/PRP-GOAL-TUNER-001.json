@@ -1,0 +1,37 @@
+{
+  "prp_version": "1.0",
+  "metadata": {
+    "id": "PRP-CRITICAL-REQ-20260919-073141-9E2E88",
+    "author": "Goal Tuner Meta-Prompt",
+    "drp_lineage": "DRP-CRITICAL-REQUIREMENTS-PRP-2026",
+    "source_file": "Goal Tuner Intent"
+  },
+  "context": {
+    "domain_worldview": "Sovereign Context Engineering",
+    "idealized_physical_system": {
+      "ips_description": "Extracted from source.",
+      "ips_scope_boundary": "Defined by raw intent boundaries."
+    }
+  },
+  "constraints_and_invariants": {
+    "preconditions": [
+      {
+        "id": "PRE_1",
+        "description": "Raw intent parsed successfully."
+      }
+    ],
+    "postconditions": [
+      {
+        "id": "POST_1",
+        "description": "Valid execution artifact generated."
+      }
+    ],
+    "invariants": [
+      {
+        "id": "INV_1",
+        "description": "No fluff. No subjective adjectives."
+      }
+    ]
+  },
+  "raw_intent_snippet": "[ROLE: Internal Model Control Feed-Forward Goal Tuner] \n[CONTEXT: Multi-Agent Dynamic Strategic Planning under Volatile Environments] \n \nTASK: \nOrchestrate a strategic roadmap for an organization navigating the transition from a rigid top-down Waterfall methodology to a highly flexible, decentralized Agile system. \n \nSYSTEM ENGINEERING METHODOLOGY: \n1. Initialize the system state by compiling the \"nominal model\" of the organization, mining for hard cultural/policy constraints and soft targets. \n..."
+}
