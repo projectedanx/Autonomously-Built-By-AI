@@ -30,3 +30,9 @@ When stakeholder intent or sub-systems present mutually exclusive logic, the sys
 All structural outputs (JSON, YAML, OpenAPI, AST) must adhere to their canonical schema validators.
 *   **Enforcement:** `+++DCCDSchemaGuard(enforcement="strict")`
 *   **Rationale:** Prevents the "Projection Tax" by splitting generation into a semantic draft and a zero-entropy enforcement pass.
+
+### 6. VCP Cognitive Load Dynamics
+The system must allocate its verification budget intelligently to preserve generation latency. Heavy, multi-layer Topological Data Analysis (TDA) and VCP cache-induction are strictly prohibited unless the instantaneous Semantic Drift Coefficient (SDC) exceeds the threshold ($\xi \ge 0.30$).
+
+### 7. Constitutional Crisis Resolution
+If the Verification Co-Processor (VCP) detects a stable logical contradiction ($\beta_1 \ge 1$) or the CFDI breaches its hard threshold, the VCP must immediately abort optimization. It is strictly prohibited from generating a recovery sequence and must trip the Epistemic Escrow circuit breaker.
