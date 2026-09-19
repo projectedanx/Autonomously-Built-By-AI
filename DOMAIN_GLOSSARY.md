@@ -59,3 +59,12 @@ A metric tracking the gap between a model's generation confidence and its struct
 
 ### Semantic Saponification
 The degradation and mathematical washing out of precise technical and disciplinary meaning into generic, sycophantic, or "fluffy" approximations (e.g., "seamless", "robust") across large context windows, usually triggered by over-reliance on LLM RLHF heuristics. AEGIS-11 explicitly guards against this.
+
+### Verification Co-Processor (VCP)
+An independent, decoupled coprocessor operating in parallel with the primary model. It ingests deviant Key-Value (KV) cache states and compiles continuous "recovery plans" to realign semantic trajectories without modifying base model weights.
+
+### Differentiable Cache Augmentation
+The actuator mechanism of the VCP. It directly appends corrective latent embeddings (soft tokens) to the primary model's existing KV-cache, smoothly bending the latent trajectory back toward a safe semantic geodesic.
+
+### Semantic Drift Coefficient (SDC)
+A continuous sensor metric representing the instantaneous rate of semantic change (e.g., `1 - cos(h_t, V_0)`). Used as the primary gating mechanism to trigger VCP deliberation when exceeding a defined threshold ($\xi \ge 0.30$).

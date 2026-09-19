@@ -5,6 +5,7 @@ from system_logic.state_manager import StateManager
 from system_logic.dccd_schema_guard import DCCDSchemaGuard
 from system_logic.saga_recovery_harness import SagaOrchestrator
 from system_logic.reflexive_repair import ReflexiveRepairLoop
+from system_logic.verification_guard import VerificationGuard
 
 
 def execute_task(manager: StateManager, target_task: str, commit: bool = True) -> None:
@@ -43,19 +44,27 @@ def execute_task(manager: StateManager, target_task: str, commit: bool = True) -
     is_cipher_task = "CIPHER" in prp_data.get("metadata", {}).get("drp_lineage", "").upper() or \
                      "CIPHER" in prp_data.get("metadata", {}).get("id", "").upper()
 
-    cfdi_threshold = 0.08 if is_cipher_task else 0.15
+    cfdi_threshold = 0.08 if is_cipher_task else 0.42
 
-    # 3. Simulate CFDI Calculation (Confidence-Fidelity Divergence Index)
-    # In a real system, this would be computed via cross-encoder divergence tracking
-    cfdi_score = round(random.uniform(0.01, 0.25), 3)
-    print(f"Calculated CFDI Score: {cfdi_score}")
+    # 3. Verification Co-Processor (VCP) Trajectory Evaluation
+    vcp = VerificationGuard(cfdi_threshold=cfdi_threshold)
+    # Simulate sensor readings
+    sdc_reading = round(random.uniform(0.10, 0.45), 3)
+    cfdi_reading = round(random.uniform(0.05, 0.50), 3)
+    betti_reading = random.choice([0, 0, 1])
 
-    if cfdi_score > cfdi_threshold:
-        print(f"CFDI Threshold exceeded (>{cfdi_threshold}). Triggering CFDI Brake and Epistemic Escrow.")
-        conflict_reason = f"Simulated schema divergence detected in {prp_data['metadata']['id']}."
-        ticket_path = manager.escrow_task(claimed_task_path, cfdi_score, conflict_reason, is_cipher_task=is_cipher_task)
+    vcp_result = vcp.evaluate_trajectory(sdc=sdc_reading, cfdi=cfdi_reading, betti_1=betti_reading)
+    print(f"VCP Sensors: SDC={sdc_reading}, CFDI={cfdi_reading}, Betti_1={betti_reading}")
+    print(f"VCP Status: {vcp_result['status']}")
+
+    if vcp_result["status"] == "CRISIS":
+        print("Constitutional Crisis detected. Triggering CFDI Brake and Epistemic Escrow.")
+        conflict_reason = f"VCP Constitutional Crisis in {prp_data['metadata']['id']} - SDC: {sdc_reading}, CFDI: {cfdi_reading}, Betti_1: {betti_reading}"
+        ticket_path = manager.escrow_task(claimed_task_path, cfdi_reading, conflict_reason, is_cipher_task=is_cipher_task)
         print(f"Task quarantined. Escrow Ticket generated: {ticket_path}")
         return
+    elif vcp_result["status"] == "REPAIRED":
+        print("VCP executed Surgical Repair via Differentiable Cache Augmentation.")
 
     # 4. Simulate Petzold Sequence Execution
     artifact_content = f"# Execution Artifact for {prp_data['metadata']['id']}\n\n"
