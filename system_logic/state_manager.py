@@ -492,21 +492,28 @@ class StateManager:
         except FileNotFoundError:
             existing_inbox = set()
 
-        for artifact_path in all_artifacts:
+        import concurrent.futures
+
+        def _copy_artifact(artifact_path):
             filename = os.path.basename(artifact_path)
 
             # Prevent infinite loops
             if filename.startswith("REINGESTED_"):
-                continue
+                return False
 
             new_filename = f"REINGESTED_{filename}"
             if new_filename in self._processed_context_set:
-                continue
+                return False
 
             if new_filename not in existing_inbox:
                 dst = os.path.join(self.inbox_dir, new_filename)
                 shutil.copy2(artifact_path, dst)
-                count += 1
+                return True
+            return False
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            results = executor.map(_copy_artifact, all_artifacts)
+            count = sum(1 for r in results if r)
 
         if count > 0:
             self._git_commit(f"Re-ingested {count} artifacts into context_inbox")
