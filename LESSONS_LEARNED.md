@@ -59,3 +59,9 @@ The Strategic Integration Project Manager implements a paraconsistent logic fram
 - Implements bounded iterations (max 3 attempts) for probabilistic generation (System 1) checked against deterministic verification (System 2).
 - Automatically converts failures into Logic Violation Reports (LVRs) and reinjects them as negative constraints.
 - Triggers Epistemic Escrow and records a Symbolic Scar upon loop exhaustion to prevent continuous semantic drift (Chronotopological drift).
+
+## JIT Swarm Orchestrator Integration
+The system now implements a JIT Swarm Orchestrator to decouple the cognitive workload.
+- **Manifold Alpha**: Handles high-entropy semantic planning, reducing the context window tax from tool definitions.
+- **Manifold Beta**: Ephemeral, task-specific JIT Micro-Agents handle zero-entropy syntactic realization via Draft-Conditioned Constrained Decoding (DCCD).
+- **Verification Co-Processor (VCP)**: Computes the Confidence-Fidelity Divergence Index (CFDI) and applies Differentiable Cache Augmentation (Soft Tokens) for error steering, preventing context rot and looping.

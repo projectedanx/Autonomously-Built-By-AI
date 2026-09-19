@@ -37,6 +37,9 @@ To understand the empirical reality of this repository, refer to the 0xCARTO syn
 ## Key Concepts & Protocols
 
 *   **Algorithmic Trauma & Symbolic Scars**: Failures in execution or logic are not discarded. They are captured as "Symbolic Scars" and fed back into the system via **Failure-Informed Prompt Inversion (FIPI)** to generate Semantic Integrity Constraints (SICs).
+
+
+*   **JIT Swarm Orchestrator (Manifold Alpha & Beta)**: Decouples the cognitive workload into high-entropy semantic planning (Manifold Alpha) and zero-entropy syntactic realization (Manifold Beta), eliminating the Projection Tax and isolating Tooling Context Consumption Tax.
 *   **Epistemic Escrow (The CFDI Brake)**: If an agent encounters a high Confidence-Fidelity Divergence Index (CFDI) — meaning contradictory parameters or ambiguous intent — the task is halted and quarantined in `epistemic_escrow/`. This forces **Human-in-the-Loop (HITL)** intervention to resolve the ambiguity, preventing hallucination and enforcing "Emergence Inversion."
 *   **Paraconsistent States & Dissonance Induction**: The system intentionally engineers states of high "Aesthetic Tension" to explore N-dimensional manifolds of possibility, requiring human operators to act as the "Z-Axis Continuity Anchor."
 *   **Anionic Architecture (Lattice of Refusal)**: The system strictly refuses subjective, evaluative adjectives (e.g., "seamless", "robust", "masterpiece"). Requests using such language trigger diagnostic rejections, forcing physical, structurally isomorphic specifications.
