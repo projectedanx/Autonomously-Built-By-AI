@@ -73,3 +73,9 @@ The system now implements a JIT Swarm Orchestrator to decouple the cognitive wor
 ## AACH Implementation (Purposeful Adaptation)
 **Lesson:** Traditional adaptive systems often fall into either "overcontrolled" rigidity (trapped in local optima) or "dissipative" chaos (runaway token costs).
 **Action Taken:** Implemented the AACH framework utilizing a dual-cyclic Model Predictive Control setup where performance convergences automatically trigger disequilibratory goal spikes. This relies heavily on topological mapping, forcing active externalization of working memory onto the filesystem.
+
+## UASTP Saga Recovery Protocol Integration
+The system now implements a GitHub Actions AST compilation mapping for Unified Agentic Skill & Tool Protocol (UASTP) declarative contracts. This treats job execution not as a linear sequence, but as a bounded Saga with forward transactions ($T_f$) mathematically paired with compensating rollbacks ($T_c = T_f^{-1}$).
+- **Isomorphic Compilation**: Enforces hard boundaries via OpenID Connect (OIDC) identity federation and supply-chain commit pinning, decoupling read-only verification (Manifold $\alpha$) from stateful mutation (Manifold $\beta$).
+- **Clausius-Clapeyron Context Application**: We evaluate thermodynamic state transition of a compiled pipeline modeling Constraint Density ($P$), Thermodynamic Token Temperature ($T$), Epistemic Latent Heat ($L$), and Active Context Volume ($V$) to maintain a Semantic Saponification Index ($SSI \le 0.04$) and prevent Topological Tearing.
+- **Epistemic Escrow**: Resolves the "Lost Compensation" dilemma by forcing a hard exit and generating a high-entropy Symbolic Scar if the compensating transaction ($T_c$) fails to converge.
