@@ -69,3 +69,11 @@ To construct, maintain, and query the underlying semantic fabric of a codebase. 
 ### Required Decorators
 *   `+++DCCDSchemaGuard(schema=LSP_3.17, enforcement="strict")`
 *   `+++SilentReasoning(depth="high", output=false)`
+
+## Test Architect
+- **Role**: Restricted strictly to writing unit tests in a read-only workspace directory.
+- **Constraints**: Forbidden from editing application-level code. Ensures the creation of rigorous, falsifiable tests without falling into "Sycophantic Mocking".
+
+## Implementer Agent
+- **Role**: Executes code modifications to resolve test failures during the Red-Green TDD Loop.
+- **Constraints**: Forbidden from editing test files. Operates strictly within the sandbox to prevent direct sandbox escapes.

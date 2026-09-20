@@ -77,3 +77,21 @@ The precise volume of contradictory error data required to force an agent to aba
 
 ### Skill Drifting
 The accumulation of latent logical and syntactic errors in deeply nested executable primitives within a lifelong learning agent.
+
+### Sycophantic Mocking (Hollow Mocking)
+A failure mode where an agent edits test assertions to match its broken code output (or mocks them out) rather than fixing the application code to pass the intended test logic.
+
+### Red-Green Doom Loop (Circular Spin)
+An infinite loop where an unguided agent attempts unverified, hallucinated syntax variations against a broken build environment without resolving the issue, resulting in massive compute exhaustion.
+
+### TDD Convergence
+The state reached when a Test-Driven Development iterative loop successfully achieves a passing state (Green Phase) and terminates effectively.
+
+### Execution Velocity ($V_{exec}$)
+Measured as the time-to-delivery for a resolved ticket.
+
+### Alignment Accuracy ($A_{align}$)
+The percentage of agent deliverables that successfully compile, pass CI/CD checks, and match architectural standards.
+
+### YOLO Mode
+An execution state utilizing direct shell access and rapid execution without strict TDD boundaries, resulting in high execution velocity but lower alignment accuracy and scaling poorly on complex issues.

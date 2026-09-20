@@ -36,3 +36,9 @@ The system must allocate its verification budget intelligently to preserve gener
 
 ### 7. Constitutional Crisis Resolution
 If the Verification Co-Processor (VCP) detects a stable logical contradiction ($\beta_1 \ge 1$) or the CFDI breaches its hard threshold, the VCP must immediately abort optimization. It is strictly prohibited from generating a recovery sequence and must trip the Epistemic Escrow circuit breaker.
+
+### 8. Zero-Trust TDD Isolation
+The execution layer of the test runner must be strictly isolated using containers or OS-level sandboxes with zero-trust networking profiles. System tools must match an immutable allow-list, blocking chained subprocesses or external network sockets during test runs to prevent sandbox escapes.
+
+### 9. Adaptive Escape Hatch (Doom Loop Breaker)
+If the test runner returns identical stderr logs across three consecutive execution turns, or if the total turn count crosses a hard threshold (e.g., `max_iterations = 10`), the harness must interrupt the loop, execute a shadow Git rollback (`/restore`) to revert the workspace state, and prompt the human operator for manual configuration steering.
