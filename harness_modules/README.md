@@ -13,3 +13,4 @@ This directory contains systemic specifications, mathematical formalisms, and ab
 - mechanistic_lookback_distillation.md
 - recap_bdi_symbolic_logic.md
 - temporal_aware_hierarchical_rl.md
+- ikea_effect_collaborative_cognition.md
