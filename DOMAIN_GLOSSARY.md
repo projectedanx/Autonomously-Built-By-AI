@@ -116,3 +116,15 @@ The ratio of bounding/descriptive data tokens to total tokens, kept maximized by
 
 ### Socratic Correction Subroutine (SCS)
 A loop that feeds compiler/linter error logs back into the context window and demands a self-corrected revision when constraints are violated.
+
+### Literal Theory of Mind (ToM)
+The passive, descriptive forecasting of another agent's belief state without behavioral execution.
+
+### Functional Theory of Mind (ToM)
+The closed-loop, adaptive execution of a rational response to minimize long-term regret based on predicted belief states.
+
+### ReCAP (Recursive Context-Aware Planning)
+A framework operating on a dynamic context tree to manage recursive execution via downward decomposition and upward backtracking.
+
+### PEACE Meta-Architecture
+An epistemic cognitive harness operationalized into Retrieval, Cognition, Control, Action, and Memory modules.
