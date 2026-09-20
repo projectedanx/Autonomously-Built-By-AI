@@ -52,14 +52,15 @@ def execute_task(manager: StateManager, target_task: str, commit: bool = True) -
     sdc_reading = round(random.uniform(0.10, 0.45), 3)
     cfdi_reading = round(random.uniform(0.05, 0.50), 3)
     betti_reading = random.choice([0, 0, 1])
+    delta_drift_reading = round(random.uniform(0.01, 0.15), 3)
 
-    vcp_result = vcp.evaluate_trajectory(sdc=sdc_reading, cfdi=cfdi_reading, betti_1=betti_reading)
-    print(f"VCP Sensors: SDC={sdc_reading}, CFDI={cfdi_reading}, Betti_1={betti_reading}")
+    vcp_result = vcp.evaluate_trajectory(sdc=sdc_reading, cfdi=cfdi_reading, betti_1=betti_reading, delta_drift=delta_drift_reading)
+    print(f"VCP Sensors: SDC={sdc_reading}, CFDI={cfdi_reading}, Betti_1={betti_reading}, Delta Drift={delta_drift_reading}")
     print(f"VCP Status: {vcp_result['status']}")
 
     if vcp_result["status"] == "CRISIS":
         print("Constitutional Crisis detected. Triggering CFDI Brake and Epistemic Escrow.")
-        conflict_reason = f"VCP Constitutional Crisis in {prp_data['metadata']['id']} - SDC: {sdc_reading}, CFDI: {cfdi_reading}, Betti_1: {betti_reading}"
+        conflict_reason = f"VCP Constitutional Crisis in {prp_data['metadata']['id']} - SDC: {sdc_reading}, CFDI: {cfdi_reading}, Betti_1: {betti_reading}, Delta Drift: {delta_drift_reading}"
         ticket_path = manager.escrow_task(claimed_task_path, cfdi_reading, conflict_reason, is_cipher_task=is_cipher_task)
         print(f"Task quarantined. Escrow Ticket generated: {ticket_path}")
         return
