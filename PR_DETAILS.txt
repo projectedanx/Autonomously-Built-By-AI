@@ -1,13 +1,13 @@
 🎯 What
-This PR implements Staged Advantage Estimation (SAE), resolving the extreme gradient variance and credit assignment failures that occur when applying standard Group Relative Policy Optimization (GRPO) to Tree-structured Off-policy Optimization (Tree-OPO).
+This PR implements the Action-Alignment Loss (AAL) specification in PyTorch, bridging the "thought-action gap" in AI agents by directly binding the agent's policy to the predicted expected utility of its optimal best response.
 
 🛡️ Solution
-* Abstracted the mathematical SAE document into `harness_modules/sae_systems_engineering.md`.
-* Extracted the systems-grade Python implementation of the optimization program into `system_logic/staged_advantage_estimation.py`.
-* Created Pytest validation in `system_logic/test_staged_advantage_estimation.py` that confirms constraint satisfaction mechanisms.
-* Updated `LESSONS_LEARNED.md` to persist insights regarding flat mean-centering versus SAE convex projection.
+* Created `system_logic/action_alignment_loss.py` to implement a differentiable regret-minimization loss function, utilizing a smooth Boltzmann best-response (`logsumexp`) approximation to ensure dense gradient flow and prevent sparse subgradients.
+* Developed `system_logic/test_action_alignment_loss.py` with pytest test cases covering edge-cases such as the "Nash Trap" evaluation (exact regret = 1.0) and multi-dimensional batch handling.
+* Consolidated the three requested rigorous research prompts (Circuit Distillation, Closed-Loop ReCAP, and Epistemic Sponge Mitigation) into `harness_modules/action_alignment_prompts.md`.
+* Updated `LESSONS_LEARNED.md` to document the necessity of causal alignment over literal next-token modeling in sequential games.
 
 ✅ Verification
-- Extracted code cleanly.
-- Added comprehensive unit tests and verified 100% constraint satisfaction mathematically via pytest. All 94 tests in the repo pass successfully.
-- Documentation mirrors the updated state of the codebase.
+* Implemented the loss logic strictly according to the mathematical derivation.
+* Pytest validation completed on `test_action_alignment_loss.py` resolving exact values derived in the chain-of-thought mathematical proof.
+* Documentation and artifacts have been recorded accurately matching codebase implementation constraints.

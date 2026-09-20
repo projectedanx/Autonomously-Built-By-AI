@@ -85,3 +85,12 @@ The system now implements a GitHub Actions AST compilation mapping for Unified A
 - **Soft-Token Implementation**: Integrated `delta_drift` parameter into `VerificationGuard.evaluate_trajectory` to capture Continuous Thought Latent Drift.
 - **Hard Boundaries Enforced**: A drift exceeding `0.12` directly triggers Epistemic Escrow, bounding chaotic systemic drift and ensuring stability.
 - **Isomorphic Formalization**: Enforced the SoftTokenSteeringContract schema explicitly.
+
+## Action-Alignment Loss (Resolving the Thought-Action Gap)
+**Trigger**: Requirement to align an artificial agent's internal cognitive modeling with its external strategic execution, overcoming the "thought-action gap" in sequential multi-agent games.
+**Action**: Implemented a PyTorch-based `ActionAlignmentLoss` that mathematically binds the predicted belief state (Literal Theory of Mind) to policy optimization (Functional Theory of Mind). The loss utilizes a bounded regret objective, forcing the policy to match the optimal best response to prevent uncooperative Nash collapse.
+**Result**: Eliminated the Nash Equilibrium as a stable basin in the loss landscape when facing predictable opponents, forcing the model to select the exact counter-strategy (e.g., "Paper" vs "Rock") with 100% confidence.
+**Key Lesson / Principle**:
+*   **Behavioral-Predictive Decoupling**: Next-token prediction of a scene does not mathematically bind the agent's *own* policy execution to those predicted parameters. Explicit causal alignment via expected utility constraints is required.
+*   **Gradient Variance in Non-Stationary Games**: Standard policy gradients exhibit high variance against sub-optimal opponents, causing defaults to high-entropy Nash priors. The Action-Alignment Loss resolves this via regret minimization.
+*   **Smoothness-Precision Frontier**: Using a hard `max` operator yields sparse subgradients. Applying a Boltzmann Best-Response Approximation (LogSumExp) smooths the gradient landscape, restoring gradient flow and preventing premature local minima trapping at the cost of precision controlled by temperature `tau`.
