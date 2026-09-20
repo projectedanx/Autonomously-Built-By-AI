@@ -95,3 +95,9 @@ The percentage of agent deliverables that successfully compile, pass CI/CD check
 
 ### YOLO Mode
 An execution state utilizing direct shell access and rapid execution without strict TDD boundaries, resulting in high execution velocity but lower alignment accuracy and scaling poorly on complex issues.
+
+### Staged Advantage Estimation ADMM
+An ultra-high-speed Alternating Direction Method of Multipliers (ADMM) solver in PyTorch used to compute prefix-aware, scale-preserving advantages under strict hierarchical constraints (C_order prefix DAG consistency).
+
+### Kinematic-Economic Coupling
+An isomorphic mapping of continuous mass, time, and angle non-convex manifolds to constraint sets in advantage estimation. Penalizes trajectories (velocity scaling non-linearly with mass) intersecting exclusion zones (e.g., Solar Singularity Exclusion Zone) dynamically.

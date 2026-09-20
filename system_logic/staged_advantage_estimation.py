@@ -1,5 +1,7 @@
+import torch
 import numpy as np
 from scipy.optimize import minimize
+from system_logic.admm_sae_solver import ADMMSolver
 from typing import List, Dict, Tuple, Set, Union, Optional
 
 class StagedTrajectoryNode:
@@ -210,3 +212,38 @@ class TreeOPOGroup:
             return self.compute_heuristic_advantages(alpha=0.5)
 
         return res.x
+
+
+    def compute_sae_admm_advantages(self, margin: float = 0.01, device: str = 'cpu') -> np.ndarray:
+        """
+        Solves the constrained convex Quadratic Program for SAE advantages
+        via PyTorch ADMM Solver. Warm-started from mean-centered rewards.
+        """
+        rewards = np.array([sample[1] for sample in self.samples], dtype=np.float64)
+        n = len(rewards)
+
+        # Center rewards to construct r_0 seed
+        r_0 = rewards - np.mean(rewards)
+        r0_tensor = torch.tensor(r_0, dtype=torch.float32, device=device)
+
+        # Build constraint matrix from C_order
+        ordering_relations = self.build_ordering_constraints(margin)
+        M = len(ordering_relations)
+
+        if M > 0:
+            L_tensor = torch.zeros((M, n), dtype=torch.float32, device=device)
+            delta_tensor = torch.zeros(M, dtype=torch.float32, device=device)
+            for m_idx, (i_idx, j_idx, margin_val) in enumerate(ordering_relations):
+                # We want a_i + margin <= a_j  => a_i - a_j + margin <= 0
+                # So L has +1 at i, -1 at j
+                L_tensor[m_idx, i_idx] = 1.0
+                L_tensor[m_idx, j_idx] = -1.0
+                delta_tensor[m_idx] = margin_val
+        else:
+            L_tensor = torch.zeros((0, n), dtype=torch.float32, device=device)
+            delta_tensor = torch.zeros(0, dtype=torch.float32, device=device)
+
+        solver = ADMMSolver(device=device)
+        a_tensor = solver.solve(r0_tensor, L_tensor, delta_tensor)
+
+        return a_tensor.cpu().numpy()
