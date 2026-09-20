@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SoftTokenSteeringContract",
+  "type": "object",
+  "required": ["step_id", "deviant_state_hash", "soft_token_payload", "target_anchor_id", "post_steering_scr"],
+  "properties": {
+    "step_id": { "type": "string", "format": "uuid" },
+    "deviant_state_hash": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "soft_token_payload": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "number" },
+        "minItems": 1536,
+        "maxItems": 1536
+      }
+    },
+    "target_anchor_id": { "type": "string" },
+    "post_steering_scr": { "type": "number", "minimum": 0.95 }
+  }
+}

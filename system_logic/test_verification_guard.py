@@ -26,3 +26,14 @@ class TestVerificationGuard(unittest.TestCase):
         # SDC > 0.30, CFDI <= 0.42, betti_1 >= 1
         result = self.guard.evaluate_trajectory(sdc=0.35, cfdi=0.30, betti_1=1)
         self.assertEqual(result["status"], "CRISIS")
+
+    def test_hard_boundary_drift(self):
+        # delta_drift >= 0.12 overrides everything
+        result = self.guard.evaluate_trajectory(sdc=0.10, cfdi=0.1, betti_1=0, delta_drift=0.15)
+        self.assertEqual(result["status"], "CRISIS")
+        self.assertTrue("Hard Boundary Breach" in result["message"])
+
+    def test_laminar_with_safe_drift(self):
+        # delta_drift < 0.12 and SDC <= 0.30
+        result = self.guard.evaluate_trajectory(sdc=0.20, cfdi=0.1, betti_1=0, delta_drift=0.10)
+        self.assertEqual(result["status"], "LAMINAR")

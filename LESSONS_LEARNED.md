@@ -79,3 +79,9 @@ The system now implements a GitHub Actions AST compilation mapping for Unified A
 - **Isomorphic Compilation**: Enforces hard boundaries via OpenID Connect (OIDC) identity federation and supply-chain commit pinning, decoupling read-only verification (Manifold $\alpha$) from stateful mutation (Manifold $\beta$).
 - **Clausius-Clapeyron Context Application**: We evaluate thermodynamic state transition of a compiled pipeline modeling Constraint Density ($P$), Thermodynamic Token Temperature ($T$), Epistemic Latent Heat ($L$), and Active Context Volume ($V$) to maintain a Semantic Saponification Index ($SSI \le 0.04$) and prevent Topological Tearing.
 - **Epistemic Escrow**: Resolves the "Lost Compensation" dilemma by forcing a hard exit and generating a high-entropy Symbolic Scar if the compensating transaction ($T_c$) fails to converge.
+
+
+## 0xCARTO Update - The Mathematics of Soft Tokens and Steering
+- **Soft-Token Implementation**: Integrated `delta_drift` parameter into `VerificationGuard.evaluate_trajectory` to capture Continuous Thought Latent Drift.
+- **Hard Boundaries Enforced**: A drift exceeding `0.12` directly triggers Epistemic Escrow, bounding chaotic systemic drift and ensuring stability.
+- **Isomorphic Formalization**: Enforced the SoftTokenSteeringContract schema explicitly.
