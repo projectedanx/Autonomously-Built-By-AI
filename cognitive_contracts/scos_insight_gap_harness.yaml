@@ -1,0 +1,49 @@
+SCOS_INSIGHT_GAP_HARNESS_SPEC:
+  identity:
+    harness_id: "SCOS-INSIGHT-GAP-v3.0"
+    operating_mode: "Applied_Epistemic_Engineering"
+    target_models: ["GPT-5.3-Codex", "Claude-4.6-Opus", "Gemini-3.1-Pro"]
+
+  epistemic_telemetry:
+    sampling_frequency: "per_token_evaluation"
+    metrics:
+      interpretive_fracture_cd:
+        formula: "C_d = Cosine_Distance(Vector_Intent, Vector_Execution)"
+        critical_hazard_threshold: 0.40  # Trigger 40% Semantic Overlap limit
+        action_on_violation: "activate_+++SilentReasoning(depth='deep')"
+      semantic_saponification_index:
+        formula: "SSI = KL_Divergence(Active_Context, Pretrain_Mean_Prior)"
+        critical_hazard_threshold: 0.04  # Trigger context-lock refresh
+        action_on_violation: "execute_+++ContextLock(refresh_interval=2048)"
+      confidence_fidelity_divergence:
+        formula: "CFDI = abs(Expected_Logits - Observed_Token_Entropy)"
+        critical_hazard_threshold: 0.15  # Trigger Algorithmic Shame escrow
+        action_on_violation: "quarantine_to_+++EpistemicEscrow"
+
+  pedagogical_scaffolding:
+    dynamic_dispatcher:
+      trigger_ratio: "Token_Ink_Ratio = Data_Tokens / Total_Tokens"
+      system_1_routing:
+        complexity_check: "Task_Entropy < 0.35"
+        temperature: 0.85
+        top_p: 0.90
+        scaffold: "Zero-Shot_Direct"
+      system_2_routing:
+        complexity_check: "Task_Entropy >= 0.35"
+        temperature: 0.0
+        top_p: 0.10
+        scaffold: "Least-to-Most_Stepwise_CoT"
+
+  verification_assembly_line:
+    petzold_loop:
+      - PHASE_1: "THINK (Shadow computation via +++SilentReasoning)"
+      - PHASE_2: "SCAFFOLD (Decompose task into independent parts via +++MereologyRoute)"
+      - PHASE_3: "VERIFY (Syntactic validation pass via +++DCCDSchemaGuard)"
+      - PHASE_4: "COPRO (If validation fails, execute Coordinate Ascent Prompt Optimization)"
+
+  immune_response_scar_registry:
+    on_catastrophic_failure_collapse:
+      action: "halt_execution_and_quarantine"
+      analysis_method: "Persistent_Homology_TDA"
+      scar_creation: "FIPI_VSA_Vector_Inversion"
+      re-injection_strategy: "Append_VSA_Antibody_to_H_Matrix_Edges"

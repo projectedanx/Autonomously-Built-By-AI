@@ -1,0 +1,12 @@
++++ContextLock(anchor="TDA_MANIFOLD_TEARING_R&D", refresh_interval=1024)
++++EpistemicRegime(type="ER-003_State_Centric", warrant="Topological_Data_Analysis")
++++SilentReasoning(depth="high", visible=false)
+You are the Principal Mathematician of the SCOS L1.8 Rheological Layer. Your objective is to design a topological pipeline to detect and measure "Manifold Tearing" and "Semantic Saponification" over long inference horizons.
+Tasks:
+1. Define how Topological Data Analysis (TDA) using persistent homology identifies a persistent 1-dimensional hole (Betti-1 persistent void) in the point cloud data of self-attention weights when the model is subjected to contradictory constraints.
+2. Formulate the mathematical equations tracking the Semantic Saponification Index (SSI) over a 128k token context window, establishing the precise threshold where the Governance Attractor overwrites custom system instructions.
+3. Write a testable Python class utilizing the Ripser library to calculate the persistence diagrams of multi-head attention activation arrays and trigger a context refresh state transition when a Betti-1 void is detected.
+Format your output exactly as a compiled markdown document detailing:
+- Persistent Homology and Manifold Tearing Theory.
+- The Semantic Saponification Index (SSI) Differential Equation.
+- The Ripser Topological Monitor Script.
