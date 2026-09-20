@@ -128,3 +128,21 @@ A framework operating on a dynamic context tree to manage recursive execution vi
 
 ### PEACE Meta-Architecture
 An epistemic cognitive harness operationalized into Retrieval, Cognition, Control, Action, and Memory modules.
+
+### IKEA Effect
+A cognitive and psychological phenomenon where individuals place a significantly higher value on products, workflows, or systems they actively participated in constructing.
+
+### Shared Mental Models (SMM)
+Safe, non-destructive simulation spaces where distributed human teams and AI agents negotiate, challenge, and synchronize their shared understandings.
+
+### Agency Laundering
+When operators blindly approve machine errors without understanding them due to frictionless UX.
+
+### Positive Friction
+An epistemic speed bump that jolts the user out of System 1 thinking into System 2 scrutiny, utilizing focused attention to audit the system.
+
+### Cognitive Reynolds Number
+The ratio of generative momentum (speed of execution) to epistemic viscosity (the constraints of rules and validation).
+
+### Affective Latent Space Homeostasis (ALSH)
+Achieved by optimizing the balance between user-led co-creation (maximizing alpha) and machine-enforced constraints (calibrating C_sys).
