@@ -14,3 +14,6 @@ This directory contains systemic specifications, mathematical formalisms, and ab
 - recap_bdi_symbolic_logic.md
 - temporal_aware_hierarchical_rl.md
 - ikea_effect_collaborative_cognition.md
+- action_alignment_prompts.md
+- sae_systems_engineering.md
+- parsimonious_architecture_protocol.md
