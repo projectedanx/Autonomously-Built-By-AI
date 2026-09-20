@@ -1,0 +1,10 @@
+#### Research Prompt 3: Temporal-Aware & Dual-System Hierarchical Cognitive Reinforcement Learning
+> **Domain:** Post-Training RL Alignment, Dual-Process Theory, and Social Game Theory.
+>
+> **Task:** Implement and evaluate Temporal-aware Hierarchical Cognitive Reinforcement Learning (TimeHC-RL) to train a small-scale LLM to dynamically shift between intuitive System 1 responses and deliberate System 2 reasoning.
+>
+> **Experimental Design & Architecture:**
+> 1.  **Hierarchical RL Scaffolding:** Implement a two-layer post-training reinforcement learning setup. The Macro-Policy (representing System 2 strategic planning) runs at a lower temporal frequency (e.g., once per conversational day or round), generating high-level desires and personality-driven biases. The Micro-Policy (representing System 1 execution) runs at a high frequency (turn-by-turn), generating immediate dialogue actions conditioned on the macro-bias.
+> 2.  **Verifiable Reward Design:** Construct a multi-agent testing environment (e.g., based on NegotiationToM or the AIWolf werewolf game framework) where rewards are derived programmatically from task outcomes (win rates, negotiation payoffs, or minimization of empirical step-wise regret).
+> 3.  **Generalization and Dataset Hacking Controls:** To prevent the model from "hacking" the statistical patterns of the training data (narrow overfitting), augment the training environment with systematically perturbed datasets (e.g., introducing irrelevant conversational details, sentiment shifts, or untrustworthy testimony).
+> 4.  **Behavioral Steering Evaluation:** Benchmark the TimeHC-RL model against a baseline model trained purely on standard System 2 step-by-step reasoning RL (like DeepSeek-R1-Zero styles). Measure the alignment to human behavior using CogBench and evaluate whether the TimeHC-RL model maintains out-of-distribution generalization on held-out social benchmarks (e.g., OpenToM) without suffering from the absolute accuracy drop-offs and robotic conversation style typical of over-deliberative models.
