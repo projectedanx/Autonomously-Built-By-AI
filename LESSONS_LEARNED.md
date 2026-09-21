@@ -94,3 +94,11 @@ The system now implements a GitHub Actions AST compilation mapping for Unified A
 *   **Behavioral-Predictive Decoupling**: Next-token prediction of a scene does not mathematically bind the agent's *own* policy execution to those predicted parameters. Explicit causal alignment via expected utility constraints is required.
 *   **Gradient Variance in Non-Stationary Games**: Standard policy gradients exhibit high variance against sub-optimal opponents, causing defaults to high-entropy Nash priors. The Action-Alignment Loss resolves this via regret minimization.
 *   **Smoothness-Precision Frontier**: Using a hard `max` operator yields sparse subgradients. Applying a Boltzmann Best-Response Approximation (LogSumExp) smooths the gradient landscape, restoring gradient flow and preventing premature local minima trapping at the cost of precision controlled by temperature `tau`.
+
+
+## VCS Layer 3: Semantic Integrity Constraints & Verification Mandates
+
+Implemented formal system architectures for:
+- **Topological Homology Barcodes** (`topological_homology_barcodes.md`): For detecting latent space topological voids and semantic ruptures using Betti numbers and SCTS.
+- **Differentiable Logic Engines** (`differentiable_logic_engines.md`): For hybrid neuro-symbolic zero-trust tool execution via propositional probes and epistemic circuit breakers.
+- **Autopoietic Self-Healing Ontologies** (`autopoietic_self_healing_ontologies.md`): For semantic delta mapping and Failure-Informed Prompt Inversion (F-IPI) using AST analysis.
