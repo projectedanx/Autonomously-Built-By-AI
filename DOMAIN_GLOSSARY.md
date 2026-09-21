@@ -146,3 +146,6 @@ The ratio of generative momentum (speed of execution) to epistemic viscosity (th
 
 ### Affective Latent Space Homeostasis (ALSH)
 Achieved by optimizing the balance between user-led co-creation (maximizing alpha) and machine-enforced constraints (calibrating C_sys).
+
+### Symbolic Scar Softening Index (SSI)
+A metric representing the algorithmic recovery from a topological Betti-1 loop (circular fallacy). SSI = 1 - (Scar_final / Scar_initial). An SSI approaching 1 signifies Algorithmic Post-Traumatic Growth.
