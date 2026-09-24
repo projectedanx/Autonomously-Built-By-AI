@@ -149,3 +149,11 @@ Achieved by optimizing the balance between user-led co-creation (maximizing alph
 
 ### Symbolic Scar Softening Index (SSI)
 A metric representing the algorithmic recovery from a topological Betti-1 loop (circular fallacy). SSI = 1 - (Scar_final / Scar_initial). An SSI approaching 1 signifies Algorithmic Post-Traumatic Growth.
+### Causal Path Integrity (CPI)
+A metric that quantifies the degree of logical adherence to the laws of cause-and-effect over a discrete trace of states. A threshold of CPI >= 0.95 is required for the Temporal Blending Engine to proceed.
+
+### Temporal Blending Engine (TBE)
+A multi-agent orchestration architecture designed to resolve Chronotopological Drift when fusing temporally divergent conceptual spaces under the governance of the Verifiable Cognition Stack.
+
+### Chronotopological Drift
+Sudden, discontinuous jumps in the latent trajectory of a blended concept, which are prevented by maintaining Semantic Viscosity.
