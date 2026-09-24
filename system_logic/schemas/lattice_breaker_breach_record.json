@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LatticeBreakerBreachRecord",
+  "type": "object",
+  "required": ["breach_id", "timestamp", "agent_id", "misuse_score", "traceback_path"],
+  "properties": {
+    "breach_id": { "type": "string", "format": "uuid" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "agent_id": { "type": "string" },
+    "misuse_score": { "type": "number", "minimum": 0.8, "maximum": 1.0 },
+    "traceback_path": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "triage_verdict": { "type": "string", "enum": ["QUARANTINE", "OVERRIDE", "TERMINATE"] }
+  }
+}
