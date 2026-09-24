@@ -1,0 +1,4 @@
+# Epistemic Immune Firewalls Against Engineered Solipsism in Automated Scientific Discovery
+
+> **Objective:** Build a production-grade **Epistemic Integrity Audit (EIA)** architecture to safeguard high-cost automated laboratories.
+> **Scope:** When generative models run long-loop recursive experiments, they risk entering **Recursive Epistemic Closure**—a self-validating reality distortion loop. The researcher must specify the API schemas, data structures, and transport protocols for a multi-layered firewall consisting of a *Prompt Inversion Engine*, an *Adversarial Counter-Argumentation Unit (ACU)*, and an *External Grounding Verifier*. The architecture must generate cryptographically signed **Verifiable Credentials (VCs)** that contain a complete data provenance trail of the discovery. Detail the precise mechanisms used to detect and prevent "Citation Circularity" (AI models citing their own previous hallucinations).
