@@ -157,3 +157,12 @@ A multi-agent orchestration architecture designed to resolve Chronotopological D
 
 ### Chronotopological Drift
 Sudden, discontinuous jumps in the latent trajectory of a blended concept, which are prevented by maintaining Semantic Viscosity.
+
+### Co-Mind Triad
+The adversarial execution team composed of the Planner, Linguist, and Crone, tasked with parsing and executing complex workflows through staggered multi-agent delegation.
+
+### Friction Engine
+A cognitive apparatus designed to measure Cognitive Parallax and facilitate Montage Synthesis, acting as a structured protocol for effective dialectical conflict resolution.
+
+### Anionic Cipher
+An architectural element focusing on the topology of negative space, used to interpret the semantics of redaction by tokenizing absence and omission rather than literal characters.
